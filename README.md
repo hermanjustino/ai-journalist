@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# AI Cultural Journalist
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application that tracks and analyzes Black cultural domains across various media sources, including social media and news outlets.
 
-## Available Scripts
+<img src="https://via.placeholder.com/800x400?text=AI+Cultural+Journalist+Screenshot" alt="Application Screenshot" width="100%" />
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+The AI Cultural Journalist project serves as a cultural tracking tool that identifies, categorizes, and analyzes content related to Black culture across several domains. By analyzing content from various sources, it provides insights into trends and connections within Black cultural expressions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Cultural Domains Tracked
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **Music**: Hip-Hop/Rap, Jazz, R&B/Soul, Gospel
+- **Social Justice & Activism**: Civil Rights, Black Liberation, Contemporary Movements
+- **Language & Expression**: AAVE, Slang & Terminology
+- **Arts & Literature**: Literature, Visual Arts
+- **Innovation & Technology**: Tech Pioneers, STEM
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Cultural Domain Tracking**: Define and track specific cultural domains and categories
+- **Content Analysis**: Analyze content from various sources to identify cultural references
+- **Trend Identification**: Track trending topics and domains in Black culture
+- **Domain Insights**: Discover connections between cultural domains and their overlap
+- **Interactive UI**: Explore domains, categories, and trending topics
 
-### `npm run build`
+## Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+ai-journalist/
+├── src/
+│   ├── components/              
+│   │   ├── About.tsx            
+│   │   ├── CulturalDomainTracker.tsx 
+│   │   ├── Dashboard.tsx        
+│   │   ├── Insights.tsx         
+│   │   └── Navigation.tsx       
+│   ├── config/                  
+│   │   └── culturalDomains.ts   
+│   ├── services/                
+│   │   ├── contentFetcher.ts    
+│   │   └── domainTracker.ts     
+│   ├── App.tsx                  
+│   └── index.tsx                
+└── public/                      
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
 
-### `npm run eject`
+- Node.js 14.x or higher
+- npm or yarn
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## How It Works
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The application works by:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Defining cultural domains and their categories with relevant keywords
+2. Fetching content from various sources (currently using mock data)
+3. Analyzing content to identify references to cultural domains
+4. Calculating trends and connections between domains
+5. Presenting insights through an interactive user interface
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Future Development
 
-## Learn More
+- **API Integration**: Connect to Twitter, TikTok, and news APIs for real-time data
+- **Machine Learning**: Implement NLP for more sophisticated content analysis
+- **User Profiles**: Add authentication and personalized insights
+- **Data Visualization**: Add charts and graphs to better visualize cultural trends
+- **Content Creator Analysis**: Track and analyze influential creators in each domain
+- **Historical Analysis**: Compare current trends to historical data
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies Used
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **React**: UI component library
+- **TypeScript**: Type-safe JavaScript
+- **CSS**: Custom styling with responsive design
+- **Content APIs**: (Placeholder for future implementation)
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Black cultural pioneers and creators across all domains
+- Open-source community for tools and libraries
