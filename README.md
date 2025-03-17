@@ -2,7 +2,8 @@
 
 A React application that tracks and analyzes Black cultural domains across various media sources, including social media and news outlets.
 
-<img src="https://via.placeholder.com/800x400?text=AI+Cultural+Journalist+Screenshot" alt="Application Screenshot" width="100%" />
+![Image 2025-03-17 at 5 02 pm](https://github.com/user-attachments/assets/dfba07c4-94a1-459b-b450-e4ba05bf47fa)
+
 
 ## Project Overview
 
