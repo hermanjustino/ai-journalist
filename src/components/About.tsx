@@ -107,8 +107,8 @@ const About: React.FC = () => {
           For questions, suggestions, or collaboration opportunities, please reach out to us.
         </p>
         <div className="contact-actions">
-          <a href="mailto:contact@aiculturaljournalist.com" className="contact-button">Contact Us</a>
-          <a href="https://github.com/yourusername/bhm" className="github-button">View on GitHub</a>
+          <a href="mailto:hermanjustino@gmail.com" className="contact-button">Contact Us</a>
+          <a href="https://github.com/hermanjustino/ai-journalist" className="github-button">View on GitHub</a>
         </div>
       </section>
     </div>
