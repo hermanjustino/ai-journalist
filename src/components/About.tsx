@@ -25,31 +25,80 @@ const About: React.FC = () => {
         </p>
       </section>
       
-      <section className="about-section">
+      <section className="about-section domains-section">
         <h3>Cultural Domains</h3>
         <p>
-          We currently track five primary cultural domains:
+          We track five primary cultural domains with specific focus areas:
         </p>
-        <ul className="domains-list">
-          <li><strong>Music</strong>: Hip-Hop/Rap, Jazz, R&B/Soul, Gospel</li>
-          <li><strong>Social Justice & Activism</strong>: Civil Rights, Black Liberation, Contemporary Movements</li>
-          <li><strong>Language & Expression</strong>: AAVE, Slang & Terminology</li>
-          <li><strong>Arts & Literature</strong>: Literature, Visual Arts</li>
-          <li><strong>Innovation & Technology</strong>: Tech Pioneers, STEM</li>
-        </ul>
+        <div className="domains-grid">
+          <div className="domain-card">
+            <h4>Music</h4>
+            <ul className="domain-list">
+              <li>Hip-Hop/Rap</li>
+              <li>Jazz</li>
+              <li>R&B/Soul</li>
+              <li>Gospel</li>
+            </ul>
+          </div>
+          <div className="domain-card">
+            <h4>Social Justice & Activism</h4>
+            <ul className="domain-list">
+              <li>Civil Rights</li>
+              <li>Black Liberation</li>
+              <li>Contemporary Movements</li>
+            </ul>
+          </div>
+          <div className="domain-card">
+            <h4>Language & Expression</h4>
+            <ul className="domain-list">
+              <li>AAVE</li>
+              <li>Slang & Terminology</li>
+            </ul>
+          </div>
+          <div className="domain-card">
+            <h4>Arts & Literature</h4>
+            <ul className="domain-list">
+              <li>Literature</li>
+              <li>Visual Arts</li>
+            </ul>
+          </div>
+          <div className="domain-card">
+            <h4>Innovation & Technology</h4>
+            <ul className="domain-list">
+              <li>Tech Pioneers</li>
+              <li>STEM</li>
+            </ul>
+          </div>
+        </div>
       </section>
       
-      <section className="about-section">
+      <section className="about-section tech-section">
         <h3>Technology Stack</h3>
-        <p>
-          This application is built using:
-        </p>
-        <ul>
-          <li>React</li>
-          <li>TypeScript</li>
-          <li>Social Media APIs</li>
-          <li>News APIs</li>
-        </ul>
+        <div className="tech-grid">
+          <div className="tech-category">
+            <h4>Frontend</h4>
+            <div className="tech-badges">
+              <span className="tech-badge">React</span>
+              <span className="tech-badge">TypeScript</span>
+              <span className="tech-badge">CSS</span>
+            </div>
+          </div>
+          <div className="tech-category">
+            <h4>Backend</h4>
+            <div className="tech-badges">
+              <span className="tech-badge">Express.js</span>
+              <span className="tech-badge">Node.js</span>
+            </div>
+          </div>
+          <div className="tech-category">
+            <h4>APIs</h4>
+            <div className="tech-badges">
+              <span className="tech-badge">Twitter API</span>
+              <span className="tech-badge">News API</span>
+              <span className="tech-badge">TikTok API</span>
+            </div>
+          </div>
+        </div>
       </section>
       
       <section className="about-section contact">
@@ -57,7 +106,10 @@ const About: React.FC = () => {
         <p>
           For questions, suggestions, or collaboration opportunities, please reach out to us.
         </p>
-        <a href="mailto:contact@aiculturaljournalist.com" className="contact-button">Contact Us</a>
+        <div className="contact-actions">
+          <a href="mailto:contact@aiculturaljournalist.com" className="contact-button">Contact Us</a>
+          <a href="https://github.com/yourusername/bhm" className="github-button">View on GitHub</a>
+        </div>
       </section>
     </div>
   );

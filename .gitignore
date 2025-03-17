@@ -31,3 +31,7 @@ yarn-error.log*
 .env.production.local
 .env
 /server/.env
+
+#data
+/server/data
+/server/data/*
