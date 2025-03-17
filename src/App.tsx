@@ -11,6 +11,7 @@ import contentFetcher from './services/contentFetcher';
 import dataCollectionService from './services/dataCollection';
 import ApiTester from './components/ApiTester';
 import ApiUsageDashboard from './components/ApiUsageDashboard';
+import TrendDiscovery from './components/TrendDiscovery/TrendDiscovery';
 
 function App() {
   const [currentView, setCurrentView] = useState<string>('domains');
@@ -81,6 +82,8 @@ function App() {
         return <ApiTester />;
       case 'api-usage':
         return <ApiUsageDashboard />;
+      case 'trends':
+        return <TrendDiscovery contentItems={contentItems} />;
       default:
         return <div>Coming soon...</div>;
     }

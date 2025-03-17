@@ -1,0 +1,1454 @@
+{
+  "timestamp": "2025-03-17T23:29:51.893Z",
+  "topics": {
+    "topics": [
+      0,
+      3,
+      1,
+      0,
+      4,
+      3,
+      3,
+      2,
+      0,
+      3,
+      3,
+      2,
+      1,
+      2,
+      0,
+      0,
+      3,
+      0,
+      1,
+      2,
+      1,
+      0,
+      4,
+      2,
+      0,
+      4,
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      0,
+      2,
+      4,
+      0,
+      2,
+      3,
+      0,
+      2,
+      4,
+      2,
+      0,
+      3,
+      1,
+      4,
+      1,
+      1,
+      0,
+      0,
+      2,
+      4,
+      0,
+      3,
+      3,
+      1,
+      3,
+      4,
+      1,
+      1,
+      0,
+      3,
+      1,
+      0,
+      4,
+      1,
+      0,
+      4,
+      2,
+      2,
+      3,
+      0,
+      2,
+      1,
+      2,
+      2,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      4,
+      2,
+      0,
+      4,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0,
+      2,
+      1,
+      2,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "topicDetails": {
+      "0": {
+        "name": "music art hours",
+        "words": [
+          {
+            "word": "music",
+            "weight": 0.2068244108018067
+          },
+          {
+            "word": "art",
+            "weight": 0.17064331565122157
+          },
+          {
+            "word": "hours",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "created",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "content",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "ago",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "31",
+            "weight": 0.04652664275252387
+          },
+          {
+            "word": "30",
+            "weight": 0.042013389283279905
+          },
+          {
+            "word": "25",
+            "weight": 0.03883780322287916
+          },
+          {
+            "word": "63",
+            "weight": 0.02715411075631551
+          }
+        ],
+        "docs": [
+          "item-0",
+          "item-3",
+          "item-8",
+          "item-14",
+          "item-15",
+          "item-17",
+          "item-21",
+          "item-24",
+          "item-26",
+          "item-32",
+          "item-35",
+          "item-38",
+          "item-42",
+          "item-48",
+          "item-49",
+          "item-52",
+          "item-60",
+          "item-63",
+          "item-66",
+          "item-71",
+          "item-77",
+          "item-78",
+          "item-79",
+          "item-81",
+          "item-84",
+          "item-87",
+          "item-89",
+          "item-91",
+          "item-95",
+          "item-98",
+          "item-99"
+        ],
+        "count": 31
+      },
+      "1": {
+        "name": "film hours created",
+        "words": [
+          {
+            "word": "film",
+            "weight": 0.32312062955175985
+          },
+          {
+            "word": "hours",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "created",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "content",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "ago",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "56",
+            "weight": 0.05868536915759732
+          },
+          {
+            "word": "70",
+            "weight": 0.05083724512600503
+          },
+          {
+            "word": "48",
+            "weight": 0.03792955153263119
+          },
+          {
+            "word": "66",
+            "weight": 0.03792955153263119
+          },
+          {
+            "word": "51",
+            "weight": 0.03792955153263119
+          }
+        ],
+        "docs": [
+          "item-2",
+          "item-12",
+          "item-18",
+          "item-20",
+          "item-28",
+          "item-30",
+          "item-31",
+          "item-44",
+          "item-46",
+          "item-47",
+          "item-55",
+          "item-58",
+          "item-59",
+          "item-62",
+          "item-65",
+          "item-73",
+          "item-80",
+          "item-88",
+          "item-90",
+          "item-93",
+          "item-96",
+          "item-97"
+        ],
+        "count": 22
+      },
+      "2": {
+        "name": "social media hours",
+        "words": [
+          {
+            "word": "social",
+            "weight": 0.2714213288234783
+          },
+          {
+            "word": "media",
+            "weight": 0.2714213288234783
+          },
+          {
+            "word": "hours",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "created",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "content",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "ago",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "12",
+            "weight": 0.04556968911484488
+          },
+          {
+            "word": "70",
+            "weight": 0.04270328590584423
+          },
+          {
+            "word": "34",
+            "weight": 0.031860823287410196
+          },
+          {
+            "word": "47",
+            "weight": 0.031860823287410196
+          }
+        ],
+        "docs": [
+          "item-7",
+          "item-11",
+          "item-13",
+          "item-19",
+          "item-23",
+          "item-27",
+          "item-29",
+          "item-33",
+          "item-36",
+          "item-39",
+          "item-41",
+          "item-50",
+          "item-68",
+          "item-69",
+          "item-72",
+          "item-74",
+          "item-75",
+          "item-76",
+          "item-83",
+          "item-86",
+          "item-92",
+          "item-94"
+        ],
+        "count": 22
+      },
+      "3": {
+        "name": "fashion created content",
+        "words": [
+          {
+            "word": "fashion",
+            "weight": 0.40044298072819995
+          },
+          {
+            "word": "created",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "content",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "ago",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "hours",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "67",
+            "weight": 0.09859142018476351
+          },
+          {
+            "word": "65",
+            "weight": 0.09859142018476351
+          },
+          {
+            "word": "52",
+            "weight": 0.06372164657482039
+          },
+          {
+            "word": "38",
+            "weight": 0.06372164657482039
+          },
+          {
+            "word": "19",
+            "weight": 0.06372164657482039
+          }
+        ],
+        "docs": [
+          "item-1",
+          "item-5",
+          "item-6",
+          "item-9",
+          "item-10",
+          "item-16",
+          "item-37",
+          "item-43",
+          "item-53",
+          "item-54",
+          "item-56",
+          "item-61",
+          "item-70"
+        ],
+        "count": 13
+      },
+      "4": {
+        "name": "literature hours created",
+        "words": [
+          {
+            "word": "literature",
+            "weight": 0.43986974781555366
+          },
+          {
+            "word": "hours",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "created",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "content",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "ago",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "12",
+            "weight": 0.10516082103425742
+          },
+          {
+            "word": "49",
+            "weight": 0.06298991634187848
+          },
+          {
+            "word": "24",
+            "weight": 0.056879665491209715
+          },
+          {
+            "word": "70",
+            "weight": 0.04927302219905103
+          },
+          {
+            "word": "",
+            "weight": 0.00001
+          }
+        ],
+        "docs": [
+          "item-4",
+          "item-22",
+          "item-25",
+          "item-34",
+          "item-40",
+          "item-45",
+          "item-51",
+          "item-57",
+          "item-64",
+          "item-67",
+          "item-82",
+          "item-85"
+        ],
+        "count": 12
+      }
+    },
+    "docIdToTopic": {
+      "item-0": 0,
+      "item-1": 3,
+      "item-2": 1,
+      "item-3": 0,
+      "item-4": 4,
+      "item-5": 3,
+      "item-6": 3,
+      "item-7": 2,
+      "item-8": 0,
+      "item-9": 3,
+      "item-10": 3,
+      "item-11": 2,
+      "item-12": 1,
+      "item-13": 2,
+      "item-14": 0,
+      "item-15": 0,
+      "item-16": 3,
+      "item-17": 0,
+      "item-18": 1,
+      "item-19": 2,
+      "item-20": 1,
+      "item-21": 0,
+      "item-22": 4,
+      "item-23": 2,
+      "item-24": 0,
+      "item-25": 4,
+      "item-26": 0,
+      "item-27": 2,
+      "item-28": 1,
+      "item-29": 2,
+      "item-30": 1,
+      "item-31": 1,
+      "item-32": 0,
+      "item-33": 2,
+      "item-34": 4,
+      "item-35": 0,
+      "item-36": 2,
+      "item-37": 3,
+      "item-38": 0,
+      "item-39": 2,
+      "item-40": 4,
+      "item-41": 2,
+      "item-42": 0,
+      "item-43": 3,
+      "item-44": 1,
+      "item-45": 4,
+      "item-46": 1,
+      "item-47": 1,
+      "item-48": 0,
+      "item-49": 0,
+      "item-50": 2,
+      "item-51": 4,
+      "item-52": 0,
+      "item-53": 3,
+      "item-54": 3,
+      "item-55": 1,
+      "item-56": 3,
+      "item-57": 4,
+      "item-58": 1,
+      "item-59": 1,
+      "item-60": 0,
+      "item-61": 3,
+      "item-62": 1,
+      "item-63": 0,
+      "item-64": 4,
+      "item-65": 1,
+      "item-66": 0,
+      "item-67": 4,
+      "item-68": 2,
+      "item-69": 2,
+      "item-70": 3,
+      "item-71": 0,
+      "item-72": 2,
+      "item-73": 1,
+      "item-74": 2,
+      "item-75": 2,
+      "item-76": 2,
+      "item-77": 0,
+      "item-78": 0,
+      "item-79": 0,
+      "item-80": 1,
+      "item-81": 0,
+      "item-82": 4,
+      "item-83": 2,
+      "item-84": 0,
+      "item-85": 4,
+      "item-86": 2,
+      "item-87": 0,
+      "item-88": 1,
+      "item-89": 0,
+      "item-90": 1,
+      "item-91": 0,
+      "item-92": 2,
+      "item-93": 1,
+      "item-94": 2,
+      "item-95": 0,
+      "item-96": 1,
+      "item-97": 1,
+      "item-98": 0,
+      "item-99": 0
+    }
+  },
+  "spikes": [
+    {
+      "key": "literature",
+      "count": 7,
+      "avgCount": 2.4,
+      "multiplier": 2.916666666666667,
+      "timestamp": "2025-03-17T16:00:00.000Z",
+      "items": [
+        "item-4",
+        "item-82",
+        "item-22",
+        "item-40",
+        "item-57",
+        "item-51",
+        "item-64"
+      ]
+    }
+  ],
+  "velocityData": {
+    "velocityByGroup": {
+      "literature": [
+        {
+          "startTime": "2025-03-15T00:00:00.000Z",
+          "endTime": "2025-03-15T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-15T20:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T08:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-17T08:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 2,
+          "endCount": 3,
+          "velocity": 0.5
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 3,
+          "endCount": 4,
+          "velocity": 0.3333333333333333
+        }
+      ],
+      "film": [
+        {
+          "startTime": "2025-03-15T00:00:00.000Z",
+          "endTime": "2025-03-15T04:00:00.000Z",
+          "startCount": 3,
+          "endCount": 2,
+          "velocity": -0.3333333333333333
+        },
+        {
+          "startTime": "2025-03-15T04:00:00.000Z",
+          "endTime": "2025-03-15T08:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-15T08:00:00.000Z",
+          "endTime": "2025-03-15T12:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-15T12:00:00.000Z",
+          "endTime": "2025-03-15T20:00:00.000Z",
+          "startCount": 2,
+          "endCount": 3,
+          "velocity": 0.5
+        },
+        {
+          "startTime": "2025-03-15T20:00:00.000Z",
+          "endTime": "2025-03-16T00:00:00.000Z",
+          "startCount": 3,
+          "endCount": 1,
+          "velocity": -0.6666666666666666
+        },
+        {
+          "startTime": "2025-03-16T00:00:00.000Z",
+          "endTime": "2025-03-16T04:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T04:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T04:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-17T04:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 5,
+          "velocity": 4
+        }
+      ],
+      "social-media": [
+        {
+          "startTime": "2025-03-15T00:00:00.000Z",
+          "endTime": "2025-03-15T08:00:00.000Z",
+          "startCount": 3,
+          "endCount": 1,
+          "velocity": -0.6666666666666666
+        },
+        {
+          "startTime": "2025-03-15T08:00:00.000Z",
+          "endTime": "2025-03-15T12:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-15T12:00:00.000Z",
+          "endTime": "2025-03-15T16:00:00.000Z",
+          "startCount": 2,
+          "endCount": 2,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-15T16:00:00.000Z",
+          "endTime": "2025-03-16T00:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-16T00:00:00.000Z",
+          "endTime": "2025-03-16T04:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T04:00:00.000Z",
+          "endTime": "2025-03-16T08:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T08:00:00.000Z",
+          "endTime": "2025-03-16T12:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T12:00:00.000Z",
+          "endTime": "2025-03-16T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-16T16:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T04:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T04:00:00.000Z",
+          "endTime": "2025-03-17T08:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-17T08:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 2,
+          "endCount": 2,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 2,
+          "endCount": 2,
+          "velocity": 0
+        }
+      ],
+      "fashion": [
+        {
+          "startTime": "2025-03-15T00:00:00.000Z",
+          "endTime": "2025-03-15T04:00:00.000Z",
+          "startCount": 1,
+          "endCount": 3,
+          "velocity": 2
+        },
+        {
+          "startTime": "2025-03-15T04:00:00.000Z",
+          "endTime": "2025-03-15T16:00:00.000Z",
+          "startCount": 3,
+          "endCount": 1,
+          "velocity": -0.6666666666666666
+        },
+        {
+          "startTime": "2025-03-15T16:00:00.000Z",
+          "endTime": "2025-03-16T08:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T08:00:00.000Z",
+          "endTime": "2025-03-16T12:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T12:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T00:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T00:00:00.000Z",
+          "endTime": "2025-03-17T04:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T04:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        }
+      ],
+      "art": [
+        {
+          "startTime": "2025-03-15T04:00:00.000Z",
+          "endTime": "2025-03-15T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-15T16:00:00.000Z",
+          "endTime": "2025-03-16T08:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T08:00:00.000Z",
+          "endTime": "2025-03-16T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 3,
+          "velocity": 2
+        },
+        {
+          "startTime": "2025-03-16T16:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 3,
+          "endCount": 2,
+          "velocity": -0.3333333333333333
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 2,
+          "endCount": 2,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 2,
+          "endCount": 3,
+          "velocity": 0.5
+        }
+      ],
+      "music": [
+        {
+          "startTime": "2025-03-15T08:00:00.000Z",
+          "endTime": "2025-03-15T12:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-15T12:00:00.000Z",
+          "endTime": "2025-03-15T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-15T16:00:00.000Z",
+          "endTime": "2025-03-16T00:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-16T00:00:00.000Z",
+          "endTime": "2025-03-16T04:00:00.000Z",
+          "startCount": 2,
+          "endCount": 1,
+          "velocity": -0.5
+        },
+        {
+          "startTime": "2025-03-16T04:00:00.000Z",
+          "endTime": "2025-03-16T12:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T12:00:00.000Z",
+          "endTime": "2025-03-16T16:00:00.000Z",
+          "startCount": 1,
+          "endCount": 1,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-16T16:00:00.000Z",
+          "endTime": "2025-03-16T20:00:00.000Z",
+          "startCount": 1,
+          "endCount": 2,
+          "velocity": 1
+        },
+        {
+          "startTime": "2025-03-16T20:00:00.000Z",
+          "endTime": "2025-03-17T08:00:00.000Z",
+          "startCount": 2,
+          "endCount": 2,
+          "velocity": 0
+        },
+        {
+          "startTime": "2025-03-17T08:00:00.000Z",
+          "endTime": "2025-03-17T16:00:00.000Z",
+          "startCount": 2,
+          "endCount": 3,
+          "velocity": 0.5
+        },
+        {
+          "startTime": "2025-03-17T16:00:00.000Z",
+          "endTime": "2025-03-17T20:00:00.000Z",
+          "startCount": 3,
+          "endCount": 2,
+          "velocity": -0.3333333333333333
+        }
+      ]
+    },
+    "topicVelocity": {
+      "literature": 0.36666666666666664,
+      "film": 0.45,
+      "social-media": 0.10256410256410257,
+      "fashion": 0.2592592592592593,
+      "art": 0.36111111111111116,
+      "music": 0.11666666666666667
+    },
+    "summary": {
+      "fastestGrowing": [
+        {
+          "key": "film",
+          "velocity": 0.45
+        },
+        {
+          "key": "literature",
+          "velocity": 0.36666666666666664
+        },
+        {
+          "key": "art",
+          "velocity": 0.36111111111111116
+        },
+        {
+          "key": "fashion",
+          "velocity": 0.2592592592592593
+        },
+        {
+          "key": "music",
+          "velocity": 0.11666666666666667
+        }
+      ],
+      "declining": []
+    }
+  },
+  "trendingTopics": {
+    "topics": [
+      0,
+      3,
+      1,
+      0,
+      4,
+      3,
+      3,
+      2,
+      0,
+      3,
+      3,
+      2,
+      1,
+      2,
+      0,
+      0,
+      3,
+      0,
+      1,
+      2,
+      1,
+      0,
+      4,
+      2,
+      0,
+      4,
+      0,
+      2,
+      1,
+      2,
+      1,
+      1,
+      0,
+      2,
+      4,
+      0,
+      2,
+      3,
+      0,
+      2,
+      4,
+      2,
+      0,
+      3,
+      1,
+      4,
+      1,
+      1,
+      0,
+      0,
+      2,
+      4,
+      0,
+      3,
+      3,
+      1,
+      3,
+      4,
+      1,
+      1,
+      0,
+      3,
+      1,
+      0,
+      4,
+      1,
+      0,
+      4,
+      2,
+      2,
+      3,
+      0,
+      2,
+      1,
+      2,
+      2,
+      2,
+      0,
+      0,
+      0,
+      1,
+      0,
+      4,
+      2,
+      0,
+      4,
+      2,
+      0,
+      1,
+      0,
+      1,
+      0,
+      2,
+      1,
+      2,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "topicDetails": {
+      "0": {
+        "name": "music art hours",
+        "words": [
+          {
+            "word": "music",
+            "weight": 0.2068244108018067
+          },
+          {
+            "word": "art",
+            "weight": 0.17064331565122157
+          },
+          {
+            "word": "hours",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "created",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "content",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "ago",
+            "weight": 0.1372674498910848
+          },
+          {
+            "word": "31",
+            "weight": 0.04652664275252387
+          },
+          {
+            "word": "30",
+            "weight": 0.042013389283279905
+          },
+          {
+            "word": "25",
+            "weight": 0.03883780322287916
+          },
+          {
+            "word": "63",
+            "weight": 0.02715411075631551
+          }
+        ],
+        "docs": [
+          "item-0",
+          "item-3",
+          "item-8",
+          "item-14",
+          "item-15",
+          "item-17",
+          "item-21",
+          "item-24",
+          "item-26",
+          "item-32",
+          "item-35",
+          "item-38",
+          "item-42",
+          "item-48",
+          "item-49",
+          "item-52",
+          "item-60",
+          "item-63",
+          "item-66",
+          "item-71",
+          "item-77",
+          "item-78",
+          "item-79",
+          "item-81",
+          "item-84",
+          "item-87",
+          "item-89",
+          "item-91",
+          "item-95",
+          "item-98",
+          "item-99"
+        ],
+        "count": 31
+      },
+      "1": {
+        "name": "film hours created",
+        "words": [
+          {
+            "word": "film",
+            "weight": 0.32312062955175985
+          },
+          {
+            "word": "hours",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "created",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "content",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "ago",
+            "weight": 0.1360725975366821
+          },
+          {
+            "word": "56",
+            "weight": 0.05868536915759732
+          },
+          {
+            "word": "70",
+            "weight": 0.05083724512600503
+          },
+          {
+            "word": "48",
+            "weight": 0.03792955153263119
+          },
+          {
+            "word": "66",
+            "weight": 0.03792955153263119
+          },
+          {
+            "word": "51",
+            "weight": 0.03792955153263119
+          }
+        ],
+        "docs": [
+          "item-2",
+          "item-12",
+          "item-18",
+          "item-20",
+          "item-28",
+          "item-30",
+          "item-31",
+          "item-44",
+          "item-46",
+          "item-47",
+          "item-55",
+          "item-58",
+          "item-59",
+          "item-62",
+          "item-65",
+          "item-73",
+          "item-80",
+          "item-88",
+          "item-90",
+          "item-93",
+          "item-96",
+          "item-97"
+        ],
+        "count": 22
+      },
+      "2": {
+        "name": "social media hours",
+        "words": [
+          {
+            "word": "social",
+            "weight": 0.2714213288234783
+          },
+          {
+            "word": "media",
+            "weight": 0.2714213288234783
+          },
+          {
+            "word": "hours",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "created",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "content",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "ago",
+            "weight": 0.11430098193081296
+          },
+          {
+            "word": "12",
+            "weight": 0.04556968911484488
+          },
+          {
+            "word": "70",
+            "weight": 0.04270328590584423
+          },
+          {
+            "word": "34",
+            "weight": 0.031860823287410196
+          },
+          {
+            "word": "47",
+            "weight": 0.031860823287410196
+          }
+        ],
+        "docs": [
+          "item-7",
+          "item-11",
+          "item-13",
+          "item-19",
+          "item-23",
+          "item-27",
+          "item-29",
+          "item-33",
+          "item-36",
+          "item-39",
+          "item-41",
+          "item-50",
+          "item-68",
+          "item-69",
+          "item-72",
+          "item-74",
+          "item-75",
+          "item-76",
+          "item-83",
+          "item-86",
+          "item-92",
+          "item-94"
+        ],
+        "count": 22
+      },
+      "3": {
+        "name": "fashion created content",
+        "words": [
+          {
+            "word": "fashion",
+            "weight": 0.40044298072819995
+          },
+          {
+            "word": "created",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "content",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "ago",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "hours",
+            "weight": 0.13508297864550622
+          },
+          {
+            "word": "67",
+            "weight": 0.09859142018476351
+          },
+          {
+            "word": "65",
+            "weight": 0.09859142018476351
+          },
+          {
+            "word": "52",
+            "weight": 0.06372164657482039
+          },
+          {
+            "word": "38",
+            "weight": 0.06372164657482039
+          },
+          {
+            "word": "19",
+            "weight": 0.06372164657482039
+          }
+        ],
+        "docs": [
+          "item-1",
+          "item-5",
+          "item-6",
+          "item-9",
+          "item-10",
+          "item-16",
+          "item-37",
+          "item-43",
+          "item-53",
+          "item-54",
+          "item-56",
+          "item-61",
+          "item-70"
+        ],
+        "count": 13
+      },
+      "4": {
+        "name": "literature hours created",
+        "words": [
+          {
+            "word": "literature",
+            "weight": 0.43986974781555366
+          },
+          {
+            "word": "hours",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "created",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "content",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "ago",
+            "weight": 0.1438753618709534
+          },
+          {
+            "word": "12",
+            "weight": 0.10516082103425742
+          },
+          {
+            "word": "49",
+            "weight": 0.06298991634187848
+          },
+          {
+            "word": "24",
+            "weight": 0.056879665491209715
+          },
+          {
+            "word": "70",
+            "weight": 0.04927302219905103
+          },
+          {
+            "word": "",
+            "weight": 0.00001
+          }
+        ],
+        "docs": [
+          "item-4",
+          "item-22",
+          "item-25",
+          "item-34",
+          "item-40",
+          "item-45",
+          "item-51",
+          "item-57",
+          "item-64",
+          "item-67",
+          "item-82",
+          "item-85"
+        ],
+        "count": 12
+      }
+    },
+    "trends": [
+      {
+        "id": "trend-4-1742254191893",
+        "topicId": "4",
+        "name": "literature hours created",
+        "keywords": [
+          "literature",
+          "hours",
+          "created",
+          "content",
+          "ago"
+        ],
+        "multiplier": 2.916666666666667,
+        "count": 7,
+        "velocity": 0,
+        "timestamp": "2025-03-17T23:29:51.893Z"
+      }
+    ],
+    "timestamp": "2025-03-17T23:29:51.893Z"
+  }
+}

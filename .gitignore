@@ -33,5 +33,34 @@ yarn-error.log*
 /server/.env
 
 #data
-/server/data
-/server/data/*
+/server/data/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+/server/trend-detection/python/venv/
+/server/trend-detection/python/.venv/
+/server/trend-detection/python/env/
+/server/trend-detection/python/.env/
+/server/trend-detection/python/build/
+/server/trend-detection/python/develop-eggs/
+/server/trend-detection/python/dist/
+/server/trend-detection/python/downloads/
+/server/trend-detection/python/eggs/
+/server/trend-detection/python/.eggs/
+/server/trend-detection/python/lib/
+/server/trend-detection/python/lib64/
+/server/trend-detection/python/parts/
+/server/trend-detection/python/sdist/
+/server/trend-detection/python/var/
+/server/trend-detection/python/wheels/
+/server/trend-detection/python/*.egg-info/
+/server/trend-detection/python/.installed.cfg
+/server/trend-detection/python/*.egg
+/server/trend-detection/python/.pytest_cache/
+/server/trend-detection/python/.coverage
+/server/trend-detection/python/htmlcov/
+/server/trend-detection/python/.tox/

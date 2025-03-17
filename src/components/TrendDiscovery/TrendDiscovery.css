@@ -1,0 +1,193 @@
+.trend-discovery {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .trend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .trend-header h2 {
+    margin: 0;
+    color: #343a40;
+  }
+  
+  .trend-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .trend-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .trend-actions button:hover:not(:disabled) {
+    background-color: #0069d9;
+  }
+  
+  .trend-actions button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 30px;
+    color: #6c757d;
+  }
+  
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .no-trends {
+    padding: 30px;
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .trending-topics {
+    margin-bottom: 30px;
+  }
+  
+  .trend-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+  }
+  
+  .trend-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid #007bff;
+  }
+  
+  .trend-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .trend-header h4 {
+    margin: 0;
+    color: #343a40;
+  }
+  
+  .trend-score {
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 0.85rem;
+  }
+  
+  .trend-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .trend-keyword {
+    background-color: #e9f2ff;
+    color: #007bff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+  }
+  
+  .trend-metrics {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .trend-metric {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .metric-label {
+    color: #6c757d;
+    font-size: 0.85rem;
+  }
+  
+  .metric-value {
+    color: #343a40;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  /* Topic details section */
+  .topic-details {
+    margin-top: 30px;
+  }
+  
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .topic-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  
+  .topic-card h4 {
+    color: #343a40;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .topic-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .topic-keyword {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #f0f0f0;
+    color: #495057;
+    border-radius: 12px;
+    margin: 2px;
+  }
+  
+  .topic-count {
+    font-size: 0.85rem;
+    color: #6c757d;
+  }

@@ -1,0 +1,609 @@
+{
+  "topics": [
+    2,
+    4,
+    3,
+    5,
+    4,
+    5,
+    2,
+    4,
+    0,
+    1,
+    2,
+    4,
+    5,
+    4,
+    0,
+    2,
+    2,
+    3,
+    2,
+    5,
+    2,
+    4,
+    3,
+    5,
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    3,
+    2,
+    2,
+    0,
+    4,
+    1,
+    2,
+    2,
+    0,
+    2,
+    2,
+    0,
+    3,
+    1,
+    0,
+    3,
+    5,
+    3,
+    1,
+    2,
+    5,
+    4,
+    0,
+    2,
+    2,
+    4,
+    3,
+    1,
+    1,
+    2,
+    3,
+    0,
+    5,
+    2,
+    2,
+    2,
+    2,
+    2,
+    0,
+    4,
+    0,
+    0,
+    1,
+    4,
+    1,
+    3,
+    4,
+    2,
+    3,
+    4,
+    3,
+    3,
+    2,
+    3,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "topicDetails": {
+    "0": {
+      "name": "literature trending",
+      "words": [
+        {
+          "word": "literature",
+          "weight": 0.24018151050867326
+        },
+        {
+          "word": "trending",
+          "weight": 0.1501134440679208
+        },
+        {
+          "word": "hours",
+          "weight": 0.11868577772491823
+        },
+        {
+          "word": "created",
+          "weight": 0.11868577772491823
+        },
+        {
+          "word": "content",
+          "weight": 0.11868577772491823
+        },
+        {
+          "word": "ago",
+          "weight": 0.11868577772491823
+        },
+        {
+          "word": "60",
+          "weight": 0.02033394311448398
+        },
+        {
+          "word": "28",
+          "weight": 0.02033394311448398
+        },
+        {
+          "word": "52",
+          "weight": 0.02033394311448398
+        },
+        {
+          "word": "51",
+          "weight": 0.02033394311448398
+        }
+      ],
+      "docs": [
+        "normal-8",
+        "normal-14",
+        "normal-24",
+        "normal-26",
+        "normal-28",
+        "normal-29",
+        "normal-33",
+        "normal-38",
+        "normal-41",
+        "normal-44",
+        "normal-52",
+        "normal-61",
+        "normal-68",
+        "normal-70",
+        "normal-71",
+        "spike-0",
+        "spike-1",
+        "spike-2",
+        "spike-3",
+        "spike-4",
+        "spike-5",
+        "spike-6",
+        "spike-7",
+        "spike-8",
+        "spike-9",
+        "spike-10",
+        "spike-11",
+        "spike-12",
+        "spike-13",
+        "spike-14",
+        "spike-15",
+        "spike-16",
+        "spike-17",
+        "spike-18",
+        "spike-19",
+        "spike-20",
+        "spike-21",
+        "spike-22",
+        "spike-23",
+        "spike-24"
+      ],
+      "count": 40
+    },
+    "1": {
+      "name": "music 12 trending",
+      "words": [
+        {
+          "word": "music",
+          "weight": 0.2761527586164992
+        },
+        {
+          "word": "12",
+          "weight": 0.14941955570992163
+        },
+        {
+          "word": "trending",
+          "weight": 0.13125773097158439
+        },
+        {
+          "word": "hours",
+          "weight": 0.10810175638816866
+        },
+        {
+          "word": "created",
+          "weight": 0.10810175638816866
+        },
+        {
+          "word": "content",
+          "weight": 0.10810175638816866
+        },
+        {
+          "word": "ago",
+          "weight": 0.10810175638816866
+        },
+        {
+          "word": "11",
+          "weight": 0.08528067223088977
+        },
+        {
+          "word": "58",
+          "weight": 0.042640336115444884
+        },
+        {
+          "word": "23",
+          "weight": 0.02963300246561995
+        }
+      ],
+      "docs": [
+        "normal-9",
+        "normal-25",
+        "normal-27",
+        "normal-35",
+        "normal-43",
+        "normal-48",
+        "normal-57",
+        "normal-58",
+        "normal-72",
+        "normal-74",
+        "spike-25",
+        "spike-26",
+        "spike-27",
+        "spike-28",
+        "spike-29",
+        "spike-30",
+        "spike-31",
+        "spike-32",
+        "spike-33",
+        "spike-34",
+        "spike-35",
+        "spike-36",
+        "spike-37",
+        "spike-38",
+        "spike-39"
+      ],
+      "count": 25
+    },
+    "2": {
+      "name": "media social",
+      "words": [
+        {
+          "word": "media",
+          "weight": 0.26686650946963814
+        },
+        {
+          "word": "social",
+          "weight": 0.26686650946963814
+        },
+        {
+          "word": "hours",
+          "weight": 0.10252735256477875
+        },
+        {
+          "word": "ago",
+          "weight": 0.10252735256477875
+        },
+        {
+          "word": "content",
+          "weight": 0.10252735256477875
+        },
+        {
+          "word": "created",
+          "weight": 0.10252735256477875
+        },
+        {
+          "word": "41",
+          "weight": 0.04550102451244629
+        },
+        {
+          "word": "30",
+          "weight": 0.029275978339528146
+        },
+        {
+          "word": "36",
+          "weight": 0.029275978339528146
+        },
+        {
+          "word": "55",
+          "weight": 0.029275978339528146
+        }
+      ],
+      "docs": [
+        "normal-0",
+        "normal-6",
+        "normal-10",
+        "normal-15",
+        "normal-16",
+        "normal-18",
+        "normal-20",
+        "normal-31",
+        "normal-32",
+        "normal-36",
+        "normal-37",
+        "normal-39",
+        "normal-40",
+        "normal-49",
+        "normal-53",
+        "normal-54",
+        "normal-59",
+        "normal-63",
+        "normal-64",
+        "normal-65",
+        "normal-66",
+        "normal-67",
+        "normal-77",
+        "normal-82"
+      ],
+      "count": 24
+    },
+    "3": {
+      "name": "art",
+      "words": [
+        {
+          "word": "art",
+          "weight": 0.39554605111956137
+        },
+        {
+          "word": "created",
+          "weight": 0.12107396715474891
+        },
+        {
+          "word": "content",
+          "weight": 0.12107396715474891
+        },
+        {
+          "word": "ago",
+          "weight": 0.12107396715474891
+        },
+        {
+          "word": "hours",
+          "weight": 0.12107396715474891
+        },
+        {
+          "word": "37",
+          "weight": 0.08528067223088977
+        },
+        {
+          "word": "63",
+          "weight": 0.0592660049312399
+        },
+        {
+          "word": "50",
+          "weight": 0.0592660049312399
+        },
+        {
+          "word": "34",
+          "weight": 0.0592660049312399
+        },
+        {
+          "word": "15",
+          "weight": 0.050907161827995574
+        }
+      ],
+      "docs": [
+        "normal-2",
+        "normal-17",
+        "normal-22",
+        "normal-30",
+        "normal-42",
+        "normal-45",
+        "normal-47",
+        "normal-56",
+        "normal-60",
+        "normal-75",
+        "normal-78",
+        "normal-80",
+        "normal-81",
+        "normal-83"
+      ],
+      "count": 14
+    },
+    "4": {
+      "name": "fashion",
+      "words": [
+        {
+          "word": "fashion",
+          "weight": 0.4131938257055495
+        },
+        {
+          "word": "created",
+          "weight": 0.12291890379710699
+        },
+        {
+          "word": "content",
+          "weight": 0.12291890379710699
+        },
+        {
+          "word": "ago",
+          "weight": 0.12291890379710699
+        },
+        {
+          "word": "hours",
+          "weight": 0.12291890379710699
+        },
+        {
+          "word": "14",
+          "weight": 0.0647974987248223
+        },
+        {
+          "word": "65",
+          "weight": 0.0647974987248223
+        },
+        {
+          "word": "49",
+          "weight": 0.0647974987248223
+        },
+        {
+          "word": "25",
+          "weight": 0.0647974987248223
+        },
+        {
+          "word": "15",
+          "weight": 0.05565849693194183
+        }
+      ],
+      "docs": [
+        "normal-1",
+        "normal-4",
+        "normal-7",
+        "normal-11",
+        "normal-13",
+        "normal-21",
+        "normal-34",
+        "normal-51",
+        "normal-55",
+        "normal-69",
+        "normal-73",
+        "normal-76",
+        "normal-79"
+      ],
+      "count": 13
+    },
+    "5": {
+      "name": "film",
+      "words": [
+        {
+          "word": "film",
+          "weight": 0.48224907983935594
+        },
+        {
+          "word": "created",
+          "weight": 0.12070596117555513
+        },
+        {
+          "word": "content",
+          "weight": 0.12070596117555513
+        },
+        {
+          "word": "ago",
+          "weight": 0.12070596117555513
+        },
+        {
+          "word": "hours",
+          "weight": 0.12070596117555513
+        },
+        {
+          "word": "67",
+          "weight": 0.08881675042331141
+        },
+        {
+          "word": "46",
+          "weight": 0.08881675042331141
+        },
+        {
+          "word": "39",
+          "weight": 0.0803528730751711
+        },
+        {
+          "word": "18",
+          "weight": 0.0803528730751711
+        },
+        {
+          "word": "68",
+          "weight": 0.07439377790354212
+        }
+      ],
+      "docs": [
+        "normal-3",
+        "normal-5",
+        "normal-12",
+        "normal-19",
+        "normal-23",
+        "normal-46",
+        "normal-50",
+        "normal-62"
+      ],
+      "count": 8
+    }
+  },
+  "trends": [
+    {
+      "id": "trend-0-1742255393599",
+      "topicId": "0",
+      "name": "literature trending",
+      "keywords": [
+        "literature",
+        "trending",
+        "hours",
+        "created",
+        "content"
+      ],
+      "multiplier": 8.125,
+      "count": 25,
+      "velocity": 0,
+      "timestamp": "2025-03-17T23:49:53.599Z"
+    },
+    {
+      "id": "trend-1-1742255393599",
+      "topicId": "1",
+      "name": "music 12 trending",
+      "keywords": [
+        "music",
+        "12",
+        "trending",
+        "hours",
+        "created"
+      ],
+      "multiplier": 2.88,
+      "count": 9,
+      "velocity": 0,
+      "timestamp": "2025-03-17T23:49:53.599Z"
+    },
+    {
+      "id": "trend-3-1742255393599",
+      "topicId": "3",
+      "name": "art",
+      "keywords": [
+        "art",
+        "created",
+        "content",
+        "ago",
+        "hours"
+      ],
+      "multiplier": 2.357142857142857,
+      "count": 3,
+      "velocity": 0,
+      "timestamp": "2025-03-17T23:49:53.599Z"
+    },
+    {
+      "id": "trend-2-1742255393599",
+      "topicId": "2",
+      "name": "media social",
+      "keywords": [
+        "media",
+        "social",
+        "hours",
+        "ago",
+        "content"
+      ],
+      "multiplier": 2.3333333333333335,
+      "count": 4,
+      "velocity": 0,
+      "timestamp": "2025-03-17T23:49:53.599Z"
+    }
+  ],
+  "timestamp": "2025-03-17T23:49:53.599Z"
+}
