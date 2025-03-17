@@ -4,9 +4,13 @@ import Navigation from './components/Navigation';
 import CulturalDomainTracker from './components/CulturalDomainTracker';
 import Dashboard from './components/Dashboard';
 import Insights from './components/Insights';
+import DataCollection from './components/DataCollection';
 import About from './components/About';
 import { ContentItem } from './services/domainTracker';
 import contentFetcher from './services/contentFetcher';
+import dataCollectionService from './services/dataCollection';
+import ApiTester from './components/ApiTester';
+import ApiUsageDashboard from './components/ApiUsageDashboard';
 
 function App() {
   const [currentView, setCurrentView] = useState<string>('domains');
@@ -19,8 +23,11 @@ function App() {
     const fetchContent = async () => {
       setLoading(true);
       try {
-        const content = await contentFetcher.fetchAllContent();
-        setContentItems(content);
+        // Combine pre-existing mock data with any collected data
+        const mockContent = await contentFetcher.fetchAllContent();
+        const collectedContent = dataCollectionService.getCollectedContent();
+        
+        setContentItems([...mockContent, ...collectedContent]);
       } catch (error) {
         console.error('Error fetching content:', error);
       } finally {
@@ -34,6 +41,14 @@ function App() {
   const handleDomainSelect = (domainId: string) => {
     setSelectedDomain(domainId);
     console.log(`Selected domain: ${domainId}`);
+  };
+  
+  const handleContentCollected = (count: number) => {
+    // Refresh content items when new content is collected
+    setContentItems([
+      ...contentItems, 
+      ...dataCollectionService.getCollectedContent().slice(-count)
+    ]);
   };
 
   const renderCurrentView = () => {
@@ -58,8 +73,14 @@ function App() {
         );
       case 'insights':
         return <Insights contentItems={contentItems} />;
+      case 'collection':
+        return <DataCollection onContentCollected={handleContentCollected} />;
       case 'about':
         return <About />;
+      case 'api-test':
+        return <ApiTester />;
+      case 'api-usage':
+        return <ApiUsageDashboard />;
       default:
         return <div>Coming soon...</div>;
     }

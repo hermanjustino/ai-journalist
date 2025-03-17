@@ -11,9 +11,14 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
+    "axios": "^1.8.3",
+    "dotenv": "^16.4.7",
+    "newsapi": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-scripts": "5.0.1",
+    "tikapi": "^3.2.0",
+    "twitter-api-v2": "^1.20.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },
@@ -21,7 +26,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run start\" \"npm run server\""
   },
   "eslintConfig": {
     "extends": [
@@ -40,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "nth-check": "^2.1.1",
+    "postcss": "^8.4.35"
   }
 }
