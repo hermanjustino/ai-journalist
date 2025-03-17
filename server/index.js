@@ -4,6 +4,7 @@ const { TwitterApi } = require('twitter-api-v2');
 const axios = require('axios');
 require('dotenv').config();
 const apiUsageTracker = require('./utils/apiUsageTracker');
+const trendsApi = require('./api/trendsApi');
 
 const app = express();
 app.use(cors({
@@ -11,6 +12,9 @@ app.use(cors({
   credentials: true
 }));
 app.use(express.json());
+
+// Mount trends API router
+app.use('/api/trends', trendsApi);
 
 app.get('/api/debug-usage', (req, res) => {
   // Load fresh data directly from file
