@@ -1,6 +1,5 @@
 import React from 'react';
 import './Navigation.css';
-import TrendDiscovery from './TrendDiscovery/TrendDiscovery';
 
 interface NavigationProps {
   onViewChange: (view: string) => void;
@@ -60,6 +59,12 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
           onClick={() => onViewChange('trends')}
         >
           Trend Discovery
+        </li>
+        <li
+          className={currentView === 'articles' ? 'active' : ''}
+          onClick={() => onViewChange('articles')}
+        >
+          Articles
         </li>
       </ul>
 

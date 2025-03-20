@@ -12,6 +12,7 @@ import dataCollectionService from './services/dataCollection';
 import ApiTester from './components/ApiTester';
 import ApiUsageDashboard from './components/ApiUsageDashboard';
 import TrendDiscovery from './components/TrendDiscovery/TrendDiscovery';
+import ArticleGenerator from './components/ArticleGenerator/ArticleGenerator';
 
 function App() {
   const [currentView, setCurrentView] = useState<string>('domains');
@@ -83,7 +84,9 @@ function App() {
       case 'api-usage':
         return <ApiUsageDashboard />;
       case 'trends':
-        return <TrendDiscovery contentItems={contentItems} />;
+        return <TrendDiscovery/>;
+      case 'articles':
+        return <ArticleGenerator />;
       default:
         return <div>Coming soon...</div>;
     }

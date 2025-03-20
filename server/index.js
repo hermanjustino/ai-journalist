@@ -3,8 +3,11 @@ const cors = require('cors');
 const { TwitterApi } = require('twitter-api-v2');
 const axios = require('axios');
 require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
 const apiUsageTracker = require('./utils/apiUsageTracker');
 const trendsApi = require('./api/trendsApi');
+const contentGenerator = require('./content-generation/contentGenerator');
 
 const app = express();
 app.use(cors({
@@ -387,6 +390,136 @@ function generateTikTokMockData(keywords) {
     }
   ];
 }
+
+// Get current trends endpoint
+app.get('/api/trends/current', (req, res) => {
+  try {
+    // Load trends from the latest trends file
+    const dataDir = path.join(__dirname, 'data/trends');
+    const files = fs.readdirSync(dataDir)
+      .filter(file => file.startsWith('trends_'))
+      .sort()
+      .reverse();
+
+    if (files.length === 0) {
+      return res.json({
+        trends: [],
+        error: 'No trend data available'
+      });
+    }
+
+    const latestFile = path.join(dataDir, files[0]);
+    const trendData = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
+    
+    // Send only the trends part
+    res.json(trendData.trendingTopics || {
+      trends: [],
+      error: 'Trend data format error'
+    });
+  } catch (error) {
+    console.error('Error fetching trends:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch trends',
+      trends: []
+    });
+  }
+});
+
+app.post('/api/articles/generate', async (req, res) => {
+  try {
+    const { trendId } = req.body;
+    
+    if (!trendId) {
+      return res.status(400).json({ error: 'Missing trendId parameter' });
+    }
+    
+    console.log('Generating article for trend:', trendId);
+    
+    // Load trends to get information about the selected trend
+    const dataDir = path.join(__dirname, 'data/trends');
+    const files = fs.readdirSync(dataDir)
+      .filter(file => file.startsWith('trends_'))
+      .sort()
+      .reverse();
+    
+    if (files.length === 0) {
+      return res.status(404).json({ error: 'No trend data available' });
+    }
+    
+    const latestFile = path.join(dataDir, files[0]);
+    const trendData = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
+    
+    // Find the selected trend
+    const trend = trendData.trendingTopics.trends.find(t => t.id === trendId);
+    
+    if (!trend) {
+      return res.status(404).json({ error: 'Trend not found' });
+    }
+    
+    // Get topic details
+    const topicDetails = trendData.trendingTopics.topicDetails[trend.topicId];
+    
+    // Use the content generator to create an AI-generated article
+    const article = await contentGenerator.generateArticle(trend, topicDetails);
+    
+    // Return the generated article
+    res.json(article);
+  } catch (error) {
+    console.error('Error generating article:', error);
+    res.status(500).json({ error: 'Failed to generate article' });
+  }
+});
+
+// Get recent articles endpoint
+app.get('/api/articles/recent', (req, res) => {
+  try {
+    const articles = contentGenerator.getRecentArticles(10);
+    res.json(articles);
+  } catch (error) {
+    console.error('Error fetching recent articles:', error);
+    res.json([]);
+  }
+});
+
+app.post('/api/debug/test-gemini', async (req, res) => {
+  try {
+    // Simple prompt for testing
+    const prompt = "Write a short paragraph about the importance of jazz in Black culture.";
+    
+    if (!process.env.GEMINI_API_KEY) {
+      return res.status(400).json({ error: 'No Gemini API key configured' });
+    }
+    
+    const genAI = new (require('@google/generative-ai').GoogleGenerativeAI)(process.env.GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
+    
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      generationConfig: {
+        temperature: 0.7,
+        maxOutputTokens: 200,
+      },
+    });
+    
+    const response = result.response;
+    const text = response.text();
+    
+    // Track usage
+    apiUsageTracker.trackRequest('gemini');
+    
+    res.json({
+      success: true,
+      text,
+      prompt
+    });
+  } catch (error) {
+    console.error('Error testing Gemini:', error);
+    res.status(500).json({ 
+      error: 'Gemini API test failed',
+      message: error.message 
+    });
+  }
+});
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

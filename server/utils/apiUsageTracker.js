@@ -60,6 +60,15 @@ class ApiUsageTracker {
     // Update counts
     this.usage[service].total += count;
     this.usage[service].monthly[yearMonth] = (this.usage[service].monthly[yearMonth] || 0) + count;
+
+    if (service === 'gemini') {
+      const monthlyUsage = this.getMonthlyUsage(service);
+      // Limit to 50 calls per month
+      if (monthlyUsage >= 50) {
+        console.warn('Monthly Gemini API limit reached (50 calls). Using mock articles.');
+        return false;
+      }
+    }
     
     // Save updated usage
     this.saveUsage();
@@ -103,8 +112,10 @@ class ApiUsageTracker {
         return 100 - monthlyUsage;
       case 'news':
         // News API free tier has 100 requests/day
-        // This is just tracking monthly, so not accurate for daily limit
         return 3000 - monthlyUsage; // Roughly 100/day * 30 days
+      case 'gemini':
+          // Limit to 50 requests/month
+        return 50 - monthlyUsage;
       default:
         return null; // Unknown limit
     }
