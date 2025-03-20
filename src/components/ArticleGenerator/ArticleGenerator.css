@@ -1,0 +1,228 @@
+.article-generator {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .article-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .article-header h2 {
+    margin-bottom: 5px;
+    color: #343a40;
+  }
+  
+  .subtitle {
+    color: #6c757d;
+    margin: 0;
+  }
+  
+  .article-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .trend-selector {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .trend-selector label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .trend-selector select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    appearance: none;
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center/8px 10px;
+    background-color: #fff;
+  }
+  
+  .generate-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    min-width: 150px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .generate-button:hover:not(:disabled) {
+    background-color: #0069d9;
+  }
+  
+  .generate-button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .article-content-area {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .article-list {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+  
+  .article-list h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .article-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .article-list li {
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+  }
+  
+  .article-list li:hover {
+    background-color: #e9ecef;
+  }
+  
+  .article-list li.selected {
+    background-color: #cfe2ff;
+    border-left: 3px solid #0d6efd;
+  }
+  
+  .article-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .article-date {
+    color: #6c757d;
+    font-size: 0.85rem;
+  }
+  
+  .no-articles {
+    color: #6c757d;
+    font-style: italic;
+    padding: 15px;
+    text-align: center;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  .article-view-container {
+    flex: 1;
+  }
+  
+  .article-view {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .article-view-title {
+    color: #212529;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .article-view-content {
+    line-height: 1.6;
+    color: #343a40;
+  }
+  
+  .article-view-content p {
+    margin-bottom: 15px;
+  }
+  
+  .article-trend-info {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .article-trend-info h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #495057;
+  }
+  
+  .trend-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 10px;
+  }
+  
+  .trend-keyword {
+    background-color: #e9f2ff;
+    color: #007bff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+  }
+  
+  .no-article-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #6c757d;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .article-content-area {
+      flex-direction: column;
+    }
+    
+    .article-list {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .article-model-info {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e9ecef;
+  }
