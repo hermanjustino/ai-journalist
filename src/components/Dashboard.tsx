@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { ContentItem } from '../services/domainTracker';
 import './Dashboard.css';
+import { DomainTracker } from '../services/domainTracker';
+import culturalDomains from '../config/culturalDomains';
+
 
 interface DashboardProps {
   contentItems: ContentItem[];
-  selectedDomain?: string;
+  selectedDomain?: string | null;
 }
 
 const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) => {
@@ -12,10 +15,12 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
   
   // Filter content by domain if a domain is selected
   const filteredContent = selectedDomain 
-    ? contentItems.filter(item => 
-        item.content.toLowerCase().includes(selectedDomain.toLowerCase())
-      )
-    : contentItems;
+  ? contentItems.filter(item => {
+      const tracker = new DomainTracker(culturalDomains);
+      const matches = tracker.analyzeContent(item);
+      return matches.some(match => match.domainId === selectedDomain);
+    })
+  : contentItems;
 
   // Group content by source
   const sourceGroups = filteredContent.reduce((acc, item) => {

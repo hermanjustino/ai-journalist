@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './ArticleGenerator.css';
+import { ContentItem } from '../../services/domainTracker';
 
 // API URL
 const API_URL = 'http://localhost:3001/api';
@@ -23,7 +24,11 @@ interface Article {
   model?: string;
 }
 
-const ArticleGenerator: React.FC = () => {
+interface ArticleGeneratorProps {
+  contentItems?: ContentItem[];
+}
+
+const ArticleGenerator: React.FC<ArticleGeneratorProps> = ({ contentItems }) => {
   const [trends, setTrends] = useState<Trend[]>([]);
   const [selectedTrendId, setSelectedTrendId] = useState<string | null>(null);
   const [articles, setArticles] = useState<Article[]>([]);

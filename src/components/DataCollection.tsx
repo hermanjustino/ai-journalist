@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import dataCollectionService, { 
-  ContentSource, 
+import dataCollectionService, {
+  ContentSource,
   CollectionFilters,
   CollectionJobStatus
 } from '../services/dataCollection';
 import culturalDomains from '../config/culturalDomains';
 import './DataCollection.css';
+import { ContentItem } from '../services/domainTracker';
 
 interface DataCollectionProps {
-  onContentCollected: (count: number) => void;
+  onContentCollected: (items: ContentItem[]) => void;
 }
 
 const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) => {
@@ -17,40 +18,40 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
   ]);
   const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
   const [keywords, setKeywords] = useState<string>('');
-  const [dateRange, setDateRange] = useState<{start?: Date; end?: Date}>({});
+  const [dateRange, setDateRange] = useState<{ start?: Date; end?: Date }>({});
   const [limit, setLimit] = useState<number>(50);
   const [activeJobs, setActiveJobs] = useState<CollectionJobStatus[]>([]);
   const [isCollecting, setIsCollecting] = useState<boolean>(false);
-  
+
   // Load active jobs on component mount
   useEffect(() => {
     setActiveJobs(dataCollectionService.getAllJobs());
   }, []);
-  
+
   // Update job statuses periodically
   useEffect(() => {
     if (activeJobs.length === 0) return;
-    
+
     const interval = setInterval(() => {
       setActiveJobs(dataCollectionService.getAllJobs());
-      
+
       // Check if any job is still in progress
       const anyJobActive = dataCollectionService.getAllJobs().some(
         job => job.status === 'in_progress' || job.status === 'pending'
       );
-      
+
       setIsCollecting(anyJobActive);
-      
+
       if (!anyJobActive) {
         // All jobs complete, notify parent of collected content
         const collectedContent = dataCollectionService.getCollectedContent();
-        onContentCollected(collectedContent.length);
+        onContentCollected(collectedContent);
       }
     }, 1000);
-    
+
     return () => clearInterval(interval);
   }, [activeJobs, onContentCollected]);
-  
+
   const handleSourceToggle = (source: ContentSource) => {
     if (sources.includes(source)) {
       setSources(sources.filter(s => s !== source));
@@ -58,7 +59,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
       setSources([...sources, source]);
     }
   };
-  
+
   const handleDomainToggle = (domainId: string) => {
     if (selectedDomains.includes(domainId)) {
       setSelectedDomains(selectedDomains.filter(id => id !== domainId));
@@ -66,7 +67,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
       setSelectedDomains([...selectedDomains, domainId]);
     }
   };
-  
+
   const startCollection = async () => {
     // Create filters from current state
     const filters: CollectionFilters = {
@@ -77,19 +78,24 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
       endDate: dateRange.end,
       limit
     };
-    
+
     // Start a new collection job
     await dataCollectionService.startCollectionJob(filters);
-    
+
     // Update job list
     setActiveJobs(dataCollectionService.getAllJobs());
     setIsCollecting(true);
   };
-  
+
   return (
     <div className="data-collection">
       <h2>Data Collection</h2>
-      
+
+      {/* Add real content indicator */}
+      <div className="content-mode-indicator">
+        <span className="indicator real">Using Real Content APIs</span>
+      </div>
+
       <div className="collection-form">
         <div className="form-section">
           <h3>Content Sources</h3>
@@ -108,7 +114,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
             ))}
           </div>
         </div>
-        
+
         <div className="form-section">
           <h3>Cultural Domains</h3>
           <div className="domains-grid">
@@ -126,7 +132,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
             ))}
           </div>
         </div>
-        
+
         <div className="form-section">
           <h3>Keywords</h3>
           <p className="form-hint">Enter comma-separated keywords</p>
@@ -137,27 +143,27 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
             rows={3}
           />
         </div>
-        
+
         <div className="form-section">
           <h3>Date Range</h3>
           <div className="date-inputs">
             <div className="date-input">
               <label>Start Date</label>
-              <input 
-                type="date" 
-                onChange={e => setDateRange({...dateRange, start: e.target.value ? new Date(e.target.value) : undefined})}
+              <input
+                type="date"
+                onChange={e => setDateRange({ ...dateRange, start: e.target.value ? new Date(e.target.value) : undefined })}
               />
             </div>
             <div className="date-input">
               <label>End Date</label>
-              <input 
+              <input
                 type="date"
-                onChange={e => setDateRange({...dateRange, end: e.target.value ? new Date(e.target.value) : undefined})}
+                onChange={e => setDateRange({ ...dateRange, end: e.target.value ? new Date(e.target.value) : undefined })}
               />
             </div>
           </div>
         </div>
-        
+
         <div className="form-section">
           <h3>Content Limit</h3>
           <input
@@ -168,9 +174,9 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
             onChange={e => setLimit(parseInt(e.target.value) || 50)}
           />
         </div>
-        
+
         <div className="collection-actions">
-          <button 
+          <button
             className="start-collection-btn"
             onClick={startCollection}
             disabled={isCollecting || sources.length === 0}
@@ -179,7 +185,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
           </button>
         </div>
       </div>
-      
+
       {activeJobs.length > 0 && (
         <div className="active-jobs">
           <h3>Collection Jobs</h3>
@@ -190,14 +196,14 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
                   <h4>Job {job.id.substring(0, 8)}...</h4>
                   <span className={`job-status status-${job.status}`}>{job.status}</span>
                 </div>
-                
+
                 <div className="job-progress">
                   <div className="progress-bar">
-                    <div className="progress-fill" style={{width: `${job.progress}%`}}></div>
+                    <div className="progress-fill" style={{ width: `${job.progress}%` }}></div>
                   </div>
                   <span className="progress-text">{job.progress.toFixed(0)}%</span>
                 </div>
-                
+
                 <div className="job-details">
                   <div className="detail-item">
                     <span className="detail-label">Sources:</span>
@@ -224,7 +230,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
                     </div>
                   )}
                 </div>
-                
+
                 {job.error && (
                   <div className="job-error">
                     Error: {job.error}
