@@ -163,8 +163,9 @@ export class DataCollectionService {
                 sourceItems = await tiktokApi.searchTikToks(keywords, options);
               } catch (error) {
                 console.error(`Error collecting from ${source}:`, error);
-                // Fall back to mock data
-                sourceItems = this.getMockContentForSource(source, keywords.length);
+
+                console.error(`No real API implementation for ${source} yet.`);
+                throw new Error(`Cannot collect from ${source}: No API implementation available`);
               }
               break;
             case ContentSource.INSTAGRAM:

@@ -1,11 +1,15 @@
 import React from 'react';
+import { ContentItem } from '../../services/domainTracker';
 
-// This is a placeholder component - will be implemented later
-const EmergingTopics: React.FC = () => {
+interface EmergingTopicsProps {
+  contentItems: ContentItem[];
+}
+
+const EmergingTopics: React.FC<EmergingTopicsProps> = ({ contentItems }) => {
   return (
     <div className="emerging-topics">
       <h2>Emerging Topics</h2>
-      <p>This component will show emerging cultural topics.</p>
+      <p>{contentItems.length} content items available for analysis</p>
     </div>
   );
 };

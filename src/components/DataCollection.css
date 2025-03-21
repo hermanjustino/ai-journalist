@@ -273,3 +273,28 @@
       grid-template-columns: 1fr;
     }
   }
+
+  .content-mode-indicator {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .indicator {
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .indicator.real {
+    background-color: #defbe6;
+    color: #0f623d;
+    border: 1px solid #0f623d;
+  }
+  
+  .indicator.mock {
+    background-color: #fff8e1;
+    color: #9e6100;
+    border: 1px solid #9e6100;
+  }

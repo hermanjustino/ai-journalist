@@ -29,35 +29,41 @@ class ContentGenerator {
      */
     async generateArticle(trend, topicDetails, relatedContent = []) {
         try {
-            console.log(`Generating article for trend: ${trend.name}`);
-
-            // Check if we should use mock articles
-            if (process.env.USE_MOCK_ARTICLES === 'true') {
-                console.log('Using mock article due to USE_MOCK_ARTICLES flag');
-                return this.generateMockArticle({ trend, topicDetails });
-            }
-
-            // Prepare content for the model prompt
-            const trendContext = this.prepareTrendContext(trend, topicDetails, relatedContent);
-
-            // Generate article using Gemini
-            console.log('Calling Gemini API...');
-            const article = await this.callLanguageModel(trendContext);
-            console.log('Article generation complete');
-
-            // Save the generated article
-            return this.saveArticle({
-                trend,
-                article,
-                timestamp: new Date()
+            setLoading(true);
+            setError(null);
+            console.log('Generating article for trend:', selectedTrendId);
+            
+            const response = await axios.post(`${API_URL}/articles/generate`, {
+              trendId: selectedTrendId
             });
-        } catch (error) {
-            console.error('Error generating article:', error);
-
-            // Fallback to mock article on error
-            console.log('Falling back to mock article due to error');
-            return this.generateMockArticle({ trend, topicDetails });
-        }
+            
+            // Process the article data
+            const articleData = {
+              ...response.data,
+              timestamp: new Date(response.data.timestamp || Date.now()),
+              trend: response.data.trend ? {
+                ...response.data.trend,
+                timestamp: response.data.trend.timestamp ? 
+                  new Date(response.data.trend.timestamp) : 
+                  new Date()
+              } : {
+                id: 'unknown',
+                name: 'Unknown Trend',
+                keywords: [],
+                multiplier: 1.0,
+                velocity: 0,
+                timestamp: new Date()
+              }
+            };
+            
+            setCurrentArticle(articleData);
+            setArticles([articleData, ...articles]);
+          } catch (err) {
+            console.error('Article generation error:', err);
+            setError(`Failed to generate article using Gemini API: ${err.response?.data?.error || err.message}`);
+          } finally {
+            setLoading(false);
+          }
     }
 
     /**

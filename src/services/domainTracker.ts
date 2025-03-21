@@ -5,7 +5,7 @@ export interface ContentItem {
   source: string;
   content: string;
   timestamp: Date;
-  url?: string;
+  url?: string | undefined | null;
   author?: string;
   title?: string;
 }

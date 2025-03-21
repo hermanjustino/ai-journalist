@@ -1,11 +1,15 @@
 import React from 'react';
+import { ContentItem } from '../../services/domainTracker';
 
-// This is a placeholder component - will be implemented later
-const TrendVisualizer: React.FC = () => {
+interface TrendVisualizerProps {
+  contentItems: ContentItem[];
+}
+
+const TrendVisualizer: React.FC<TrendVisualizerProps> = ({ contentItems }) => {
   return (
     <div className="trend-visualizer">
       <h2>Trend Visualizer</h2>
-      <p>This component will visualize cultural trends over time.</p>
+      <p>{contentItems.length} content items available for visualization</p>
     </div>
   );
 };
