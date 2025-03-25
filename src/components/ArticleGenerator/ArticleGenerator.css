@@ -118,8 +118,8 @@
   }
   
   .article-list li.selected {
-    background-color: #cfe2ff;
-    border-left: 3px solid #0d6efd;
+    background-color: var(--background-color);
+    border-left: 3px solid var(--primary-color);
   }
   
   .article-title {

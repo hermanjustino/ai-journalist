@@ -124,7 +124,7 @@ const Insights: React.FC<InsightsProps> = ({ contentItems }) => {
                   className="strength-bar" 
                   style={{ 
                     width: `${Math.min(conn.strength * 20, 100)}%`,
-                    backgroundColor: `rgba(23, 162, 184, ${0.5 + (conn.strength / 10)})`
+                    backgroundColor: `rgb(141, 35, 39 ${0.5 + (conn.strength / 10)})`
                   }}
                 ></div>
                 <span className="strength-label">{conn.strength} connections</span>

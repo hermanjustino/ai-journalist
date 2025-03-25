@@ -1,22 +1,16 @@
 .main-navigation {
-  background-color: #fff;
+  background-color: var(--card-background);
   padding: 15px 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .nav-brand {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -32,83 +26,32 @@
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
+  color: var(--text-medium);
 }
 
 .nav-links li:hover {
-  background-color: #f0f7ff;
-  color: #007bff;
+  background-color: var(--primary-light);
+  color: var(--primary-color);
 }
 
 .nav-links li.active {
-  background-color: #007bff;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
 }
 
 /* Hamburger menu styles */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-}
-
 .hamburger-menu span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #007bff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
+  background-color: var(--primary-color);
 }
 
-/* Mobile styles */
+/* Mobile styles - keep existing but update colors */
 @media (max-width: 768px) {
-  .main-navigation {
-    padding: 15px;
-  }
-  
-  .hamburger-menu {
-    display: flex;
-  }
-  
   .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-    visibility: hidden;
-  }
-  
-  .nav-links.open {
-    max-height: 500px;
-    visibility: visible;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-md);
   }
   
   .nav-links li {
-    margin: 0;
-    padding: 15px 20px;
-    border-radius: 0;
-    border-bottom: 1px solid #f0f0f0;
-  }
-  
-  .hamburger-menu.open span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-  }
-  
-  .hamburger-menu.open span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .hamburger-menu.open span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
+    border-bottom: 1px solid var(--border-color);
   }
 }
-

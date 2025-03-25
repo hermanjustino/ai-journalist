@@ -24,7 +24,7 @@
 }
 
 .about-section h3 {
-  color: #007bff;
+  color: var(--primary-color);
   margin-bottom: 15px;
   padding-bottom: 10px;
   border-bottom: 1px solid #e9ecef;
@@ -149,7 +149,7 @@
 }
 
 .contact-button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
 }
 

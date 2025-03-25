@@ -29,9 +29,9 @@
   }
   
   .time-filters button.active {
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: white;
-    border-color: #007bff;
+    border-color: var(--primary-color);
   }
   
   .dashboard-metrics {

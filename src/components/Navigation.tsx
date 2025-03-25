@@ -62,18 +62,6 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
           About
         </li>
         <li
-          className={currentView === 'api-test' ? 'active' : ''}
-          onClick={() => handleNavClick('api-test')}
-        >
-          API Test
-        </li>
-        <li
-          className={currentView === 'api-usage' ? 'active' : ''}
-          onClick={() => handleNavClick('api-usage')}
-        >
-          API Usage
-        </li>
-        <li
           className={currentView === 'trends' ? 'active' : ''}
           onClick={() => handleNavClick('trends')}
         >
