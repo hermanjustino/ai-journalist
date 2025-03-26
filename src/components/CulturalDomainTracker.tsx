@@ -34,7 +34,7 @@ const CulturalDomainTracker: React.FC<Props> = ({ contentItems = [], onDomainSel
 
   return (
     <div className="cultural-tracker">
-      <h2>Black Cultural Domains</h2>
+      <h2>Cultural Domains</h2>
       
       <div className="domains-list">
         {domains.map(domain => (

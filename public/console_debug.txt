@@ -1,0 +1,54 @@
+contentFetcher.ts:11 Fetching from Twitter with options: {}
+contentFetcher.ts:11 Fetching from Twitter with options: {}
+contentFetcher.ts:43 Fetching from news with options: {}
+contentFetcher.ts:43 Fetching from news with options: {}
+App.tsx:60 Loaded 23 content items
+App.tsx:60 Loaded 23 content items
+automatedCollection.ts:61 Running automated collection for 2025-03-18
+automatedCollection.ts:61 Running automated collection for 2025-03-18
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-19
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-19
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-20
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-20
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-21
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-21
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-22
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-22
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-23
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-23
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:82 Collected 20 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-24
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-24
+automatedCollection.ts:82 Collected 19 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-25
+automatedCollection.ts:82 Collected 19 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:61 Running automated collection for 2025-03-25
+automatedCollection.ts:82 Collected 19 news items
+automatedCollection.ts:82 Collected 19 news items
+automatedCollection.ts:86 Collected 2 academic items
+automatedCollection.ts:86 Collected 2 academic items

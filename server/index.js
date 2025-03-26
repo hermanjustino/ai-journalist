@@ -335,61 +335,9 @@ app.post('/api/tiktok/search', async (req, res) => {
       // Something happened in setting up the request
       console.error('Error message:', error.message);
     }
-  
-    // Fall back to mock data
     const keywords = req.body.keywords || [];
-    const fallbackData = generateTikTokMockData(keywords);
-    res.json(fallbackData.map(item => ({ ...item, isMockData: true })));
   }
 });
-
-
-
-// Helper function to generate TikTok mock data
-
-function generateTikTokMockData(keywords) {
-  // Base cultural content
-  const mockTemplates = [
-    {
-      content: `Black linguistic evolution: AAVE terms and their cultural impact #blackculture #language #aave`,
-      author: '@linguisticsscholar',
-      title: 'Understanding AAVE and its cultural impact'
-    },
-    {
-      content: `Jazz history lesson: From spirituals to swing - the evolution of Black musical innovation #blackmusic #jazztradition`,
-      author: '@musichistorian',
-      title: 'Black Musical Traditions'
-    },
-    {
-      content: `Civil rights movement teaching: Freedom Riders - stories we don't learn in school #blackhistory #civilrights`,
-      author: '@historyprofessor',
-      title: 'Civil Rights Education Series'
-    },
-    {
-      content: `Black tech innovators spotlight: Dr. Gladys West and her contributions to modern computing #blackintech #innovation`,
-      author: '@techdiversity',
-      title: 'Black Innovation Spotlight'
-    }
-  ];
-  
-  // Customize content with keywords if available
-  const keyword = keywords && keywords.length > 0 ? keywords[0] : 'black culture';
-  const selectedTemplate = mockTemplates[Math.floor(Math.random() * mockTemplates.length)];
-  
-  return [
-    {
-      id: `tiktok-mock-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-      source: 'tiktok',
-      content: selectedTemplate.content.includes(keyword) 
-        ? selectedTemplate.content 
-        : `${selectedTemplate.content} featuring ${keyword}`,
-      timestamp: new Date().toISOString(),
-      author: selectedTemplate.author,
-      title: selectedTemplate.title,
-      url: 'https://tiktok.com/example'
-    }
-  ];
-}
 
 // Get current trends endpoint
 app.get('/api/trends/current', (req, res) => {
@@ -520,6 +468,119 @@ app.post('/api/debug/test-gemini', async (req, res) => {
     });
   }
 });
+
+app.post('/api/scholar/search', async (req, res) => {
+  try {
+    const { keywords, startDate, endDate, limit = 50 } = req.body;
+    
+    if (!keywords || !Array.isArray(keywords) || keywords.length === 0) {
+      return res.status(400).json({ error: 'Keywords are required' });
+    }
+    
+    // Create search query
+    const query = keywords.join(' OR ');
+    
+    // Check if we have a RapidAPI key
+    const rapidApiKey = process.env.RAPID_API_KEY || process.env.RAPIDAPI_KEY;
+    
+    if (!rapidApiKey) {
+      console.warn('No RapidAPI key found. Returning mock academic data.');
+      // Return mock data if no API key
+      return res.json(generateMockScholarData());
+    }
+    
+    // Set up request to RapidAPI Google Scholar endpoint
+    const options = {
+      method: 'GET',
+      url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
+      params: {
+        query,
+        max_results: limit.toString(),
+        patents: 'false',
+        citations: 'true'
+      },
+      headers: {
+        'x-rapidapi-key': rapidApiKey,
+        'x-rapidapi-host': 'google-scholar1.p.rapidapi.com'
+      }
+    };
+    
+    // Log headers without showing the actual key
+    console.log('Making Scholar API request with headers:',
+      { ...options.headers, 'x-rapidapi-key': rapidApiKey ? '***SET***' : 'MISSING' }
+    );
+    
+    // Add year filters if dates are provided
+    if (startDate) {
+      options.params.year_low = new Date(startDate).getFullYear().toString();
+    }
+    
+    if (endDate) {
+      options.params.year_high = new Date(endDate).getFullYear().toString();
+    }
+    
+    try {
+      const response = await axios.request(options);
+      
+      if (response.data && response.data.status === 'success' && response.data.result) {
+        // Extract and format the articles from the response
+        const articles = response.data.result.map(item => {
+          const bib = item.bib || {};
+          
+          return {
+            id: `scholar-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+            title: bib.title || 'Untitled Academic Article',
+            author: bib.author || [],
+            abstract: bib.abstract || '',
+            pub_year: bib.pub_year || '',
+            venue: bib.venue || '',
+            url: item.pub_url || '',
+            eprint_url: item.eprint_url || '',
+            citations: item.num_citations || 0,
+            publishedAt: bib.pub_year ? `${bib.pub_year}-01-01` : null
+          };
+        });
+        
+        res.json(articles);
+      } else {
+        throw new Error('Invalid response format from Google Scholar API');
+      }
+    } catch (apiError) {
+      console.error('Google Scholar API error:', apiError);
+      
+      // Return mock data on API error
+      res.json(generateMockScholarData());
+    }
+    
+  } catch (error) {
+    console.error('Server error:', error);
+    res.status(500).json({ error: 'Failed to process Google Scholar request' });
+  }
+});
+
+// Helper function to generate mock scholarly data with AAVE terms
+function generateMockScholarData() {
+  return [
+    {
+      id: `scholar-mock-${Date.now()}-1`,
+      title: 'Linguistic Analysis of African American Vernacular English in Educational Content',
+      abstract: 'This study examines the prevalence of AAVE in educational materials. We found instances where "he going" and "they be working" as examples in linguistic diversity training.',
+      author: ['Williams, J.', 'Thompson, K.'],
+      pub_year: '2023',
+      venue: 'Journal of Educational Linguistics',
+      url: 'https://example.edu/aave-classroom-approaches'
+    },
+    {
+      id: `scholar-mock-${Date.now()}-2`,
+      title: 'Code-Switching and Academic Achievement Among African American Students',
+      abstract: 'Research indicates students who effectively code-switch between AAVE and Standard English demonstrate higher academic performance. Students often reported "ain\'t got no" choice but to learn both linguistic systems.',
+      author: ['Davis, M.', 'Johnson, R.'],
+      pub_year: '2022',
+      venue: 'Educational Psychology Review',
+      url: 'https://example.edu/code-switching-achievement'
+    }
+  ];
+}
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

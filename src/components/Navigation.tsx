@@ -8,11 +8,11 @@ interface NavigationProps {
 
 const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-  
+
   const handleNavClick = (view: string) => {
     onViewChange(view);
     setMenuOpen(false); // Close menu after selection on mobile
@@ -22,7 +22,7 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
     <nav className="main-navigation">
       <div className="nav-container">
         <div className="nav-brand">AI Cultural Journalist</div>
-        
+
         <div className="hamburger-menu" onClick={toggleMenu}>
           <span></span>
           <span></span>
@@ -54,6 +54,12 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
           onClick={() => handleNavClick('collection')}
         >
           Data Collection
+        </li>
+        <li
+          className={currentView === 'aave-analysis' ? 'active' : ''}
+          onClick={() => handleNavClick('aave-analysis')}
+        >
+          AAVE Analysis
         </li>
         <li
           className={currentView === 'about' ? 'active' : ''}

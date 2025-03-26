@@ -4,7 +4,6 @@ import dataCollectionService, {
   CollectionFilters,
   CollectionJobStatus
 } from '../services/dataCollection';
-import culturalDomains from '../config/culturalDomains';
 import './DataCollection.css';
 import { ContentItem } from '../services/domainTracker';
 
@@ -14,14 +13,27 @@ interface DataCollectionProps {
 
 const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) => {
   const [sources, setSources] = useState<ContentSource[]>([
-    ContentSource.TWITTER, ContentSource.NEWS
+    ContentSource.NEWS, ContentSource.ACADEMIC
   ]);
-  const [selectedDomains, setSelectedDomains] = useState<string[]>([]);
   const [keywords, setKeywords] = useState<string>('');
   const [dateRange, setDateRange] = useState<{ start?: Date; end?: Date }>({});
-  const [limit, setLimit] = useState<number>(50);
+  const [limit, setLimit] = useState<number>(20);
   const [activeJobs, setActiveJobs] = useState<CollectionJobStatus[]>([]);
   const [isCollecting, setIsCollecting] = useState<boolean>(false);
+
+  // Suggested keywords for technology research
+  const suggestedKeywords = [
+    'machine learning', 
+    'artificial intelligence', 
+    'blockchain', 
+    'cloud computing',
+    'cybersecurity',
+    'IoT',
+    'data science',
+    'quantum computing',
+    'edge computing',
+    'VR/AR'
+  ];
 
   // Load active jobs on component mount
   useEffect(() => {
@@ -60,11 +72,11 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
     }
   };
 
-  const handleDomainToggle = (domainId: string) => {
-    if (selectedDomains.includes(domainId)) {
-      setSelectedDomains(selectedDomains.filter(id => id !== domainId));
-    } else {
-      setSelectedDomains([...selectedDomains, domainId]);
+  const addKeyword = (keyword: string) => {
+    const currentKeywords = keywords.split(',').map(k => k.trim()).filter(k => k !== '');
+    if (!currentKeywords.includes(keyword)) {
+      const newKeywords = [...currentKeywords, keyword].join(', ');
+      setKeywords(newKeywords);
     }
   };
 
@@ -72,8 +84,7 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
     // Create filters from current state
     const filters: CollectionFilters = {
       sources,
-      domains: selectedDomains.length > 0 ? selectedDomains : undefined,
-      keywords: keywords ? keywords.split(',').map(k => k.trim()) : undefined,
+      keywords: keywords ? keywords.split(',').map(k => k.trim()).filter(k => k !== '') : undefined,
       startDate: dateRange.start,
       endDate: dateRange.end,
       limit
@@ -89,59 +100,63 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
 
   return (
     <div className="data-collection">
-      <h2>Data Collection</h2>
+      <h2>Technology Research Data Collection</h2>
 
-      {/* Add real content indicator */}
       <div className="content-mode-indicator">
-        <span className="indicator real">Using Real Content APIs</span>
+        <span className="indicator real">Using Real Academic & News APIs</span>
       </div>
 
       <div className="collection-form">
         <div className="form-section">
           <h3>Content Sources</h3>
           <div className="sources-grid">
-            {Object.values(ContentSource).map(source => (
-              <div key={source} className="source-toggle">
-                <label className={sources.includes(source) ? 'selected' : ''}>
-                  <input
-                    type="checkbox"
-                    checked={sources.includes(source)}
-                    onChange={() => handleSourceToggle(source)}
-                  />
-                  <span className="source-label">{source}</span>
-                </label>
-              </div>
-            ))}
+            <div className="source-toggle">
+              <label className={sources.includes(ContentSource.NEWS) ? 'selected' : ''}>
+                <input
+                  type="checkbox"
+                  checked={sources.includes(ContentSource.NEWS)}
+                  onChange={() => handleSourceToggle(ContentSource.NEWS)}
+                />
+                <span className="source-label">News</span>
+              </label>
+            </div>
+            <div className="source-toggle">
+              <label className={sources.includes(ContentSource.ACADEMIC) ? 'selected' : ''}>
+                <input
+                  type="checkbox"
+                  checked={sources.includes(ContentSource.ACADEMIC)}
+                  onChange={() => handleSourceToggle(ContentSource.ACADEMIC)}
+                />
+                <span className="source-label">Academic</span>
+              </label>
+            </div>
           </div>
         </div>
 
         <div className="form-section">
-          <h3>Cultural Domains</h3>
-          <div className="domains-grid">
-            {culturalDomains.map(domain => (
-              <div key={domain.id} className="domain-toggle">
-                <label className={selectedDomains.includes(domain.id) ? 'selected' : ''}>
-                  <input
-                    type="checkbox"
-                    checked={selectedDomains.includes(domain.id)}
-                    onChange={() => handleDomainToggle(domain.id)}
-                  />
-                  <span className="domain-label">{domain.name}</span>
-                </label>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="form-section">
-          <h3>Keywords</h3>
+          <h3>Technology Keywords</h3>
           <p className="form-hint">Enter comma-separated keywords</p>
           <textarea
             value={keywords}
             onChange={e => setKeywords(e.target.value)}
-            placeholder="hip-hop, civil rights, AAVE, etc."
+            placeholder="AI, machine learning, blockchain, etc."
             rows={3}
           />
+          
+          <div className="suggested-keywords">
+            <p>Suggested keywords:</p>
+            <div className="keyword-chips">
+              {suggestedKeywords.map(keyword => (
+                <span 
+                  key={keyword} 
+                  className="keyword-chip"
+                  onClick={() => addKeyword(keyword)}
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="form-section">
@@ -169,9 +184,9 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
           <input
             type="number"
             min="1"
-            max="1000"
+            max="100"
             value={limit}
-            onChange={e => setLimit(parseInt(e.target.value) || 50)}
+            onChange={e => setLimit(parseInt(e.target.value) || 20)}
           />
         </div>
 
@@ -209,10 +224,10 @@ const DataCollection: React.FC<DataCollectionProps> = ({ onContentCollected }) =
                     <span className="detail-label">Sources:</span>
                     <span className="detail-value">{job.filters.sources.join(', ')}</span>
                   </div>
-                  {job.filters.domains && (
+                  {job.filters.keywords && job.filters.keywords.length > 0 && (
                     <div className="detail-item">
-                      <span className="detail-label">Domains:</span>
-                      <span className="detail-value">{job.filters.domains.join(', ')}</span>
+                      <span className="detail-label">Keywords:</span>
+                      <span className="detail-value">{job.filters.keywords.join(', ')}</span>
                     </div>
                   )}
                   <div className="detail-item">

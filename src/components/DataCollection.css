@@ -298,3 +298,28 @@
     color: #9e6100;
     border: 1px solid #9e6100;
   }
+
+  .suggested-keywords {
+    margin-top: 15px;
+  }
+  
+  .keyword-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .keyword-chip {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .keyword-chip:hover {
+    background-color: var(--primary-light-hover);
+  }

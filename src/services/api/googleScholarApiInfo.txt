@@ -1,0 +1,350 @@
+// Query params
+
+query*
+String
+Search Query
+
+max_results
+(optional)
+Number
+Max number of results. There are 10 results per page. As the value is increased, the request time increases.
+
+patents
+(optional)
+Boolean
+Whether or not to include patents, defaults to true
+
+citations
+(optional)
+Boolean
+Whether or not to include citations, defaults to true
+
+year_low
+(optional)
+Number
+minimum year of publication
+
+year_high
+(optional)
+Number
+maximum year of publication
+
+sort_by
+(optional)
+String
+relevance or date, defaults to relevance
+
+include_last_year
+(optional)
+String
+abstracts or everything, defaults to abstracts and only applies if sort_by is date
+
+start_index
+(optional)
+Number
+starting index of list of publications, defaults to 0
+
+
+// Code Snippet
+import axios from 'axios';
+
+const options = {
+  method: 'GET',
+  url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
+  params: {
+    query: 'machine learning',
+    max_results: '10',
+    patents: 'true',
+    citations: 'true',
+    year_low: '1990',
+    year_high: '2007',
+    sort_by: 'date',
+    include_last_year: 'abstracts',
+    start_index: '0'
+  },
+  headers: {
+    'x-rapidapi-key': '88026812fdmshede27d3f0a6f3bbp1f5f82jsn001219c064f9',
+    'x-rapidapi-host': 'google-scholar1.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
+
+// Sample response
+{
+  "status": "success",
+  "result": [
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning algorithms-a review",
+        "author": [
+          "B Mahesh"
+        ],
+        "pub_year": "2020",
+        "venue": "International Journal of Science and Research (IJSR) …",
+        "abstract": "Here‟sa quick look at some of the commonly used algorithms in machine learning (ML)  Supervised Learning Supervised learning is the machine learning task of learning a function"
+      },
+      "filled": false,
+      "gsrank": 1,
+      "pub_url": "https://www.researchgate.net/profile/Batta-Mahesh/publication/344717762_Machine_Learning_Algorithms_-A_Review/links/5f8b2365299bf1b53e2d243a/Machine-Learning-Algorithms-A-Review.pdf?eid=5082902844932096t",
+      "author_id": [
+        ""
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:sR_ChBn63tIJ:scholar.google.com/&output=cite&scirp=0&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=sR_ChBn63tIJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 3883,
+      "citedby_url": "/scholar?cites=15194857180303073201&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:sR_ChBn63tIJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://www.researchgate.net/profile/Batta-Mahesh/publication/344717762_Machine_Learning_Algorithms_-A_Review/links/5f8b2365299bf1b53e2d243a/Machine-Learning-Algorithms-A-Review.pdf?eid=5082902844932096t"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning",
+        "author": [
+          "ZH Zhou"
+        ],
+        "pub_year": "2021",
+        "venue": "NA",
+        "abstract": "machine learning. The second part includes Chapters 4–10, which presents some classic and  popular machine learning  cover the core topics of machine learning in one semester, and"
+      },
+      "filled": false,
+      "gsrank": 2,
+      "pub_url": "https://books.google.com/books?hl=en&lr=&id=ctM-EAAAQBAJ&oi=fnd&pg=PR6&dq=machine+learning&ots=o_Lp-3Uz0s&sig=LtbDf7wnI2lfla6hnSUKfFp5B0M",
+      "author_id": [
+        "rSVIHasAAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:EQ8shYj8Ai8J:scholar.google.com/&output=cite&scirp=1&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=EQ8shYj8Ai8J&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 2875,
+      "citedby_url": "/scholar?cites=3387547533016043281&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:EQ8shYj8Ai8J:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning",
+        "author": [
+          "E Alpaydin"
+        ],
+        "pub_year": "2021",
+        "venue": "NA",
+        "abstract": "MIT presents a concise primer on machine learning—computer programs that learn from  data and the basis of applications like voice recognition and driverless cars. No in-depth"
+      },
+      "filled": false,
+      "gsrank": 3,
+      "pub_url": "https://books.google.com/books?hl=en&lr=&id=2nQJEAAAQBAJ&oi=fnd&pg=PR7&dq=machine+learning&ots=fI0aX5XGls&sig=B9rMt0wdJIyYYUKlAusVG29JVRA",
+      "author_id": [
+        "lXYKgiYAAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:_zuqxloS2b0J:scholar.google.com/&output=cite&scirp=2&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=_zuqxloS2b0J&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 1225,
+      "citedby_url": "/scholar?cites=13679985524203994111&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:_zuqxloS2b0J:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://cs.pomona.edu/~dkauchak/classes/s16/cs30-s16/lectures/lecture12-NN-basics.pdf"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning: Trends, perspectives, and prospects",
+        "author": [
+          "MI Jordan",
+          "TM Mitchell"
+        ],
+        "pub_year": "2015",
+        "venue": "Science",
+        "abstract": "Machine learning addresses the question of how to build computers that improve  Recent  progress in machine learning has been driven both by the development of new learning"
+      },
+      "filled": false,
+      "gsrank": 4,
+      "pub_url": "https://www.science.org/doi/abs/10.1126/science.aaa8415",
+      "author_id": [
+        "yxUduqMAAAAJ",
+        "MnfzuPYAAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:pdcI9r5sCJcJ:scholar.google.com/&output=cite&scirp=3&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=pdcI9r5sCJcJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 10690,
+      "citedby_url": "/scholar?cites=10883068066968164261&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:pdcI9r5sCJcJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "http://www.cs.cmu.edu/~tom/pubs/Science-ML-2015.pdf"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "What is machine learning?",
+        "author": [
+          "I El Naqa",
+          "MJ Murphy"
+        ],
+        "pub_year": "2015",
+        "venue": "NA",
+        "abstract": "A machine learning algorithm is a computational process that  This training is the “learning”  part of machine learning. The  can practice “lifelong” learning as it processes new data and"
+      },
+      "filled": false,
+      "gsrank": 5,
+      "pub_url": "https://link.springer.com/chapter/10.1007/978-3-319-18305-3_1",
+      "author_id": [
+        "9Vdfc2sAAAAJ",
+        ""
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:6uA6mpei2rcJ:scholar.google.com/&output=cite&scirp=4&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=6uA6mpei2rcJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 1626,
+      "citedby_url": "/scholar?cites=13248080025875046634&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:6uA6mpei2rcJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://repository.kaust.edu.sa/server/api/core/bitstreams/798f4362-602a-47d4-91a3-c52e45358ed7/content"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning",
+        "author": [
+          "TG Dietterich"
+        ],
+        "pub_year": "1990",
+        "venue": "Annual review of computer science",
+        "abstract": "The study of machine learning methods has progressed greatly in the past few years. This  progress has taken many directions. First, in the area of inductive learning, a new formal de"
+      },
+      "filled": false,
+      "gsrank": 6,
+      "pub_url": "https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=417f55320080fea71d491a18318dad6572b2fa8c",
+      "author_id": [
+        "09kJn28AAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:sgzh8w-wKWIJ:scholar.google.com/&output=cite&scirp=5&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=sgzh8w-wKWIJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 266,
+      "citedby_url": "/scholar?cites=7073378272324684978&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:sgzh8w-wKWIJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=417f55320080fea71d491a18318dad6572b2fa8c"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning",
+        "author": [
+          "TM Mitchell",
+          "TM Mitchell"
+        ],
+        "pub_year": "1997",
+        "venue": "NA",
+        "abstract": "What is machine learning?  • Traditional AI: you encode the knowledge (eg, logic  statements), and the machine executes it, with some more ‘inference’ like if a -> b and b-> c"
+      },
+      "filled": false,
+      "gsrank": 7,
+      "pub_url": "http://www.pachecoj.com/courses/csc380_fall21/lectures/mlintro.pdf",
+      "author_id": [
+        "MnfzuPYAAAAJ",
+        ""
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:jF00X9UGn0cJ:scholar.google.com/&output=cite&scirp=6&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=jF00X9UGn0cJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 40247,
+      "citedby_url": "/scholar?cites=5160851211484945804&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:jF00X9UGn0cJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "http://www.pachecoj.com/courses/csc380_fall21/lectures/mlintro.pdf"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning and law: An overview",
+        "author": [
+          "H Surden"
+        ],
+        "pub_year": "2021",
+        "venue": "Research Handbook on Big Data Law",
+        "abstract": ", machine learning has only recently started to develop. This chapter explores machine  learning’s  The first section describes what machine learning is, highlighting its central principles."
+      },
+      "filled": false,
+      "gsrank": 8,
+      "pub_url": "https://www.elgaronline.com/abstract/edcoll/9781788972819/9781788972819.00014.xml",
+      "author_id": [
+        "YBuBwXEAAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:nLsZrNC4QDEJ:scholar.google.com/&output=cite&scirp=7&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=nLsZrNC4QDEJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 937,
+      "citedby_url": "/scholar?cites=3549039712748026780&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:nLsZrNC4QDEJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=2417415"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "Machine learning basics",
+        "author": [
+          "H Wang",
+          "Z Lei",
+          "X Zhang",
+          "B Zhou",
+          "J Peng"
+        ],
+        "pub_year": "2016",
+        "venue": "Deep learning",
+        "abstract": "To obtain theoretical guarantees about generalization of a machine learning algorithm, we   Why does deep learning have different behavior than other machine learning methods for"
+      },
+      "filled": false,
+      "gsrank": 9,
+      "pub_url": "http://whdeng.cn/Teaching/PPT_01_Machine%20learning%20Basics.pdf",
+      "author_id": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:p7YVSi5UNiMJ:scholar.google.com/&output=cite&scirp=8&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=p7YVSi5UNiMJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 1900,
+      "citedby_url": "/scholar?cites=2537307997858018983&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:p7YVSi5UNiMJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "http://whdeng.cn/Teaching/PPT_01_Machine%20learning%20Basics.pdf"
+    },
+    {
+      "container_type": "Publication",
+      "source": "PUBLICATION_SEARCH_SNIPPET",
+      "bib": {
+        "title": "What is machine learning? A primer for the epidemiologist",
+        "author": [
+          "Q Bi",
+          "KE Goodman",
+          "J Kaminsky"
+        ],
+        "pub_year": "2019",
+        "venue": "American journal of …",
+        "abstract": "We provide a brief introduction to 5 common machine learning  of machine learning  techniques in the published literature. We recommend approaches to incorporate machine learning"
+      },
+      "filled": false,
+      "gsrank": 10,
+      "pub_url": "https://academic.oup.com/aje/article-abstract/188/12/2222/5567515",
+      "author_id": [
+        "xzss3t0AAAAJ",
+        "",
+        "BFdcm_gAAAAJ"
+      ],
+      "url_scholarbib": "/scholar?hl=en&q=info:LDE5SAcBB-gJ:scholar.google.com/&output=cite&scirp=9&hl=en",
+      "url_add_sclib": "/citations?hl=en&xsrf=&continue=/scholar%3Fq%3Dmachine%2Blearning%26hl%3Den%26as_sdt%3D0,33&citilm=1&update_op=library_add&info=LDE5SAcBB-gJ&ei=Cr2kZ93dJtmlieoPu4PawQQ&json=",
+      "num_citations": 670,
+      "citedby_url": "/scholar?cites=16719333272424362284&as_sdt=5,33&sciodt=0,33&hl=en",
+      "url_related_articles": "/scholar?q=related:LDE5SAcBB-gJ:scholar.google.com/&scioq=machine+learning&hl=en&as_sdt=0,33",
+      "eprint_url": "https://sph.umsha.ac.ir/uploads/18/2023/May/22/kwz189.pdf"
+    }
+  ]
+}
