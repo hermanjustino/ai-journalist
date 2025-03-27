@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/hermkdmx/public_html/language-journal
-    - /bin/cp -R build/* $DEPLOYPATH
+    - export DEPLOYPATH=/home/hermkdmx/public_html
+    - /bin/cp -R language-journal/build/* $DEPLOYPATH
     - /bin/cp -R server $DEPLOYPATH/server
     - /bin/cp -R python_api $DEPLOYPATH/python_api
     - /bin/chmod 755 $DEPLOYPATH/python_api/*.py
