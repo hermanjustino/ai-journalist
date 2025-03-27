@@ -15,7 +15,7 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
 
   const handleNavClick = (view: string) => {
     onViewChange(view);
-    setMenuOpen(false); // Close menu after selection on mobile
+    setMenuOpen(false);
   };
 
   return (
@@ -23,7 +23,7 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
       <div className="nav-container">
         <div className="nav-brand">AI Cultural Journalist</div>
 
-        <div className="hamburger-menu" onClick={toggleMenu}>
+        <div className={`hamburger-menu ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
           <span></span>
           <span></span>
@@ -31,6 +31,12 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
       </div>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+        <li
+          className={currentView === 'about' ? 'active' : ''}
+          onClick={() => handleNavClick('about')}
+        >
+          About
+        </li>
         <li
           className={currentView === 'domains' ? 'active' : ''}
           onClick={() => handleNavClick('domains')}
@@ -60,12 +66,6 @@ const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) =>
           onClick={() => handleNavClick('aave-analysis')}
         >
           AAVE Analysis
-        </li>
-        <li
-          className={currentView === 'about' ? 'active' : ''}
-          onClick={() => handleNavClick('about')}
-        >
-          About
         </li>
         <li
           className={currentView === 'trends' ? 'active' : ''}

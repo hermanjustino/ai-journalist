@@ -162,7 +162,7 @@ const fetchContentData = useCallback(async () => {
         onViewChange={setCurrentView}
       />
 
-      <main>
+      <main className="responsive-container">
         {error && <div className="error-banner">{error}</div>}
         {renderCurrentView()}
       </main>

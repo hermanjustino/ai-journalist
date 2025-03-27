@@ -1,37 +1,38 @@
 import { useRef, useEffect } from 'react';
-import { Chart, registerables } from 'chart.js';
+import Chart from 'chart.js/auto';
 
-// Register all Chart.js components
-Chart.register(...registerables);
-
-export function useChart() {
-  const chartRef = useRef<HTMLCanvasElement | null>(null);
+export const useChart = () => {
+  const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInstance = useRef<Chart | null>(null);
 
-  // Cleanup chart when component unmounts
+  const renderChart = (config: any) => {
+    if (chartRef.current) {
+      // Destroy existing chart if it exists
+      if (chartInstance.current) {
+        chartInstance.current.destroy();
+      }
+
+      // Create new chart
+      chartInstance.current = new Chart(chartRef.current, {
+        ...config,
+        options: {
+          ...config.options,
+          responsive: true,
+          maintainAspectRatio: false,
+          resizeDelay: 100
+        }
+      });
+    }
+  };
+
+  // Clean up chart on unmount
   useEffect(() => {
     return () => {
       if (chartInstance.current) {
         chartInstance.current.destroy();
-        chartInstance.current = null;
       }
     };
   }, []);
 
-  const renderChart = (config: any) => {
-    if (!chartRef.current) return;
-
-    // Destroy existing chart if it exists
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
-    }
-
-    // Create new chart
-    const ctx = chartRef.current.getContext('2d');
-    if (!ctx) return;
-
-    chartInstance.current = new Chart(ctx, config);
-  };
-
   return { chartRef, renderChart };
-}
+};

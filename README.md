@@ -1,50 +1,51 @@
-# AAVE Linguistic Analysis in Academic and News Sources
+# AI Cultural Journalist: AAVE Analysis Platform
 
-A specialized tool for tracking and analyzing African American Vernacular English (AAVE) patterns in academic articles and news sources.
+An autonomous platform tracking and analyzing African American Vernacular English (AAVE) in academic publications and news media through daily analysis.
 
-## Project Overview
+## Project Vision
 
-This application tracks the prevalence of AAVE in academic publications and news media, analyzing linguistic patterns based on established research. The project is inspired by research from the paper "LOW-RESOURCE LANGUAGE MODEL WITH CYBER DEFENSE" which explores unique phonemes and morphemes structures of languages including AAVE.
+This autonomous application monitors the growing presence of Black linguistic contributions in academia and news sources. By analyzing AAVE patterns in scholarly and news content, it provides data-driven insights into how Black language evolves and gains recognition in institutional contexts. The project is built on research from "LOW-RESOURCE LANGUAGE MODEL WITH CYBER DEFENSE" and aims to expand to track other languages from the African diaspora globally.
 
-## Key Features
+## Core Capabilities
 
-- **Data Collection**: Gather content from news sources and academic articles
-- **Linguistic Analysis**: Identify and categorize AAVE language features
-- **Trend Visualization**: Track prevalence of AAVE patterns over time
-- **Source Comparison**: Compare representation in academic vs news sources
+- **Automated Daily Analysis**: Collects and analyzes new content from academic and news sources daily
+- **Linguistic Pattern Recognition**: Identifies established AAVE features in text using advanced NLP
+- **Comparative Analysis**: Tracks differences in AAVE representation between academic and media sources
+- **Trend Visualization**: Provides data visualizations of changing linguistic patterns over time
+- **Cultural Domain Tracking**: Organizes insights across different domains of Black cultural expression
 
-## Technologies
+## Technology Stack
 
-- React with TypeScript for the frontend
-- Node.js/Express backend
-- Google Scholar API for academic article data
-- News API for current news sources
-- Chart.js for visualization
+- **Frontend**: React with TypeScript, Chart.js for data visualization
+- **Backend**: Node.js/Express server with Python microservices
+- **Data Sources**: Google Scholar API (via scholarly Python library), News API
+- **Analysis**: Custom NLP algorithms for AAVE feature detection
+- **Infrastructure**: Automated data collection and analysis pipelines
 
-## Getting Started
+## Roadmap
+
+- **Current**: AAVE analysis in English-language academic and news sources
+- **Upcoming**: Integration of other Black diaspora languages and dialects
+- **Future**: Comparative analysis across regional Black linguistic expressions globally
+
+## Research Foundation
+
+This project builds upon linguistic research exploring the structures and patterns of AAVE:
+
+- "LOW-RESOURCE LANGUAGE MODEL WITH CYBER DEFENSE" (2022)
+- Studies on the grammatical patterns and innovations of AAVE
+- Research on linguistic code-switching in academic contexts
+
+## Development
 
 1. Clone the repository
 2. Install dependencies: `npm install`
-3. Create `.env` file with API keys:
+3. Set up API keys in `.env` file
+4. Start the Python service: `npm run start-python-api`
+5. Start the Node.js server: `npm run server`
+6. Start the React client: `npm start`
+7. Or use `npm run start-all` to launch everything
 
-REACT_APP_NEWS_API_KEY=your_news_api_key 
-RAPID_API_KEY=your_rapid_api_key
+## Contributing
 
-4. Start the server: `npm run server`
-5. Start the client: `npm start`
-
-## Linguistic Features Analyzed
-
-- Copula deletion
-- Habitual "be"
-- Multiple negation
-- Completive "done"
-- Remote time "been"
-- Absence of third-person singular -s
-- Use of "ain't"
-
-## Research References
-
-This project builds upon academic research on AAVE linguistics:
-
-- "LOW-RESOURCE LANGUAGE MODEL WITH CYBER DEFENSE" (ResearchGate, 2022)
+Contributions that enhance linguistic accuracy, expand language coverage, or improve data visualization are welcome.

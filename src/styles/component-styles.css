@@ -87,3 +87,41 @@
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 10px;
   }
+
+/* Responsive utilities */
+.responsive-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive tables */
+.responsive-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive images */
+img.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Make sure charts are responsive */
+  canvas {
+    max-width: 100%;
+  }
+}
