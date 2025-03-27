@@ -64,3 +64,9 @@ __pycache__/
 /server/trend-detection/python/.coverage
 /server/trend-detection/python/htmlcov/
 /server/trend-detection/python/.tox/
+
+# Python API env
+/python_api/venv/
+/python_api/.venv/
+/python_api/env/
+/python_api/.env/

@@ -115,82 +115,6 @@ app.get('/api/test', (req, res) => {
   });
 });
 
-// Twitter API endpoint
-
-app.post('/api/twitter/search', async (req, res) => {
-  try {
-    const { keywords, startDate, endDate, limit } = req.body;
-
-    // Build query
-    const query = keywords.join(' OR ');
-
-    try {
-      // Set up parameters
-      const params = {
-        query,
-        max_results: limit || 10,
-        'tweet.fields': 'created_at,author_id,text',
-        'user.fields': 'username,name',
-        expansions: 'author_id'
-      };
-
-      if (startDate) params.start_time = new Date(startDate).toISOString();
-      if (endDate) params.end_time = new Date(endDate).toISOString();
-
-      // Make Twitter API request
-      const response = await twitterClient.v2.search(query, params);
-
-      // Track this successful API call
-      apiUsageTracker.trackRequest('twitter');
-
-      // Format response
-      const tweets = response.data.data.map(tweet => {
-        const user = response.data.includes?.users?.find(u => u.id === tweet.author_id);
-
-        return {
-          id: tweet.id,
-          source: 'twitter',
-          content: tweet.text,
-          timestamp: tweet.created_at,
-          author: user ? `@${user.username}` : undefined,
-          title: `Tweet by ${user?.name || 'Unknown'}`,
-          url: `https://twitter.com/${user?.username}/status/${tweet.id}`
-        };
-      });
-
-      res.json(tweets);
-    } catch (twitterError) {
-      console.error('Twitter API error:', twitterError);
-
-      // Return mock data on Twitter API failure
-      const mockTweets = [
-        {
-          id: `tw-mock-${Date.now()}-1`,
-          source: 'twitter',
-          content: `Tweet about: ${keywords.join(', ')} #blackculture`,
-          timestamp: new Date().toISOString(),
-          author: '@culturalcommentator',
-          title: 'Perspectives on Black culture'
-        },
-        {
-          id: `tw-mock-${Date.now()}-2`,
-          source: 'twitter',
-          content: `Discussing the impact of ${keywords[0] || 'hip-hop'} on modern society. #culturalanalysis`,
-          timestamp: new Date(Date.now() - 3600000).toISOString(),
-          author: '@academicvoice',
-          title: 'Cultural Analysis'
-        }
-      ];
-
-      // Flag as mock data
-      res.json(mockTweets.map(tweet => ({ ...tweet, isMockData: true })));
-    }
-  } catch (error) {
-    console.error('Server error:', error);
-    res.status(500).json({ error: 'Failed to process request' });
-  }
-});
-
 // News API endpoint
 app.post('/api/news/search', async (req, res) => {
   try {
@@ -231,111 +155,6 @@ app.post('/api/news/search', async (req, res) => {
   } catch (error) {
     console.error('News API error:', error);
     res.status(500).json({ error: 'Failed to fetch news' });
-  }
-});
-
-// TikTok API endpoint using RapidAPI
-app.post('/api/tiktok/search', async (req, res) => {
-  try {
-    const { keywords, limit = 5 } = req.body;
-
-    // Check if we still have quota for TikTok API
-    const remainingTikTokQuota = apiUsageTracker.getRemainingQuota('tiktok');
-
-    if (remainingTikTokQuota <= 0) {
-      // Out of quota, immediately return mock data
-      console.log('TikTok API monthly quota exceeded, using mock data');
-      const fallbackData = generateTikTokMockData(keywords);
-      return res.json(fallbackData.map(item => ({ ...item, isMockData: true, quotaExceeded: true })));
-    }
-
-    // Use the first keyword for searching
-    const searchTerm = keywords[0] || 'black culture';
-
-    // Let's try the correct endpoint structure for tiktok-api23
-    const rapidApiOptions = {
-      method: 'GET',
-      url: 'https://tiktok-api23.p.rapidapi.com/api/search/video',  // Updated endpoint URL
-      params: {
-        keyword: searchTerm,
-        cursor: '0',
-        search_id: '0'
-      },
-      headers: {
-        'X-RapidAPI-Key': process.env.RAPIDAPI_KEY,
-        'X-RapidAPI-Host': 'tiktok-api23.p.rapidapi.com'
-      }
-    };
-
-    console.log('Trying TikTok API request with options:', rapidApiOptions);
-
-    // Make request to RapidAPI
-    const response = await axios.request(rapidApiOptions);
-    
-    // Track this successful API call with detailed logging
-    console.log('TikTok API response received:', response.status);
-    apiUsageTracker.trackRequestAndLog('tiktok');
-
-    console.log('TikTok API response structure:',
-      Object.keys(response.data),
-      response.data.data ? Object.keys(response.data.data) : 'no data property'
-    );
-
-    // Check if we have valid data (response structure may vary)
-    if (!response.data) {
-      throw new Error('Invalid response from TikTok API');
-    }
-
-    // Try to extract videos from the response based on possible structures
-    let videos = [];
-    
-    if (response.data.data && Array.isArray(response.data.data)) {
-      videos = response.data.data;
-    } else if (response.data.videos && Array.isArray(response.data.videos)) {
-      videos = response.data.videos;
-    } else if (response.data.data && response.data.data.videos) {
-      videos = response.data.data.videos;
-    } else {
-      console.log('Unexpected response structure:', response.data);
-    }
-
-    if (videos.length === 0) {
-      throw new Error('No videos found in TikTok API response');
-    }
-
-    // Format the response into our ContentItem structure - adapt based on actual structure
-    const tiktoks = videos.map(video => ({
-      id: `tiktok-${video.id || Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-      source: 'tiktok',
-      content: video.desc || video.description || `TikTok about ${searchTerm}`,
-      timestamp: new Date().toISOString(),
-      author: `@${video.author?.unique_id || video.author?.uniqueId || video.username || 'unknown'}`,
-      title: video.desc || video.description || `TikTok about ${searchTerm}`,
-      url: `https://www.tiktok.com/@${video.author?.unique_id || video.author?.uniqueId || video.username || 'unknown'}/video/${video.id || ''}`
-    }));
-
-    res.json(tiktoks.map(item => ({
-      ...item,
-      remaining: apiUsageTracker.getRemainingQuota('tiktok')
-    })));
-
-  } // Additional error logging in the catch block
-  catch (error) {
-    console.error('TikTok API error details:');
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      console.error('Response data:', error.response.data);
-      console.error('Response status:', error.response.status);
-      console.error('Response headers:', error.response.headers);
-    } else if (error.request) {
-      // The request was made but no response was received
-      console.error('Request made but no response received:', error.request);
-    } else {
-      // Something happened in setting up the request
-      console.error('Error message:', error.message);
-    }
-    const keywords = req.body.keywords || [];
   }
 });
 
@@ -471,90 +290,42 @@ app.post('/api/debug/test-gemini', async (req, res) => {
 
 app.post('/api/scholar/search', async (req, res) => {
   try {
-    const { keywords, startDate, endDate, limit = 50 } = req.body;
+    console.log('Received scholar search request:', req.body);
     
-    if (!keywords || !Array.isArray(keywords) || keywords.length === 0) {
-      return res.status(400).json({ error: 'Keywords are required' });
-    }
+    // Forward the request to the Python API (trying ports 5001-5005)
+    let response;
+    let connected = false;
+    let error;
     
-    // Create search query
-    const query = keywords.join(' OR ');
-    
-    // Check if we have a RapidAPI key
-    const rapidApiKey = process.env.RAPID_API_KEY || process.env.RAPIDAPI_KEY;
-    
-    if (!rapidApiKey) {
-      console.warn('No RapidAPI key found. Returning mock academic data.');
-      // Return mock data if no API key
-      return res.json(generateMockScholarData());
-    }
-    
-    // Set up request to RapidAPI Google Scholar endpoint
-    const options = {
-      method: 'GET',
-      url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-      params: {
-        query,
-        max_results: limit.toString(),
-        patents: 'false',
-        citations: 'true'
-      },
-      headers: {
-        'x-rapidapi-key': rapidApiKey,
-        'x-rapidapi-host': 'google-scholar1.p.rapidapi.com'
-      }
-    };
-    
-    // Log headers without showing the actual key
-    console.log('Making Scholar API request with headers:',
-      { ...options.headers, 'x-rapidapi-key': rapidApiKey ? '***SET***' : 'MISSING' }
-    );
-    
-    // Add year filters if dates are provided
-    if (startDate) {
-      options.params.year_low = new Date(startDate).getFullYear().toString();
-    }
-    
-    if (endDate) {
-      options.params.year_high = new Date(endDate).getFullYear().toString();
-    }
-    
-    try {
-      const response = await axios.request(options);
-      
-      if (response.data && response.data.status === 'success' && response.data.result) {
-        // Extract and format the articles from the response
-        const articles = response.data.result.map(item => {
-          const bib = item.bib || {};
-          
-          return {
-            id: `scholar-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-            title: bib.title || 'Untitled Academic Article',
-            author: bib.author || [],
-            abstract: bib.abstract || '',
-            pub_year: bib.pub_year || '',
-            venue: bib.venue || '',
-            url: item.pub_url || '',
-            eprint_url: item.eprint_url || '',
-            citations: item.num_citations || 0,
-            publishedAt: bib.pub_year ? `${bib.pub_year}-01-01` : null
-          };
+    // Try ports 5001 through 5005
+    for (let port = 5001; port <= 5005; port++) {
+      try {
+        console.log(`Trying to connect to Python API on port ${port}...`);
+        response = await axios.post(`http://localhost:${port}/search`, req.body, {
+          timeout: 10000 // 10 second timeout
         });
-        
-        res.json(articles);
-      } else {
-        throw new Error('Invalid response format from Google Scholar API');
+        console.log(`Successfully connected to Python API on port ${port}`);
+        connected = true;
+        break;
+      } catch (err) {
+        error = err;
+        console.log(`Failed to connect on port ${port}: ${err.message}`);
       }
-    } catch (apiError) {
-      console.error('Google Scholar API error:', apiError);
-      
-      // Return mock data on API error
-      res.json(generateMockScholarData());
     }
     
+    if (!connected) {
+      throw new Error(`Could not connect to Python API on any port: ${error.message}`);
+    }
+    
+    console.log(`Got ${response.data.length} results from Python scholarly API`);
+    res.json(response.data);
   } catch (error) {
-    console.error('Server error:', error);
-    res.status(500).json({ error: 'Failed to process Google Scholar request' });
+    console.error('Error with Python scholarly API:', error.message);
+    
+    // Fall back to mock data on error
+    const mockData = generateMockScholarData();
+    console.log('Returning mock data');
+    res.json(mockData);
   }
 });
 
