@@ -93,9 +93,8 @@ const About: React.FC = () => {
           <div className="tech-category">
             <h4>APIs</h4>
             <div className="tech-badges">
-              <span className="tech-badge">Twitter API</span>
               <span className="tech-badge">News API</span>
-              <span className="tech-badge">TikTok API</span>
+              <span className="tech-badge">Google Scholar</span>
             </div>
           </div>
         </div>

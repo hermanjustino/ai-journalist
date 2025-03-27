@@ -71,7 +71,7 @@ class ContentFetcher {
   }
 
 async getMockContent(count = 20): Promise<ContentItem[]> {
-  const sources = ['news', 'academic']; // Removed Twitter and TikTok
+  const sources = ['news', 'academic']; 
   const aaveTerms = [
     'he going', 'they running', 'she ready',
     'be working', 'be talking', 'be doing',

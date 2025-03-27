@@ -19,11 +19,6 @@ const AutomatedAAVEDashboard: React.FC = () => {
   const { chartRef: termsChartRef, renderChart: renderTermsChart } = useChart();
   const { chartRef: sourcesChartRef, renderChart: renderSourcesChart } = useChart();
   
-  // Run automated collection on component mount for the default date range
-  useEffect(() => {
-    collectData();
-  }, []);
-  
   // Render charts when results change
   useEffect(() => {
     if (results.length > 0) {

@@ -14,6 +14,29 @@ This autonomous application monitors the growing presence of Black linguistic co
 - **Trend Visualization**: Provides data visualizations of changing linguistic patterns over time
 - **Cultural Domain Tracking**: Organizes insights across different domains of Black cultural expression
 
+## Autonomous Architecture
+
+The platform operates on an autonomous cycle:
+
+1. **Automated Data Collection**: The system periodically collects content from news and academic APIs
+2. **AAVE Pattern Analysis**: Content is analyzed for AAVE linguistic features including:
+   - Copula deletion (e.g., "he going")
+   - Habitual use of "be" (e.g., "they be working")
+   - Multiple negation (e.g., "don't know nothing")
+   - Completive "done" (e.g., "done finished")
+   - Remote time expressed with "been" (e.g., "been knew")
+3. **Results Storage and Tracking**: Analysis results are stored for tracking changes over time
+4. **Dashboard Updates**: Visualizations update automatically to show the latest AAVE trends
+
+## Future Language Expansion
+
+Beyond AAVE, the platform is designed to eventually incorporate other languages used by Black communities globally:
+
+- Caribbean Creole languages
+- West African dialects
+- Black British linguistic patterns
+- Afro-Brazilian Portuguese variations
+
 ## Technology Stack
 
 - **Frontend**: React with TypeScript, Chart.js for data visualization
@@ -21,12 +44,6 @@ This autonomous application monitors the growing presence of Black linguistic co
 - **Data Sources**: Google Scholar API (via scholarly Python library), News API
 - **Analysis**: Custom NLP algorithms for AAVE feature detection
 - **Infrastructure**: Automated data collection and analysis pipelines
-
-## Roadmap
-
-- **Current**: AAVE analysis in English-language academic and news sources
-- **Upcoming**: Integration of other Black diaspora languages and dialects
-- **Future**: Comparative analysis across regional Black linguistic expressions globally
 
 ## Research Foundation
 

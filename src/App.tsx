@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Navigation from './components/Navigation';
 import About from './components/About';
 import ApiTester from './components/ApiTester';
 import ApiUsageDashboard from './components/ApiUsageDashboard';
 import TrendDiscovery from './components/TrendDiscovery/TrendDiscovery';
-import DataCollection from './components/DataCollection';
 import ArticleGenerator from './components/ArticleGenerator/ArticleGenerator';
 import Insights from './components/Insights';
 import Dashboard from './components/Dashboard';
@@ -103,13 +102,6 @@ const fetchContentData = useCallback(async () => {
     };
   };
 
-  // Handle newly collected content
-  const handleContentCollected = (items: ContentItem[]) => {
-    const formattedItems = items.map(formatContent);
-    setContentItems([...formattedItems, ...contentItems]);
-    console.log(`Added ${items.length} new content items`);
-  };
-
   // Handle domain selection
   const handleDomainSelect = (domainId: string) => {
     setSelectedDomain(domainId);
@@ -136,8 +128,6 @@ const fetchContentData = useCallback(async () => {
         />;
       case 'insights':
         return <Insights contentItems={contentItems} />;
-      case 'collection':
-        return <DataCollection onContentCollected={handleContentCollected} />;
       case 'aave-analysis':
         return <AutomatedAAVEDashboard />;
       case 'about':

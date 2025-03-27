@@ -42,15 +42,6 @@ app.get('/api/debug-usage', (req, res) => {
   }
 });
 
-// Initialize Twitter client
-const twitterClient = new TwitterApi({
-  appKey: process.env.TWITTER_API_KEY,
-  appSecret: process.env.TWITTER_API_SECRET,
-  accessToken: process.env.TWITTER_ACCESS_TOKEN,
-  accessSecret: process.env.TWITTER_ACCESS_TOKEN_SECRET,
-  bearerToken: process.env.TWITTER_BEARER_TOKEN
-});
-
 // Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
