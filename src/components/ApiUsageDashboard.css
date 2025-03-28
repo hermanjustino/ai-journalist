@@ -34,17 +34,13 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     border-top: 5px solid #6c757d;
   }
-  
-  .service-card.tiktok {
-    border-top-color: #ff0050;
+
+  .service-card.gemini {
+    border-top-color: #1a73e8; /* Google blue */
   }
   
   .service-card.news {
     border-top-color: #6e4694;
-  }
-  
-  .service-card.twitter {
-    border-top-color: #1da1f2;
   }
   
   .service-card h3 {

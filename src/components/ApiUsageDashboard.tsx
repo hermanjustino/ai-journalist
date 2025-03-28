@@ -8,11 +8,9 @@ interface UsageData {
 }
 
 interface UsageStats {
-  twitter: UsageData;
   news: UsageData;
-  tiktok: UsageData;
+  gemini?: UsageData;
   remaining: {
-    tiktok: number;
     news: number;
   };
 }
@@ -63,14 +61,15 @@ useEffect(() => {
   const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
   
   // Helper to get current month's usage
-  const getCurrentMonthUsage = (service: 'twitter' | 'news' | 'tiktok'): number => {
-    if (!usageStats) return 0;
+  const getCurrentMonthUsage = (service: 'news' | 'gemini'): number => {
+    if (!usageStats || !usageStats[service as keyof typeof usageStats]) return 0;
     const date = new Date();
     const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
-    // Make sure we're only accessing monthly on the right objects
-    if (service === 'twitter' || service === 'news' || service === 'tiktok') {
-      return usageStats[service].monthly[yearMonth] || 0;
+    // Use optional chaining for both the service and monthly property
+    const serviceData = usageStats[service as keyof typeof usageStats];
+    if (serviceData && 'monthly' in serviceData) {
+      return serviceData.monthly?.[yearMonth] || 0;
     }
     return 0;
   };
@@ -93,36 +92,6 @@ useEffect(() => {
       <div className="usage-period">{currentMonth}</div>
       
       <div className="service-usage-grid">
-        <div className="service-card tiktok">
-          <h3>TikTok API</h3>
-          <div className="usage-stats">
-            <div className="usage-stat">
-              <span className="stat-label">Monthly Usage</span>
-              <span className="stat-value">{getCurrentMonthUsage('tiktok')} requests</span>
-            </div>
-            <div className="usage-stat">
-              <span className="stat-label">Monthly Limit</span>
-              <span className="stat-value">100 requests</span>
-            </div>
-            <div className="usage-stat">
-              <span className="stat-label">Remaining</span>
-              <span className={`stat-value ${usageStats.remaining.tiktok < 10 ? 'warning' : ''}`}>
-                {usageStats.remaining.tiktok} requests
-              </span>
-            </div>
-          </div>
-          <div className="usage-progress-container">
-            <div 
-              className="usage-progress-bar"
-              style={{ 
-                width: `${Math.min(getCurrentMonthUsage('tiktok') / 100 * 100, 100)}%`,
-                backgroundColor: usageStats.remaining.tiktok < 20 ? '#dc3545' : 
-                                 usageStats.remaining.tiktok < 50 ? '#ffc107' : '#28a745'
-              }}
-            ></div>
-          </div>
-        </div>
-        
         <div className="service-card news">
           <h3>News API</h3>
           <div className="usage-stats">
@@ -141,27 +110,28 @@ useEffect(() => {
           </div>
         </div>
         
-        <div className="service-card twitter">
-          <h3>Twitter API</h3>
-          <div className="usage-stats">
-            <div className="usage-stat">
-              <span className="stat-label">Monthly Usage</span>
-              <span className="stat-value">{getCurrentMonthUsage('twitter')} requests</span>
-            </div>
-            <div className="usage-stat">
-              <span className="stat-label">Total Usage</span>
-              <span className="stat-value">{usageStats.twitter.total} requests</span>
+        {usageStats.gemini && (
+          <div className="service-card gemini">
+            <h3>Gemini API</h3>
+            <div className="usage-stats">
+              <div className="usage-stat">
+                <span className="stat-label">Monthly Usage</span>
+                <span className="stat-value">{getCurrentMonthUsage('gemini')} requests</span>
+              </div>
+              <div className="usage-stat">
+                <span className="stat-label">Total Usage</span>
+                <span className="stat-value">{usageStats.gemini.total || 0} requests</span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       
       <div className="api-usage-notes">
         <h4>Notes</h4>
         <ul>
-          <li>TikTok API (RapidAPI): Limited to 100 requests per month on the free tier</li>
           <li>News API: Limited to 100 requests per day on the free tier</li>
-          <li>Twitter API: The app uses Twitter v2 API which may have rate limits</li>
+          <li>Gemini API: Usage may be subject to Google Cloud quotas</li>
         </ul>
       </div>
     </div>

@@ -27,10 +27,9 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
     return acc;
   }, {} as Record<string, number>);
 
-  // Get most recent items
-  const recentItems = [...filteredContent]
-    .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime())
-    .slice(0, 5);
+  // Get all items sorted by timestamp (most recent first)
+  const sortedItems = [...filteredContent]
+    .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
 
   return (
     <div className="dashboard">
@@ -80,8 +79,8 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
                   className="source-bar" 
                   style={{ 
                     width: `${(count / filteredContent.length) * 100}%`,
-                    backgroundColor: source === 'twitter' ? '#1DA1F2' : 
-                                     source === 'news' ? '#FF6B6B' : '#4CAF50'
+                    backgroundColor: source === 'news' ? '#FF6B6B' : 
+                                     source === 'academic' ? '#4CAF50' : '#9C27B0'
                   }}
                 />
                 <div className="source-count">{count}</div>
@@ -91,21 +90,23 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
         </div>
         
         <div className="section recent-content">
-          <h3>Recent Content</h3>
-          <ul className="content-list">
-            {recentItems.map(item => (
-              <li key={item.id} className="content-item">
-                <div className="content-header">
-                  <span className={`source-badge ${item.source}`}>{item.source}</span>
-                  <span className="content-date">{item.timestamp.toLocaleDateString()}</span>
-                </div>
-                <h4>{item.title}</h4>
-                <p>{item.content.length > 100 ? `${item.content.substring(0, 100)}...` : item.content}</p>
-                {item.author && <div className="content-author">By: {item.author}</div>}
-                {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer" className="content-link">View Source</a>}
-              </li>
-            ))}
-          </ul>
+          <h3>All Content ({sortedItems.length} items)</h3>
+          <div className="content-scrollable-container">
+            <ul className="content-list">
+              {sortedItems.map(item => (
+                <li key={item.id} className="content-item">
+                  <div className="content-header">
+                    <span className={`source-badge ${item.source}`}>{item.source}</span>
+                    <span className="content-date">{item.timestamp.toLocaleDateString()}</span>
+                  </div>
+                  <h4>{item.title}</h4>
+                  <p>{item.content.length > 100 ? `${item.content.substring(0, 100)}...` : item.content}</p>
+                  {item.author && <div className="content-author">By: {item.author}</div>}
+                  {item.url && <a href={item.url} target="_blank" rel="noopener noreferrer" className="content-link">View Source</a>}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

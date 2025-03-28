@@ -15,30 +15,49 @@ class ApiUsageTracker {
     }
   }
 
-  loadUsage() {
-    try {
-      if (fs.existsSync(this.usageFilePath)) {
-        const data = fs.readFileSync(this.usageFilePath, 'utf8');
-        return JSON.parse(data);
-      } else {
-        // Initialize with default structure if file doesn't exist
-        const defaultUsage = {
-          twitter: { total: 0, monthly: {} },
-          news: { total: 0, monthly: {} },
-          tiktok: { total: 0, monthly: {} }
-        };
-        fs.writeFileSync(this.usageFilePath, JSON.stringify(defaultUsage, null, 2));
-        return defaultUsage;
-      }
-    } catch (error) {
-      console.error('Error loading API usage data:', error);
-      return {
-        twitter: { total: 0, monthly: {} },
+  // In the loadUsage method, change the default structure:
+loadUsage() {
+  try {
+    if (fs.existsSync(this.usageFilePath)) {
+      const data = fs.readFileSync(this.usageFilePath, 'utf8');
+      const parsed = JSON.parse(data);
+      
+      // Filter out Twitter and TikTok if they exist
+      const filteredData = {};
+      Object.keys(parsed).forEach(key => {
+        if (key !== 'twitter' && key !== 'tiktok') {
+          filteredData[key] = parsed[key];
+        }
+      });
+      
+      return filteredData;
+    } else {
+      // Initialize with default structure if file doesn't exist
+      const defaultUsage = {
         news: { total: 0, monthly: {} },
-        tiktok: { total: 0, monthly: {} }
+        gemini: { total: 0, monthly: {} }
       };
+      fs.writeFileSync(this.usageFilePath, JSON.stringify(defaultUsage, null, 2));
+      return defaultUsage;
     }
+  } catch (error) {
+    console.error('Error loading API usage data:', error);
+    return {
+      news: { total: 0, monthly: {} },
+      gemini: { total: 0, monthly: {} }
+    };
   }
+}
+
+getRemainingQuota(service) {
+  if (service === 'news') {
+    // News API: 100 requests per day
+    return 100;
+  } else if (service === 'gemini') {
+    return 1000;
+  }
+  return null;
+}
 
   saveUsage() {
     try {
@@ -102,24 +121,6 @@ class ApiUsageTracker {
     return this.usage;
   }
 
-  // Get remaining quota for services with known limits
-  getRemainingQuota(service) {
-    const monthlyUsage = this.getMonthlyUsage(service);
-    
-    switch(service) {
-      case 'tiktok':
-        // RapidAPI TikTok free tier has 100 requests/month
-        return 100 - monthlyUsage;
-      case 'news':
-        // News API free tier has 100 requests/day
-        return 3000 - monthlyUsage; // Roughly 100/day * 30 days
-      case 'gemini':
-          // Limit to 50 requests/month
-        return 50 - monthlyUsage;
-      default:
-        return null; // Unknown limit
-    }
-  }
 }
 
 

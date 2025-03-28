@@ -177,3 +177,66 @@
   .content-link:hover {
     text-decoration: underline;
   }
+
+  /* Add these styles to create a scrollable content container */
+.content-scrollable-container {
+  height: calc(100vh - 400px); /* Adjust height to fit the view */
+  min-height: 300px; /* Minimum height */
+  overflow-y: auto;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+/* Make sure the dashboard takes appropriate height */
+.dashboard {
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-sections {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-height: calc(100vh - 200px);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.section.recent-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.section.recent-content h3 {
+  margin-bottom: 15px;
+}
+
+/* Improve source badges based on source type */
+.source-badge.academic {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+}
+
+.source-badge.news {
+  background-color: #fff5f5;
+  color: #FF6B6B;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-scrollable-container {
+    height: 400px; /* Fixed height on mobile */
+  }
+
+  .dashboard-sections {
+    max-height: none;
+    grid-template-columns: 1fr;
+  }
+}

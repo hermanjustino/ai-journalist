@@ -21,6 +21,10 @@ body {
   overflow-x: hidden;
 }
 
+:root {
+  --nav-height: 60px;
+}
+
 main {
   padding: 20px;
   max-width: 1200px;
@@ -29,6 +33,7 @@ main {
   flex: 1;
   box-sizing: border-box;
   overflow-x: hidden;
+  height: calc(100vh - var(--nav-height));
 }
 
 .loading-container {

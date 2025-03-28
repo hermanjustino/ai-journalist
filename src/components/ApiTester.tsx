@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import twitterApi from '../services/api/twitterApi';
 import newsApi from '../services/api/newsApi';
-import tiktokApi from '../services/api/tiktokApi';
 import './ApiTester.css';
 
 const ApiTester: React.FC = () => {
   const [testStatus, setTestStatus] = useState<{
-    twitter?: { success: boolean; message: string };
     news?: { success: boolean; message: string };
-    tiktok?: { success: boolean; message: string };
     server?: { success: boolean; message: string };
+    gemini?: { success: boolean; message: string };
   }>({});
   
   const [loading, setLoading] = useState<{
-    twitter: boolean;
     news: boolean;
-    tiktok: boolean;
     server: boolean;
+    gemini: boolean;
   }>({
-    twitter: false,
     news: false,
-    tiktok: false,
-    server: false
+    server: false,
+    gemini: false
   });
 
   // Test server connection
@@ -47,41 +42,6 @@ const ApiTester: React.FC = () => {
       }));
     } finally {
       setLoading(prev => ({ ...prev, server: false }));
-    }
-  };
-
-  // Test Twitter API
-  const testTwitter = async () => {
-    setLoading(prev => ({ ...prev, twitter: true }));
-    try {
-      const results = await twitterApi.searchTweets(['test'], { limit: 1 });
-      if (results.length > 0) {
-        setTestStatus(prev => ({
-          ...prev,
-          twitter: {
-            success: true,
-            message: `Success! Retrieved ${results.length} tweets.`
-          }
-        }));
-      } else {
-        setTestStatus(prev => ({
-          ...prev,
-          twitter: {
-            success: true,
-            message: 'API connected but no tweets found. Try different keywords.'
-          }
-        }));
-      }
-    } catch (error) {
-      setTestStatus(prev => ({
-        ...prev,
-        twitter: {
-          success: false,
-          message: `Twitter API error: ${(error as Error).message}`
-        }
-      }));
-    } finally {
-      setLoading(prev => ({ ...prev, twitter: false }));
     }
   };
 
@@ -120,51 +80,46 @@ const ApiTester: React.FC = () => {
     }
   };
 
-  // Test TikTok API
-  const testTikTok = async () => {
-    setLoading(prev => ({ ...prev, tiktok: true }));
+  // Test Gemini AI
+  const testGemini = async () => {
+    setLoading(prev => ({ ...prev, gemini: true }));
     try {
-      const results = await tiktokApi.searchTikToks(['black culture'], { limit: 1 });
-      if (results.length > 0) {
-        const mockDataFlag = 'isMockData' in results[0];
-        
+      const response = await axios.post('http://localhost:3001/api/debug/test-gemini');
+      if (response.data.success) {
         setTestStatus(prev => ({
           ...prev,
-          tiktok: {
+          gemini: {
             success: true,
-            message: mockDataFlag 
-              ? 'Retrieved mock data (API may be unavailable or reached limit)'
-              : `Success! Retrieved ${results.length} TikTok videos.`
+            message: `Success! Generated text: "${response.data.text.substring(0, 50)}..."`
           }
         }));
       } else {
         setTestStatus(prev => ({
           ...prev,
-          tiktok: {
+          gemini: {
             success: false,
-            message: 'No TikTok content found.'
+            message: 'Received response but no text was generated.'
           }
         }));
       }
     } catch (error) {
       setTestStatus(prev => ({
         ...prev,
-        tiktok: {
+        gemini: {
           success: false,
-          message: `TikTok API error: ${(error as Error).message}`
+          message: `Gemini API error: ${(error as Error).message}`
         }
       }));
     } finally {
-      setLoading(prev => ({ ...prev, tiktok: false }));
+      setLoading(prev => ({ ...prev, gemini: false }));
     }
   };
 
   // Run all tests
   const testAll = async () => {
     await testServer();
-    await testTwitter();
     await testNews();
-    await testTikTok();
+    await testGemini();
   };
 
   return (
@@ -196,22 +151,6 @@ const ApiTester: React.FC = () => {
         </div>
 
         <div className="test-card">
-          <h3>Twitter API</h3>
-          <button 
-            onClick={testTwitter} 
-            disabled={loading.twitter}
-            className="test-button"
-          >
-            {loading.twitter ? 'Testing...' : 'Test Twitter API'}
-          </button>
-          {testStatus.twitter && (
-            <div className={`test-result ${testStatus.twitter.success ? 'success' : 'error'}`}>
-              {testStatus.twitter.message}
-            </div>
-          )}
-        </div>
-
-        <div className="test-card">
           <h3>News API</h3>
           <button 
             onClick={testNews} 
@@ -228,17 +167,17 @@ const ApiTester: React.FC = () => {
         </div>
 
         <div className="test-card">
-          <h3>TikTok API (RapidAPI)</h3>
+          <h3>Gemini API</h3>
           <button 
-            onClick={testTikTok} 
-            disabled={loading.tiktok}
+            onClick={testGemini} 
+            disabled={loading.gemini}
             className="test-button"
           >
-            {loading.tiktok ? 'Testing...' : 'Test TikTok API'}
+            {loading.gemini ? 'Testing...' : 'Test Gemini API'}
           </button>
-          {testStatus.tiktok && (
-            <div className={`test-result ${testStatus.tiktok.success ? 'success' : 'error'}`}>
-              {testStatus.tiktok.message}
+          {testStatus.gemini && (
+            <div className={`test-result ${testStatus.gemini.success ? 'success' : 'error'}`}>
+              {testStatus.gemini.message}
             </div>
           )}
         </div>

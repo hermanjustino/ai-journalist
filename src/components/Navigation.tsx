@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navigation.css';
 
 interface Props {
@@ -7,39 +7,58 @@ interface Props {
 }
 
 const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  
+  const handleViewChange = (view: string) => {
+    onViewChange(view);
+    setMenuOpen(false); // Close menu when a view is selected
+  };
+
   return (
     <nav className="main-navigation">
-      <div className="brand">
-        <h1>Cultural AI Journalist</h1>
+      <div className="nav-container">
+        <div className="brand">
+          <h1>Cultural AI Journalist</h1>
+        </div>
+        
+        {/* Hamburger menu for mobile */}
+        <div 
+          className={`hamburger-menu ${menuOpen ? 'active' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        
+        <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
+          <li className={currentView === 'aave-analysis' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('aave-analysis')}>
+              AAVE Analysis
+            </button>
+          </li>
+          <li className={currentView === 'dashboard' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('dashboard')}>
+              Dashboard
+            </button>
+          </li>
+          <li className={currentView === 'trends' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('trends')}>
+              Trend Discovery
+            </button>
+          </li>
+          <li className={currentView === 'articles' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('articles')}>
+              Article Generator
+            </button>
+          </li>
+          <li className={currentView === 'about' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('about')}>
+              About
+            </button>
+          </li>
+        </ul>
       </div>
-      <ul className="nav-links">
-        <li className={currentView === 'aave-analysis' ? 'active' : ''}>
-          <button onClick={() => onViewChange('aave-analysis')}>
-            AAVE Analysis
-          </button>
-        </li>
-        <li className={currentView === 'dashboard' ? 'active' : ''}>
-          <button onClick={() => onViewChange('dashboard')}>
-            Dashboard
-          </button>
-        </li>
-        {/* Removed Insights navigation item */}
-        <li className={currentView === 'trends' ? 'active' : ''}>
-          <button onClick={() => onViewChange('trends')}>
-            Trend Discovery
-          </button>
-        </li>
-        <li className={currentView === 'articles' ? 'active' : ''}>
-          <button onClick={() => onViewChange('articles')}>
-            Article Generator
-          </button>
-        </li>
-        <li className={currentView === 'about' ? 'active' : ''}>
-          <button onClick={() => onViewChange('about')}>
-            About
-          </button>
-        </li>
-      </ul>
     </nav>
   );
 };
