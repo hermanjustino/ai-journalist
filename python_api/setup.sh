@@ -20,6 +20,6 @@ while netstat -tuln | grep -q ":$PORT "; do
   PORT=$((PORT+1))
 done
 
-# Start the server on the available port
+# Start the server on the available port with more verbose logging
 echo "Starting Flask API server on port $PORT"
-gunicorn -w 1 scholar_service:app -b 0.0.0.0:$PORT
+PYTHONPATH=$(pwd) gunicorn -w 1 --log-level debug scholar_service:app -b 0.0.0.0:$PORT

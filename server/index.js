@@ -8,12 +8,17 @@ const path = require('path');
 const apiUsageTracker = require('./utils/apiUsageTracker');
 const trendsApi = require('./api/trendsApi');
 const contentGenerator = require('./content-generation/contentGenerator');
+const scholarlyService = require('./services/ScholarlyService');
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: ['http://localhost:3000', 'http://localhost:3001'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
 }));
+app.options('*', cors());
+
 app.use(express.json());
 
 // Mount trends API router
@@ -281,42 +286,41 @@ app.post('/api/debug/test-gemini', async (req, res) => {
 
 app.post('/api/scholar/search', async (req, res) => {
   try {
-    console.log('Received scholar search request:', req.body);
+    const keywords = req.body.keywords || [];
+    const limit = parseInt(req.body.limit) || 15;
     
-    // Forward the request to the Python API (trying ports 5001-5005)
-    let response;
-    let connected = false;
-    let error;
+    console.log('Received scholar search request:', { keywords, limit });
     
-    // Try ports 5001 through 5005
-    for (let port = 5001; port <= 5005; port++) {
-      try {
-        console.log(`Trying to connect to Python API on port ${port}...`);
-        response = await axios.post(`http://localhost:${port}/search`, req.body, {
-          timeout: 10000 // 10 second timeout
-        });
-        console.log(`Successfully connected to Python API on port ${port}`);
-        connected = true;
-        break;
-      } catch (err) {
-        error = err;
-        console.log(`Failed to connect on port ${port}: ${err.message}`);
-      }
-    }
+    const results = await scholarlyService.searchArticles(keywords, { limit });
     
-    if (!connected) {
-      throw new Error(`Could not connect to Python API on any port: ${error.message}`);
-    }
-    
-    console.log(`Got ${response.data.length} results from Python scholarly API`);
-    res.json(response.data);
+    console.log(`Retrieved ${results.length} scholarly results`);
+    res.json(results);
   } catch (error) {
-    console.error('Error with Python scholarly API:', error.message);
+    console.error('Error in scholar search endpoint:', error);
+    res.status(500).json({ 
+      error: 'Failed to search scholarly content',
+      message: error.message 
+    });
+  }
+});
+
+app.get('/api/scholar/search', async (req, res) => {
+  try {
+    const query = req.query.query || 'education';
+    const limit = parseInt(req.query.limit) || 15;
     
-    // Fall back to mock data on error
-    const mockData = generateMockScholarData();
-    console.log('Returning mock data');
-    res.json(mockData);
+    console.log(`Received GET scholar search request: query=${query}, limit=${limit}`);
+    
+    const results = await scholarlyService.searchArticles([query], { limit });
+    
+    console.log(`Retrieved ${results.length} scholarly results (GET)`);
+    res.json(results);
+  } catch (error) {
+    console.error('Error in GET scholar search endpoint:', error);
+    res.status(500).json({
+      error: 'Failed to search scholarly content',
+      message: error.message
+    });
   }
 });
 

@@ -1,76 +1,613 @@
-Hermans-MacBook-Pro:python_api hermanjustino$ ./setup.sh
+    Running setup.py install for stem ... done
+Successfully installed scholarly-1.4.0 stem-1.8.2
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ ./setup.sh
 Requirement already satisfied: flask==2.0.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (2.0.1)
-Requirement already satisfied: scholarly==1.7.11 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (1.7.11)
-Requirement already satisfied: gunicorn==20.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (20.1.0)
+Requirement already satisfied: flask-cors==3.0.10 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (3.0.10)
+Collecting scholarly==1.7.0
+  Using cached scholarly-1.7.0-py3-none-any.whl (37 kB)
+Requirement already satisfied: gunicorn==20.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (20.1.0)
+Requirement already satisfied: requests==2.26.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (2.26.0)
+Requirement already satisfied: beautifulsoup4==4.10.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (4.10.0)
+Requirement already satisfied: lxml==4.6.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (4.6.3)
+Requirement already satisfied: fake_useragent==1.1.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 8)) (1.1.1)
 Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: Werkzeug>=2.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (2.0.3)
 Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (3.1.6)
-Requirement already satisfied: Werkzeug>=2.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (3.1.3)
 Requirement already satisfied: click>=7.1.2 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (8.1.8)
-Requirement already satisfied: sphinx-rtd-theme in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (3.0.2)
-Requirement already satisfied: free-proxy in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (1.1.3)
-Requirement already satisfied: arrow in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (1.3.0)
-Requirement already satisfied: beautifulsoup4 in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (4.13.3)
-Requirement already satisfied: deprecated in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (1.2.18)
-Requirement already satisfied: python-dotenv in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (1.1.0)
-Requirement already satisfied: bibtexparser in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (1.4.3)
-Requirement already satisfied: httpx in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (0.28.1)
-Requirement already satisfied: requests[socks] in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (2.32.3)
-Requirement already satisfied: selenium in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (4.30.0)
-Requirement already satisfied: fake-useragent in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (2.1.0)
-Requirement already satisfied: typing-extensions in ./venv/lib/python3.9/site-packages (from scholarly==1.7.11->-r requirements.txt (line 2)) (4.13.0)
-Requirement already satisfied: setuptools>=3.0 in ./venv/lib/python3.9/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 3)) (49.2.1)
+Requirement already satisfied: Six in ./venv/lib/python3.9/site-packages (from flask-cors==3.0.10->-r requirements.txt (line 2)) (1.17.0)
+Requirement already satisfied: bibtexparser in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.4.3)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (4.13.0)
+Requirement already satisfied: arrow in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: free-proxy in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.1.3)
+Requirement already satisfied: sphinx-rtd-theme in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (3.0.2)
+Requirement already satisfied: selenium in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (4.30.0)
+Requirement already satisfied: python-dotenv in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: deprecated in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.18)
+Requirement already satisfied: setuptools>=3.0 in ./venv/lib/python3.9/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 4)) (49.2.1)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (1.26.20)
+Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (3.10)
+Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (2.0.12)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (2025.1.31)
+Requirement already satisfied: soupsieve>1.2 in ./venv/lib/python3.9/site-packages (from beautifulsoup4==4.10.0->-r requirements.txt (line 6)) (2.6)
+Requirement already satisfied: importlib-resources>=5.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from fake_useragent==1.1.1->-r requirements.txt (line 8)) (6.5.2)
 Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.9/site-packages (from Jinja2>=3.0->flask==2.0.1->-r requirements.txt (line 1)) (3.0.2)
-Requirement already satisfied: sphinx<9,>=6 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (7.4.7)
-Requirement already satisfied: sphinxcontrib-jquery<5,>=4 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (4.1)
-Requirement already satisfied: docutils<0.22,>0.18 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (0.21.2)
-Requirement already satisfied: lxml in ./venv/lib/python3.9/site-packages (from free-proxy->scholarly==1.7.11->-r requirements.txt (line 2)) (5.3.1)
-Requirement already satisfied: types-python-dateutil>=2.8.10 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.11->-r requirements.txt (line 2)) (2.9.0.20241206)
-Requirement already satisfied: python-dateutil>=2.7.0 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.11->-r requirements.txt (line 2)) (2.9.0.post0)
-Requirement already satisfied: soupsieve>1.2 in ./venv/lib/python3.9/site-packages (from beautifulsoup4->scholarly==1.7.11->-r requirements.txt (line 2)) (2.6)
-Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.9/site-packages (from deprecated->scholarly==1.7.11->-r requirements.txt (line 2)) (1.17.2)
-Requirement already satisfied: pyparsing>=2.0.3 in ./venv/lib/python3.9/site-packages (from bibtexparser->scholarly==1.7.11->-r requirements.txt (line 2)) (3.2.3)
-Requirement already satisfied: httpcore==1.* in ./venv/lib/python3.9/site-packages (from httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (1.0.7)
-Requirement already satisfied: idna in ./venv/lib/python3.9/site-packages (from httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (3.10)
-Requirement already satisfied: certifi in ./venv/lib/python3.9/site-packages (from httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (2025.1.31)
-Requirement already satisfied: anyio in ./venv/lib/python3.9/site-packages (from httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (4.9.0)
-Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.7.11->-r requirements.txt (line 2)) (3.4.1)
-Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.7.11->-r requirements.txt (line 2)) (2.3.0)
-Requirement already satisfied: PySocks!=1.5.7,>=1.5.6; extra == "socks" in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.7.11->-r requirements.txt (line 2)) (1.7.1)
-Requirement already satisfied: trio~=0.17 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (0.29.0)
-Requirement already satisfied: trio-websocket~=0.9 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (0.12.2)
-Requirement already satisfied: websocket-client~=1.8 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (1.8.0)
-Requirement already satisfied: importlib-resources>=6.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from fake-useragent->scholarly==1.7.11->-r requirements.txt (line 2)) (6.5.2)
-Requirement already satisfied: packaging>=23.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (24.2)
-Requirement already satisfied: importlib-metadata>=6.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (8.6.1)
-Requirement already satisfied: sphinxcontrib-jsmath in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (1.0.1)
-Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.1.0)
-Requirement already satisfied: tomli>=2; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.2.1)
-Requirement already satisfied: babel>=2.13 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.17.0)
-Requirement already satisfied: sphinxcontrib-devhelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.0.0)
-Requirement already satisfied: Pygments>=2.17 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.19.1)
-Requirement already satisfied: alabaster~=0.7.14 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (0.7.16)
-Requirement already satisfied: snowballstemmer>=2.2 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.2.0)
-Requirement already satisfied: imagesize>=1.3 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (1.4.1)
-Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.9 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.0.0)
-Requirement already satisfied: sphinxcontrib-applehelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.0.0)
-Requirement already satisfied: sphinxcontrib-qthelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.11->-r requirements.txt (line 2)) (2.0.0)
-Requirement already satisfied: six>=1.5 in ./venv/lib/python3.9/site-packages (from python-dateutil>=2.7.0->arrow->scholarly==1.7.11->-r requirements.txt (line 2)) (1.17.0)
-Requirement already satisfied: h11<0.15,>=0.13 in ./venv/lib/python3.9/site-packages (from httpcore==1.*->httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (0.14.0)
-Requirement already satisfied: sniffio>=1.1 in ./venv/lib/python3.9/site-packages (from anyio->httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (1.3.1)
-Requirement already satisfied: exceptiongroup>=1.0.2; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from anyio->httpx->scholarly==1.7.11->-r requirements.txt (line 2)) (1.2.2)
-Requirement already satisfied: sortedcontainers in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (2.4.0)
-Requirement already satisfied: attrs>=23.2.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (25.3.0)
-Requirement already satisfied: outcome in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (1.3.0.post0)
-Requirement already satisfied: wsproto>=0.14 in ./venv/lib/python3.9/site-packages (from trio-websocket~=0.9->selenium->scholarly==1.7.11->-r requirements.txt (line 2)) (1.2.0)
-Requirement already satisfied: zipp>=3.1.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from importlib-resources>=6.0; python_version < "3.10"->fake-useragent->scholarly==1.7.11->-r requirements.txt (line 2)) (3.21.0)
+Requirement already satisfied: pyparsing>=2.0.3 in ./venv/lib/python3.9/site-packages (from bibtexparser->scholarly==1.7.0->-r requirements.txt (line 3)) (3.2.3)
+Requirement already satisfied: types-python-dateutil>=2.8.10 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.0->-r requirements.txt (line 3)) (2.9.0.20241206)
+Requirement already satisfied: python-dateutil>=2.7.0 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.0->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: sphinx<9,>=6 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (7.4.7)
+Requirement already satisfied: sphinxcontrib-jquery<5,>=4 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (4.1)
+Requirement already satisfied: docutils<0.22,>0.18 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (0.21.2)
+Requirement already satisfied: trio~=0.17 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.29.0)
+Requirement already satisfied: websocket-client~=1.8 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.8.0)
+Requirement already satisfied: trio-websocket~=0.9 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.12.2)
+Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.9/site-packages (from deprecated->scholarly==1.7.0->-r requirements.txt (line 3)) (1.17.2)
+Requirement already satisfied: zipp>=3.1.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from importlib-resources>=5.0; python_version < "3.10"->fake_useragent==1.1.1->-r requirements.txt (line 8)) (3.21.0)
+Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.1.0)
+Requirement already satisfied: sphinxcontrib-devhelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: babel>=2.13 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.17.0)
+Requirement already satisfied: alabaster~=0.7.14 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (0.7.16)
+Requirement already satisfied: tomli>=2; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.2.1)
+Requirement already satisfied: sphinxcontrib-qthelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: snowballstemmer>=2.2 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.2.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.9 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: Pygments>=2.17 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.19.1)
+Requirement already satisfied: sphinxcontrib-applehelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: importlib-metadata>=6.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (8.6.1)
+Requirement already satisfied: packaging>=23.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (24.2)
+Requirement already satisfied: imagesize>=1.3 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (1.4.1)
+Requirement already satisfied: sphinxcontrib-jsmath in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (1.0.1)
+Requirement already satisfied: attrs>=23.2.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (25.3.0)
+Requirement already satisfied: sortedcontainers in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (2.4.0)
+Requirement already satisfied: exceptiongroup; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.2)
+Requirement already satisfied: outcome in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.0.post0)
+Requirement already satisfied: sniffio>=1.3.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.1)
+Requirement already satisfied: wsproto>=0.14 in ./venv/lib/python3.9/site-packages (from trio-websocket~=0.9->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.0)
+Requirement already satisfied: h11<1,>=0.9.0 in ./venv/lib/python3.9/site-packages (from wsproto>=0.14->trio-websocket~=0.9->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.14.0)
+Installing collected packages: scholarly
+  Attempting uninstall: scholarly
+    Found existing installation: scholarly 1.4.0
+    Uninstalling scholarly-1.4.0:
+      Successfully uninstalled scholarly-1.4.0
+Successfully installed scholarly-1.7.0
 WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
 You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
 Starting Flask API server on port 5001
-[2025-03-27 15:48:44 -0400] [84772] [INFO] Starting gunicorn 20.1.0
-[2025-03-27 15:48:44 -0400] [84772] [INFO] Listening at: http://0.0.0.0:5001 (84772)
-[2025-03-27 15:48:44 -0400] [84772] [INFO] Using worker: sync
-[2025-03-27 15:48:44 -0400] [84775] [INFO] Booting worker with pid: 84775
-[2025-03-27 15:48:44 -0400] [84775] [ERROR] Exception in worker process
+[2025-03-28 15:23:09 -0400] [3661] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: scholar_service:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff55a846790>
+  on_reload: <function OnReload.on_reload at 0x7ff55a8468b0>
+  when_ready: <function WhenReady.when_ready at 0x7ff55a8469d0>
+  pre_fork: <function Prefork.pre_fork at 0x7ff55a846af0>
+  post_fork: <function Postfork.post_fork at 0x7ff55a846c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff55a846d30>
+  worker_int: <function WorkerInt.worker_int at 0x7ff55a846e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff55a846f70>
+  pre_exec: <function PreExec.pre_exec at 0x7ff55a85a0d0>
+  pre_request: <function PreRequest.pre_request at 0x7ff55a85a1f0>
+  post_request: <function PostRequest.post_request at 0x7ff55a85a280>
+  child_exit: <function ChildExit.child_exit at 0x7ff55a85a3a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff55a85a4c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff55a85a5e0>
+  on_exit: <function OnExit.on_exit at 0x7ff55a85a700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2025-03-28 15:23:09 -0400] [3661] [INFO] Starting gunicorn 20.1.0
+[2025-03-28 15:23:09 -0400] [3661] [DEBUG] Arbiter booted
+[2025-03-28 15:23:09 -0400] [3661] [INFO] Listening at: http://0.0.0.0:5001 (3661)
+[2025-03-28 15:23:09 -0400] [3661] [INFO] Using worker: sync
+[2025-03-28 15:23:09 -0400] [3662] [INFO] Booting worker with pid: 3662
+[2025-03-28 15:23:09 -0400] [3661] [DEBUG] 1 workers
+[2025-03-28 15:23:24 -0400] [3662] [DEBUG] GET /
+[2025-03-28 15:23:27 -0400] [3662] [DEBUG] POST /search
+2025-03-28 15:23:27,936 - scholar_service - INFO - Searching for query: education OR aave, limit: 3
+2025-03-28 15:23:27,940 - scholar_service - ERROR - Error in search_articles: get_proxy_list() missing 1 required positional argument: 'repeat'
+^C[2025-03-28 15:23:45 -0400] [3661] [INFO] Handling signal: int
+[2025-03-28 15:23:46 -0400] [3662] [INFO] Worker exiting (pid: 3662)
+[2025-03-28 15:23:46 -0400] [3661] [INFO] Shutting down: Master
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ pkill -f gunicorn
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ ./setup.sh
+Requirement already satisfied: flask==2.0.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (2.0.1)
+Requirement already satisfied: flask-cors==3.0.10 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (3.0.10)
+Requirement already satisfied: scholarly==1.7.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (1.7.0)
+Requirement already satisfied: gunicorn==20.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (20.1.0)
+Requirement already satisfied: requests==2.26.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (2.26.0)
+Requirement already satisfied: beautifulsoup4==4.10.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (4.10.0)
+Requirement already satisfied: lxml==4.6.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (4.6.3)
+Requirement already satisfied: fake_useragent==1.1.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 8)) (1.1.1)
+Requirement already satisfied: itsdangerous>=2.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (2.2.0)
+Requirement already satisfied: Werkzeug>=2.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (2.0.3)
+Requirement already satisfied: Jinja2>=3.0 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (3.1.6)
+Requirement already satisfied: click>=7.1.2 in ./venv/lib/python3.9/site-packages (from flask==2.0.1->-r requirements.txt (line 1)) (8.1.8)
+Requirement already satisfied: Six in ./venv/lib/python3.9/site-packages (from flask-cors==3.0.10->-r requirements.txt (line 2)) (1.17.0)
+Requirement already satisfied: free-proxy in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.1.3)
+Requirement already satisfied: sphinx-rtd-theme in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (3.0.2)
+Requirement already satisfied: selenium in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (4.30.0)
+Requirement already satisfied: arrow in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (4.13.0)
+Requirement already satisfied: python-dotenv in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.1.0)
+Requirement already satisfied: bibtexparser in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.4.3)
+Requirement already satisfied: deprecated in ./venv/lib/python3.9/site-packages (from scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.18)
+Requirement already satisfied: setuptools>=3.0 in ./venv/lib/python3.9/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 4)) (49.2.1)
+Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (2.0.12)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (1.26.20)
+Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (3.10)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.9/site-packages (from requests==2.26.0->-r requirements.txt (line 5)) (2025.1.31)
+Requirement already satisfied: soupsieve>1.2 in ./venv/lib/python3.9/site-packages (from beautifulsoup4==4.10.0->-r requirements.txt (line 6)) (2.6)
+Requirement already satisfied: importlib-resources>=5.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from fake_useragent==1.1.1->-r requirements.txt (line 8)) (6.5.2)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.9/site-packages (from Jinja2>=3.0->flask==2.0.1->-r requirements.txt (line 1)) (3.0.2)
+Requirement already satisfied: sphinxcontrib-jquery<5,>=4 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (4.1)
+Requirement already satisfied: docutils<0.22,>0.18 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (0.21.2)
+Requirement already satisfied: sphinx<9,>=6 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (7.4.7)
+Requirement already satisfied: websocket-client~=1.8 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.8.0)
+Requirement already satisfied: trio~=0.17 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.29.0)
+Requirement already satisfied: trio-websocket~=0.9 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.12.2)
+Requirement already satisfied: types-python-dateutil>=2.8.10 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.0->-r requirements.txt (line 3)) (2.9.0.20241206)
+Requirement already satisfied: python-dateutil>=2.7.0 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.7.0->-r requirements.txt (line 3)) (2.9.0.post0)
+Requirement already satisfied: pyparsing>=2.0.3 in ./venv/lib/python3.9/site-packages (from bibtexparser->scholarly==1.7.0->-r requirements.txt (line 3)) (3.2.3)
+Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.9/site-packages (from deprecated->scholarly==1.7.0->-r requirements.txt (line 3)) (1.17.2)
+Requirement already satisfied: zipp>=3.1.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from importlib-resources>=5.0; python_version < "3.10"->fake_useragent==1.1.1->-r requirements.txt (line 8)) (3.21.0)
+Requirement already satisfied: sphinxcontrib-applehelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: imagesize>=1.3 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (1.4.1)
+Requirement already satisfied: sphinxcontrib-jsmath in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (1.0.1)
+Requirement already satisfied: sphinxcontrib-devhelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.9 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: alabaster~=0.7.14 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (0.7.16)
+Requirement already satisfied: tomli>=2; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.2.1)
+Requirement already satisfied: sphinxcontrib-qthelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.1.0)
+Requirement already satisfied: importlib-metadata>=6.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (8.6.1)
+Requirement already satisfied: Pygments>=2.17 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.19.1)
+Requirement already satisfied: babel>=2.13 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.17.0)
+Requirement already satisfied: packaging>=23.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (24.2)
+Requirement already satisfied: snowballstemmer>=2.2 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.7.0->-r requirements.txt (line 3)) (2.2.0)
+Requirement already satisfied: sniffio>=1.3.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.1)
+Requirement already satisfied: sortedcontainers in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (2.4.0)
+Requirement already satisfied: outcome in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.3.0.post0)
+Requirement already satisfied: attrs>=23.2.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (25.3.0)
+Requirement already satisfied: exceptiongroup; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.2)
+Requirement already satisfied: wsproto>=0.14 in ./venv/lib/python3.9/site-packages (from trio-websocket~=0.9->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (1.2.0)
+Requirement already satisfied: h11<1,>=0.9.0 in ./venv/lib/python3.9/site-packages (from wsproto>=0.14->trio-websocket~=0.9->selenium->scholarly==1.7.0->-r requirements.txt (line 3)) (0.14.0)
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
+Starting Flask API server on port 5001
+[2025-03-28 15:23:57 -0400] [3740] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: scholar_service:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f7a60946790>
+  on_reload: <function OnReload.on_reload at 0x7f7a609468b0>
+  when_ready: <function WhenReady.when_ready at 0x7f7a609469d0>
+  pre_fork: <function Prefork.pre_fork at 0x7f7a60946af0>
+  post_fork: <function Postfork.post_fork at 0x7f7a60946c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f7a60946d30>
+  worker_int: <function WorkerInt.worker_int at 0x7f7a60946e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f7a60946f70>
+  pre_exec: <function PreExec.pre_exec at 0x7f7a6095a0d0>
+  pre_request: <function PreRequest.pre_request at 0x7f7a6095a1f0>
+  post_request: <function PostRequest.post_request at 0x7f7a6095a280>
+  child_exit: <function ChildExit.child_exit at 0x7f7a6095a3a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f7a6095a4c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f7a6095a5e0>
+  on_exit: <function OnExit.on_exit at 0x7f7a6095a700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2025-03-28 15:23:57 -0400] [3740] [INFO] Starting gunicorn 20.1.0
+[2025-03-28 15:23:57 -0400] [3740] [DEBUG] Arbiter booted
+[2025-03-28 15:23:57 -0400] [3740] [INFO] Listening at: http://0.0.0.0:5001 (3740)
+[2025-03-28 15:23:57 -0400] [3740] [INFO] Using worker: sync
+[2025-03-28 15:23:57 -0400] [3740] [DEBUG] 1 workers
+[2025-03-28 15:23:57 -0400] [3741] [INFO] Booting worker with pid: 3741
+[2025-03-28 15:24:08 -0400] [3741] [DEBUG] POST /search
+2025-03-28 15:24:08,221 - scholar_service - INFO - Searching for query: education OR aave, limit: 3
+2025-03-28 15:24:08,225 - scholar_service - ERROR - Error in search_articles: get_proxy_list() missing 1 required positional argument: 'repeat'
+^C[2025-03-28 15:28:44 -0400] [3740] [INFO] Handling signal: int
+[2025-03-28 15:28:44 -0400] [3741] [INFO] Worker exiting (pid: 3741)
+[2025-03-28 15:28:44 -0400] [3740] [INFO] Shutting down: Master
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ chmod +x fix_scholarly.sh
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ ./fix_scholarly.sh
+Found existing installation: scholarly 1.7.0
+Uninstalling scholarly-1.7.0:
+  Successfully uninstalled scholarly-1.7.0
+Found existing installation: free-proxy 1.1.3
+Uninstalling free-proxy-1.1.3:
+  Successfully uninstalled free-proxy-1.1.3
+Collecting scholarly==1.6.0
+  Downloading scholarly-1.6.0-py3-none-any.whl (38 kB)
+Requirement already satisfied: requests[socks] in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (2.26.0)
+Requirement already satisfied: fake-useragent in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (1.1.1)
+Processing /Users/hermanjustino/Library/Caches/pip/wheels/89/0b/74/9d833f50c24a92280d704c287c73af4d45a0135c45900bc4cd/free_proxy-1.1.3-py3-none-any.whl
+Requirement already satisfied: arrow in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (1.3.0)
+Requirement already satisfied: beautifulsoup4 in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (4.10.0)
+Requirement already satisfied: python-dotenv in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (1.1.0)
+Requirement already satisfied: typing-extensions in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (4.13.0)
+Requirement already satisfied: deprecated in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (1.2.18)
+Requirement already satisfied: selenium in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (4.30.0)
+Requirement already satisfied: sphinx-rtd-theme in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (3.0.2)
+Requirement already satisfied: bibtexparser in ./venv/lib/python3.9/site-packages (from scholarly==1.6.0) (1.4.3)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.6.0) (1.26.20)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.6.0) (2025.1.31)
+Requirement already satisfied: charset-normalizer~=2.0.0; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.6.0) (2.0.12)
+Requirement already satisfied: idna<4,>=2.5; python_version >= "3" in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.6.0) (3.10)
+Requirement already satisfied: PySocks!=1.5.7,>=1.5.6; extra == "socks" in ./venv/lib/python3.9/site-packages (from requests[socks]->scholarly==1.6.0) (1.7.1)
+Requirement already satisfied: importlib-resources>=5.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from fake-useragent->scholarly==1.6.0) (6.5.2)
+Requirement already satisfied: lxml in ./venv/lib/python3.9/site-packages (from free-proxy->scholarly==1.6.0) (4.6.3)
+Requirement already satisfied: python-dateutil>=2.7.0 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.6.0) (2.9.0.post0)
+Requirement already satisfied: types-python-dateutil>=2.8.10 in ./venv/lib/python3.9/site-packages (from arrow->scholarly==1.6.0) (2.9.0.20241206)
+Requirement already satisfied: soupsieve>1.2 in ./venv/lib/python3.9/site-packages (from beautifulsoup4->scholarly==1.6.0) (2.6)
+Requirement already satisfied: wrapt<2,>=1.10 in ./venv/lib/python3.9/site-packages (from deprecated->scholarly==1.6.0) (1.17.2)
+Requirement already satisfied: websocket-client~=1.8 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.6.0) (1.8.0)
+Requirement already satisfied: trio~=0.17 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.6.0) (0.29.0)
+Requirement already satisfied: trio-websocket~=0.9 in ./venv/lib/python3.9/site-packages (from selenium->scholarly==1.6.0) (0.12.2)
+Requirement already satisfied: docutils<0.22,>0.18 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.6.0) (0.21.2)
+Requirement already satisfied: sphinxcontrib-jquery<5,>=4 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.6.0) (4.1)
+Requirement already satisfied: sphinx<9,>=6 in ./venv/lib/python3.9/site-packages (from sphinx-rtd-theme->scholarly==1.6.0) (7.4.7)
+Requirement already satisfied: pyparsing>=2.0.3 in ./venv/lib/python3.9/site-packages (from bibtexparser->scholarly==1.6.0) (3.2.3)
+Requirement already satisfied: zipp>=3.1.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from importlib-resources>=5.0; python_version < "3.10"->fake-useragent->scholarly==1.6.0) (3.21.0)
+Requirement already satisfied: six>=1.5 in ./venv/lib/python3.9/site-packages (from python-dateutil>=2.7.0->arrow->scholarly==1.6.0) (1.17.0)
+Requirement already satisfied: attrs>=23.2.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.6.0) (25.3.0)
+Requirement already satisfied: sniffio>=1.3.0 in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.6.0) (1.3.1)
+Requirement already satisfied: outcome in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.6.0) (1.3.0.post0)
+Requirement already satisfied: exceptiongroup; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.6.0) (1.2.2)
+Requirement already satisfied: sortedcontainers in ./venv/lib/python3.9/site-packages (from trio~=0.17->selenium->scholarly==1.6.0) (2.4.0)
+Requirement already satisfied: wsproto>=0.14 in ./venv/lib/python3.9/site-packages (from trio-websocket~=0.9->selenium->scholarly==1.6.0) (1.2.0)
+Requirement already satisfied: sphinxcontrib-devhelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.0.0)
+Requirement already satisfied: Jinja2>=3.1 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (3.1.6)
+Requirement already satisfied: sphinxcontrib-qthelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.0.0)
+Requirement already satisfied: packaging>=23.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (24.2)
+Requirement already satisfied: importlib-metadata>=6.0; python_version < "3.10" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (8.6.1)
+Requirement already satisfied: imagesize>=1.3 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (1.4.1)
+Requirement already satisfied: snowballstemmer>=2.2 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.2.0)
+Requirement already satisfied: sphinxcontrib-applehelp in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.0.0)
+Requirement already satisfied: tomli>=2; python_version < "3.11" in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.2.1)
+Requirement already satisfied: sphinxcontrib-htmlhelp>=2.0.0 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.1.0)
+Requirement already satisfied: alabaster~=0.7.14 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (0.7.16)
+Requirement already satisfied: babel>=2.13 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.17.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml>=1.1.9 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.0.0)
+Requirement already satisfied: Pygments>=2.17 in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (2.19.1)
+Requirement already satisfied: sphinxcontrib-jsmath in ./venv/lib/python3.9/site-packages (from sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (1.0.1)
+Requirement already satisfied: h11<1,>=0.9.0 in ./venv/lib/python3.9/site-packages (from wsproto>=0.14->trio-websocket~=0.9->selenium->scholarly==1.6.0) (0.14.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.9/site-packages (from Jinja2>=3.1->sphinx<9,>=6->sphinx-rtd-theme->scholarly==1.6.0) (3.0.2)
+Installing collected packages: free-proxy, scholarly
+Successfully installed free-proxy-1.1.3 scholarly-1.6.0
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
+Collecting fake-useragent==0.1.11
+  Downloading fake-useragent-0.1.11.tar.gz (13 kB)
+Using legacy 'setup.py install' for fake-useragent, since package 'wheel' is not installed.
+Installing collected packages: fake-useragent
+  Attempting uninstall: fake-useragent
+    Found existing installation: fake-useragent 1.1.1
+    Uninstalling fake-useragent-1.1.1:
+      Successfully uninstalled fake-useragent-1.1.1
+    Running setup.py install for fake-useragent ... done
+Successfully installed fake-useragent-0.1.11
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ ./setup.sh
+Requirement already satisfied: alabaster==0.7.16 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 1)) (0.7.16)
+Requirement already satisfied: anyio==4.9.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 2)) (4.9.0)
+Requirement already satisfied: arrow==1.3.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 3)) (1.3.0)
+Requirement already satisfied: attrs==25.3.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 4)) (25.3.0)
+Requirement already satisfied: babel==2.17.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 5)) (2.17.0)
+Requirement already satisfied: beautifulsoup4==4.10.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 6)) (4.10.0)
+Requirement already satisfied: bibtexparser==1.4.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 7)) (1.4.3)
+Requirement already satisfied: certifi==2025.1.31 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 8)) (2025.1.31)
+Requirement already satisfied: charset-normalizer==2.0.12 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 9)) (2.0.12)
+Requirement already satisfied: click==8.1.8 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 10)) (8.1.8)
+Requirement already satisfied: Deprecated==1.2.18 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 11)) (1.2.18)
+Requirement already satisfied: docutils==0.21.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 12)) (0.21.2)
+Requirement already satisfied: exceptiongroup==1.2.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 13)) (1.2.2)
+Requirement already satisfied: fake-useragent==0.1.11 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 14)) (0.1.11)
+Requirement already satisfied: Flask==2.0.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 15)) (2.0.1)
+Requirement already satisfied: Flask-Cors==3.0.10 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 16)) (3.0.10)
+Requirement already satisfied: free-proxy==1.1.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 17)) (1.1.3)
+Requirement already satisfied: gunicorn==20.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 18)) (20.1.0)
+Requirement already satisfied: h11==0.14.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 19)) (0.14.0)
+Requirement already satisfied: httpcore==1.0.7 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 20)) (1.0.7)
+Requirement already satisfied: httpx==0.28.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 21)) (0.28.1)
+Requirement already satisfied: idna==3.10 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 22)) (3.10)
+Requirement already satisfied: imagesize==1.4.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 23)) (1.4.1)
+Requirement already satisfied: importlib-metadata==8.6.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 24)) (8.6.1)
+Requirement already satisfied: importlib-resources==6.5.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 25)) (6.5.2)
+Requirement already satisfied: itsdangerous==2.2.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 26)) (2.2.0)
+Requirement already satisfied: jinja2==3.1.6 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 27)) (3.1.6)
+Requirement already satisfied: lxml==4.6.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 28)) (4.6.3)
+Requirement already satisfied: markupsafe==3.0.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 29)) (3.0.2)
+Requirement already satisfied: outcome==1.3.0.post0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 30)) (1.3.0.post0)
+Requirement already satisfied: packaging==24.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 31)) (24.2)
+Requirement already satisfied: pygments==2.19.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 32)) (2.19.1)
+Requirement already satisfied: pyparsing==3.2.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 33)) (3.2.3)
+Requirement already satisfied: PySocks==1.7.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 34)) (1.7.1)
+Requirement already satisfied: python-dateutil==2.9.0.post0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 35)) (2.9.0.post0)
+Requirement already satisfied: python-dotenv==1.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 36)) (1.1.0)
+Requirement already satisfied: requests==2.26.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 37)) (2.26.0)
+Requirement already satisfied: scholarly==1.6.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 38)) (1.6.0)
+Requirement already satisfied: selenium==4.30.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 39)) (4.30.0)
+Requirement already satisfied: six==1.17.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 40)) (1.17.0)
+Requirement already satisfied: sniffio==1.3.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 41)) (1.3.1)
+Requirement already satisfied: snowballstemmer==2.2.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 42)) (2.2.0)
+Requirement already satisfied: sortedcontainers==2.4.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 43)) (2.4.0)
+Requirement already satisfied: soupsieve==2.6 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 44)) (2.6)
+Requirement already satisfied: sphinx==7.4.7 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 45)) (7.4.7)
+Requirement already satisfied: sphinx-rtd-theme==3.0.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 46)) (3.0.2)
+Requirement already satisfied: sphinxcontrib-applehelp==2.0.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 47)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-devhelp==2.0.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 48)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-htmlhelp==2.1.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 49)) (2.1.0)
+Requirement already satisfied: sphinxcontrib-jquery==4.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 50)) (4.1)
+Requirement already satisfied: sphinxcontrib-jsmath==1.0.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 51)) (1.0.1)
+Requirement already satisfied: sphinxcontrib-qthelp==2.0.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 52)) (2.0.0)
+Requirement already satisfied: sphinxcontrib-serializinghtml==2.0.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 53)) (2.0.0)
+Requirement already satisfied: stem==1.8.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 54)) (1.8.2)
+Requirement already satisfied: tomli==2.2.1 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 55)) (2.2.1)
+Requirement already satisfied: trio==0.29.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 56)) (0.29.0)
+Requirement already satisfied: trio-websocket==0.12.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 57)) (0.12.2)
+Requirement already satisfied: types-python-dateutil==2.9.0.20241206 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 58)) (2.9.0.20241206)
+Requirement already satisfied: typing-extensions==4.13.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 59)) (4.13.0)
+Requirement already satisfied: urllib3==1.26.20 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 60)) (1.26.20)
+Requirement already satisfied: websocket-client==1.8.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 61)) (1.8.0)
+Requirement already satisfied: Werkzeug==2.0.3 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 62)) (2.0.3)
+Requirement already satisfied: wrapt==1.17.2 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 63)) (1.17.2)
+Requirement already satisfied: wsproto==1.2.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 64)) (1.2.0)
+Requirement already satisfied: zipp==3.21.0 in ./venv/lib/python3.9/site-packages (from -r requirements.txt (line 65)) (3.21.0)
+Requirement already satisfied: setuptools>=3.0 in ./venv/lib/python3.9/site-packages (from gunicorn==20.1.0->-r requirements.txt (line 18)) (49.2.1)
+WARNING: You are using pip version 20.2.3; however, version 25.0.1 is available.
+You should consider upgrading via the '/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/bin/python3 -m pip install --upgrade pip' command.
+Starting Flask API server on port 5001
+[2025-03-28 15:29:07 -0400] [3950] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['0.0.0.0:5001']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 501
+  group: 20
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: None
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: -
+  loglevel: debug
+  capture_output: False
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: unix:///var/run/syslog
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: scholar_service:app
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fbc37f23790>
+  on_reload: <function OnReload.on_reload at 0x7fbc37f238b0>
+  when_ready: <function WhenReady.when_ready at 0x7fbc37f239d0>
+  pre_fork: <function Prefork.pre_fork at 0x7fbc37f23af0>
+  post_fork: <function Postfork.post_fork at 0x7fbc37f23c10>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fbc37f23d30>
+  worker_int: <function WorkerInt.worker_int at 0x7fbc37f23e50>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fbc37f23f70>
+  pre_exec: <function PreExec.pre_exec at 0x7fbc37f370d0>
+  pre_request: <function PreRequest.pre_request at 0x7fbc37f371f0>
+  post_request: <function PostRequest.post_request at 0x7fbc37f37280>
+  child_exit: <function ChildExit.child_exit at 0x7fbc37f373a0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fbc37f374c0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fbc37f375e0>
+  on_exit: <function OnExit.on_exit at 0x7fbc37f37700>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2025-03-28 15:29:07 -0400] [3950] [INFO] Starting gunicorn 20.1.0
+[2025-03-28 15:29:07 -0400] [3950] [DEBUG] Arbiter booted
+[2025-03-28 15:29:07 -0400] [3950] [INFO] Listening at: http://0.0.0.0:5001 (3950)
+[2025-03-28 15:29:07 -0400] [3950] [INFO] Using worker: sync
+[2025-03-28 15:29:07 -0400] [3951] [INFO] Booting worker with pid: 3951
+[2025-03-28 15:29:07 -0400] [3950] [DEBUG] 1 workers
+[2025-03-28 15:29:09 -0400] [3951] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 99, in get_browsers
+    html = html.split('<table class="w3-table-all notranslate">')[1]
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 64, in get
+    with contextlib.closing(urlopen(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 523, in open
+    response = meth(req, response)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 632, in http_response
+    response = self.parent.error(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 561, in error
+    return self._call_chain(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 503: Service Unavailable
+
+During handling of the above exception, another exception occurred:
+
 Traceback (most recent call last):
   File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
     worker.init_process()
@@ -94,18 +631,41 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
   File "<frozen importlib._bootstrap_external>", line 790, in exec_module
   File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
-  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/scholar_service.py", line 1, in <module>
-    from flask import Flask, request, jsonify
-  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/flask/__init__.py", line 7, in <module>
-    from .app import Flask as Flask
-  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/flask/app.py", line 28, in <module>
-    from . import cli
-  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/flask/cli.py", line 18, in <module>
-    from .helpers import get_debug_flag
-  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/flask/helpers.py", line 16, in <module>
-    from werkzeug.urls import url_quote
-ImportError: cannot import name 'url_quote' from 'werkzeug.urls' (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/werkzeug/urls.py)
-[2025-03-27 15:48:44 -0400] [84775] [INFO] Worker exiting (pid: 84775)
-[2025-03-27 15:48:45 -0400] [84772] [INFO] Shutting down: Master
-[2025-03-27 15:48:45 -0400] [84772] [INFO] Reason: Worker failed to boot.
-Hermans-MacBook-Pro:python_api hermanjustino$ 
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/scholar_service.py", line 4, in <module>
+    from scholarly import scholarly, ProxyGenerator
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/__init__.py", line 4, in <module>
+    scholarly = _Scholarly()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_scholarly.py", line 30, in __init__
+    self.__nav = Navigator()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_navigator.py", line 26, in __call__
+    cls._instances[cls] = super(Singleton, cls).__call__(*args,
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_navigator.py", line 42, in __init__
+    self.pm1 = ProxyGenerator()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_proxy_generator.py", line 53, in __init__
+    self._new_session()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_proxy_generator.py", line 442, in _new_session
+    'User-Agent': UserAgent().random,
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/fake.py", line 69, in __init__
+    self.load()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/fake.py", line 75, in load
+    self.data = load_cached(
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 250, in load_cached
+    update(path, use_cache_server=use_cache_server, verify_ssl=verify_ssl)
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 245, in update
+    write(path, load(use_cache_server=use_cache_server, verify_ssl=verify_ssl))
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 187, in load
+    ret = json.loads(get(
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+[2025-03-28 15:29:09 -0400] [3951] [INFO] Worker exiting (pid: 3951)
+Exception ignored in: <function ProxyGenerator.__del__ at 0x7fbc3a9d3ca0>
+Traceback (most recent call last):
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_proxy_generator.py", line 59, in __del__
+    self._close_session()
+  File "/Users/hermanjustino/Documents/projects/bhm/ai-journalist/python_api/venv/lib/python3.9/site-packages/scholarly/_proxy_generator.py", line 460, in _close_session
+    if self._webdriver:
+AttributeError: 'ProxyGenerator' object has no attribute '_webdriver'
+[2025-03-28 15:29:09 -0400] [3950] [INFO] Shutting down: Master
+[2025-03-28 15:29:09 -0400] [3950] [INFO] Reason: Worker failed to boot.
+(venv) Hermans-MacBook-Pro:python_api hermanjustino$ 

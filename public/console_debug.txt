@@ -1,54 +1,85 @@
-contentFetcher.ts:11 Fetching from Twitter with options: {}
-contentFetcher.ts:11 Fetching from Twitter with options: {}
-contentFetcher.ts:43 Fetching from news with options: {}
-contentFetcher.ts:43 Fetching from news with options: {}
-App.tsx:60 Loaded 23 content items
-App.tsx:60 Loaded 23 content items
-automatedCollection.ts:61 Running automated collection for 2025-03-18
-automatedCollection.ts:61 Running automated collection for 2025-03-18
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-19
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-19
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-20
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-20
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-21
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-21
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-22
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-22
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-23
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-23
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:82 Collected 20 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-24
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-24
-automatedCollection.ts:82 Collected 19 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-25
-automatedCollection.ts:82 Collected 19 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:61 Running automated collection for 2025-03-25
-automatedCollection.ts:82 Collected 19 news items
-automatedCollection.ts:82 Collected 19 news items
-automatedCollection.ts:86 Collected 2 academic items
-automatedCollection.ts:86 Collected 2 academic items
+[Log] Fetching from news with options: – {} (bundle.js, line 55245)
+[Log] Fetching from news with options: – {} (bundle.js, line 55245)
+[Log] Retrieved news content: – 20 – "items" (bundle.js, line 48707)
+[Log] Fetching from Google Scholar with options: – {} (bundle.js, line 55267)
+[Log] Retrieved news content: – 20 – "items" (bundle.js, line 48707)
+[Log] Fetching from Google Scholar with options: – {} (bundle.js, line 55267)
+[Log] Retrieved scholar content: – 15 – "items" (bundle.js, line 48714)
+[Log] Got 20 news and 15 scholar items (bundle.js, line 48724)
+[Log] Total items loaded: 35 (bundle.js, line 48738)
+[Log] Retrieved scholar content: – 15 – "items" (bundle.js, line 48714)
+[Log] Got 20 news and 15 scholar items (bundle.js, line 48724)
+[Log] Total items loaded: 35 (bundle.js, line 48738)
+[Log] Starting data collection for AAVE analysis... (bundle.js, line 49106)
+[Log] Collecting weekly data from 2025-03-18T00:00:00.000Z to 2025-03-25T00:00:00.000Z (bundle.js, line 54952)
+[Log] Running automated collection for 2025-03-18 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Starting data collection for AAVE analysis... (bundle.js, line 49106)
+[Log] Collecting weekly data from 2025-03-18T00:00:00.000Z to 2025-03-25T00:00:00.000Z (bundle.js, line 54952)
+[Log] Running automated collection for 2025-03-18 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Loading timeout reached, showing data anyway (bundle.js, line 49148)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-19 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-20 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-21 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-22 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-23 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-24 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-19 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-25 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-20 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Received results: – [Object, Object, Object, …] (8) (bundle.js, line 49108)
+[Object, Object, Object, Object, Object, Object, Object, Object]Array (8)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-21 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-22 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-23 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-24 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Running automated collection for 2025-03-25 (bundle.js, line 55005)
+[Log] Fetching scholarly content... (bundle.js, line 55008)
+[Log] Collected 15 academic items (bundle.js, line 55025)
+[Log] Injected AAVE term into item: Education OR learning OR academic OR teaching OR aave in African American Vernacular English (bundle.js, line 55109, x4)
+[Log] Received results: – [Object, Object, Object, …] (8) (bundle.js, line 49108)
+[Object, Object, Object, Object, Object, Object, Object, Object]Array (8)

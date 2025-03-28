@@ -1,982 +1,142 @@
-      adapter: [Array],
-      transformRequest: [Array],
-      transformResponse: [Array],
-      timeout: 0,
-      xsrfCookieName: 'XSRF-TOKEN',
-      xsrfHeaderName: 'X-XSRF-TOKEN',
-      maxContentLength: -1,
-      maxBodyLength: -1,
-      env: [Object],
-      validateStatus: [Function: validateStatus],
-      headers: [Object [AxiosHeaders]],
-      method: 'get',
-      url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-      params: [Object],
-      allowAbsoluteUrls: true,
-      data: undefined
-    },
-    request: <ref *1> ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 7,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: true,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: false,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: 0,
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [TLSSocket],
-      _header: 'GET /search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025 HTTP/1.1\r\n' +
-        'Accept: application/json, text/plain, */*\r\n' +
-        'x-rapidapi-host: google-scholar1.p.rapidapi.com\r\n' +
-        'User-Agent: axios/1.8.3\r\n' +
-        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
-        'Host: google-scholar1.p.rapidapi.com\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'GET',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      _ended: true,
-      res: [IncomingMessage],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: true,
-      host: 'google-scholar1.p.rapidapi.com',
-      protocol: 'https:',
-      _redirectable: [Writable],
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null
-    },
-    data: { message: 'Too many requests' }
-  },
-  status: 429
+Received scholar search request: {
+  keywords: [
+    'education',
+    'learning',
+    'academic',
+    'teaching',
+    'african american vernacular english',
+    'aave'
+  ],
+  limit: 15
 }
-  express:router dispatching POST /api/news/search +27ms
-  express:router query  : /api/news/search +1ms
-  express:router expressInit  : /api/news/search +0ms
-  express:router corsMiddleware  : /api/news/search +0ms
-  express:router jsonParser  : /api/news/search +0ms
-  body-parser:json content-type "application/json" +0ms
-  body-parser:json content-encoding "identity" +0ms
-  body-parser:json read body +0ms
-  body-parser:json parse body +0ms
-  body-parser:json parse json +0ms
-  follow-redirects options {
-  maxRedirects: 21,
-  maxBodyLength: Infinity,
-  protocol: 'https:',
-  path: '/v2/everything?q=education+OR+learning+OR+academic+OR+school+OR+teaching&apiKey=762fd307f72143bb8d3f09d2fa3b33cf&language=en&pageSize=20&from=2025-03-25&to=2025-03-26',
-  method: 'GET',
-  headers: [Object: null prototype] {
-    Accept: 'application/json, text/plain, */*',
-    'User-Agent': 'axios/1.8.3',
-    'Accept-Encoding': 'gzip, compress, deflate, br'
-  },
-  agents: { http: undefined, https: undefined },
-  auth: undefined,
-  family: undefined,
-  beforeRedirect: [Function: dispatchBeforeRedirect],
-  beforeRedirects: { proxy: [Function: beforeRedirect] },
-  hostname: 'newsapi.org',
-  port: '',
-  agent: undefined,
-  nativeProtocols: {
-    'http:': {
-      _connectionListener: [Function: connectionListener],
-      METHODS: [Array],
-      STATUS_CODES: [Object],
-      Agent: [Function],
-      ClientRequest: [Function: ClientRequest],
-      IncomingMessage: [Function: IncomingMessage],
-      OutgoingMessage: [Function: OutgoingMessage],
-      Server: [Function: Server],
-      ServerResponse: [Function: ServerResponse],
-      createServer: [Function: createServer],
-      validateHeaderName: [Function: __node_internal_],
-      validateHeaderValue: [Function: __node_internal_],
-      get: [Function: get],
-      request: [Function: request],
-      setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
-      maxHeaderSize: [Getter],
-      globalAgent: [Getter/Setter]
-    },
-    'https:': {
-      Agent: [Function: Agent],
-      globalAgent: [Agent],
-      Server: [Function: Server],
-      createServer: [Function: createServer],
-      get: [Function: get],
-      request: [Function: request]
-    }
-  }
-} +1ms
-  express:router dispatching POST /api/scholar/search +39ms
-  express:router query  : /api/scholar/search +0ms
-  express:router expressInit  : /api/scholar/search +0ms
-  express:router corsMiddleware  : /api/scholar/search +1ms
-  express:router jsonParser  : /api/scholar/search +0ms
-  body-parser:json content-type "application/json" +0ms
-  body-parser:json content-encoding "identity" +0ms
-  body-parser:json read body +0ms
-  body-parser:json parse body +0ms
-  body-parser:json parse json +0ms
-  follow-redirects options {
-  maxRedirects: 21,
-  maxBodyLength: Infinity,
-  protocol: 'https:',
-  path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-  method: 'GET',
-  headers: [Object: null prototype] {
-    Accept: 'application/json, text/plain, */*',
-    'x-rapidapi-host': 'google-scholar1.p.rapidapi.com',
-    'User-Agent': 'axios/1.8.3',
-    'Accept-Encoding': 'gzip, compress, deflate, br'
-  },
-  agents: { http: undefined, https: undefined },
-  auth: undefined,
-  family: undefined,
-  beforeRedirect: [Function: dispatchBeforeRedirect],
-  beforeRedirects: { proxy: [Function: beforeRedirect] },
-  hostname: 'google-scholar1.p.rapidapi.com',
-  port: '',
-  agent: undefined,
-  nativeProtocols: {
-    'http:': {
-      _connectionListener: [Function: connectionListener],
-      METHODS: [Array],
-      STATUS_CODES: [Object],
-      Agent: [Function],
-      ClientRequest: [Function: ClientRequest],
-      IncomingMessage: [Function: IncomingMessage],
-      OutgoingMessage: [Function: OutgoingMessage],
-      Server: [Function: Server],
-      ServerResponse: [Function: ServerResponse],
-      createServer: [Function: createServer],
-      validateHeaderName: [Function: __node_internal_],
-      validateHeaderValue: [Function: __node_internal_],
-      get: [Function: get],
-      request: [Function: request],
-      setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
-      maxHeaderSize: [Getter],
-      globalAgent: [Getter/Setter]
-    },
-    'https:': {
-      Agent: [Function: Agent],
-      globalAgent: [Agent],
-      Server: [Function: Server],
-      createServer: [Function: createServer],
-      get: [Function: get],
-      request: [Function: request]
-    }
-  }
-} +0ms
-  express:router dispatching POST /api/scholar/search +26ms
-  express:router query  : /api/scholar/search +0ms
-  express:router expressInit  : /api/scholar/search +0ms
-  express:router corsMiddleware  : /api/scholar/search +0ms
-  express:router jsonParser  : /api/scholar/search +0ms
-  body-parser:json content-type "application/json" +1ms
-  body-parser:json content-encoding "identity" +0ms
-  body-parser:json read body +0ms
-  body-parser:json parse body +0ms
-  body-parser:json parse json +0ms
-  follow-redirects options {
-  maxRedirects: 21,
-  maxBodyLength: Infinity,
-  protocol: 'https:',
-  path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-  method: 'GET',
-  headers: [Object: null prototype] {
-    Accept: 'application/json, text/plain, */*',
-    'x-rapidapi-host': 'google-scholar1.p.rapidapi.com',
-    'User-Agent': 'axios/1.8.3',
-    'Accept-Encoding': 'gzip, compress, deflate, br'
-  },
-  agents: { http: undefined, https: undefined },
-  auth: undefined,
-  family: undefined,
-  beforeRedirect: [Function: dispatchBeforeRedirect],
-  beforeRedirects: { proxy: [Function: beforeRedirect] },
-  hostname: 'google-scholar1.p.rapidapi.com',
-  port: '',
-  agent: undefined,
-  nativeProtocols: {
-    'http:': {
-      _connectionListener: [Function: connectionListener],
-      METHODS: [Array],
-      STATUS_CODES: [Object],
-      Agent: [Function],
-      ClientRequest: [Function: ClientRequest],
-      IncomingMessage: [Function: IncomingMessage],
-      OutgoingMessage: [Function: OutgoingMessage],
-      Server: [Function: Server],
-      ServerResponse: [Function: ServerResponse],
-      createServer: [Function: createServer],
-      validateHeaderName: [Function: __node_internal_],
-      validateHeaderValue: [Function: __node_internal_],
-      get: [Function: get],
-      request: [Function: request],
-      setMaxIdleHTTPParsers: [Function: setMaxIdleHTTPParsers],
-      maxHeaderSize: [Getter],
-      globalAgent: [Getter/Setter]
-    },
-    'https:': {
-      Agent: [Function: Agent],
-      globalAgent: [Agent],
-      Server: [Function: Server],
-      createServer: [Function: createServer],
-      get: [Function: get],
-      request: [Function: request]
-    }
-  }
-} +0ms
-Google Scholar API error: AxiosError: Request failed with status code 429
-    at settle (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:2031:12)
-    at IncomingMessage.handleStreamEnd (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:3148:11)
-    at IncomingMessage.emit (node:events:526:35)
-    at endReadableNT (node:internal/streams/readable:1376:12)
-    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
-    at Axios.request (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:4258:41)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async /Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/index.js:562:24 {
-  code: 'ERR_BAD_REQUEST',
-  config: {
-    transitional: {
-      silentJSONParsing: true,
-      forcedJSONParsing: true,
-      clarifyTimeoutError: false
-    },
-    adapter: [ 'xhr', 'http', 'fetch' ],
-    transformRequest: [ [Function: transformRequest] ],
-    transformResponse: [ [Function: transformResponse] ],
-    timeout: 0,
-    xsrfCookieName: 'XSRF-TOKEN',
-    xsrfHeaderName: 'X-XSRF-TOKEN',
-    maxContentLength: -1,
-    maxBodyLength: -1,
-    env: { FormData: [Function [FormData]], Blob: [class Blob] },
-    validateStatus: [Function: validateStatus],
-    headers: Object [AxiosHeaders] {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': undefined,
-      'x-rapidapi-key': undefined,
-      'x-rapidapi-host': 'google-scholar1.p.rapidapi.com',
-      'User-Agent': 'axios/1.8.3',
-      'Accept-Encoding': 'gzip, compress, deflate, br'
-    },
-    method: 'get',
-    url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-    params: {
-      query: 'education OR learning OR academic OR school OR teaching',
-      max_results: '20',
-      patents: 'false',
-      citations: 'true',
-      year_low: '2025',
-      year_high: '2025'
-    },
-    allowAbsoluteUrls: true,
-    data: undefined
-  },
-  request: <ref *1> ClientRequest {
-    _events: [Object: null prototype] {
-      abort: [Function (anonymous)],
-      aborted: [Function (anonymous)],
-      connect: [Function (anonymous)],
-      error: [Function (anonymous)],
-      socket: [Function (anonymous)],
-      timeout: [Function (anonymous)],
-      finish: [Function: requestOnFinish]
-    },
-    _eventsCount: 7,
-    _maxListeners: undefined,
-    outputData: [],
-    outputSize: 0,
-    writable: true,
-    destroyed: true,
-    _last: true,
-    chunkedEncoding: false,
-    shouldKeepAlive: true,
-    maxRequestsOnConnectionReached: false,
-    _defaultKeepAlive: true,
-    useChunkedEncodingByDefault: false,
-    sendDate: false,
-    _removedConnection: false,
-    _removedContLen: false,
-    _removedTE: false,
-    strictContentLength: false,
-    _contentLength: 0,
-    _hasBody: true,
-    _trailer: '',
-    finished: true,
-    _headerSent: true,
-    _closed: true,
-    socket: TLSSocket {
-      _tlsOptions: [Object],
-      _secureEstablished: true,
-      _securePending: false,
-      _newSessionPending: false,
-      _controlReleased: true,
-      secureConnecting: false,
-      _SNICallback: null,
-      servername: 'google-scholar1.p.rapidapi.com',
-      alpnProtocol: false,
-      authorized: true,
-      authorizationError: null,
-      encrypted: true,
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: 'google-scholar1.p.rapidapi.com',
-      _closeAfterHandlingError: false,
-      _readableState: [ReadableState],
-      _maxListeners: undefined,
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: undefined,
-      _server: null,
-      ssl: [TLSWrap],
-      _requestCert: true,
-      _rejectUnauthorized: true,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      autoSelectFamilyAttemptedAddresses: [Array],
-      [Symbol(alpncallback)]: null,
-      [Symbol(res)]: [TLSWrap],
-      [Symbol(verified)]: true,
-      [Symbol(pendingSession)]: null,
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TLSWrap],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 12470396,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 4054,
-        [Symbol(triggerId)]: 4052
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: false,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(connect-options)]: [Object]
-    },
-    _header: 'GET /search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025 HTTP/1.1\r\n' +
-      'Accept: application/json, text/plain, */*\r\n' +
-      'x-rapidapi-host: google-scholar1.p.rapidapi.com\r\n' +
-      'User-Agent: axios/1.8.3\r\n' +
-      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
-      'Host: google-scholar1.p.rapidapi.com\r\n' +
-      'Connection: keep-alive\r\n' +
-      '\r\n',
-    _keepAliveTimeout: 0,
-    _onPendingData: [Function: nop],
-    agent: Agent {
-      _events: [Object: null prototype],
-      _eventsCount: 2,
-      _maxListeners: undefined,
-      defaultPort: 443,
-      protocol: 'https:',
-      options: [Object: null prototype],
-      requests: [Object: null prototype] {},
-      sockets: [Object: null prototype],
-      freeSockets: [Object: null prototype],
-      keepAliveMsecs: 1000,
-      keepAlive: true,
-      maxSockets: Infinity,
-      maxFreeSockets: 256,
-      scheduling: 'lifo',
-      maxTotalSockets: Infinity,
-      totalSocketCount: 8,
-      maxCachedSessions: 100,
-      _sessionCache: [Object],
-      [Symbol(kCapture)]: false
-    },
-    socketPath: undefined,
-    method: 'GET',
-    maxHeaderSize: undefined,
-    insecureHTTPParser: undefined,
-    joinDuplicateHeaders: undefined,
-    path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-    _ended: true,
-    res: IncomingMessage {
-      _readableState: [ReadableState],
-      _events: [Object: null prototype],
-      _eventsCount: 4,
-      _maxListeners: undefined,
-      socket: null,
-      httpVersionMajor: 1,
-      httpVersionMinor: 1,
-      httpVersion: '1.1',
-      complete: true,
-      rawHeaders: [Array],
-      rawTrailers: [],
-      joinDuplicateHeaders: undefined,
-      aborted: false,
-      upgrade: false,
-      url: '',
-      method: null,
-      statusCode: 429,
-      statusMessage: 'Too Many Requests',
-      client: [TLSSocket],
-      _consuming: true,
-      _dumped: false,
-      req: [Circular *1],
-      responseUrl: 'https://google-scholar1.p.rapidapi.com/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      redirects: [],
-      [Symbol(kCapture)]: false,
-      [Symbol(kHeaders)]: [Object],
-      [Symbol(kHeadersCount)]: 18,
-      [Symbol(kTrailers)]: null,
-      [Symbol(kTrailersCount)]: 0
-    },
-    aborted: false,
-    timeoutCb: null,
-    upgradeOrConnect: false,
-    parser: null,
-    maxHeadersCount: null,
-    reusedSocket: true,
-    host: 'google-scholar1.p.rapidapi.com',
-    protocol: 'https:',
-    _redirectable: Writable {
-      _writableState: [WritableState],
-      _events: [Object: null prototype],
-      _eventsCount: 3,
-      _maxListeners: undefined,
-      _options: [Object],
-      _ended: true,
-      _ending: true,
-      _redirectCount: 0,
-      _redirects: [],
-      _requestBodyLength: 0,
-      _requestBodyBuffers: [],
-      _onNativeResponse: [Function (anonymous)],
-      _currentRequest: [Circular *1],
-      _currentUrl: 'https://google-scholar1.p.rapidapi.com/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      [Symbol(kCapture)]: false
-    },
-    [Symbol(kCapture)]: false,
-    [Symbol(kBytesWritten)]: 0,
-    [Symbol(kNeedDrain)]: false,
-    [Symbol(corked)]: 0,
-    [Symbol(kOutHeaders)]: [Object: null prototype] {
-      accept: [Array],
-      'x-rapidapi-host': [Array],
-      'user-agent': [Array],
-      'accept-encoding': [Array],
-      host: [Array]
-    },
-    [Symbol(errored)]: null,
-    [Symbol(kHighWaterMark)]: 16384,
-    [Symbol(kRejectNonStandardBodyWrites)]: false,
-    [Symbol(kUniqueHeaders)]: null
-  },
-  response: {
-    status: 429,
-    statusText: 'Too Many Requests',
-    headers: Object [AxiosHeaders] {
-      date: 'Wed, 26 Mar 2025 18:36:39 GMT',
-      'content-type': 'application/json',
-      'transfer-encoding': 'chunked',
-      connection: 'keep-alive',
-      'x-rapidapi-version': '1.2.8',
-      'x-rapidapi-region': 'AWS - us-east-1',
-      'x-rapidapi-request-id': '4f0bf1a612e7a15dc199ab1f4439fff1c649924ce2bfcd57a023f604290f9229',
-      'x-rapidapi-proxy-response': 'true',
-      server: 'RapidAPI-1.2.8'
-    },
-    config: {
-      transitional: [Object],
-      adapter: [Array],
-      transformRequest: [Array],
-      transformResponse: [Array],
-      timeout: 0,
-      xsrfCookieName: 'XSRF-TOKEN',
-      xsrfHeaderName: 'X-XSRF-TOKEN',
-      maxContentLength: -1,
-      maxBodyLength: -1,
-      env: [Object],
-      validateStatus: [Function: validateStatus],
-      headers: [Object [AxiosHeaders]],
-      method: 'get',
-      url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-      params: [Object],
-      allowAbsoluteUrls: true,
-      data: undefined
-    },
-    request: <ref *1> ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 7,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: true,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: false,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: 0,
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [TLSSocket],
-      _header: 'GET /search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025 HTTP/1.1\r\n' +
-        'Accept: application/json, text/plain, */*\r\n' +
-        'x-rapidapi-host: google-scholar1.p.rapidapi.com\r\n' +
-        'User-Agent: axios/1.8.3\r\n' +
-        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
-        'Host: google-scholar1.p.rapidapi.com\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'GET',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      _ended: true,
-      res: [IncomingMessage],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: true,
-      host: 'google-scholar1.p.rapidapi.com',
-      protocol: 'https:',
-      _redirectable: [Writable],
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null
-    },
-    data: { message: 'Too many requests' }
-  },
-  status: 429
+Searching for scholarly articles: "education OR learning OR academic OR teaching OR african american vernacular english OR aave" (limit: 15)
+Received scholar search request: {
+  keywords: [
+    'education',
+    'learning',
+    'academic',
+    'teaching',
+    'african american vernacular english',
+    'aave'
+  ],
+  limit: 15
 }
-Google Scholar API error: AxiosError: Request failed with status code 429
-    at settle (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:2031:12)
-    at IncomingMessage.handleStreamEnd (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:3148:11)
-    at IncomingMessage.emit (node:events:526:35)
-    at endReadableNT (node:internal/streams/readable:1376:12)
-    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
-    at Axios.request (/Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/node_modules/axios/dist/node/axios.cjs:4258:41)
-    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
-    at async /Users/hermanjustino/Documents/projects/bhm/ai-journalist/server/index.js:562:24 {
-  code: 'ERR_BAD_REQUEST',
-  config: {
-    transitional: {
-      silentJSONParsing: true,
-      forcedJSONParsing: true,
-      clarifyTimeoutError: false
-    },
-    adapter: [ 'xhr', 'http', 'fetch' ],
-    transformRequest: [ [Function: transformRequest] ],
-    transformResponse: [ [Function: transformResponse] ],
-    timeout: 0,
-    xsrfCookieName: 'XSRF-TOKEN',
-    xsrfHeaderName: 'X-XSRF-TOKEN',
-    maxContentLength: -1,
-    maxBodyLength: -1,
-    env: { FormData: [Function [FormData]], Blob: [class Blob] },
-    validateStatus: [Function: validateStatus],
-    headers: Object [AxiosHeaders] {
-      Accept: 'application/json, text/plain, */*',
-      'Content-Type': undefined,
-      'x-rapidapi-key': undefined,
-      'x-rapidapi-host': 'google-scholar1.p.rapidapi.com',
-      'User-Agent': 'axios/1.8.3',
-      'Accept-Encoding': 'gzip, compress, deflate, br'
-    },
-    method: 'get',
-    url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-    params: {
-      query: 'education OR learning OR academic OR school OR teaching',
-      max_results: '20',
-      patents: 'false',
-      citations: 'true',
-      year_low: '2025',
-      year_high: '2025'
-    },
-    allowAbsoluteUrls: true,
-    data: undefined
-  },
-  request: <ref *1> ClientRequest {
-    _events: [Object: null prototype] {
-      abort: [Function (anonymous)],
-      aborted: [Function (anonymous)],
-      connect: [Function (anonymous)],
-      error: [Function (anonymous)],
-      socket: [Function (anonymous)],
-      timeout: [Function (anonymous)],
-      finish: [Function: requestOnFinish]
-    },
-    _eventsCount: 7,
-    _maxListeners: undefined,
-    outputData: [],
-    outputSize: 0,
-    writable: true,
-    destroyed: true,
-    _last: true,
-    chunkedEncoding: false,
-    shouldKeepAlive: true,
-    maxRequestsOnConnectionReached: false,
-    _defaultKeepAlive: true,
-    useChunkedEncodingByDefault: false,
-    sendDate: false,
-    _removedConnection: false,
-    _removedContLen: false,
-    _removedTE: false,
-    strictContentLength: false,
-    _contentLength: 0,
-    _hasBody: true,
-    _trailer: '',
-    finished: true,
-    _headerSent: true,
-    _closed: true,
-    socket: TLSSocket {
-      _tlsOptions: [Object],
-      _secureEstablished: true,
-      _securePending: false,
-      _newSessionPending: false,
-      _controlReleased: true,
-      secureConnecting: false,
-      _SNICallback: null,
-      servername: 'google-scholar1.p.rapidapi.com',
-      alpnProtocol: false,
-      authorized: true,
-      authorizationError: null,
-      encrypted: true,
-      _events: [Object: null prototype],
-      _eventsCount: 9,
-      connecting: false,
-      _hadError: false,
-      _parent: null,
-      _host: 'google-scholar1.p.rapidapi.com',
-      _closeAfterHandlingError: false,
-      _readableState: [ReadableState],
-      _maxListeners: undefined,
-      _writableState: [WritableState],
-      allowHalfOpen: false,
-      _sockname: null,
-      _pendingData: null,
-      _pendingEncoding: '',
-      server: undefined,
-      _server: null,
-      ssl: [TLSWrap],
-      _requestCert: true,
-      _rejectUnauthorized: true,
-      timeout: 5000,
-      parser: null,
-      _httpMessage: null,
-      autoSelectFamilyAttemptedAddresses: [Array],
-      [Symbol(alpncallback)]: null,
-      [Symbol(res)]: [TLSWrap],
-      [Symbol(verified)]: true,
-      [Symbol(pendingSession)]: null,
-      [Symbol(async_id_symbol)]: -1,
-      [Symbol(kHandle)]: [TLSWrap],
-      [Symbol(lastWriteQueueSize)]: 0,
-      [Symbol(timeout)]: Timeout {
-        _idleTimeout: 5000,
-        _idlePrev: [TimersList],
-        _idleNext: [Timeout],
-        _idleStart: 12470419,
-        _onTimeout: [Function: bound ],
-        _timerArgs: undefined,
-        _repeat: null,
-        _destroyed: false,
-        [Symbol(refed)]: false,
-        [Symbol(kHasPrimitive)]: false,
-        [Symbol(asyncId)]: 4066,
-        [Symbol(triggerId)]: 4064
-      },
-      [Symbol(kBuffer)]: null,
-      [Symbol(kBufferCb)]: null,
-      [Symbol(kBufferGen)]: null,
-      [Symbol(kCapture)]: false,
-      [Symbol(kSetNoDelay)]: false,
-      [Symbol(kSetKeepAlive)]: true,
-      [Symbol(kSetKeepAliveInitialDelay)]: 1,
-      [Symbol(kBytesRead)]: 0,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(connect-options)]: [Object]
-    },
-    _header: 'GET /search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025 HTTP/1.1\r\n' +
-      'Accept: application/json, text/plain, */*\r\n' +
-      'x-rapidapi-host: google-scholar1.p.rapidapi.com\r\n' +
-      'User-Agent: axios/1.8.3\r\n' +
-      'Accept-Encoding: gzip, compress, deflate, br\r\n' +
-      'Host: google-scholar1.p.rapidapi.com\r\n' +
-      'Connection: keep-alive\r\n' +
-      '\r\n',
-    _keepAliveTimeout: 0,
-    _onPendingData: [Function: nop],
-    agent: Agent {
-      _events: [Object: null prototype],
-      _eventsCount: 2,
-      _maxListeners: undefined,
-      defaultPort: 443,
-      protocol: 'https:',
-      options: [Object: null prototype],
-      requests: [Object: null prototype] {},
-      sockets: [Object: null prototype] {},
-      freeSockets: [Object: null prototype],
-      keepAliveMsecs: 1000,
-      keepAlive: true,
-      maxSockets: Infinity,
-      maxFreeSockets: 256,
-      scheduling: 'lifo',
-      maxTotalSockets: Infinity,
-      totalSocketCount: 8,
-      maxCachedSessions: 100,
-      _sessionCache: [Object],
-      [Symbol(kCapture)]: false
-    },
-    socketPath: undefined,
-    method: 'GET',
-    maxHeaderSize: undefined,
-    insecureHTTPParser: undefined,
-    joinDuplicateHeaders: undefined,
-    path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-    _ended: true,
-    res: IncomingMessage {
-      _readableState: [ReadableState],
-      _events: [Object: null prototype],
-      _eventsCount: 4,
-      _maxListeners: undefined,
-      socket: null,
-      httpVersionMajor: 1,
-      httpVersionMinor: 1,
-      httpVersion: '1.1',
-      complete: true,
-      rawHeaders: [Array],
-      rawTrailers: [],
-      joinDuplicateHeaders: undefined,
-      aborted: false,
-      upgrade: false,
-      url: '',
-      method: null,
-      statusCode: 429,
-      statusMessage: 'Too Many Requests',
-      client: [TLSSocket],
-      _consuming: true,
-      _dumped: false,
-      req: [Circular *1],
-      responseUrl: 'https://google-scholar1.p.rapidapi.com/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      redirects: [],
-      [Symbol(kCapture)]: false,
-      [Symbol(kHeaders)]: [Object],
-      [Symbol(kHeadersCount)]: 18,
-      [Symbol(kTrailers)]: null,
-      [Symbol(kTrailersCount)]: 0
-    },
-    aborted: false,
-    timeoutCb: null,
-    upgradeOrConnect: false,
-    parser: null,
-    maxHeadersCount: null,
-    reusedSocket: true,
-    host: 'google-scholar1.p.rapidapi.com',
-    protocol: 'https:',
-    _redirectable: Writable {
-      _writableState: [WritableState],
-      _events: [Object: null prototype],
-      _eventsCount: 3,
-      _maxListeners: undefined,
-      _options: [Object],
-      _ended: true,
-      _ending: true,
-      _redirectCount: 0,
-      _redirects: [],
-      _requestBodyLength: 0,
-      _requestBodyBuffers: [],
-      _onNativeResponse: [Function (anonymous)],
-      _currentRequest: [Circular *1],
-      _currentUrl: 'https://google-scholar1.p.rapidapi.com/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      [Symbol(kCapture)]: false
-    },
-    [Symbol(kCapture)]: false,
-    [Symbol(kBytesWritten)]: 0,
-    [Symbol(kNeedDrain)]: false,
-    [Symbol(corked)]: 0,
-    [Symbol(kOutHeaders)]: [Object: null prototype] {
-      accept: [Array],
-      'x-rapidapi-host': [Array],
-      'user-agent': [Array],
-      'accept-encoding': [Array],
-      host: [Array]
-    },
-    [Symbol(errored)]: null,
-    [Symbol(kHighWaterMark)]: 16384,
-    [Symbol(kRejectNonStandardBodyWrites)]: false,
-    [Symbol(kUniqueHeaders)]: null
-  },
-  response: {
-    status: 429,
-    statusText: 'Too Many Requests',
-    headers: Object [AxiosHeaders] {
-      date: 'Wed, 26 Mar 2025 18:36:39 GMT',
-      'content-type': 'application/json',
-      'transfer-encoding': 'chunked',
-      connection: 'keep-alive',
-      'x-rapidapi-version': '1.2.8',
-      'x-rapidapi-region': 'AWS - us-east-1',
-      'x-rapidapi-request-id': '52de36b299365fc5c8d1db0e646f184b19314f9ffedf80a3e057aee916a95b8b',
-      'x-rapidapi-proxy-response': 'true',
-      server: 'RapidAPI-1.2.8'
-    },
-    config: {
-      transitional: [Object],
-      adapter: [Array],
-      transformRequest: [Array],
-      transformResponse: [Array],
-      timeout: 0,
-      xsrfCookieName: 'XSRF-TOKEN',
-      xsrfHeaderName: 'X-XSRF-TOKEN',
-      maxContentLength: -1,
-      maxBodyLength: -1,
-      env: [Object],
-      validateStatus: [Function: validateStatus],
-      headers: [Object [AxiosHeaders]],
-      method: 'get',
-      url: 'https://google-scholar1.p.rapidapi.com/search_pubs',
-      params: [Object],
-      allowAbsoluteUrls: true,
-      data: undefined
-    },
-    request: <ref *1> ClientRequest {
-      _events: [Object: null prototype],
-      _eventsCount: 7,
-      _maxListeners: undefined,
-      outputData: [],
-      outputSize: 0,
-      writable: true,
-      destroyed: true,
-      _last: true,
-      chunkedEncoding: false,
-      shouldKeepAlive: true,
-      maxRequestsOnConnectionReached: false,
-      _defaultKeepAlive: true,
-      useChunkedEncodingByDefault: false,
-      sendDate: false,
-      _removedConnection: false,
-      _removedContLen: false,
-      _removedTE: false,
-      strictContentLength: false,
-      _contentLength: 0,
-      _hasBody: true,
-      _trailer: '',
-      finished: true,
-      _headerSent: true,
-      _closed: true,
-      socket: [TLSSocket],
-      _header: 'GET /search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025 HTTP/1.1\r\n' +
-        'Accept: application/json, text/plain, */*\r\n' +
-        'x-rapidapi-host: google-scholar1.p.rapidapi.com\r\n' +
-        'User-Agent: axios/1.8.3\r\n' +
-        'Accept-Encoding: gzip, compress, deflate, br\r\n' +
-        'Host: google-scholar1.p.rapidapi.com\r\n' +
-        'Connection: keep-alive\r\n' +
-        '\r\n',
-      _keepAliveTimeout: 0,
-      _onPendingData: [Function: nop],
-      agent: [Agent],
-      socketPath: undefined,
-      method: 'GET',
-      maxHeaderSize: undefined,
-      insecureHTTPParser: undefined,
-      joinDuplicateHeaders: undefined,
-      path: '/search_pubs?query=education+OR+learning+OR+academic+OR+school+OR+teaching&max_results=20&patents=false&citations=true&year_low=2025&year_high=2025',
-      _ended: true,
-      res: [IncomingMessage],
-      aborted: false,
-      timeoutCb: null,
-      upgradeOrConnect: false,
-      parser: null,
-      maxHeadersCount: null,
-      reusedSocket: true,
-      host: 'google-scholar1.p.rapidapi.com',
-      protocol: 'https:',
-      _redirectable: [Writable],
-      [Symbol(kCapture)]: false,
-      [Symbol(kBytesWritten)]: 0,
-      [Symbol(kNeedDrain)]: false,
-      [Symbol(corked)]: 0,
-      [Symbol(kOutHeaders)]: [Object: null prototype],
-      [Symbol(errored)]: null,
-      [Symbol(kHighWaterMark)]: 16384,
-      [Symbol(kRejectNonStandardBodyWrites)]: false,
-      [Symbol(kUniqueHeaders)]: null
-    },
-    data: { message: 'Too many requests' }
-  },
-  status: 429
+Searching for scholarly articles: "education OR learning OR academic OR teaching OR african american vernacular english OR aave" (limit: 15)
+Error with google-scholar package: expected statusCode 200 on http response, but got: 429
+Rate limit reached (429), using sample data
+Retrieved 15 scholarly results
+Error with google-scholar package: expected statusCode 200 on http response, but got: 429
+Rate limit reached (429), using sample data
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
 }
+Searching for scholarly articles: "education OR learning OR academic OR teaching OR aave" (limit: 15)
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Searching for scholarly articles: "education OR learning OR academic OR teaching OR aave" (limit: 15)
+Error with google-scholar package: expected statusCode 200 on http response, but got: 429
+Rate limit reached (429), using sample data
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Error with google-scholar package: expected statusCode 200 on http response, but got: 429
+Rate limit reached (429), using sample data
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [ 'education', 'learning', 'academic', 'teaching', 'aave' ],
+  limit: 15
+}
+Returning cached scholarly results
+Retrieved 15 scholarly results
+Received scholar search request: {
+  keywords: [
+    'education',
+    'learning',
+    'academic',
+    'teaching',
+    'african american vernacular english',
+    'aave'
+  ],
+  limit: 15
+}
+Returning cached scholarly results
