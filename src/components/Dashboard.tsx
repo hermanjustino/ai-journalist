@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { ContentItem } from '../services/domainTracker';
+import { ContentItem, DomainTracker } from '../services/domainTracker';
 import './Dashboard.css';
-import { DomainTracker } from '../services/domainTracker';
 import culturalDomains from '../config/culturalDomains';
 
 

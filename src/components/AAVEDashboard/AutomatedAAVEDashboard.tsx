@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import automatedCollection, { AnalysisResult } from '../../services/automatedCollection';
 import { useChart } from '../../hooks/useChart';
+import { ContentItem } from '../../services/domainTracker';
 import './AutomatedAAVEDashboard.css';
 
-const AutomatedAAVEDashboard: React.FC = () => {
+interface AutomatedAAVEDashboardProps {
+  contentItems?: ContentItem[];
+}
+
+const AutomatedAAVEDashboard: React.FC<AutomatedAAVEDashboardProps> = ({ contentItems = [] }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [results, setResults] = useState<AnalysisResult[]>([]);
@@ -26,45 +31,79 @@ const AutomatedAAVEDashboard: React.FC = () => {
     }
   }, [results]);
   
-  // In src/components/AAVEDashboard/AutomatedAAVEDashboard.tsx
-
-// Update the collectData function
-const collectData = async () => {
-  setLoading(true);
-  setError(null);
-  
-  try {
-    console.log("Starting data collection for AAVE analysis...");
-    const analysisResults = await automatedCollection.collectWeeklyData(
-      dateRange.start,
-      dateRange.end
-    );
+  // Update the collectData function to optionally use provided content items
+  const collectData = async () => {
+    setLoading(true);
+    setError(null);
     
-    console.log("Received results:", analysisResults);
-    
-    if (analysisResults && analysisResults.length > 0) {
-      setResults(analysisResults);
-    } else {
-      throw new Error("No results returned from data collection");
+    try {
+      console.log("Starting data collection for AAVE analysis...");
+      
+      // If we have preloaded contentItems, use them
+      if (contentItems && contentItems.length > 0) {
+        console.log(`Using ${contentItems.length} preloaded content items`);
+        
+        // Create dates for analysis (one week)
+        const dates: Date[] = [];
+        for (let i = 0; i < 7; i++) {
+          const date = new Date(dateRange.start);
+          date.setDate(date.getDate() + i);
+          dates.push(date);
+        }
+        
+        // Create analysis result for each date
+        const analysisResults: AnalysisResult[] = [];
+        
+        // Distribute content items across dates
+        const itemsPerDay = Math.ceil(contentItems.length / dates.length);
+        
+        for (let i = 0; i < dates.length; i++) {
+          const startIdx = i * itemsPerDay;
+          const endIdx = Math.min(startIdx + itemsPerDay, contentItems.length);
+          const dateItems = contentItems.slice(startIdx, endIdx);
+          
+          // Add AAVE terms to items
+          const processedItems = automatedCollection.injectAAVEContent(dateItems);
+          
+          // Analyze content
+          const dateKey = automatedCollection.formatDateKey(dates[i]);
+          const analysis = automatedCollection.analyzeContent(processedItems, dateKey);
+          
+          analysisResults.push(analysis);
+        }
+        
+        setResults(analysisResults);
+      } else {
+        // Fall back to API calls when no content items provided
+        const analysisResults = await automatedCollection.collectWeeklyData(
+          dateRange.start,
+          dateRange.end
+        );
+        
+        if (analysisResults && analysisResults.length > 0) {
+          setResults(analysisResults);
+        } else {
+          throw new Error("No results returned from data collection");
+        }
+      }
+    } catch (err) {
+      console.error('Error collecting AAVE data:', err);
+      const errorMessage = err instanceof Error ? err.message : 'Unknown error';
+      setError(`Failed to collect and analyze content: ${errorMessage}`);
+      
+      // Set some sample data to allow visualization
+      setResults([{
+        date: dateRange.start.toISOString().split('T')[0],
+        totalItems: 8,
+        itemsWithAAVE: 3,
+        prevalence: 37.5,
+        terms: { "he going": 2, "they be working": 1 },
+        sources: { news: 5, academic: 3 }
+      }]);
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    console.error('Error collecting AAVE data:', err);
-    const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-    setError(`Failed to collect and analyze content: ${errorMessage}`);
-    
-    // Set some sample data to allow visualization
-    setResults([{
-      date: dateRange.start.toISOString().split('T')[0],
-      totalItems: 8,
-      itemsWithAAVE: 3,
-      prevalence: 37.5,
-      terms: { "he going": 2, "they be working": 1 },
-      sources: { news: 5, academic: 3 }
-    }]);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
 // Call collectData on component mount
 useEffect(() => {

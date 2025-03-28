@@ -28,8 +28,7 @@
     "eject": "react-scripts eject",
     "server": "cd server && npm run dev",
     "dev": "concurrently \"npm run start\" \"npm run server\"",
-    "start-python-api": "cd python_api && ./setup.sh",
-    "start-all": "concurrently \"npm run server\" \"npm run start\" \"npm run start-python-api\""
+    "start-all": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
     "extends": [

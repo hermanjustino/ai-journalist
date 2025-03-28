@@ -1,77 +1,43 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Navigation.css';
 
-interface NavigationProps {
-  onViewChange: (view: string) => void;
+interface Props {
   currentView: string;
+  onViewChange: (view: string) => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ onViewChange, currentView }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleNavClick = (view: string) => {
-    onViewChange(view);
-    setMenuOpen(false);
-  };
-
+const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
   return (
     <nav className="main-navigation">
-      <div className="nav-container">
-        <div className="nav-brand">AI Cultural Journalist</div>
-
-        <div className={`hamburger-menu ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+      <div className="brand">
+        <h1>Cultural AI Journalist</h1>
       </div>
-
-      <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <li
-          className={currentView === 'about' ? 'active' : ''}
-          onClick={() => handleNavClick('about')}
-        >
-          About
+      <ul className="nav-links">
+        <li className={currentView === 'aave-analysis' ? 'active' : ''}>
+          <button onClick={() => onViewChange('aave-analysis')}>
+            AAVE Analysis
+          </button>
         </li>
-        <li
-          className={currentView === 'domains' ? 'active' : ''}
-          onClick={() => handleNavClick('domains')}
-        >
-          Cultural Domains
+        <li className={currentView === 'dashboard' ? 'active' : ''}>
+          <button onClick={() => onViewChange('dashboard')}>
+            Dashboard
+          </button>
         </li>
-        <li
-          className={currentView === 'dashboard' ? 'active' : ''}
-          onClick={() => handleNavClick('dashboard')}
-        >
-          Dashboard
+        {/* Removed Insights navigation item */}
+        <li className={currentView === 'trends' ? 'active' : ''}>
+          <button onClick={() => onViewChange('trends')}>
+            Trend Discovery
+          </button>
         </li>
-        <li
-          className={currentView === 'insights' ? 'active' : ''}
-          onClick={() => handleNavClick('insights')}
-        >
-          Insights
+        <li className={currentView === 'articles' ? 'active' : ''}>
+          <button onClick={() => onViewChange('articles')}>
+            Article Generator
+          </button>
         </li>
-        <li
-          className={currentView === 'aave-analysis' ? 'active' : ''}
-          onClick={() => handleNavClick('aave-analysis')}
-        >
-          AAVE Analysis
-        </li>
-        <li
-          className={currentView === 'trends' ? 'active' : ''}
-          onClick={() => handleNavClick('trends')}
-        >
-          Trend Discovery
-        </li>
-        <li
-          className={currentView === 'articles' ? 'active' : ''}
-          onClick={() => handleNavClick('articles')}
-        >
-          Articles
+        <li className={currentView === 'about' ? 'active' : ''}>
+          <button onClick={() => onViewChange('about')}>
+            About
+          </button>
         </li>
       </ul>
     </nav>

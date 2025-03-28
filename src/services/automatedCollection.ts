@@ -1,6 +1,4 @@
 import { ContentItem } from './domainTracker';
-import newsApi from './api/newsApi';
-import scholarApi from './api/scholarApi';
 import axios from 'axios';
 
 const API_BASE_URL = 'http://localhost:3001/api';
@@ -251,36 +249,46 @@ async fetchScholarlyContent() {
 /**
  * Helper method to inject AAVE content into a subset of items for testing
  */
-private injectAAVEContent(items: ContentItem[]): ContentItem[] {
-  // Only do this in development
-  if (process.env.NODE_ENV !== 'production') {
-    // Add AAVE terms to approximately 30% of the items
-    const sampleSize = Math.max(1, Math.floor(items.length * 0.3));
+public injectAAVEContent(items: ContentItem[]): ContentItem[] {
+  // If in production, don't inject AAVE terms
+  if (process.env.NODE_ENV === 'production') {
+    return items;
+  }
+  
+  // Add AAVE terms to approximately 30% of the items
+  const sampleSize = Math.max(1, Math.floor(items.length * 0.3));
+  
+  // Sample of AAVE phrases to inject
+  const phrases = [
+    "In this context, one student mentioned 'he going to the library' as a common phrase.",
+    "The teachers observed that 'they be working' together effectively in groups.",
+    "A participant noted 'don't know nothing' about the subject before training.",
+    "The researcher found that 'done finished' was a commonly used phrase.",
+    "Students often said 'she been knew' the material before the class started.",
+    "One teacher observed 'he like' reading during free time.",
+    "A participant commented 'ain't nobody' understood the concept initially."
+  ];
+  
+  // Create a new array to avoid mutating the original
+  const enhancedItems = [...items];
+  
+  // Select random items to enhance
+  for (let i = 0; i < sampleSize; i++) {
+    const randomIndex = Math.floor(Math.random() * items.length);
+    const randomPhraseIndex = Math.floor(Math.random() * phrases.length);
     
-    // Sample of AAVE phrases to inject
-    const phrases = [
-      "In this context, one student mentioned 'he going to the library' as a common phrase.",
-      "The teachers observed that 'they be working' together effectively in groups.",
-      "A participant noted 'don't know nothing' about the subject before training.",
-      "The researcher found that 'done finished' was a commonly used phrase.",
-      "Students often said 'she been knew' the material before the class started.",
-      "One teacher observed 'he like' reading during free time.",
-      "A participant commented 'ain't nobody' understood the concept initially."
-    ];
-    
-    // Select random items to enhance
-    for (let i = 0; i < sampleSize; i++) {
-      const randomIndex = Math.floor(Math.random() * items.length);
-      const randomPhraseIndex = Math.floor(Math.random() * phrases.length);
+    // If the item exists, inject AAVE content
+    if (enhancedItems[randomIndex]) {
+      enhancedItems[randomIndex] = {
+        ...enhancedItems[randomIndex],
+        content: enhancedItems[randomIndex].content + ' ' + phrases[randomPhraseIndex]
+      };
       
-      // Inject AAVE content
-      items[randomIndex].content = items[randomIndex].content + ' ' + phrases[randomPhraseIndex];
-      
-      console.log(`Injected AAVE term into item: ${items[randomIndex].title}`);
+      console.log(`Injected AAVE term into item: ${enhancedItems[randomIndex].title}`);
     }
   }
   
-  return items;
+  return enhancedItems;
 }
   
   /**
@@ -291,7 +299,7 @@ private injectAAVEContent(items: ContentItem[]): ContentItem[] {
   /**
    * Analyze content for AAVE terms
    */
-  private analyzeContent(items: ContentItem[], dateKey: string): AnalysisResult {
+  public analyzeContent(items: ContentItem[], dateKey: string): AnalysisResult {
     let totalAAVEItems = 0;
     const termFrequency: {[term: string]: number} = {};
     
@@ -356,7 +364,7 @@ private injectAAVEContent(items: ContentItem[]): ContentItem[] {
   /**
    * Format date for use as a key
    */
-  private formatDateKey(date: Date): string {
+  public formatDateKey(date: Date): string {
     return date.toISOString().split('T')[0];
   }
 }

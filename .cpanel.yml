@@ -4,6 +4,4 @@ deployment:
     - export DEPLOYPATH=/home/hermkdmx/public_html/language-journal
     - /bin/cp -R build/* $DEPLOYPATH
     - /bin/cp -R server $DEPLOYPATH/server
-    - /bin/cp -R python_api $DEPLOYPATH/python_api
-    - /bin/chmod 755 $DEPLOYPATH/python_api/*.py
     - /bin/chmod 755 $DEPLOYPATH/server/*.js

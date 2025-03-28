@@ -12,7 +12,6 @@ This autonomous application monitors the growing presence of Black linguistic co
 - **Linguistic Pattern Recognition**: Identifies established AAVE features in text using advanced NLP
 - **Comparative Analysis**: Tracks differences in AAVE representation between academic and media sources
 - **Trend Visualization**: Provides data visualizations of changing linguistic patterns over time
-- **Cultural Domain Tracking**: Organizes insights across different domains of Black cultural expression
 
 ## Autonomous Architecture
 
@@ -40,10 +39,11 @@ Beyond AAVE, the platform is designed to eventually incorporate other languages 
 ## Technology Stack
 
 - **Frontend**: React with TypeScript, Chart.js for data visualization
-- **Backend**: Node.js/Express server with Python microservices
-- **Data Sources**: Google Scholar API (via scholarly Python library), News API
+- **Backend**: Node.js/Express server
+- **Data Sources**: 
+  - News API for current articles
+  - Google Scholar data via Node.js scholarly packages
 - **Analysis**: Custom NLP algorithms for AAVE feature detection
-- **Infrastructure**: Automated data collection and analysis pipelines
 
 ## Research Foundation
 

@@ -66,7 +66,11 @@ __pycache__/
 /server/trend-detection/python/.tox/
 
 # Python API env
-/python_api/venv/
-/python_api/.venv/
-/python_api/env/
-/python_api/.env/
+/python_api/
+/python_api_backup.tar.gz
+
+# Archive folders
+/archive/*/
+/archive/cultural-domains/
+/archive/python_api/
+!archive/future.md
