@@ -4,18 +4,15 @@
   "description": "Backend proxy server for AI Cultural Journalist",
   "main": "index.js",
   "scripts": {
-    "setup-python": "cd trend-detection/python && ./setup.sh",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js --max-old-space-size=512"
   },
   "dependencies": {
     "@google/generative-ai": "^0.2.1",
     "axios": "^1.8.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.18.3",
-    "google-scholar": "^1.5.1",
-    "scholarly": "^1.1.1"
+    "express": "^4.18.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

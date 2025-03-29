@@ -19,6 +19,13 @@ app.use(cors({
 }));
 app.options('*', cors());
 
+app.use(cors({
+  origin: ['http://localhost:3000', 'http://localhost:3001', 'https://your-frontend-domain.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Mount trends API router
@@ -109,106 +116,26 @@ app.get('/api/test', (req, res) => {
 // News API endpoint
 app.post('/api/news/search', async (req, res) => {
   try {
-    const { keywords, startDate, endDate, limit } = req.body;
-
-    // Create a cache key from the request parameters
-    const cacheKey = `${keywords?.join('-') || ''}-${startDate || ''}-${endDate || ''}-${limit || 10}`;
-    const newsCache = app.locals.newsCache || new Map();
-    app.locals.newsCache = newsCache; // Store on app.locals to persist between requests
-    const NEWS_CACHE_DURATION = 3600000; // 1 hour
-
-    // Check if we have a cached response
-    if (newsCache.has(cacheKey)) {
-      const cachedData = newsCache.get(cacheKey);
-      if (cachedData.timestamp > Date.now() - NEWS_CACHE_DURATION) {
-        console.log('Returning cached news results');
-        return res.json(cachedData.data);
-      }
-    }
-
-    try {
-      // Create search query
-      const query = keywords?.join(' OR ') || 'education';
-
-      // Set up parameters
-      const params = {
-        q: query,
-        apiKey: process.env.NEWS_API_KEY,
-        language: 'en',
-        pageSize: limit || 10
-      };
-
-      if (startDate) params.from = new Date(startDate).toISOString().split('T')[0];
-      if (endDate) params.to = new Date(endDate).toISOString().split('T')[0];
-
-      // Make News API request
-      const response = await axios.get('https://newsapi.org/v2/everything', { params });
-
-      // Track this successful API call
-      apiUsageTracker.trackRequest('news');
-
-      // Format response
-      const articles = response.data.articles.map(article => ({
-        id: `news-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
-        source: 'news',
-        content: article.description || article.title,
-        timestamp: article.publishedAt,
-        author: article.author,
-        title: article.title,
-        url: article.url
-      }));
-
-      // Cache the response
-      newsCache.set(cacheKey, {
-        timestamp: Date.now(),
-        data: articles
-      });
-
-      res.json(articles);
-    } catch (error) {
-      console.error('News API error:', error);
-      
-      // If rate limited or any other error, try to return cached data
-      if (error.response?.status === 429 || error.code) {
-        console.log('API error, checking for any cached news data');
-        // Try to find any cached news data
-        const cacheEntries = Array.from(newsCache.entries());
-        
-        if (cacheEntries.length > 0) {
-          // Sort by timestamp to get most recent
-          const mostRecent = cacheEntries
-            .sort((a, b) => b[1].timestamp - a[1].timestamp)[0];
-          
-          console.log('Returning fallback cached news results');
-          return res.json(mostRecent[1].data);
-        }
-      }
-      
-      console.log('No cached data, generating mock news');
-      const mockArticles = generateMockNewsData(keywords, limit || 10);
-      
-      // Cache these mock articles too
-      newsCache.set(cacheKey, {
-        timestamp: Date.now(),
-        data: mockArticles
-      });
-      
-      res.json(mockArticles);
-    }
+    const { keywords, limit = 10 } = req.body;
+    console.log(`Generating mock news for keywords: ${keywords?.join(', ')}`);
+    
+    // Generate mock news articles
+    const articles = generateMockNewsData(keywords, limit);
+    
+    res.json(articles);
   } catch (error) {
     console.error('Error in news search endpoint:', error);
     res.status(500).json([]);
   }
 });
 
+// Helper function for mock news data
 function generateMockNewsData(keywords = [], limit = 10) {
-  console.log(`Generating ${limit} mock news items with keywords:`, keywords);
   const articles = [];
   const sources = ['CNN', 'NPR', 'The Atlantic', 'New York Times', 'Washington Post'];
   const authors = ['Jane Smith', 'Robert Johnson', 'Leila Williams', 'David Chen', 'Maria Rodriguez'];
   
   for (let i = 0; i < limit; i++) {
-    // Use the provided keywords to make relevant mock content
     const keyword = keywords && keywords.length > 0 ? 
       keywords[i % keywords.length] : 'education';
     
@@ -422,6 +349,32 @@ function generateMockScholarData() {
       url: 'https://example.edu/code-switching-achievement'
     }
   ];
+}
+
+if (process.env.NODE_ENV === 'production') {
+  // Create data directory if it doesn't exist
+  const dataDir = path.join(__dirname, 'data');
+  const trendsDir = path.join(dataDir, 'trends');
+  
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+    console.log('Created data directory');
+  }
+  
+  if (!fs.existsSync(trendsDir)) {
+    fs.mkdirSync(trendsDir, { recursive: true });
+    console.log('Created trends directory');
+  }
+  
+  // Create empty API usage file if it doesn't exist
+  const apiUsageFile = path.join(dataDir, 'api-usage.json');
+  if (!fs.existsSync(apiUsageFile)) {
+    fs.writeFileSync(apiUsageFile, JSON.stringify({
+      news: { total: 0, monthly: {} },
+      gemini: { total: 0, monthly: {} }
+    }));
+    console.log('Created api-usage.json file');
+  }
 }
 
 const PORT = process.env.PORT || 3001;

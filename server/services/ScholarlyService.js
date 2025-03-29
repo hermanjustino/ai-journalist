@@ -1,55 +1,27 @@
 /**
- * Service for scholarly article searches
+ * Service for scholarly article searches - optimized for shared hosting
  */
 class ScholarlyService {
   constructor() {
     this.cacheTime = 1800000; // 30 minutes
     this.cache = new Map();
-    console.log('ScholarlyService initialized');
+    console.log('ScholarlyService initialized (Mock Mode)');
   }
 
   /**
-   * Search for scholarly articles
+   * Search for scholarly articles - MOCK IMPLEMENTATION FOR SHARED HOSTING
    */
   async searchArticles(keywords, options = {}) {
     const query = Array.isArray(keywords) ? keywords.join(' OR ') : keywords;
     const limit = options.limit || 15;
     const cacheKey = `${query}-${limit}`;
-    const forceRefresh = options.forceRefresh || false;
     
-    console.log(`Searching for scholarly articles: "${query}" (limit: ${limit})`);
+    console.log(`Generating mock scholarly results for: "${query}" (limit: ${limit})`);
     
-    // Check cache first, unless forceRefresh is true
-    if (!forceRefresh && this.cache.has(cacheKey) && this.cache.get(cacheKey).timestamp > Date.now() - this.cacheTime) {
-      console.log('Returning cached scholarly results');
-      return this.cache.get(cacheKey).data;
-    }
+    // Generate mock scholarly results directly
+    const results = this.generateSampleResults(keywords, limit);
     
-    try {
-      // Skip the actual API calls since they're not working
-      console.log('Generating sample scholarly results');
-      const results = this.generateSampleResults(keywords, limit);
-      
-      // Cache these results
-      this.cache.set(cacheKey, { 
-        timestamp: Date.now(),
-        data: results 
-      });
-      
-      return results;
-    } catch (error) {
-      console.error('Error getting scholarly articles:', error.message);
-      // Generate sample results as fallback
-      console.log('Falling back to sample data due to error');
-      const results = this.generateSampleResults(keywords, limit);
-      
-      this.cache.set(cacheKey, { 
-        timestamp: Date.now() - (this.cacheTime / 2),
-        data: results 
-      });
-      
-      return results;
-    }
+    return results;
   }
 
   /**
@@ -65,8 +37,6 @@ class ScholarlyService {
       const topic = topics[i % topics.length];
       const subtopic = subtopics[Math.floor(Math.random() * subtopics.length)];
       const aaveTerm = aaveTerms[Math.floor(Math.random() * aaveTerms.length)];
-      
-      // Try to incorporate a provided keyword if possible
       const keyword = keywords[i % keywords.length] || 'education';
       
       articles.push({
