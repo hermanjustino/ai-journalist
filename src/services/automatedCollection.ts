@@ -188,14 +188,12 @@ async collectDataForDateRange(startDate: Date, endDate: Date): Promise<AnalysisR
       };
     }
     
-    // Process content items with AAVE injection
-    const contentItems = this.injectAAVEContent(allItems);
     
     // Store in collection history
-    this.collectionHistory.set(dateKey, contentItems);
+    this.collectionHistory.set(dateKey, allItems);
     
     // Analyze and return results
-    const analysis = this.analyzeContent(contentItems, dateKey);
+    const analysis = this.analyzeContent(allItems, dateKey);
     this.analysisResults.push(analysis);
     return analysis;
   } catch (error) {
@@ -246,50 +244,6 @@ async fetchScholarlyContent() {
   }
 }
 
-/**
- * Helper method to inject AAVE content into a subset of items for testing
- */
-public injectAAVEContent(items: ContentItem[]): ContentItem[] {
-  // If in production, don't inject AAVE terms
-  if (process.env.NODE_ENV === 'production') {
-    return items;
-  }
-  
-  // Add AAVE terms to approximately 30% of the items
-  const sampleSize = Math.max(1, Math.floor(items.length * 0.3));
-  
-  // Sample of AAVE phrases to inject
-  const phrases = [
-    "In this context, one student mentioned 'he going to the library' as a common phrase.",
-    "The teachers observed that 'they be working' together effectively in groups.",
-    "A participant noted 'don't know nothing' about the subject before training.",
-    "The researcher found that 'done finished' was a commonly used phrase.",
-    "Students often said 'she been knew' the material before the class started.",
-    "One teacher observed 'he like' reading during free time.",
-    "A participant commented 'ain't nobody' understood the concept initially."
-  ];
-  
-  // Create a new array to avoid mutating the original
-  const enhancedItems = [...items];
-  
-  // Select random items to enhance
-  for (let i = 0; i < sampleSize; i++) {
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const randomPhraseIndex = Math.floor(Math.random() * phrases.length);
-    
-    // If the item exists, inject AAVE content
-    if (enhancedItems[randomIndex]) {
-      enhancedItems[randomIndex] = {
-        ...enhancedItems[randomIndex],
-        content: enhancedItems[randomIndex].content + ' ' + phrases[randomPhraseIndex]
-      };
-      
-      console.log(`Injected AAVE term into item: ${enhancedItems[randomIndex].title}`);
-    }
-  }
-  
-  return enhancedItems;
-}
   
   /**
    * Run weekly data collection for a specific week

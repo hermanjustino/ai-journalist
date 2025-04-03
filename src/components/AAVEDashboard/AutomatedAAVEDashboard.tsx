@@ -62,12 +62,9 @@ const AutomatedAAVEDashboard: React.FC<AutomatedAAVEDashboardProps> = ({ content
           const endIdx = Math.min(startIdx + itemsPerDay, contentItems.length);
           const dateItems = contentItems.slice(startIdx, endIdx);
           
-          // Add AAVE terms to items
-          const processedItems = automatedCollection.injectAAVEContent(dateItems);
-          
           // Analyze content
           const dateKey = automatedCollection.formatDateKey(dates[i]);
-          const analysis = automatedCollection.analyzeContent(processedItems, dateKey);
+          const analysis = automatedCollection.analyzeContent(dateItems, dateKey);
           
           analysisResults.push(analysis);
         }

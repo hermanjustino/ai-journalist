@@ -9,6 +9,7 @@ const trendsApi = require('./api/trendsApi');
 const contentGenerator = require('./content-generation/contentGenerator');
 const ScholarlyService = require('./services/ScholarlyService');
 const scholarlyService = new ScholarlyService();
+const newsApiCache = require('./services/NewsApiCache');
 
 const app = express();
 app.use(cors({
@@ -116,15 +117,89 @@ app.get('/api/test', (req, res) => {
 // News API endpoint
 app.post('/api/news/search', async (req, res) => {
   try {
-    const { keywords, limit = 10 } = req.body;
-    console.log(`Generating mock news for keywords: ${keywords?.join(', ')}`);
+    const { keywords = [], limit = 10 } = req.body;
+    console.log(`Searching news for keywords: ${keywords.join(', ')}`);
     
-    // Generate mock news articles
-    const articles = generateMockNewsData(keywords, limit);
+    // Build the query string from keywords
+    const query = keywords.join(' OR ') || 'black culture OR african american OR racial justice';
     
-    res.json(articles);
+    // Check if we have a valid API key
+    if (!process.env.NEWS_API_KEY) {
+      console.log('No News API key found, using mock data');
+      return res.json(generateMockNewsData(keywords, limit));
+    }
+    
+    // Check cache first
+    const cachedData = newsApiCache.getCachedData(query, limit);
+    if (cachedData) {
+      console.log('Returning cached news data');
+      return res.json(cachedData);
+    }
+    
+    // Check if we're about to exceed rate limits
+    const canProceed = apiUsageTracker.trackRequest('news');
+    if (canProceed === false) {
+      console.log('Rate limit would be exceeded, using mock data');
+      const mockData = generateMockNewsData(keywords, limit);
+      return res.json(mockData);
+    }
+    
+    try {
+      // Call the News API
+      const response = await axios.get('https://newsapi.org/v2/everything', {
+        params: {
+          q: query,
+          apiKey: process.env.NEWS_API_KEY,
+          language: 'en',
+          pageSize: limit
+        },
+        timeout: 10000 // 10 second timeout
+      });
+      
+      if (response.data && response.data.articles) {
+        console.log(`Retrieved ${response.data.articles.length} articles from News API`);
+        
+        // Format the articles to match our expected format
+        const articles = response.data.articles.map((article, i) => ({
+          id: `news-${Date.now()}-${i}`,
+          title: article.title,
+          content: article.content || article.description,
+          author: article.author,
+          source: 'news',
+          url: article.url,
+          timestamp: new Date(article.publishedAt)
+        }));
+        
+        // Cache the successful response
+        newsApiCache.cacheResponse(query, limit, articles);
+        
+        return res.json(articles);
+      } else {
+        console.log('Invalid response from News API, using mock data');
+        const mockData = generateMockNewsData(keywords, limit);
+        return res.json(mockData);
+      }
+    } catch (apiError) {
+      console.error('News API error:', apiError.message);
+      
+      // Check if it's a rate limit error (status code 429)
+      if (apiError.response && apiError.response.status === 429) {
+        console.log('News API rate limit reached, using mock data');
+      } else if (apiError.response) {
+        console.error('API response error:', {
+          status: apiError.response.status,
+          statusText: apiError.response.statusText,
+          data: apiError.response.data
+        });
+      }
+      
+      console.log('Falling back to mock data due to API error');
+      const mockData = generateMockNewsData(keywords, limit);
+      return res.json(mockData);
+    }
   } catch (error) {
     console.error('Error in news search endpoint:', error);
+    // Always return a consistent response structure even in case of errors
     res.status(500).json([]);
   }
 });
@@ -327,29 +402,37 @@ app.get('/api/scholar/search', async (req, res) => {
   }
 });
 
-// Helper function to generate mock scholarly data with AAVE terms
-function generateMockScholarData() {
-  return [
-    {
-      id: `scholar-mock-${Date.now()}-1`,
-      title: 'Linguistic Analysis of African American Vernacular English in Educational Content',
-      abstract: 'This study examines the prevalence of AAVE in educational materials. We found instances where "he going" and "they be working" as examples in linguistic diversity training.',
-      author: ['Williams, J.', 'Thompson, K.'],
-      pub_year: '2023',
-      venue: 'Journal of Educational Linguistics',
-      url: 'https://example.edu/aave-classroom-approaches'
-    },
-    {
-      id: `scholar-mock-${Date.now()}-2`,
-      title: 'Code-Switching and Academic Achievement Among African American Students',
-      abstract: 'Research indicates students who effectively code-switch between AAVE and Standard English demonstrate higher academic performance. Students often reported "ain\'t got no" choice but to learn both linguistic systems.',
-      author: ['Davis, M.', 'Johnson, R.'],
-      pub_year: '2022',
-      venue: 'Educational Psychology Review',
-      url: 'https://example.edu/code-switching-achievement'
-    }
-  ];
-}
+// Test endpoint for Semantic Scholar API
+app.get('/api/scholar/test', async (req, res) => {
+  try {
+    console.log('Testing Semantic Scholar API integration');
+    
+    // Perform a simple search with a clear term
+    const results = await scholarlyService.searchArticles(['AAVE linguistics'], { 
+      limit: 5, 
+      forceRefresh: true  // Force a fresh API call
+    });
+    
+    console.log(`Retrieved ${results.length} test results from Scholar API`);
+    
+    // Return both the results and debug info
+    res.json({
+      success: true,
+      count: results.length,
+      hasValidKey: scholarlyService.hasValidApiKey,
+      results: results,
+      apiBaseUrl: scholarlyService.baseUrl
+    });
+  } catch (error) {
+    console.error('Error in Scholar API test endpoint:', error);
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to test Scholar API',
+      message: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
+  }
+});
 
 if (process.env.NODE_ENV === 'production') {
   // Create data directory if it doesn't exist

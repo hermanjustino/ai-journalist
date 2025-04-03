@@ -74,3 +74,6 @@ __pycache__/
 /archive/cultural-domains/
 /archive/python_api/
 !archive/future.md.env
+
+/static/
+/debug/

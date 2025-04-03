@@ -15,49 +15,52 @@ class ApiUsageTracker {
     }
   }
 
-  // In the loadUsage method, change the default structure:
-loadUsage() {
-  try {
-    if (fs.existsSync(this.usageFilePath)) {
-      const data = fs.readFileSync(this.usageFilePath, 'utf8');
-      const parsed = JSON.parse(data);
-      
-      // Filter out Twitter and TikTok if they exist
-      const filteredData = {};
-      Object.keys(parsed).forEach(key => {
-        if (key !== 'twitter' && key !== 'tiktok') {
-          filteredData[key] = parsed[key];
-        }
-      });
-      
-      return filteredData;
-    } else {
-      // Initialize with default structure if file doesn't exist
-      const defaultUsage = {
+  loadUsage() {
+    try {
+      if (fs.existsSync(this.usageFilePath)) {
+        const data = fs.readFileSync(this.usageFilePath, 'utf8');
+        const parsed = JSON.parse(data);
+        
+        // Filter out Twitter and TikTok if they exist
+        const filteredData = {};
+        Object.keys(parsed).forEach(key => {
+          if (key !== 'twitter' && key !== 'tiktok') {
+            filteredData[key] = parsed[key];
+          }
+        });
+        
+        return filteredData;
+      } else {
+        // Initialize with default structure if file doesn't exist
+        const defaultUsage = {
+          news: { total: 0, monthly: {} },
+          gemini: { total: 0, monthly: {} },
+          semanticScholar: { total: 0, monthly: {} }
+        };
+        fs.writeFileSync(this.usageFilePath, JSON.stringify(defaultUsage, null, 2));
+        return defaultUsage;
+      }
+    } catch (error) {
+      console.error('Error loading API usage data:', error);
+      return {
         news: { total: 0, monthly: {} },
         gemini: { total: 0, monthly: {} }
       };
-      fs.writeFileSync(this.usageFilePath, JSON.stringify(defaultUsage, null, 2));
-      return defaultUsage;
     }
-  } catch (error) {
-    console.error('Error loading API usage data:', error);
-    return {
-      news: { total: 0, monthly: {} },
-      gemini: { total: 0, monthly: {} }
-    };
   }
-}
 
-getRemainingQuota(service) {
-  if (service === 'news') {
-    // News API: 100 requests per day
-    return 100;
-  } else if (service === 'gemini') {
-    return 1000;
+  // Update the getRemainingQuota method to check actual usage
+  getRemainingQuota(service) {
+    if (service === 'news') {
+      // News API: 100 requests per day
+      const monthlyUsage = this.getMonthlyUsage(service);
+      return Math.max(0, 100 - monthlyUsage);
+    } else if (service === 'gemini') {
+      const monthlyUsage = this.getMonthlyUsage(service);
+      return Math.max(0, 50 - monthlyUsage);
+    }
+    return null;
   }
-  return null;
-}
 
   saveUsage() {
     try {
@@ -67,6 +70,7 @@ getRemainingQuota(service) {
     }
   }
 
+  // Update the trackRequest method to be more robust
   trackRequest(service, count = 1) {
     if (!this.usage[service]) {
       this.usage[service] = { total: 0, monthly: {} };
@@ -76,24 +80,32 @@ getRemainingQuota(service) {
     const date = new Date();
     const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
     
-    // Update counts
-    this.usage[service].total += count;
-    this.usage[service].monthly[yearMonth] = (this.usage[service].monthly[yearMonth] || 0) + count;
-
-    if (service === 'gemini') {
-      const monthlyUsage = this.getMonthlyUsage(service);
-      // Limit to 50 calls per month
-      if (monthlyUsage >= 50) {
-        console.warn('Monthly Gemini API limit reached (50 calls). Using mock articles.');
+    // Get current usage before updating
+    const currentMonthlyUsage = this.usage[service].monthly[yearMonth] || 0;
+    
+    // Check rate limits before updating
+    if (service === 'news' && currentMonthlyUsage >= 90) {
+      console.warn(`WARNING: News API is approaching its monthly limit (${currentMonthlyUsage}/100).`);
+      if (currentMonthlyUsage >= 95) {
+        console.error(`ERROR: News API monthly limit reached (${currentMonthlyUsage}/100).`);
+        return false;
+      }
+    } else if (service === 'gemini' && currentMonthlyUsage >= 45) {
+      console.warn(`WARNING: Gemini API is approaching its monthly limit (${currentMonthlyUsage}/50).`);
+      if (currentMonthlyUsage >= 50) {
+        console.error(`ERROR: Monthly Gemini API limit reached (${currentMonthlyUsage}/50). Using mock articles.`);
         return false;
       }
     }
     
+    // Update counts
+    this.usage[service].total += count;
+    this.usage[service].monthly[yearMonth] = currentMonthlyUsage + count;
+    
     // Save updated usage
     this.saveUsage();
     
-    // Return current month's usage for this service
-    return this.getMonthlyUsage(service);
+    return true;
   }
 
   trackRequestAndLog(service, count = 1) {
