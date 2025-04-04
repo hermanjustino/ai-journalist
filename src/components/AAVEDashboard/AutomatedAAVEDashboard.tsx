@@ -412,7 +412,7 @@ useEffect(() => {
         </table>
       </div>
       
-      <div className="aave-explanation">
+      {/* <div className="aave-explanation">
         <h3>About AAVE Discourse Analysis</h3>
         <p>
           This dashboard tracks academic and news articles discussing African American Vernacular English (AAVE).
@@ -436,7 +436,7 @@ useEffect(() => {
             <p>Tracking how AAVE research is cited and referenced in academic contexts</p>
           </div>
         </div>
-      </div>
+      </div> */}
       
     </div>
   );

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { ContentItem } from './domainTracker';
 
 // Define API endpoints
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
 
 // ContentFetcher service
 class ContentFetcher {
@@ -10,7 +10,7 @@ class ContentFetcher {
   async fetchFromNews(options = {}) {
     console.log('Fetching from news with options:', options);
     try {
-      const response = await axios.post(`${API_BASE_URL}/news/search`, {
+      const response = await axios.post(`${API_BASE_URL}/api/news/search`, {
         keywords: ['black culture', 'african american', 'racial justice'],
         limit: 20,
         ...options
@@ -34,7 +34,7 @@ class ContentFetcher {
   async fetchFromScholar(options = {}) {
     console.log('Fetching from Google Scholar with options:', options);
     try {
-      const response = await axios.post(`${API_BASE_URL}/scholar/search`, {
+      const response = await axios.post(`${API_BASE_URL}/api/scholar/search`, {
         keywords: ['education', 'learning', 'academic', 'teaching', 'african american vernacular english', 'aave'],
         limit: 15,
         ...options
