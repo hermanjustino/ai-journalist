@@ -413,30 +413,31 @@ useEffect(() => {
       </div>
       
       <div className="aave-explanation">
-        <h3>About AAVE Linguistic Features</h3>
+        <h3>About AAVE Discourse Analysis</h3>
         <p>
-          African American Vernacular English (AAVE) is a rule-governed linguistic variety with 
-          distinct grammatical features. This analysis tracks the following features:
+          This dashboard tracks academic and news articles discussing African American Vernacular English (AAVE).
+          We analyze the discourse around AAVE using sentiment analysis and content categorization.
         </p>
         <div className="feature-list">
           <div className="feature-item">
-            <h4>Copula Deletion</h4>
-            <p>Omission of forms of "to be" (e.g., "he running" instead of "he is running")</p>
+            <h4>Sentiment Analysis</h4>
+            <p>Measuring the emotional tone and attitude toward AAVE in published content</p>
           </div>
           <div className="feature-item">
-            <h4>Habitual "be"</h4>
-            <p>Use of "be" to indicate habitual actions (e.g., "she be working" to indicate "she habitually works")</p>
+            <h4>Academic Context</h4>
+            <p>Analyzing how AAVE is discussed in scholarly publications vs. news media</p>
           </div>
           <div className="feature-item">
-            <h4>Multiple Negation</h4>
-            <p>Use of multiple negative elements (e.g., "don't know nothing")</p>
+            <h4>Topic Classification</h4>
+            <p>Identifying common themes and subjects in AAVE-related discourse</p>
           </div>
           <div className="feature-item">
-            <h4>Completive "done"</h4>
-            <p>Use of "done" to mark completed actions (e.g., "he done finished")</p>
+            <h4>Citation Analysis</h4>
+            <p>Tracking how AAVE research is cited and referenced in academic contexts</p>
           </div>
         </div>
       </div>
+      
     </div>
   );
 };
