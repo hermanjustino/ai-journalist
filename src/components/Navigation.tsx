@@ -47,11 +47,6 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
               Trend Discovery
             </button>
           </li>
-          <li className={currentView === 'articles' ? 'active' : ''}>
-            <button onClick={() => handleViewChange('articles')}>
-              Article Generator
-            </button>
-          </li>
           <li className={currentView === 'about' ? 'active' : ''}>
             <button onClick={() => handleViewChange('about')}>
               About

@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import Navigation from './components/Navigation';
 import About from './components/About';
 import TrendDiscovery from './components/TrendDiscovery/TrendDiscovery';
-import ArticleGenerator from './components/ArticleGenerator/ArticleGenerator';
 import Dashboard from './components/Dashboard';
 import { ContentItem } from './services/domainTracker';
 import contentFetcher from './services/contentFetcher';
@@ -113,8 +112,6 @@ function App() {
         return <About />;
       case 'trends':
         return <TrendDiscovery contentItems={contentItems} />;
-      case 'articles':
-        return <ArticleGenerator contentItems={contentItems} />;
       default:
         return <AutomatedAAVEDashboard contentItems={contentItems} />;
     }
