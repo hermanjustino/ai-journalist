@@ -1,0 +1,80 @@
+{
+    "total": 15117,
+    "token": "SDKJFHSDKFHWIEFSFSGHEIURYC",
+    "data": [
+      {
+        "paperId": "5c5751d45e298cea054f32b392c12c61027d2fe7",
+        "corpusId": 215416146,
+        "externalIds": {
+          "MAG": "3015453090",
+          "DBLP": "conf/acl/LoWNKW20",
+          "ACL": "2020.acl-main.447",
+          "DOI": "10.18653/V1/2020.ACL-MAIN.447",
+          "CorpusId": 215416146
+        },
+        "url": "https://www.semanticscholar.org/paper/5c5751d45e298cea054f32b392c12c61027d2fe7",
+        "title": "Construction of the Literature Graph in Semantic Scholar",
+        "abstract": "We describe a deployed scalable system for organizing published scientific literature into a heterogeneous graph to facilitate algorithmic manipulation and discovery.",
+        "venue": "Annual Meeting of the Association for Computational Linguistics",
+        "publicationVenue": {
+          "id": "1e33b3be-b2ab-46e9-96e8-d4eb4bad6e44",
+          "name": "Annual Meeting of the Association for Computational Linguistics",
+          "type": "conference",
+          "alternate_names": [
+            "Annu Meet Assoc Comput Linguistics",
+            "Meeting of the Association for Computational Linguistics",
+            "ACL",
+            "Meet Assoc Comput Linguistics"
+          ],
+          "url": "https://www.aclweb.org/anthology/venues/acl/"
+        },
+        "year": 1997,
+        "referenceCount": 59,
+        "citationCount": 453,
+        "influentialCitationCount": 90,
+        "isOpenAccess": true,
+        "openAccessPdf": {
+          "url": "https://www.aclweb.org/anthology/2020.acl-main.447.pdf",
+          "status": "HYBRID",
+          "license": "CCBY",
+          "disclaimer": "Notice: This snippet is extracted from the open access paper or abstract available at https://aclanthology.org/2020.acl-main.447, which is subject to the license by the author or copyright owner provided with this content. Please go to the source to verify the license and copyright information for your use."
+        },
+        "fieldsOfStudy": [
+          "Computer Science"
+        ],
+        "s2FieldsOfStudy": [
+          {
+            "category": "Computer Science",
+            "source": "external"
+          },
+          {
+            "category": "Computer Science",
+            "source": "s2-fos-model"
+          },
+          {
+            "category": "Mathematics",
+            "source": "s2-fos-model"
+          }
+        ],
+        "publicationTypes": [
+          "Journal Article",
+          "Review"
+        ],
+        "publicationDate": "2024-04-29",
+        "journal": {
+          "volume": "40",
+          "pages": "116 - 135",
+          "name": "IETE Technical Review"
+        },
+        "citationStyles": {
+          "bibtex": "@['JournalArticle', 'Conference']{Ammar2018ConstructionOT,\n author = {Waleed Ammar and Dirk Groeneveld and Chandra Bhagavatula and Iz Beltagy and Miles Crawford and Doug Downey and Jason Dunkelberger and Ahmed Elgohary and Sergey Feldman and Vu A. Ha and Rodney Michael Kinney and Sebastian Kohlmeier and Kyle Lo and Tyler C. Murray and Hsu-Han Ooi and Matthew E. Peters and Joanna L. Power and Sam Skjonsberg and Lucy Lu Wang and Christopher Wilhelm and Zheng Yuan and Madeleine van Zuylen and Oren Etzioni},\n booktitle = {NAACL},\n pages = {84-91},\n title = {Construction of the Literature Graph in Semantic Scholar},\n year = {2018}\n}\n"
+        },
+        "authors": [
+          {
+            "authorId": "1741101",
+            "name": "Oren Etzioni"
+          }
+        ]
+      }
+    ]
+  }

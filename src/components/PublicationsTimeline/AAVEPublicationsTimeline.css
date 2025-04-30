@@ -1,0 +1,109 @@
+.publications-timeline {
+  background-color: var(--card-background);
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.timeline-header h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.timeline-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background-color: var(--card-background-accent);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+}
+
+.stat-card h3 {
+  color: var(--text-medium);
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.chart-container {
+  height: 400px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.timeline-explanation {
+  background-color: var(--card-background-accent);
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 30px;
+}
+
+.timeline-explanation h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.timeline-explanation p {
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .publications-timeline {
+    padding: 15px;
+  }
+  
+  .chart-container {
+    height: 300px;
+  }
+}

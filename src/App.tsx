@@ -6,7 +6,9 @@ import Dashboard from './components/Dashboard';
 import { ContentItem } from './services/domainTracker';
 import contentFetcher from './services/contentFetcher';
 import './App.css';
+import AAVEPublicationsTimeline from './components/PublicationsTimeline/AAVEPublicationsTimeline';
 import AutomatedAAVEDashboard from './components/AAVEDashboard/AutomatedAAVEDashboard';
+
 
 function App() {
   // Change default view to AAVE dashboard
@@ -112,6 +114,8 @@ function App() {
         return <About />;
       case 'trends':
         return <TrendDiscovery contentItems={contentItems} />;
+      case 'publications-timeline':
+        return <AAVEPublicationsTimeline />;
       default:
         return <AutomatedAAVEDashboard contentItems={contentItems} />;
     }
