@@ -7,6 +7,8 @@ interface Paper {
   title: string;
   year: number;
   publicationDate?: string;
+  pub_year?: string; 
+  publishedAt?: string; // Added property
 }
 
 interface YearCount {
@@ -15,7 +17,7 @@ interface YearCount {
 }
 
 const LOCAL_STORAGE_KEY = 'aave_publications_data';
-const CACHE_EXPIRY_TIME = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
+const CACHE_EXPIRY_TIME = 7 * 24 * 60 * 60 * 1000;
 
 const AAVEPublicationsTimeline: React.FC = () => {
   const chartRef = useRef<HTMLCanvasElement | null>(null);
@@ -56,8 +58,14 @@ const AAVEPublicationsTimeline: React.FC = () => {
         }
       }
 
-      // Use our server API instead of calling Semantic Scholar directly
-      const response = await fetch('/api/scholar/search', {
+      // Get base URL for API calls (handles both development and production)
+      const baseUrl = process.env.REACT_APP_API_URL || 
+                     (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '');
+      
+      console.log('Fetching AAVE publications from API...');
+      
+      // Use our server API with proper URL
+      const response = await fetch(`${baseUrl}/api/scholar/search`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -72,12 +80,29 @@ const AAVEPublicationsTimeline: React.FC = () => {
         throw new Error(`API error: ${response.status}`);
       }
       
-      const papers: Paper[] = await response.json();
+      const responseData = await response.json();
+      
+      // Handle either array response or object with data property
+      const papers: Paper[] = Array.isArray(responseData) ? responseData : 
+                              responseData.data && Array.isArray(responseData.data) ? responseData.data : [];
+      
+      console.log(`Retrieved ${papers.length} papers from API`);
+      
+      // Ensure paper objects have the required year property
+      const validPapers = papers.filter(paper => {
+        // Convert various year formats to a standardized year number
+        if (paper.year) return true;
+        if (paper.pub_year) paper.year = parseInt(paper.pub_year);
+        else if (paper.publicationDate) paper.year = new Date(paper.publicationDate).getFullYear();
+        else if (paper.publishedAt) paper.year = new Date(paper.publishedAt).getFullYear();
+        
+        return !!paper.year;
+      });
       
       // Process papers to count by year
       const counts: { [year: number]: number } = {};
       
-      papers.forEach(paper => {
+      validPapers.forEach(paper => {
         if (paper.year) {
           counts[paper.year] = (counts[paper.year] || 0) + 1;
         }
@@ -92,7 +117,7 @@ const AAVEPublicationsTimeline: React.FC = () => {
         .sort((a, b) => a.year - b.year);
       
       // Calculate total papers
-      const total = papers.length;
+      const total = validPapers.length;
       
       // Save results to state
       setYearCounts(yearCountArray);
@@ -116,20 +141,16 @@ const AAVEPublicationsTimeline: React.FC = () => {
       // Try to load cached data even if it's expired as fallback
       const cachedData = localStorage.getItem(LOCAL_STORAGE_KEY);
       if (cachedData) {
-        const { data } = JSON.parse(cachedData);
-        setYearCounts(data.yearCounts);
-        setTotalPapers(data.totalPapers);
+        try {
+          const { data } = JSON.parse(cachedData);
+          setYearCounts(data.yearCounts);
+          setTotalPapers(data.totalPapers);
+          console.log('Loaded expired cache data as fallback');
+        } catch (cacheErr) {
+          console.error('Error parsing cached data:', cacheErr);
+        }
       } else {
-        // Set sample data for visualization if no cache exists
-        setYearCounts([
-          { year: 1990, count: 2 },
-          { year: 1995, count: 5 },
-          { year: 2000, count: 12 },
-          { year: 2005, count: 18 },
-          { year: 2010, count: 25 },
-          { year: 2015, count: 42 },
-          { year: 2020, count: 78 },
-        ]);
+        console.error('Want to use Sample data. AAVEPublicationsTimeline.tsx - line 153');
       }
     }
   };

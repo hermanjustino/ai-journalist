@@ -56,6 +56,7 @@ class ScholarlyService {
       
       // Fallback to sample results on error
       console.log('Falling back to sample data');
+      return this.generateSampleResults(limit);
     }
   }
   
@@ -124,8 +125,6 @@ class ScholarlyService {
         query,
         limit: Math.min(limit, 100), // API supports up to 100 papers per standard search call
         fields: 'title,abstract,authors,year,venue,url,openAccessPdf,publicationDate',
-        // Add year filter to limit results
-        year: `${new Date().getFullYear() - 10}-${new Date().getFullYear()}` // Last 10 years only
       };
       
       // Call the search endpoint
@@ -190,7 +189,6 @@ class ScholarlyService {
               query: narrowQuery,
               limit: Math.min(limit, 100),
               fields: 'title,abstract,authors,year,venue,url,openAccessPdf,publicationDate',
-              year: `${new Date().getFullYear() - 15}-${new Date().getFullYear()}`
             },
             headers: {
               'x-api-key': this.apiKey
@@ -221,6 +219,38 @@ class ScholarlyService {
       
       throw error;
     }
+  }
+
+  /**
+   * Generate sample scholarly results for fallback
+   */
+  generateSampleResults(limit = 15) {
+    console.log(`Generating ${limit} sample scholarly results`);
+    const currentYear = new Date().getFullYear();
+    const sampleResults = [];
+    
+    // Create a realistic distribution of papers by year
+    // Extend range to include earlier years
+    for (let i = 0; i < limit; i++) {
+      // Calculate a weighted year (go back up to 70 years to include older publications)
+      const yearOffset = Math.floor(Math.pow(Math.random(), 1.5) * 70); // 0-70 years ago
+      const year = currentYear - yearOffset;
+      
+      sampleResults.push({
+        id: `scholar-mock-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`,
+        paperId: `mock-paper-${i}`,
+        title: `Sample Paper on AAVE in ${['Education', 'Linguistics', 'Media', 'Social Context'][i % 4]}`,
+        year: year,
+        publicationDate: new Date(year, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toISOString(),
+        abstract: `This paper examines the role of African American Vernacular English in various contexts. The research highlights important linguistic features and their social implications.`,
+        author: [`Author ${i+1}`, `Co-Author ${i+1}`],
+        venue: ['Journal of Sociolinguistics', 'Language & Education', 'American Speech', 'Journal of Black Studies'][i % 4],
+        url: `https://example.org/sample-paper-${i}`,
+        source: 'academic'
+      });
+    }
+    
+    return sampleResults;
   }
 }
 
