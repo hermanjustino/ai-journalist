@@ -8,7 +8,7 @@ interface Paper {
   year: number;
   publicationDate?: string;
   pub_year?: string; 
-  publishedAt?: string; // Added property
+  publishedAt?: string;
 }
 
 interface YearCount {
@@ -59,8 +59,7 @@ const AAVEPublicationsTimeline: React.FC = () => {
       }
 
       // Get base URL for API calls (handles both development and production)
-      const baseUrl = process.env.REACT_APP_API_URL || 
-                     (window.location.hostname === 'localhost' ? 'http://localhost:3001' : '');
+      const baseUrl = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
       
       console.log('Fetching AAVE publications from API...');
       
