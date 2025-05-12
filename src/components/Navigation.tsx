@@ -37,6 +37,11 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
               AAVE Analysis
             </button>
           </li>
+          <li className={currentView === 'publications-timeline' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('publications-timeline')}>
+              Publications Timeline
+            </button>
+          </li>
           <li className={currentView === 'dashboard' ? 'active' : ''}>
             <button onClick={() => handleViewChange('dashboard')}>
               Dashboard
@@ -47,16 +52,18 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
               Trend Discovery
             </button>
           </li>
-          <li className={currentView === 'publications-timeline' ? 'active' : ''}>
-            <button onClick={() => handleViewChange('publications-timeline')}>
-              Publications
-            </button>
-          </li>
           <li className={currentView === 'about' ? 'active' : ''}>
             <button onClick={() => handleViewChange('about')}>
               About
             </button>
           </li>
+          {window.location.hostname === 'localhost' && (
+            <li className={currentView === 'api-test' ? 'active' : ''}>
+              <button onClick={() => handleViewChange('api-test')}>
+                API Test
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </nav>

@@ -12,19 +12,32 @@ const scholarlyService = new ScholarlyService();
 const newsApiCache = require('./services/NewsApiCache');
 
 const app = express();
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
-app.options('*', cors());
 
+// Configure CORS to allow requests from frontend in both local and production
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:3001', 
+  'https://ai-journalist-1.onrender.com',
+];
+
+// CORS configuration that properly handles different environments
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:3001', 'https://ai-journalist-1.onrender.com'],
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, etc)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) === -1) {
+      console.log(`CORS blocked for origin: ${origin}`);
+      const msg = 'The CORS policy for this site does not allow access from the specified origin';
+      return callback(new Error(msg), false);
+    }
+    
+    console.log(`CORS allowed for origin: ${origin}`);
+    return callback(null, true);
+  },
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 }));
 
 app.use(express.json());

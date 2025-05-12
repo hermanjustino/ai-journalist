@@ -8,6 +8,7 @@ import contentFetcher from './services/contentFetcher';
 import './App.css';
 import AAVEPublicationsTimeline from './components/PublicationsTimeline/AAVEPublicationsTimeline';
 import AutomatedAAVEDashboard from './components/AAVEDashboard/AutomatedAAVEDashboard';
+import ApiTester from './components/ApiTester';
 
 
 function App() {
@@ -16,6 +17,17 @@ function App() {
   const [contentItems, setContentItems] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [apiBaseUrl, setApiBaseUrl] = useState<string>('');
+
+  useEffect(() => {
+    // Set API base URL for display in UI
+    const baseUrl = process.env.REACT_APP_API_BASE_URL || 
+                   (window.location.hostname === 'localhost' ? 
+                    'http://localhost:3001' : 
+                    window.location.origin);
+    setApiBaseUrl(baseUrl);
+    console.log("Using API base URL:", baseUrl);
+  }, []);
 
   const fetchContentData = useCallback(async () => {
     setLoading(true);
@@ -116,6 +128,8 @@ function App() {
         return <TrendDiscovery contentItems={contentItems} />;
       case 'publications-timeline':
         return <AAVEPublicationsTimeline />;
+      case 'api-test':
+        return <ApiTester />;
       default:
         return <AutomatedAAVEDashboard contentItems={contentItems} />;
     }
@@ -129,7 +143,17 @@ function App() {
       />
 
       <main className="responsive-container">
-        {error && <div className="error-banner">{error}</div>}
+        {error && (
+          <div className="error-banner">
+            {error}
+            {window.location.hostname === 'localhost' && (
+              <div>
+                <p>Detected local development. API base URL: {apiBaseUrl}</p>
+                <button onClick={() => setCurrentView('api-test')}>Test API Connection</button>
+              </div>
+            )}
+          </div>
+        )}
         {renderCurrentView()}
       </main>
     </div>
