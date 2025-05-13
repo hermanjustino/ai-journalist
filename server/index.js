@@ -379,7 +379,7 @@ app.post('/api/scholar/search', async (req, res) => {
     
     console.log('Received scholar search request:', { keywords, limit, forceRefresh });
     
-    const results = await scholarlyService.searchArticles(keywords, { 
+    const results = await scholarlyService.searchWithBulkSearch(keywords, { 
       limit, 
       forceRefresh 
     });
@@ -402,7 +402,7 @@ app.get('/api/scholar/search', async (req, res) => {
     
     console.log(`Received GET scholar search request: query=${query}, limit=${limit}`);
     
-    const results = await scholarlyService.searchArticles([query], { limit });
+    const results = await scholarlyService.searchWithBulkSearch([query], { limit });
     
     console.log(`Retrieved ${results.length} scholarly results (GET)`);
     res.json(results);
@@ -411,38 +411,6 @@ app.get('/api/scholar/search', async (req, res) => {
     res.status(500).json({
       error: 'Failed to search scholarly content',
       message: error.message
-    });
-  }
-});
-
-// Test endpoint for Semantic Scholar API
-app.get('/api/scholar/test', async (req, res) => {
-  try {
-    console.log('Testing Semantic Scholar API integration');
-    
-    // Perform a simple search with a clear term
-    const results = await scholarlyService.searchArticles(['AAVE linguistics'], { 
-      limit: 5, 
-      forceRefresh: true  // Force a fresh API call
-    });
-    
-    console.log(`Retrieved ${results.length} test results from Scholar API`);
-    
-    // Return both the results and debug info
-    res.json({
-      success: true,
-      count: results.length,
-      hasValidKey: scholarlyService.hasValidApiKey,
-      results: results,
-      apiBaseUrl: scholarlyService.baseUrl
-    });
-  } catch (error) {
-    console.error('Error in Scholar API test endpoint:', error);
-    res.status(500).json({ 
-      success: false,
-      error: 'Failed to test Scholar API',
-      message: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 });

@@ -1,9 +1,6 @@
 import axios from 'axios';
 import { ContentItem } from './domainTracker';
 
-// Define API endpoints
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:3001';
-
 // Determine API base URL with proper logical evaluation
 const getApiBaseUrl = () => {
   if (process.env.REACT_APP_API_BASE_URL) {
@@ -63,7 +60,7 @@ class ContentFetcher {
       const API_BASE_URL = getApiBaseUrl();
       
       const response = await axios.post(`${API_BASE_URL}/api/scholar/search`, {
-        keywords: ['education', 'learning', 'academic', 'teaching', 'african american vernacular english', 'aave', 'african american english', 'black english', 'african-american english'],
+        keywords: ['african american vernacular english', 'aave', 'african american english', 'black english', 'african-american english'],
         limit: 15,
         ...options
       });

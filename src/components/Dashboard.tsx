@@ -4,6 +4,48 @@ import './Dashboard.css';
 import culturalDomains from '../config/culturalDomains';
 
 
+// Source display mapping
+const sourceDisplayNames: Record<string, string> = {
+  'news': 'News Media',
+  'academic': 'Scholarly Publications',
+  'journal': 'Academic Journals',
+  'book': 'Books & Publications',
+  'conference': 'Conference Papers',
+  'magazine': 'Magazines',
+  'newspaper': 'Newspapers',
+  'online': 'Online Media',
+  'blog': 'Blogs & Commentary',
+  'podcast': 'Podcasts',
+  'video': 'Video Content',
+  'social': 'Social Media'
+};
+
+// Source colors
+const sourceColors: Record<string, string> = {
+  'news': '#FF6B6B',
+  'academic': '#4CAF50',
+  'journal': '#3F51B5', 
+  'book': '#9C27B0',
+  'conference': '#00BCD4',
+  'magazine': '#FF9800',
+  'newspaper': '#795548',
+  'online': '#607D8B',
+  'blog': '#E91E63',
+  'podcast': '#FFEB3B',
+  'video': '#8BC34A',
+  'social': '#03A9F4'
+};
+
+// Get source display name with fallback for unknown sources
+const getSourceDisplayName = (source: string): string => {
+  return sourceDisplayNames[source.toLowerCase()] || source.charAt(0).toUpperCase() + source.slice(1);
+};
+
+// Get source color with fallback
+const getSourceColor = (source: string): string => {
+  return sourceColors[source.toLowerCase()] || '#9E9E9E'; // Default gray color
+};
+
 interface DashboardProps {
   contentItems: ContentItem[];
   selectedDomain?: string | null;
@@ -23,7 +65,8 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
 
   // Group content by source
   const sourceGroups = filteredContent.reduce((acc, item) => {
-    acc[item.source] = (acc[item.source] || 0) + 1;
+    const sourceKey = item.source.toLowerCase();
+    acc[sourceKey] = (acc[sourceKey] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
@@ -63,24 +106,23 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
           <div className="metric-value">{filteredContent.length}</div>
         </div>
         <div className="metric-card">
-          <h3>Sources</h3>
+          <h3>Source Categories</h3>
           <div className="metric-value">{Object.keys(sourceGroups).length}</div>
         </div>
       </div>
 
       <div className="dashboard-sections">
         <div className="section source-breakdown">
-          <h3>Content Sources</h3>
+          <h3>Content Sources Distribution</h3>
           <div className="source-bars">
             {Object.entries(sourceGroups).map(([source, count]) => (
               <div key={source} className="source-bar-container">
-                <div className="source-label">{source}</div>
+                <div className="source-label">{getSourceDisplayName(source)}</div>
                 <div 
                   className="source-bar" 
                   style={{ 
-                    width: `${(count / filteredContent.length) * 100}%`,
-                    backgroundColor: source === 'news' ? '#FF6B6B' : 
-                                     source === 'academic' ? '#4CAF50' : '#9C27B0'
+                    width: `${Math.max((count / filteredContent.length) * 100, 5)}%`,
+                    backgroundColor: getSourceColor(source)
                   }}
                 />
                 <div className="source-count">{count}</div>
@@ -96,7 +138,12 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
               {sortedItems.map(item => (
                 <li key={item.id} className="content-item">
                   <div className="content-header">
-                    <span className={`source-badge ${item.source}`}>{item.source}</span>
+                    <span 
+                      className="source-badge" 
+                      style={{ backgroundColor: getSourceColor(item.source) }}
+                    >
+                      {getSourceDisplayName(item.source)}
+                    </span>
                     <span className="content-date">{item.timestamp.toLocaleDateString()}</span>
                   </div>
                   <h4>{item.title}</h4>
