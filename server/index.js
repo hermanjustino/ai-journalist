@@ -447,6 +447,73 @@ app.get('/api/scholar/test', async (req, res) => {
   }
 });
 
+// Add a new test endpoint for Semantic Scholar bulk search API
+app.post('/api/scholar/bulk-search-test', async (req, res) => {
+  try {
+    const { query, fields, sort, limit, token } = req.body;
+    
+    console.log('Testing Semantic Scholar bulk search with params:', { 
+      query, fields, sort, limit, token 
+    });
+    
+    // Set up API URL
+    const baseUrl = 'https://api.semanticscholar.org/graph/v1';
+    const endpoint = `${baseUrl}/paper/search/bulk`;
+    
+    // Set up request params
+    const params = {
+      query: query || 'AAVE',
+      fields: fields || 'title,abstract,url,year,authors,venue,publicationDate,externalIds',
+      sort: sort || 'publicationDate:desc',
+      limit: limit || 100
+    };
+    
+    // Add token for pagination if provided
+    if (token) {
+      params.token = token;
+    }
+    
+    // Prepare headers
+    const headers = {};
+    if (process.env.SEMANTIC_SCHOLAR_API_KEY) {
+      headers['x-api-key'] = process.env.SEMANTIC_SCHOLAR_API_KEY;
+    }
+    
+    // Make the direct API call
+    const response = await axios.get(endpoint, {
+      params,
+      headers,
+      timeout: 15000 // Extended timeout for the bulk search
+    });
+    
+    // Return the raw API response
+    res.json({
+      success: true,
+      apiUrl: endpoint,
+      requestParams: params,
+      responseData: response.data,
+      totalResults: response.data.total,
+      resultCount: response.data.data ? response.data.data.length : 0,
+      nextToken: response.data.next || null
+    });
+  } catch (error) {
+    console.error('Error in Scholar bulk search test:', error);
+    
+    // Return detailed error information
+    res.status(500).json({ 
+      success: false,
+      error: 'Failed to test Scholar bulk search API',
+      message: error.message,
+      response: error.response ? {
+        status: error.response.status,
+        statusText: error.response.statusText,
+        data: error.response.data
+      } : null,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
+  }
+});
+
 if (process.env.NODE_ENV === 'production') {
   // Create data directory if it doesn't exist
   const dataDir = path.join(__dirname, 'data');

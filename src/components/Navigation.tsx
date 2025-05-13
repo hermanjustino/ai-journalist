@@ -58,9 +58,9 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
             </button>
           </li>
           {window.location.hostname === 'localhost' && (
-            <li className={currentView === 'api-test' ? 'active' : ''}>
-              <button onClick={() => handleViewChange('api-test')}>
-                API Test
+            <li className={currentView === 'scholar-api-test' ? 'active' : ''}>
+              <button onClick={() => handleViewChange('scholar-api-test')}>
+                Scholar API Test
               </button>
             </li>
           )}

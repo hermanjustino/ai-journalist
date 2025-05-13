@@ -70,41 +70,53 @@ class ScholarlyService {
   }
 
   /**
-   * Search for scholarly articles using Semantic Scholar API
+   * Search using the bulk search endpoint for more comprehensive results
    */
-  async searchArticles(keywords, options = {}) {
-    console.log(`Searching for scholarly articles: "${keywords.join(' OR ')}" (limit: ${options.limit || 15})`);
+  async searchWithBulkSearch(keywords, options) {
+    const query = keywords.join(' | '); // Using OR operator in the bulk search query
+    const limit = Math.min(options.limit || 15, 1000); // API limits to max 1000
     
-    // Check cache unless force refresh is requested
-    if (!options.forceRefresh) {
-      const cachedResults = this.getCachedResults(keywords);
-      if (cachedResults) return cachedResults;
+    console.log(`Using bulk search endpoint with query: "${query}"`);
+    
+    const headers = {};
+    if (process.env.SEMANTIC_SCHOLAR_API_KEY) {
+      headers['x-api-key'] = process.env.SEMANTIC_SCHOLAR_API_KEY;
     }
     
-    try {
-      // Try using Semantic Scholar API if available
-      if (this.hasValidApiKey) {
-        try {
-          return await this.searchWithSemanticScholar(keywords, options);
-        } catch (semanticError) {
-          console.error('Error with Semantic Scholar API:', semanticError);
-        }
-      }
-      
-      // Fall back to sample data
-      console.log('Generating sample data');
-      const sampleData = this.generateSampleResults(keywords, options.limit || 15);
-      
-      // Cache the sample results
-      this.cacheResults(keywords, sampleData);
-      
-      return sampleData;
-    } catch (error) {
-      console.error('Error in scholar search:', error);
-      
-      // Return minimal sample data as final fallback
-      return this.generateSampleResults(keywords, 5, true);
+    const response = await axios.get(`${this.baseUrl}/paper/search/bulk`, {
+      params: {
+        query: query,
+        limit: limit,
+        fields: 'title,abstract,url,year,authors,venue,publicationDate,externalIds',
+        sort: 'publicationDate:desc' // Most recent papers first
+      },
+      headers,
+      timeout: 15000 // Extended timeout for bulk search
+    });
+    
+    if (!response.data || !response.data.data) {
+      console.error('Invalid bulk search response:', response.data);
+      throw new Error('Invalid response from Semantic Scholar bulk search API');
     }
+    
+    console.log(`Bulk search returned ${response.data.data.length} results out of ${response.data.total} total matches`);
+    
+    // Format the results to match our expected format
+    const results = response.data.data.map(paper => ({
+      id: paper.paperId,
+      title: paper.title || 'Untitled Paper',
+      abstract: paper.abstract || '',
+      url: paper.url || `https://www.semanticscholar.org/paper/${paper.paperId}`,
+      pub_year: paper.year,
+      publicationDate: paper.publicationDate,
+      author: paper.authors ? paper.authors.map(a => a.name).join(', ') : 'Unknown',
+      venue: paper.venue || ''
+    }));
+    
+    // Cache the results
+    this.cacheResults(keywords, results);
+    
+    return results;
   }
 
   /**

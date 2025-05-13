@@ -1,6 +1,6 @@
 {
   "aave-african american vernacular english-ebonics": {
-    "timestamp": 1747069344296,
+    "timestamp": 1747154471804,
     "data": [
       {
         "id": "eb5e369e8d4b8812ffdee11c72460ac1e75edbcf",
@@ -416,6 +416,161 @@
         "author": "Johnson, L.",
         "venue": "Language & Communication",
         "url": "https://example.org/scholar/2017/sample-14"
+      }
+    ]
+  },
+  "aave-academic-african american english-african american vernacular english-african-american english-black english-education-learning-teaching": {
+    "timestamp": 1747152771011,
+    "data": [
+      {
+        "id": "scholar-mock-0-1747152771011",
+        "title": "Ebonics and Education: Contemporary Approaches",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2013,
+        "publicationDate": "2013-7-18",
+        "author": "Smith, J.",
+        "venue": "Journal of English Linguistics",
+        "url": "https://example.org/scholar/2013/sample-0"
+      },
+      {
+        "id": "scholar-mock-1-1747152771011",
+        "title": "Analysis of AAVE Features in Digital Discourse",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2019,
+        "publicationDate": "2019-12-12",
+        "author": "Davis, R.",
+        "venue": "American Speech",
+        "url": "https://example.org/scholar/2019/sample-1"
+      },
+      {
+        "id": "scholar-mock-2-1747152771011",
+        "title": "Ebonics and Education: Traditional Approaches",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 1966,
+        "publicationDate": "1966-3-19",
+        "author": "Smith, R.",
+        "venue": "Journal of Sociolinguistics",
+        "url": "https://example.org/scholar/1966/sample-2"
+      },
+      {
+        "id": "scholar-mock-3-1747152771011",
+        "title": "Linguistic Patterns in AAVE: A 2024 Study",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2024,
+        "publicationDate": "2024-4-20",
+        "author": "Johnson, R.",
+        "venue": "Journal of English Linguistics",
+        "url": "https://example.org/scholar/2024/sample-3"
+      },
+      {
+        "id": "scholar-mock-4-1747152771011",
+        "title": "Linguistic Patterns in AAVE: A 1977 Study",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 1977,
+        "publicationDate": "1977-12-20",
+        "author": "Williams, L.",
+        "venue": "Journal of Sociolinguistics",
+        "url": "https://example.org/scholar/1977/sample-4"
+      },
+      {
+        "id": "scholar-mock-5-1747152771011",
+        "title": "Linguistic Patterns in AAVE: A 2022 Study",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2022,
+        "publicationDate": "2022-11-17",
+        "author": "Davis, L.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/2022/sample-5"
+      },
+      {
+        "id": "scholar-mock-6-1747152771011",
+        "title": "Ebonics and Education: Contemporary Approaches",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 2008,
+        "publicationDate": "2008-11-2",
+        "author": "Smith, R.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/2008/sample-6"
+      },
+      {
+        "id": "scholar-mock-7-1747152771011",
+        "title": "Ebonics and Education: Contemporary Approaches",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 2007,
+        "publicationDate": "2007-6-2",
+        "author": "Davis, L.",
+        "venue": "American Speech",
+        "url": "https://example.org/scholar/2007/sample-7"
+      },
+      {
+        "id": "scholar-mock-8-1747152771011",
+        "title": "Analysis of AAVE Features in Academic Discourse",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 2002,
+        "publicationDate": "2002-3-20",
+        "author": "Johnson, J.",
+        "venue": "Journal of African American Studies",
+        "url": "https://example.org/scholar/2002/sample-8"
+      },
+      {
+        "id": "scholar-mock-9-1747152771011",
+        "title": "Analysis of AAVE Features in Academic Discourse",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 1970,
+        "publicationDate": "1970-5-12",
+        "author": "Brown, S.",
+        "venue": "Journal of English Linguistics",
+        "url": "https://example.org/scholar/1970/sample-9"
+      },
+      {
+        "id": "scholar-mock-10-1747152771011",
+        "title": "Analysis of AAVE Features in Academic Discourse",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 1987,
+        "publicationDate": "1987-3-28",
+        "author": "Smith, M.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/1987/sample-10"
+      },
+      {
+        "id": "scholar-mock-11-1747152771011",
+        "title": "Linguistic Patterns in AAVE: A 2019 Study",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2019,
+        "publicationDate": "2019-11-26",
+        "author": "Smith, L.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/2019/sample-11"
+      },
+      {
+        "id": "scholar-mock-12-1747152771011",
+        "title": "Linguistic Patterns in AAVE: A 2022 Study",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE. The study also explores digital media representations and code-switching phenomena.",
+        "pub_year": 2022,
+        "publicationDate": "2022-12-16",
+        "author": "Williams, R.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/2022/sample-12"
+      },
+      {
+        "id": "scholar-mock-13-1747152771011",
+        "title": "Analysis of AAVE Features in Academic Discourse",
+        "abstract": "This study examines the structural features of African American Vernacular English in community contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 1963,
+        "publicationDate": "1963-9-5",
+        "author": "Smith, J.",
+        "venue": "Language & Communication",
+        "url": "https://example.org/scholar/1963/sample-13"
+      },
+      {
+        "id": "scholar-mock-14-1747152771011",
+        "title": "Ebonics and Education: Contemporary Approaches",
+        "abstract": "This study examines the structural features of African American Vernacular English in educational contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.",
+        "pub_year": 2009,
+        "publicationDate": "2009-6-14",
+        "author": "Williams, S.",
+        "venue": "Journal of English Linguistics",
+        "url": "https://example.org/scholar/2009/sample-14"
       }
     ]
   }

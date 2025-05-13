@@ -8,7 +8,7 @@ import contentFetcher from './services/contentFetcher';
 import './App.css';
 import AAVEPublicationsTimeline from './components/PublicationsTimeline/AAVEPublicationsTimeline';
 import AutomatedAAVEDashboard from './components/AAVEDashboard/AutomatedAAVEDashboard';
-import ApiTester from './components/ApiTester';
+import ScholarApiTester from './components/ScholarApiTester';
 
 
 function App() {
@@ -128,8 +128,8 @@ function App() {
         return <TrendDiscovery contentItems={contentItems} />;
       case 'publications-timeline':
         return <AAVEPublicationsTimeline />;
-      case 'api-test':
-        return <ApiTester />;
+      case 'scholar-api-test':
+        return <ScholarApiTester />;
       default:
         return <AutomatedAAVEDashboard contentItems={contentItems} />;
     }
