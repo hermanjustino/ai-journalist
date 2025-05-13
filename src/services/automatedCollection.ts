@@ -109,7 +109,7 @@ async collectWeeklyData(startDate: Date, endDate: Date): Promise<AnalysisResult[
   }
 }
 
-// Update the collectDataForDateRange method to include news content
+// Update the collectDataForDateRange method to handle missing data properly
 async collectDataForDateRange(startDate: Date, endDate: Date): Promise<AnalysisResult> {
   const dateKey = this.formatDateKey(startDate);
   console.log(`Running automated collection for ${dateKey}`);
@@ -175,19 +175,18 @@ async collectDataForDateRange(startDate: Date, endDate: Date): Promise<AnalysisR
     // Combine items from both sources
     const allItems = [...scholarItems, ...newsItems];
     
-    // If we couldn't get any items, return placeholder data
+    // If we couldn't get any items, return an empty result
     if (allItems.length === 0) {
-      console.log('No content collected, returning placeholder data');
+      console.log('No content collected, returning empty result');
       return {
         date: dateKey,
-        totalItems: 5,
-        itemsWithAAVE: 2,
-        prevalence: 40,
-        terms: { "he going": 1, "they be working": 1 },
-        sources: { news: 3, academic: 2 }
+        totalItems: 0,
+        itemsWithAAVE: 0,
+        prevalence: 0,
+        terms: {},
+        sources: { news: 0, academic: 0 }
       };
     }
-    
     
     // Store in collection history
     this.collectionHistory.set(dateKey, allItems);
@@ -199,19 +198,19 @@ async collectDataForDateRange(startDate: Date, endDate: Date): Promise<AnalysisR
   } catch (error) {
     console.error('Error in automated collection:', error);
     
-    // Return minimal fallback result
+    // Return empty result instead of placeholder
     return {
       date: dateKey,
-      totalItems: 3,
-      itemsWithAAVE: 1,
-      prevalence: 33.3,
-      terms: { "he going": 1 },
-      sources: { news: 0, academic: 3 }
+      totalItems: 0,
+      itemsWithAAVE: 0,
+      prevalence: 0,
+      terms: {},
+      sources: { news: 0, academic: 0 }
     };
   }
 }
 
-// Add a direct fetch method that returns something even on failure
+// Remove direct fetch method that returns fallback data
 async fetchScholarlyContent() {
   try {
     const response = await axios.post(`${API_BASE_URL}/scholar/search`, {
@@ -231,16 +230,7 @@ async fetchScholarlyContent() {
     }));
   } catch (error) {
     console.error('Error fetching scholarly content:', error);
-    // Return at least one mock item to prevent UI from getting stuck
-    return [{
-      id: `scholar-mock-${Date.now()}-1`,
-      source: 'academic',
-      content: 'This study examines the prevalence of AAVE in educational materials. We found instances where "he going" and "they be working" as examples in linguistic diversity training.',
-      timestamp: new Date(),
-      author: 'Williams, J., Thompson, K.',
-      title: 'Linguistic Analysis of African American Vernacular English in Educational Content',
-      url: 'https://example.edu/aave-classroom-approaches'
-    }];
+    throw error; // Propagate error instead of returning mock data
   }
 }
 

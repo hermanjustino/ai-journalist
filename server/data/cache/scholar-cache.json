@@ -1,6 +1,6 @@
 {
   "aave-african american vernacular english-ebonics": {
-    "timestamp": 1747160848987,
+    "timestamp": 1747163544122,
     "data": [
       {
         "id": "18c15594ee788bdb82adcf31bde0546ce26ec426",
@@ -441,6 +441,16 @@
         "publicationDate": "2024-12-01",
         "author": "Shimin Chen, Yalin Ruan, Zhaoyang Li, Chuqiao Zhou, Qi Chen, Xuguo Zhou, Youjun Zhang, Chunxiao Yang, Huipeng Pan",
         "venue": "Pesticide Biochemistry and Physiology"
+      },
+      {
+        "id": "3e69f1674b9cfb0995e5933902d7d5854ee076ee",
+        "title": "A Review of Harry Potter and the Other: Race, Justice, and Difference in the Wizarding World",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/3e69f1674b9cfb0995e5933902d7d5854ee076ee",
+        "pub_year": 2024,
+        "publicationDate": "2024-12-01",
+        "author": "Jennifer Duggan",
+        "venue": "Jeunesse"
       },
       {
         "id": "cedbee876a8449c4a8d626abb92772b1605aca5d",
@@ -9990,16 +10000,6 @@
         "pub_year": 2014,
         "publicationDate": "2014-10-15",
         "author": "Matt Maggio, R. Campbell, Renee O'Connell &, D. Wright",
-        "venue": ""
-      },
-      {
-        "id": "b5e5e8c098c8b760dace586a4f2cf9b733302b05",
-        "title": "La photo contre l’image / Laurent Jenny",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b5e5e8c098c8b760dace586a4f2cf9b733302b05",
-        "pub_year": 2014,
-        "publicationDate": "2014-10-13",
-        "author": "L. Jenny, N. Cochoy",
         "venue": ""
       }
     ]

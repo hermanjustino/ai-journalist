@@ -143,8 +143,11 @@ app.post('/api/news/search', async (req, res) => {
     
     // Check if we have a valid API key
     if (!process.env.NEWS_API_KEY) {
-      console.log('No News API key found, using mock data');
-      return res.json(generateMockNewsData(keywords, limit));
+      console.log('No News API key found');
+      return res.status(400).json({ 
+        error: 'News API key not configured',
+        message: 'The server is not configured with a News API key'
+      });
     }
     
     // Check cache first
@@ -157,9 +160,11 @@ app.post('/api/news/search', async (req, res) => {
     // Check if we're about to exceed rate limits
     const canProceed = apiUsageTracker.trackRequest('news');
     if (canProceed === false) {
-      console.log('Rate limit would be exceeded, using mock data');
-      const mockData = generateMockNewsData(keywords, limit);
-      return res.json(mockData);
+      console.log('Rate limit would be exceeded');
+      return res.status(429).json({
+        error: 'Rate limit exceeded',
+        message: 'The News API rate limit has been reached. Please try again later.'
+      });
     }
     
     try {
@@ -185,7 +190,7 @@ app.post('/api/news/search', async (req, res) => {
           author: article.author,
           source: 'news',
           url: article.url,
-          timestamp: new Date(article.publishedAt)
+          timestamp: new Date(article.publishedAt).toISOString()
         }));
         
         // Cache the successful response
@@ -193,58 +198,36 @@ app.post('/api/news/search', async (req, res) => {
         
         return res.json(articles);
       } else {
-        console.log('Invalid response from News API, using mock data');
-        const mockData = generateMockNewsData(keywords, limit);
-        return res.json(mockData);
+        console.log('Invalid response from News API');
+        return res.status(502).json({
+          error: 'Invalid API response',
+          message: 'The News API returned an invalid response'
+        });
       }
     } catch (apiError) {
       console.error('News API error:', apiError.message);
       
-      // Check if it's a rate limit error (status code 429)
       if (apiError.response && apiError.response.status === 429) {
-        console.log('News API rate limit reached, using mock data');
-      } else if (apiError.response) {
-        console.error('API response error:', {
-          status: apiError.response.status,
-          statusText: apiError.response.statusText,
-          data: apiError.response.data
+        return res.status(429).json({
+          error: 'Rate limit reached',
+          message: 'The News API rate limit has been reached'
+        });
+      } else {
+        return res.status(apiError.response?.status || 500).json({
+          error: 'API request failed',
+          message: apiError.message,
+          details: apiError.response?.data || 'No additional details'
         });
       }
-      
-      console.log('Falling back to mock data due to API error');
-      const mockData = generateMockNewsData(keywords, limit);
-      return res.json(mockData);
     }
   } catch (error) {
     console.error('Error in news search endpoint:', error);
-    // Always return a consistent response structure even in case of errors
-    res.status(500).json([]);
-  }
-});
-
-// Helper function for mock news data
-function generateMockNewsData(keywords = [], limit = 10) {
-  const articles = [];
-  const sources = ['CNN', 'NPR', 'The Atlantic', 'New York Times', 'Washington Post'];
-  const authors = ['Jane Smith', 'Robert Johnson', 'Leila Williams', 'David Chen', 'Maria Rodriguez'];
-  
-  for (let i = 0; i < limit; i++) {
-    const keyword = keywords && keywords.length > 0 ? 
-      keywords[i % keywords.length] : 'education';
-    
-    articles.push({
-      id: `mock-news-${Date.now()}-${i}`,
-      title: `Recent developments in ${keyword} show promising trends`,
-      content: `A recent study on ${keyword} demonstrates significant findings relevant to African American communities. Researchers found evidence of increasing use of AAVE in educational contexts, highlighting the growing recognition of linguistic diversity.`,
-      author: authors[i % authors.length],
-      source: 'news',
-      url: `https://example.com/news/${i}`,
-      timestamp: new Date(Date.now() - i * 86400000) // Each article is one day older
+    res.status(500).json({
+      error: 'Server error',
+      message: 'An unexpected error occurred while processing your request'
     });
   }
-  
-  return articles;
-}
+});
 
 // Get current trends endpoint
 app.get('/api/trends/current', (req, res) => {

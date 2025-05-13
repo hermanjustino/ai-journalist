@@ -29,50 +29,40 @@ class ContentGenerator {
      */
     async generateArticle(trend, topicDetails, relatedContent = []) {
         try {
-            setLoading(true);
-            setError(null);
-            console.log('Generating article for trend:', selectedTrendId);
+            console.log(`Generating article for trend: ${trend.id}`);
             
-            const response = await axios.post(`${API_URL}/articles/generate`, {
-              trendId: selectedTrendId
-            });
+            // Check if API key is configured
+            if (!this.apiKey || !this.genAI) {
+              throw new Error('Gemini API key not configured');
+            }
             
-            // Process the article data
+            // Prepare the context for the language model
+            const context = this.prepareTrendContext(trend, topicDetails, relatedContent);
+            
+            // Generate article using language model
+            const article = await this.callLanguageModel(context);
+            
+            // Save the article for future reference
             const articleData = {
-              ...response.data,
-              timestamp: new Date(response.data.timestamp || Date.now()),
-              trend: response.data.trend ? {
-                ...response.data.trend,
-                timestamp: response.data.trend.timestamp ? 
-                  new Date(response.data.trend.timestamp) : 
-                  new Date()
-              } : {
-                id: 'unknown',
-                name: 'Unknown Trend',
-                keywords: [],
-                multiplier: 1.0,
-                velocity: 0,
-                timestamp: new Date()
-              }
+              article,
+              trend,
+              timestamp: new Date()
             };
             
-            setCurrentArticle(articleData);
-            setArticles([articleData, ...articles]);
-          } catch (err) {
-            console.error('Article generation error:', err);
-            setError(`Failed to generate article using Gemini API: ${err.response?.data?.error || err.message}`);
-          } finally {
-            setLoading(false);
-          }
+            return this.saveArticle(articleData);
+        } catch (error) {
+            console.error('Article generation error:', error);
+            throw error;
+        }
     }
 
     /**
      * Call the Gemini language model to generate an article
      */
     async callLanguageModel(context) {
-        // Without an API key, return mock article
+        // Without an API key, throw error
         if (!this.apiKey || !this.genAI) {
-            return this.generateMockArticle(context);
+            throw new Error('Gemini API key not configured');
         }
 
         try {
@@ -197,31 +187,6 @@ Format the article with a clear headline and well-structured paragraphs. Use a j
                 wordWeights
             },
             relatedContent
-        };
-    }
-
-    /**
-     * Generate a mock article for testing or fallback
-     */
-    generateMockArticle(context) {
-        const { trend } = context;
-
-        const title = `The Rise of ${trend.name}: A Cultural Analysis`;
-
-        const intro = `A significant trend is emerging in ${trend.name}, showing ${trend.multiplier.toFixed(1)}x normal activity levels.`;
-
-        const body = `
-Cultural analysts have noted this movement's importance within broader Black cultural expression. 
-Examining the most relevant terms associated with this trend reveals patterns of cultural significance that merit attention.
-Content creators across platforms are engaging with these themes in ways that demonstrate both innovation and connection to historical cultural traditions.`;
-
-        const conclusion = `As this trend continues to evolve, it offers valuable insights into contemporary cultural expression and the ongoing development of Black cultural movements in digital and physical spaces.`;
-
-        return {
-            title,
-            content: `**${title}**\n\n${intro}\n\n${body}\n\n${conclusion}`,
-            model: 'mock',
-            timestamp: new Date()
         };
     }
 

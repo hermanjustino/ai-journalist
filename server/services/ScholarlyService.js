@@ -76,12 +76,23 @@ class ScholarlyService {
     const query = keywords.join(' | '); // Using OR operator in the bulk search query
     const limit = Math.min(options.limit || 15, 1000); // API limits to max 1000
     
+    // Check for cached results first unless forced refresh
+    if (!options.forceRefresh) {
+      const cachedResults = this.getCachedResults(keywords);
+      if (cachedResults) {
+        return cachedResults;
+      }
+    }
+    
     console.log(`Using bulk search endpoint with query: "${query}"`);
     
-    const headers = {};
-    if (process.env.SEMANTIC_SCHOLAR_API_KEY) {
-      headers['x-api-key'] = process.env.SEMANTIC_SCHOLAR_API_KEY;
+    if (!process.env.SEMANTIC_SCHOLAR_API_KEY) {
+      throw new Error('Semantic Scholar API key not configured');
     }
+    
+    const headers = {
+      'x-api-key': process.env.SEMANTIC_SCHOLAR_API_KEY
+    };
     
     const response = await axios.get(`${this.baseUrl}/paper/search/bulk`, {
       params: {
@@ -159,81 +170,6 @@ class ScholarlyService {
     
     // Cache the results
     this.cacheResults(keywords, results);
-    
-    return results;
-  }
-
-  /**
-   * Generate sample scholarly results for fallback
-   */
-  generateSampleResults(keywords, count = 15, minimal = false) {
-    console.log(`Generating ${count} sample results related to: ${keywords.join(', ')}`);
-    
-    const results = [];
-    const currentYear = new Date().getFullYear();
-    const aaveKeywords = ['aave', 'african american vernacular english', 'ebonics', 'AFRICAN-AMERICAN ENGLISH', 'black english'];
-    const isAAVESearch = keywords.some(kw => 
-      aaveKeywords.some(aaveKw => kw.toLowerCase().includes(aaveKw.toLowerCase()))
-    );
-    
-    // Generate more targeted sample data based on keywords
-    const generateAbstract = (year) => {
-      if (isAAVESearch) {
-        return `This study examines the structural features of African American Vernacular English in ${
-          Math.random() > 0.5 ? 'educational' : 'community'
-        } contexts. The research identifies specific patterns in pronoun usage, verbal markers, and syntactic structures common in AAVE.${
-          year > 2010 ? ' The study also explores digital media representations and code-switching phenomena.' : ''
-        }`;
-      } else {
-        return `This research explores ${keywords[0]} with a focus on cultural impact and historical significance. ${
-          year > 2015 ? 'Modern methodologies were applied to analyze recent developments.' : 'Traditional analysis reveals important patterns.'
-        }`;
-      }
-    };
-    
-    // Generate sample titles based on keywords
-    const generateTitle = (year) => {
-      if (isAAVESearch) {
-        const titles = [
-          `Analysis of AAVE Features in ${year > 2015 ? 'Digital' : 'Academic'} Discourse`,
-          `The Evolution of African American Vernacular English: ${year > 2010 ? 'Modern' : 'Historical'} Perspectives`,
-          `Linguistic Patterns in AAVE: A ${year} Study`,
-          `Ebonics and Education: ${year > 2000 ? 'Contemporary' : 'Traditional'} Approaches`
-        ];
-        return titles[Math.floor(Math.random() * titles.length)];
-      } else {
-        return `${keywords[0].charAt(0).toUpperCase() + keywords[0].slice(1)} Research: Insights from ${year}`;
-      }
-    };
-    
-    // Generate appropriate academic venues
-    const venues = [
-      'Journal of Sociolinguistics',
-      'American Speech',
-      'Language in Society',
-      'Journal of African American Studies',
-      'Journal of English Linguistics',
-      'Language & Communication'
-    ];
-    
-    for (let i = 0; i < count; i++) {
-      // Generate years with more recent years being more common
-      let year = 1960 + Math.floor(Math.random() * (currentYear - 1960));
-      if (Math.random() > 0.5) {
-        year = 2000 + Math.floor(Math.random() * (currentYear - 2000));
-      }
-      
-      results.push({
-        id: `scholar-mock-${i}-${Date.now()}`,
-        title: generateTitle(year),
-        abstract: minimal ? `Study related to ${keywords.join(', ')}` : generateAbstract(year),
-        pub_year: year,
-        publicationDate: `${year}-${Math.floor(Math.random() * 12) + 1}-${Math.floor(Math.random() * 28) + 1}`,
-        author: minimal ? 'Academic Author' : `${['Smith', 'Johnson', 'Williams', 'Brown', 'Davis'][Math.floor(Math.random() * 5)]}, ${['J.', 'M.', 'R.', 'L.', 'S.'][Math.floor(Math.random() * 5)]}`,
-        venue: minimal ? 'Academic Journal' : venues[Math.floor(Math.random() * venues.length)],
-        url: `https://example.org/scholar/${year}/sample-${i}`
-      });
-    }
     
     return results;
   }

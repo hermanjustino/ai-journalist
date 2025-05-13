@@ -59,7 +59,7 @@ const AAVEPublicationsTimeline: React.FC = () => {
             const { data, timestamp, papers, source } = JSON.parse(cachedData);
             
             // Check if cache is still valid (less than 7 days old)
-            if (Date.now() - timestamp < CACHE_EXPIRY_TIME) {
+            if (Date.now() - timestamp < CACHE_EXPIRY_TIME && !data.isSample) {
               console.log('Using cached AAVE publications data');
               setYearCounts(data.yearCounts);
               setTotalPapers(data.totalPapers);
@@ -154,10 +154,10 @@ const AAVEPublicationsTimeline: React.FC = () => {
         // Successfully loaded from cache
         console.log('Successfully loaded data from cache as fallback');
       } else {
-        // Generate fallback data if needed
-        if (yearCounts.length === 0) {
-          generateSampleData();
-        }
+        // Show empty results instead of generating sample data
+        setYearCounts([]);
+        setTotalPapers(0);
+        setRawPapers([]);
       }
     } finally {
       setLoading(false);
@@ -182,63 +182,6 @@ const AAVEPublicationsTimeline: React.FC = () => {
     } catch (error) {
       console.error('Error loading cached data:', error);
       return false;
-    }
-  };
-
-  const generateSampleData = () => {
-    console.log('Generating sample AAVE publications data');
-    const currentYear = new Date().getFullYear();
-    const startYear = 1970;
-    const sampleData: YearCount[] = [];
-    const samplePapers: Paper[] = [];
-    
-    for (let year = startYear; year <= currentYear; year++) {
-      // Generate a pattern that looks realistic
-      let count = 1;
-      
-      if (year > 1980) count += Math.floor(Math.random() * 3);
-      if (year > 1990) count += Math.floor(Math.random() * 5);
-      if (year > 2000) count += Math.floor(Math.random() * 8);
-      if (year > 2010) count += Math.floor(Math.random() * 10);
-      
-      // Add some randomization
-      count = Math.max(1, count + Math.floor(Math.random() * 4) - 1);
-      
-      sampleData.push({ year, count });
-      
-      // Generate sample papers for this year
-      for (let i = 0; i < count; i++) {
-        samplePapers.push({
-          paperId: `sample-${year}-${i}`,
-          title: `Sample AAVE Research Paper ${i+1} (${year})`,
-          year,
-          author: `Sample Author ${i % 5 + 1}`,
-          venue: 'Sample Journal of Linguistics',
-          abstract: 'This is a sample paper about AAVE research generated as fallback data.',
-          url: '#'
-        });
-      }
-    }
-    
-    setYearCounts(sampleData);
-    setTotalPapers(samplePapers.length);
-    setRawPapers(samplePapers);
-    setDataSource('sample');
-    
-    // Save this sample data to cache to avoid regenerating
-    try {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify({
-        data: {
-          yearCounts: sampleData,
-          totalPapers: samplePapers.length
-        },
-        papers: samplePapers,
-        timestamp: Date.now(),
-        source: 'sample',
-        isSample: true
-      }));
-    } catch (e) {
-      console.warn('Failed to cache sample data:', e);
     }
   };
 
@@ -475,6 +418,7 @@ const AAVEPublicationsTimeline: React.FC = () => {
           <button 
             onClick={() => setShowRawData(!showRawData)}
             className="toggle-data-button"
+            disabled={rawPapers.length === 0}
           >
             {showRawData ? 'Hide Paper List' : 'Show Paper List'}
           </button>
@@ -502,10 +446,14 @@ const AAVEPublicationsTimeline: React.FC = () => {
         )}
       </div>
       
-      {loading && yearCounts.length === 0 ? (
+      {loading ? (
         <div className="loading-container">
           <div className="loading-spinner"></div>
           <p>Fetching publications data...</p>
+        </div>
+      ) : yearCounts.length === 0 ? (
+        <div className="no-data-message">
+          <p>No publication data available. Please check your API connection and try again.</p>
         </div>
       ) : (
         <>

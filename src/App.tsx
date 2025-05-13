@@ -30,6 +30,7 @@ function App() {
 
   const fetchContentData = useCallback(async () => {
     setLoading(true);
+    setError(null);
     try {
       // Only fetch content from news and scholar sources
       let newsContent: any[] = [];
@@ -40,7 +41,7 @@ function App() {
         console.log('Retrieved news content:', newsContent.length, 'items');
       } catch (newsErr) {
         console.error('Error fetching news content:', newsErr);
-        newsContent = [];
+        setError(`Failed to fetch news content. ${newsErr instanceof Error ? newsErr.message : ''}`);
       }
       
       try {
@@ -48,13 +49,15 @@ function App() {
         console.log('Retrieved scholar content:', scholarContent.length, 'items');
       } catch (scholarErr) {
         console.error('Error fetching scholarly content:', scholarErr);
-        scholarContent = [];
+        if (!error) {
+          setError(`Failed to fetch scholarly content. ${scholarErr instanceof Error ? scholarErr.message : ''}`);
+        }
       }
 
       // Combine news and scholar content
       const formattedNewsContent = newsContent.map(formatContent);
       const formattedScholarContent = scholarContent.map(formatContent);
-      let allContent: ContentItem[] = [
+      const allContent: ContentItem[] = [
         ...formattedNewsContent,
         ...formattedScholarContent
       ];
@@ -62,32 +65,19 @@ function App() {
       console.log(`Got ${formattedNewsContent.length} news and ${formattedScholarContent.length} scholar items`);
 
       if (allContent.length === 0) {
-        console.log('No content from APIs, using mock data');
-        // If no content, use mock data
-        try {
-          const mockContent = await contentFetcher.getMockContent(15);
-          allContent = mockContent;
-          console.log(`Retrieved ${mockContent.length} mock content items`);
-        } catch (mockErr) {
-          console.error('Error getting mock content:', mockErr);
-          allContent = []; // Ensure allContent is an array even if mock data fails
+        console.log('No content available from APIs');
+        if (!error) {
+          setError('No content available. Please check your API keys and connections.');
         }
+        setContentItems([]);
+      } else {
+        setContentItems(allContent);
+        console.log(`Total items loaded: ${allContent.length}`);
       }
-
-      setContentItems(allContent);
-      console.log(`Total items loaded: ${allContent.length}`);
     } catch (err) {
       console.error('Error in content fetching logic:', err);
-      setError('Failed to load content. Using mock data instead.');
-
-      try {
-        // Fallback to mock content on error
-        const mockContent = await contentFetcher.getMockContent(15);
-        setContentItems(mockContent);
-      } catch (mockErr) {
-        console.error('Error even with mock data:', mockErr);
-        setContentItems([]); // Empty array as final fallback
-      }
+      setError(`Failed to load content. ${err instanceof Error ? err.message : 'Unknown error'}`);
+      setContentItems([]);
     } finally {
       setLoading(false);
     }
