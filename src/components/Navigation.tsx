@@ -32,11 +32,7 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
         </div>
         
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-          <li className={currentView === 'aave-analysis' ? 'active' : ''}>
-            <button onClick={() => handleViewChange('aave-analysis')}>
-              AAVE Analysis
-            </button>
-          </li>
+
           <li className={currentView === 'publications-timeline' ? 'active' : ''}>
             <button onClick={() => handleViewChange('publications-timeline')}>
               Publications Timeline
@@ -44,7 +40,7 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
           </li>
           <li className={currentView === 'dashboard' ? 'active' : ''}>
             <button onClick={() => handleViewChange('dashboard')}>
-              Dashboard
+              Sources
             </button>
           </li>
           <li className={currentView === 'trends' ? 'active' : ''}>

@@ -7,13 +7,12 @@ import { ContentItem } from './services/domainTracker';
 import contentFetcher from './services/contentFetcher';
 import './App.css';
 import AAVEPublicationsTimeline from './components/PublicationsTimeline/AAVEPublicationsTimeline';
-import AutomatedAAVEDashboard from './components/AAVEDashboard/AutomatedAAVEDashboard';
 import ScholarApiTester from './components/ScholarApiTester';
 
 
 function App() {
   // Change default view to AAVE dashboard
-  const [currentView, setCurrentView] = useState<string>('aave-analysis');
+  const [currentView, setCurrentView] = useState<string>('publications-timeline');
   const [contentItems, setContentItems] = useState<ContentItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -120,8 +119,6 @@ function App() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard contentItems={contentItems} />;
-      case 'aave-analysis':
-        return <AutomatedAAVEDashboard contentItems={contentItems} />;
       case 'about':
         return <About />;
       case 'trends':
@@ -131,7 +128,7 @@ function App() {
       case 'scholar-api-test':
         return <ScholarApiTester />;
       default:
-        return <AutomatedAAVEDashboard contentItems={contentItems} />;
+        return <AAVEPublicationsTimeline/>;
     }
   };
 

@@ -1,6 +1,6 @@
 {
   "aave-african american vernacular english-ebonics": {
-    "timestamp": 1747159173057,
+    "timestamp": 1747160848987,
     "data": [
       {
         "id": "18c15594ee788bdb82adcf31bde0546ce26ec426",
@@ -43,6 +43,16 @@
         "venue": "'Atiqot"
       },
       {
+        "id": "bb47d178bfcfbaba41417ffc8dc5bfec9993ba54",
+        "title": "Centering Black Voices: Lessons Learned and Reflections from a Large-Scale AAVE Data Collection at a Historically Black University",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/bb47d178bfcfbaba41417ffc8dc5bfec9993ba54",
+        "pub_year": 2025,
+        "publicationDate": "2025-04-25",
+        "author": "Jazette Johnson, Lucretia Williams, Jaye Nias, Saurav K. Aryal, Gloria Washington",
+        "venue": "CHI Extended Abstracts"
+      },
+      {
         "id": "4900459afbecda4ee66f5a34c46722b31fef9803",
         "title": "Abstract 7111: A cross-sectional survey of genomics infrastructure at six NHGRI-funded Diversity Centers for Genome Research",
         "abstract": "",
@@ -81,6 +91,36 @@
         "publicationDate": "2025-03-31",
         "author": "Jonathan N. Thomas, Kayla Ann Woodward, Sarah Poston, Cindy Jong, Molly H. Fisher",
         "venue": "School Science and Mathematics"
+      },
+      {
+        "id": "7e601bdc2fae8ccd691af0ca6433aa25c62a0996",
+        "title": "Smart contract vulnerability in DeFi: Assessing security risk in blockchain-based lending platforms",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/7e601bdc2fae8ccd691af0ca6433aa25c62a0996",
+        "pub_year": 2025,
+        "publicationDate": "2025-03-30",
+        "author": "Nonso Okika, Omoshalewa Anike Adeosun, Oluwatobi Julius Ogunjide, Blessing Unwana Umoh, Modupe Elizabeth Temidayo",
+        "venue": "Global Journal of Engineering and Technology Advances"
+      },
+      {
+        "id": "4f4c0166f9a4b87af0455bbdf7387c9258b9bdac",
+        "title": "Risk Management for Distributed Arbitrage Systems: Integrating Artificial Intelligence",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/4f4c0166f9a4b87af0455bbdf7387c9258b9bdac",
+        "pub_year": 2025,
+        "publicationDate": "2025-03-24",
+        "author": "Akaash Vishal Hazarika, Mahak Shah, Swapnil Patil, Pradyumna Shukla",
+        "venue": "arXiv.org"
+      },
+      {
+        "id": "b25ce5e9220ef4a5c2c0efffa1a82fc633832890",
+        "title": "A Curationary Tale: Logarithmic Regret in DeFi Lending via Dynamic Pricing",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/b25ce5e9220ef4a5c2c0efffa1a82fc633832890",
+        "pub_year": 2025,
+        "publicationDate": "2025-03-23",
+        "author": "Tarun Chitra",
+        "venue": "arXiv.org"
       },
       {
         "id": "80af8299fe6552e06241b31d7ef9eb75e92a96fe",
@@ -143,6 +183,16 @@
         "venue": "International Journal of Scientific Research in Biological Sciences"
       },
       {
+        "id": "3e54befd9939db765525a638be65d392062e6887",
+        "title": "Exploring the Asymmetric Multifractal Dynamics of DeFi Markets",
+        "abstract": "The rapid growth of decentralized finance (DeFi) has revolutionized the global financial landscape, providing decentralized alternatives to traditional financial services. This study investigates the asymmetric multifractal behavior of nine DeFi markets—AAVE, Pancake Swap (CAKE), Compound (COMP), Curve Finance (CRV), Maker DAO (MKR), Synthetix (SNX), Sushi Swap (SUSHI), UniSwap (UNis), and Yearn Finance (YFI)—using Asymmetrical Multifractal Detrended Fluctuation Analysis (A-MFDA). The use of generalized Hurst exponents, Rényi exponents, and singularity spectrum functions revealed that DeFi markets exhibit multifractal behaviors. The analysis uncovered clear differences between uptrend and downtrend fluctuation functions, highlighting asymmetric multifractal behavior. The asymmetry intensity was analyzed through excess differences in uptrend and downtrend generalized Hurst exponents. AAVE, COMP, SNX, UNis, SUSHI, and MKR exhibit negative asymmetry, with stronger correlations during negative trends. CAKE shifts from positive to negative asymmetry, showing sensitivity to both trends. CRV is more volatile in negative trends, while YFI consistently displays positive asymmetry across market fluctuations. The results also reveal that long-term correlations and heavy-tailed distributions contribute to the multifractality of DeFi assets. This study highlights the need for dynamic risk management in DeFi markets, urging investors to adopt adaptive strategies for volatile assets and prepare for sudden price fluctuations to safeguard investments.",
+        "url": "https://www.semanticscholar.org/paper/3e54befd9939db765525a638be65d392062e6887",
+        "pub_year": 2025,
+        "publicationDate": "2025-02-26",
+        "author": "Soufiane Benbachir, Karim Amzile, Mohamed Beraich",
+        "venue": "Journal of Risk and Financial Management"
+      },
+      {
         "id": "f523a43efe1711bd500fdd10757dde5d2edc87b6",
         "title": "Evaluation of ebony as a potential selectable marker for genetic sexing in Aedes aegypti",
         "abstract": "Background Aedes aegypti is expected to invade previously unoccupied areas, mainly due to the climate change, the increase in travel and trade activities and the continuous transformation of the rural environment into urban areas. The sterile insect technique (SIT), which relies on the mass production and release of sterile males, is an environmentally friendly approach that can be applied for population control of Ae. aegypti. SIT programs can be greatly benefited by a genetic sexing strain (GSS) and a reliable sex sorting system to minimize any accidental female release. Visually detectable or conditionally lethal selectable markers can be used for the development of new GSSs. In this study, we evaluated the suitability and competence of a mutant Ae. aegypti ebony strain for the development of a new GSS. The ebony gene is known to be involved in the pigmentation pathway of several dipteran insects, including Ae. aegypti. Methods An ebony gene knockout was developed though CRISPR/Cas9 mutagenesis. G0 individuals with the desired phenotype were crossed, and progeny were screened in every generation. PCR and sequencing were performed using gDNA from a pulled leg to determine the mutant genotype. Quality control tests, including pupae and adult recovery rates, male sex ratio and fecundity, were applied to the ebony mutant line to determine whether the mutation confers any fitness cost. Results An Ae. aegypti ebony knockout mutant carrying a 5-bp deletion was obtained, which presented darker head and siphon phenotypes at the larval stage. However, genetic analysis revealed that this ebony mutation results in incomplete penetrance and variable expressivity. The establishment of a pure ebony mutant line was not possible because of the fitness costs conferred by the mutation. Conclusions In this study, the adequacy and suitability of the ebony gene as a selectable marker for the development of a GSS in Ae. aegypti were assessed. Despite its clear phenotype early in larval development, the homozygous mutant line presented phenotypic inconsistency and loss of fertility. These drawbacks clearly indicate that this particular mutation is not suitable for the development of a new GSS. Nonetheless, it cannot be excluded that a different mutation will lead to a different expression and penetrance profile and a viable homozygous mutant line. Graphical Abstract Supplementary Information The online version contains supplementary material available at 10.1186/s13071-025-06709-y.",
@@ -161,6 +211,16 @@
         "publicationDate": "2025-02-03",
         "author": "J. Rickford",
         "venue": "Annual Review of Linguistics"
+      },
+      {
+        "id": "281226a3f0d5f1f9db33af2c06145f8ac3ed00e1",
+        "title": "Exploring Connectivity Pattern, Wealth Distribution, and Market Behavior: Insights into Decentralized Finance Network",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/281226a3f0d5f1f9db33af2c06145f8ac3ed00e1",
+        "pub_year": 2025,
+        "publicationDate": "2025-02-03",
+        "author": "Ki Anisa Zahria Salsabila, A. Alamsyah, Nora Amelda Rizal",
+        "venue": "International Conference Advancement Data Science, E-learning and Information Systems"
       },
       {
         "id": "fdeadfc6def8ded39f9ebd35757caf291bfbb2ee",
@@ -353,6 +413,26 @@
         "venue": "Ab Imperio"
       },
       {
+        "id": "b2ed7d16a81bdfe9760d4fb903264cc8517c2c66",
+        "title": "Blockchain and the Evolution of Decentralized Finance Navigating Growth and Vulnerabilities",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/b2ed7d16a81bdfe9760d4fb903264cc8517c2c66",
+        "pub_year": 2024,
+        "publicationDate": "2024-12-01",
+        "author": "Yusuf Durachman",
+        "venue": "Journal of Current Research in Blockchain"
+      },
+      {
+        "id": "85454a05d7575c1f76ac77a6b4db85a37baacd12",
+        "title": "A Comparative Analysis of Centralized and Decentralized Developer Autonomous Organizations Managing Conflicts in Discussing External Crises",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/85454a05d7575c1f76ac77a6b4db85a37baacd12",
+        "pub_year": 2024,
+        "publicationDate": "2024-12-01",
+        "author": "Hongzhou Chen, Wei Cai",
+        "venue": "IEEE Transactions on Computational Social Systems"
+      },
+      {
         "id": "843120a34ce54714fcb78abddf25a2b29b22861c",
         "title": "CRISPR/Cas9-mediated editing of the melanization gene ebony in the 28-spotted ladybeetle, Henosepilachna vigintioctopunctata.",
         "abstract": "",
@@ -381,6 +461,16 @@
         "publicationDate": "2024-11-29",
         "author": "Runhuan Yang, Huiduo Guo, Juan Sun, Tao Gui, Xinyu Li, Heying Qian, Anli Chen",
         "venue": "Genes"
+      },
+      {
+        "id": "e02512878d22ce889e7659eecac171de14abd821",
+        "title": "Utilization of Decentralized Finance (DeFi) and Distributed Ledger Technology (DLT) in Banking operations",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/e02512878d22ce889e7659eecac171de14abd821",
+        "pub_year": 2024,
+        "publicationDate": "2024-11-21",
+        "author": "Ch Sree Kumar, Dr. Akhilendra Pratap Singh, Dr. K Hemant K Reddy",
+        "venue": "2024 International Conference on Intelligent Computing and Sustainable Innovations in Technology (IC-SIT)"
       },
       {
         "id": "1ed96e1e8bed1d0d09b8ae99f0628e7d83c0c106",
@@ -441,6 +531,16 @@
         "publicationDate": "2024-10-25",
         "author": "Steven Ni, G. A. McCulloch, Gracie C. Kroos, Tania M. King, L. Dutoit, B. Foster, Kahu Hema, J. Jandt, Mei Peng, Peter K. Dearden, J. Waters",
         "venue": "Science"
+      },
+      {
+        "id": "d76df3468400e64a64ac5be7ddc4ce24d6d7845a",
+        "title": "AgileRate: Bringing Adaptivity and Robustness to DeFi Lending Markets",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/d76df3468400e64a64ac5be7ddc4ce24d6d7845a",
+        "pub_year": 2024,
+        "publicationDate": "2024-10-17",
+        "author": "Mahsa Bastankhah, Viraj Nadkarni, Xuechao Wang, P. Viswanath",
+        "venue": "arXiv.org"
       },
       {
         "id": "47d05459146fa644c88b1e1472ae5855e22224da",
@@ -643,6 +743,16 @@
         "venue": "Revista Vortex"
       },
       {
+        "id": "3cd3437b08ddf3033d4f63c98b45b5ae9618aa45",
+        "title": "Machine Learning-Enhanced Decentralized Finance (DeFi)",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/3cd3437b08ddf3033d4f63c98b45b5ae9618aa45",
+        "pub_year": 2024,
+        "publicationDate": "2024-08-05",
+        "author": "Ohm Patel",
+        "venue": "International Journal of Science and Research (IJSR)"
+      },
+      {
         "id": "57e62109c6eab771e7cb882439db4218c26a5716",
         "title": "The genetic basis of the black pupae phenotype in tephritid fruit flies",
         "abstract": "The remarkable diversity of insect pigmentation offers a captivating avenue for exploring evolution and genetics. In tephritid fruit flies, decoding the molecular pathways underlying pigmentation traits also plays a central role in applied entomology. Mutant phenotypes like the black pupae (bp) have long been used as a component of genetic sexing strains, allowing male-only release in tephritid sterile insect technique applications. However, the genetic basis of bp remains largely unknown. Here, we present independent evidence from classical and modern genetics showing that the bp phenotype in the GUA10 strain of the Mexican fruit fly, Anastrepha ludens, is caused by a large deletion at the ebony locus resulting in the removal of the entire protein-coding region of the gene. Targeted knockout of ebony induced analogous bp phenotypes across six tephritid species spanning over 50 million years of divergent evolution. This functionally validated our findings and allowed for a deeper investigation into the role of Ebony in pigmentation and development in these species. Our study offers fundamental knowledge for developing new sexing strains based on the bp marker and for future evolutionary developmental biology studies in tephritid fruit flies.",
@@ -673,6 +783,16 @@
         "venue": ""
       },
       {
+        "id": "2dd4fe033e6d7ebca17709b2c566d63b2cd2f737",
+        "title": "Blockchain Governance: An Empirical Analysis of User Engagement on DAOs",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/2dd4fe033e6d7ebca17709b2c566d63b2cd2f737",
+        "pub_year": 2024,
+        "publicationDate": "2024-07-15",
+        "author": "Brett Falk, Tasneem Pathan, Andrew Rigas, Gerry Tsoukalas",
+        "venue": "arXiv.org"
+      },
+      {
         "id": "6f851ec07cdef60120265464164f19cfabf516d3",
         "title": "“We Jih Like Sick of This S?!t Moe, Kill”: Toward the Emancipation of Black Education (Commentary)",
         "abstract": "",
@@ -691,6 +811,16 @@
         "publicationDate": "2024-07-12",
         "author": "Muhammad Majiidu, D. Matra, Fifi Gus Dwiyanti, I. Siregar",
         "venue": "Journal of Natural Resources and Environmental Management"
+      },
+      {
+        "id": "dce521e2e06ccd1c958b14f8051cf7079370b9a0",
+        "title": "AAVE Corpus Generation and Low-Resource Dialect Machine Translation",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/dce521e2e06ccd1c958b14f8051cf7079370b9a0",
+        "pub_year": 2024,
+        "publicationDate": "2024-07-08",
+        "author": "Eric Graves, Shreyas Aswar, Rujuta Desai, Srilekha Nampelli, Sunandan Chakraborty, Ted Hall",
+        "venue": "The Compass"
       },
       {
         "id": "ac83750795edbf7e5007d0d68f0677592a001099",
@@ -863,6 +993,16 @@
         "venue": "Journal of Experimental Agriculture International"
       },
       {
+        "id": "ce0dcee62f3860a634cf63e24ef1448672001c08",
+        "title": "Cryptocurrency Portfolio Management:A Clustering-Based Association Approach",
+        "abstract": "The aim of this study is to identify crypto assets with similar characteristics and to explore the similar responses of these assets to market-priced events. This process is carried out in two stages. Cluster analysis and association analysis were applied in the research. First of all, cluster analysis was performed using the variables; the total number of active unique addresses, USD value of the current supply, fixed closing price of the asset, return on investment of the asset, total of the current supply, number of transactions, USD value of the sum of native units and 30 days volatility criteria. HK-Means algorithm and R Program were used for clustering. Then, the co-movement of crypto assets was analyzed using the FP-Growth algorithm and the WEKA program. 71 crypto assets with the highest market capitalization and meeting the research criteria were included in the research. The data used in the research covers the period of May 2021-May 2022. According to the main findings obtained from the research; within the framework of the criteria used in the research, 4 clusters were formed. Most important association rules found to be between; btc (bitcoin) & aave (nominex), eth (ethereum) & aave (nominex), dot (polkadot) & aave (nominex), neo & aave (nominex), uni (uniswap) & aave (nominex) , btg (bitcoin gold) & etc (ethereum classic), xrp (riple) & algo (algorand) & doge (dogecoin), xrp (riple) & doge (dogecoin), cro (cronos) & xrp (riple) & algo ( algorand) & trx (tron) & doge (dogecoin).",
+        "url": "https://www.semanticscholar.org/paper/ce0dcee62f3860a634cf63e24ef1448672001c08",
+        "pub_year": 2024,
+        "publicationDate": "2024-04-11",
+        "author": "T. Kocabıyık, Meltem Karaatlı, Mehmet Özsoy, Muhammet Fatih Özer",
+        "venue": "Ekonomika"
+      },
+      {
         "id": "4bd3aaf3a51e0d61bb40d1e939476818840f2d1c",
         "title": "Phenotypic and Estimated Genetic Variability in Endemic Diospyros celebica Bakh. and Widely-spread D. blancoi A.Dc. Cultivated at Purwodadi Botanic Garden, Indonesia",
         "abstract": "The endemic Diospyros celebica and widely spread D. blancoi are two valuable species of Diospyros (the genus of persimmons and ebonies) that have been conserved at botanic gardens in Indonesia. Understanding the biological contrasts between endemic and widely spread species is essential for plant conservation. This study aims to compare the phenotypic and estimated genetic variability between the endemic D. celebica and the widely spread D. blancoi to support their conservation. Fifty-three morphological characters from fifteen selected living plant specimens at Purwodadi Botanic Garden were measured directly or using variable encoding methods. Unpaired two-samples Wilcoxon test and hierarchical cluster analysis were used to compare morphological variations between both species. Further, genetic variabilities were estimated from encoded morphological characters using GenAlEx 6.503 software. The two Diospyros’ morphological characters were significantly different, except for the lamina length, pairs of leaf vein, number of flowers in each inflorescence, and the fruit sulci presence. The cluster analysis successfully distinguished D. celebica from D. blancoi according to thirteen comparable morphological characters. The endemic D. celebica has lower genetic variability (female/bisexual %P = 86.21%, He = 0.259, uHe = 0.277; male P = 54.29%, He = 0.195, uHe = 0.234) than the widely spread D. blancoi (female/bisexual %P = 86.76, He = 0.311, uHe = 0.355). Due to the importance of genetic diversity in plant conservation, both species’ population size needs to be maintained, if not increased, to preserve the existing phenotypic and genetic variabilities within the cultivated populations at the botanic garden.",
@@ -1013,6 +1153,16 @@
         "venue": "Pesticide Biochemistry and Physiology"
       },
       {
+        "id": "12fbd520003e5c245381a61a6847539cf18a6c84",
+        "title": "DeFi Survival Analysis: Insights Into the Emerging Decentralized Financial Ecosystem",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/12fbd520003e5c245381a61a6847539cf18a6c84",
+        "pub_year": 2024,
+        "publicationDate": "2024-01-08",
+        "author": "Aaron Green, Michael Giannattasio, John S. Erickson, O. Seneviratne, Kristin P. Bennett",
+        "venue": "Distributed Ledger Technol. Res. Pract."
+      },
+      {
         "id": "b782e7e5bd15bef2be69f0a20a0fbd8763f124c8",
         "title": "Knowledge, Local Uses, and Vulnerability of the African Ebony Tree (Diospyros crassiflora Hiern, Ebenaceae) Among Communities Around the Campo-Ma'an National Park (Southern Cameroon)",
         "abstract": "",
@@ -1083,6 +1233,16 @@
         "venue": "Language"
       },
       {
+        "id": "f07913a5ed30a2cd4f02748f5bced46460f4025c",
+        "title": "Leverage Staking with Liquid Staking Derivatives (LSDs): Opportunities and Risks",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/f07913a5ed30a2cd4f02748f5bced46460f4025c",
+        "pub_year": 2023,
+        "publicationDate": "2023-11-28",
+        "author": "Xihan Xiong, Zhipeng Wang, Xi Chen, William Knottenbelt, Michael Huth",
+        "venue": "IACR Cryptology ePrint Archive"
+      },
+      {
         "id": "01a56844c3affb15cec5eec73ad51093dc8c790b",
         "title": "A cyclic (intermittent) drying schedule for Macassar ebony—the prevention of collapse deformation and the utilization of mechano-sorptive creep gradient",
         "abstract": "",
@@ -1101,6 +1261,16 @@
         "publicationDate": "2023-11-01",
         "author": "H. Trowell, Satoshi Nambu",
         "venue": "Journal of Japanese Linguistics"
+      },
+      {
+        "id": "fcf0763f3062efc45b7c443fdeba617e099849d3",
+        "title": "Decoding Social Sentiment in DAO: A Comparative Analysis of Blockchain Governance Communities",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/fcf0763f3062efc45b7c443fdeba617e099849d3",
+        "pub_year": 2023,
+        "publicationDate": "2023-10-31",
+        "author": "Yutong Quan, Xintong Wu, Wanlin Deng, Luyao Zhang",
+        "venue": "IEEE International Conference on Software Quality, Reliability and Security Companion"
       },
       {
         "id": "985ba3135b46b841567edf4a722dfbe0bae52758",
@@ -1181,6 +1351,16 @@
         "publicationDate": "2023-09-03",
         "author": "E. Lafuente, D. Duneau, P. Beldade, UMR5174 P. Beldade",
         "venue": "bioRxiv"
+      },
+      {
+        "id": "a5c4bd45a55ec2f2e1728b8cb8ea4ef17fe90a08",
+        "title": "Risks inherent within various models of decentralised crypto networks: `A framework for an objective discussion about the level of decentralisation in crypto networks and risks to true decentralisation`",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/a5c4bd45a55ec2f2e1728b8cb8ea4ef17fe90a08",
+        "pub_year": 2023,
+        "publicationDate": "2023-09-01",
+        "author": "Julien Lüssem, Abdel Aziz, Antonio Frías, U. Koyluoglu",
+        "venue": "Journal of Risk Management in Financial Institutions"
       },
       {
         "id": "60162ef3460d3acf6a918d670d2983972d3c7643",
@@ -1343,6 +1523,16 @@
         "venue": "FEBS Open Bio"
       },
       {
+        "id": "03deb56a24024e749a9e38ef3359fd7ab1388fcb",
+        "title": "Credit Scoring Using Machine Learning Algorithms and Blockchain Technology",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/03deb56a24024e749a9e38ef3359fd7ab1388fcb",
+        "pub_year": 2023,
+        "publicationDate": "2023-07-15",
+        "author": "Mariam Ossama Kotb",
+        "venue": "Internet, Multimedia Systems and Applications"
+      },
+      {
         "id": "7f3ad30e0561279a4f663f5cad0a3f4a0939a23d",
         "title": "Terrestrial vegetation monitoring at Ocmulgee Mounds National Historical Park: 2021 data summary",
         "abstract": "",
@@ -1413,6 +1603,16 @@
         "venue": "Langkawi: Journal of The Association for Arabic and English"
       },
       {
+        "id": "6189b5eaecc9aecf7eafedd0f3fbd2839455e704",
+        "title": "Midnight: An Efficient Event-driven EVM Transaction Security Monitoring Approach For Flash Loan Detection",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/6189b5eaecc9aecf7eafedd0f3fbd2839455e704",
+        "pub_year": 2023,
+        "publicationDate": "2023-06-28",
+        "author": "Shahin Ramezany, Rachsuda Setthawong, Pisal Setthawong",
+        "venue": "International Joint Conference on Computer Science and Software Engineering"
+      },
+      {
         "id": "e48e0e668c07e958102ff0824f360460782189aa",
         "title": "Ebony Towers in Higher Education",
         "abstract": "",
@@ -1431,6 +1631,16 @@
         "publicationDate": "2023-06-27",
         "author": "Meghan Pantalia, Zhi Lin, Samantha J. Tener, Bing Qiao, Grace Tang, Matthew Ulgherait, Reed M. O’Connor, Rebecca Delventhal, Julia Volpi, Sheyum Syed, Nissim Itzhak, J. Canman, María Paz Fernández, M. Shirasu-Hiza",
         "venue": "Scientific Reports"
+      },
+      {
+        "id": "0dcefb3a26f8590ab676a820905676107fd796b3",
+        "title": "Sustainable Forest Management in Uasin-Gishu-Kenya: Design of Yield Estimation Modelling Tool on Cupressus Lusitanica and Pinus Patula",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/0dcefb3a26f8590ab676a820905676107fd796b3",
+        "pub_year": 2023,
+        "publicationDate": "2023-06-24",
+        "author": "Wanyonyi Mungau Michael, Zhu Li, M. Kinyanjui",
+        "venue": "International journal of scientific and research publications"
       },
       {
         "id": "7c2380f25abb7f92ffe8c79358ee13a8ac8d6b54",
@@ -1683,6 +1893,16 @@
         "venue": "Archives of Insect Biochemistry and Physiology"
       },
       {
+        "id": "ba9a2195aeed7998f5aa5bc51003f63d71a0a3a9",
+        "title": "Bladder cancer segmentation using U-Net-based deep-learning",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/ba9a2195aeed7998f5aa5bc51003f63d71a0a3a9",
+        "pub_year": 2023,
+        "publicationDate": "2023-04-07",
+        "author": "Jonathan Clever, Lubomir M. Hadjiiski, H. Chan, R. Cohan, E. Caoili, Kenny H. Cha, Ravi K. Samala, Chuan Zhou",
+        "venue": "Medical Imaging"
+      },
+      {
         "id": "97b3aa7752236c862de60af4aabb1ddc7dc3251f",
         "title": "Abstract 2976: A single administration of DNA-encoded tri-specific T cell engager (DTriTE) targeting EGFRvIII, IL13Ra2, and CD3 shows complete tumor clearance in an orthotopic challenge model of heterogeneous GBM",
         "abstract": "",
@@ -1783,6 +2003,26 @@
         "venue": "Cancer Research"
       },
       {
+        "id": "89897514262613e8fffd15e2b9acbf2985138b88",
+        "title": "Optimization of BP Neural Network Model for Rockburst Prediction under Multiple Influence Factors",
+        "abstract": "Rockbursts are serious threats to the safe production of mining, resulting in great casualties and property losses. The accurate prediction of rockburst is an important premise that influences the safety and health of miners. As a classical machine learning algorithm, the back propagation (BP) neural network has been widely used in rockburst prediction. However, there are few reports about the influence study of different training sample sizes, optimization algorithms and index dimensionless methods on the prediction accuracy of BP neural network models. Therefore, 100 groups of typical rockburst engineering samples were collected locally and abroad, and considering the relevance, scientificity and quantifiability of the prediction indexes, the ratio of the maximum tangential stress of surrounding rock to the rock uniaxial compressive strength (σθ/σc), the ratio of the rock uniaxial compressive strength to the rock uniaxial tensile strength (σc/σt) and the elastic energy index (Wet) were chosen as the prediction indexes. When the number of samples was 40, 70 and 100, sixty improved BP models were established based on the standard gradient descent algorithm and four optimization algorithms (momentum gradient descent algorithm, quasi-Newton algorithm, conjugate gradient algorithm, Levenberg–Marquardt algorithm) and four index dimensionless methods (unified extreme value processing method, differentiated extreme value processing method, data averaging processing method, normalized processing method). The prediction performances of each improved model were compared with those of standard BP models. The comparative study results indicate that the sample size, optimization algorithm and dimensionless method have different effects on the prediction accuracy of BP models, which are described as follows: (1) The prediction accuracy value A of the BP model increases with the addition of sample size. The average value Aave of twenty improved models under three kinds of sample sizes increases from Aave (40) = 69.7% to Aave (100) = 75.3%, with a maximal value Amax from Amax (40) = 85.0% to Amax (100) = 97.0%. (2) The value A and comprehensive accuracy value C of the BP model based on four optimization algorithms are generally higher than those of the standard BP model. (3) The improved BP model based on the unified extreme value processing method combined with the Levenberg–Marquardt algorithm has the highest value Amax (100) = 97.0% and value C = 194, and the prediction results of five engineering cases are completely consistent with the actual situation at the site, so this is the best BP neural network model selected in this paper.",
+        "url": "https://www.semanticscholar.org/paper/89897514262613e8fffd15e2b9acbf2985138b88",
+        "pub_year": 2023,
+        "publicationDate": "2023-02-20",
+        "author": "Chao Wang, Jianhui Xu, Yuefeng Li, Tuanhui Wang, Qiwei Wang",
+        "venue": "Applied Sciences"
+      },
+      {
+        "id": "faa41c07250c27c7a55f06db281aafcb9ec835e5",
+        "title": "Auto.gov: Learning-based Governance for Decentralized Finance (DeFi)",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/faa41c07250c27c7a55f06db281aafcb9ec835e5",
+        "pub_year": 2023,
+        "publicationDate": "2023-02-19",
+        "author": "Jiahua Xu, Daniel Perez, Yebo Feng, B. Livshits",
+        "venue": "IEEE Transactions on Services Computing"
+      },
+      {
         "id": "f7d8005bd94f4c6ab23af6984be0c51f4e7029e6",
         "title": "“On not being able to” speak Italian: Linguistic domination and intergenerational trauma",
         "abstract": "",
@@ -1791,6 +2031,16 @@
         "publicationDate": "2023-02-13",
         "author": "P. Salvio",
         "venue": "Psychoanalysis, Culture & Society"
+      },
+      {
+        "id": "f6b488adf538bcd1d8380e31a8c73160fabd4a93",
+        "title": "Short Squeeze in DeFi Lending Market: Decentralization in Jeopardy?",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/f6b488adf538bcd1d8380e31a8c73160fabd4a93",
+        "pub_year": 2023,
+        "publicationDate": "2023-02-08",
+        "author": "Lioba Heimbach, Eric Schertenleib, R. Wattenhofer",
+        "venue": "FC Workshops"
       },
       {
         "id": "f293152af1f640f671b9a29ae4b3bb191af35a6c",
@@ -1821,6 +2071,16 @@
         "publicationDate": "2023-01-27",
         "author": "Kenneth Womack",
         "venue": "Popular Music"
+      },
+      {
+        "id": "4dbb861806eac5f8b670fca4ff27392e28a67dbf",
+        "title": "DeFi Lending During The Merge",
+        "abstract": "Lending protocols in decentralized finance enable the permissionless exchange of capital from lenders to borrowers without relying on a trusted third party for clearing or market-making. Interest rates are set by the supply and demand of capital according to a pre-defined function. In the lead-up to The Merge: Ethereum blockchain's transition from proof-of-work (PoW) to proof-of-stake (PoS), a fraction of the Ethereum ecosystem announced plans of continuing with a PoW-chain. Owners of ETH - whether their ETH was borrowed or not - would hold the native tokens on each chain. This development alarmed lending protocols. They feared spiking ETH borrowing rates would lead to mass liquidations which could undermine their viability. Thus, the decentralized autonomous organization running the protocols saw no alternative to intervention - restricting users' ability to borrow. We investigate the effects of the merge and the aforementioned intervention on the two biggest lending protocols on Ethereum: AAVE and Compound. Our analysis finds that borrowing rates were extremely volatile, jumping by two orders of magnitude, and borrowing at times reached 100% of the available funds. Despite this, no spike in mass liquidations or irretrievable loans materialized. Further, we are the first to quantify and analyze hard-fork-arbitrage, profiting from holding debt in the native blockchain token during a hard fork. We find that arbitrageurs transferred tokens to centralized exchanges which at the time were worth more than 13 Mio US$, money that was effectively extracted from the platforms' lenders.",
+        "url": "https://www.semanticscholar.org/paper/4dbb861806eac5f8b670fca4ff27392e28a67dbf",
+        "pub_year": 2023,
+        "publicationDate": "2023-01-23",
+        "author": "Lioba Heimbach, Eric Schertenleib, R. Wattenhofer",
+        "venue": "Conference on Advances in Financial Technologies"
       },
       {
         "id": "c3c36d7867520445a03ea4a837b7219a30364dd3",
@@ -1893,6 +2153,16 @@
         "venue": "Wood Science and Technology"
       },
       {
+        "id": "b0bdaf6a88f5f4bfeb24691453abadfc0196b574",
+        "title": "Toxic Liquidation Spirals",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/b0bdaf6a88f5f4bfeb24691453abadfc0196b574",
+        "pub_year": 2022,
+        "publicationDate": "2022-12-14",
+        "author": "Jakub Warmuz, A. Chaudhary, Daniele Pinna",
+        "venue": ""
+      },
+      {
         "id": "2e7eab36f2f7dfd39c00fe970e21fcc6a4fec0fa",
         "title": "Harp Instruments in Silapathikaram",
         "abstract": "Silapathikaramm is the first text in Tamil literature. It is a very famous epic by Ilango Adigal. This epic is a cultural story based on the Tamil tradition and the story centers around an anklet. Ilango Adigal has used an ordinary couple, Kannaki and her husband Kovalan. In this text harp music is given importance. During the festive seasons the town of Bukhar is filled with songs and music. The author has explained about the seven types of musical instruments. In the text Madhavi was taught to play the harp by a musician. Madhavi learned it effectively and systematically. The text praises the merits of musical instruments. Tamil Vidu Toothu, a Tamil text states that with the help of five musical instruments such as tholkaruvi, thulaikaruvi, kanjakaruvi, narambukaruvi and midatrukaruvi 103 musical varieties are formed. Harp instruments are made using bamboo, sandal wood, charcoal, ebony and bronze. Thus, the article gives a clear information about the harp instrument.",
@@ -1901,6 +2171,16 @@
         "publicationDate": "2022-12-12",
         "author": "Mathiazahi C",
         "venue": "International Research Journal of Tamil"
+      },
+      {
+        "id": "50456cdc8cb58b0d97caebd072af71b0086a6da9",
+        "title": "Blockchain Network Analysis: A Comparative Study of Decentralized Banks",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/50456cdc8cb58b0d97caebd072af71b0086a6da9",
+        "pub_year": 2022,
+        "publicationDate": "2022-12-11",
+        "author": "Yufan Zhang, Zichao Chen, Yutong Sun, Yulin Liu, Luyao Zhang",
+        "venue": "arXiv.org"
       },
       {
         "id": "e69bef5d01e23e85f9aba684912618056e954af1",
@@ -1973,6 +2253,16 @@
         "venue": "School psychologist"
       },
       {
+        "id": "46e1404bd3f37975d444352cbc12928af573566e",
+        "title": "A Note On Borrowing Constant Function Market Maker Shares",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/46e1404bd3f37975d444352cbc12928af573566e",
+        "pub_year": 2022,
+        "publicationDate": "2022-11-07",
+        "author": "Tarun Chitra, Guillermo Angeris, A. Evans, Hsien-Tang Kao",
+        "venue": "DeFi@CCS"
+      },
+      {
         "id": "0dee2cc6777e90a54641ea2a941889f78832664c",
         "title": "RNAi-Mediated Manipulation of Cuticle Coloration Genes in Lygus hesperus Knight (Hemiptera: Miridae)",
         "abstract": "Simple Summary Insect cuticle coloration results from pigments accumulating in a species-specific pattern. Numerous genes are involved in regulating pigmentation, and their manipulation can be used to create externally visible markers of successful gene editing. To clarify the roles for many of these genes and examine their suitability as markers in Lygus hesperus Knight (western tarnished plant bug), we screened existing gene expression data for sequences similar to those with known functions in pigmentation. We identified six genes (aaNAT, black, ebony, pale, tan, and yellow), with two variants for black and found that expression varied for each by developmental stage, adult age, body part, and sex. Silencing the expression of each gene produced varied effects in adults, ranging from the non-detectable (black 1, yellow), to moderate decreases (pale, tan) and increases (black 2, ebony) in darkness, to extremely dark and pervasive pigmentation (aaNAT). Based solely on its expression profile and easily observed color changes, aaNAT appears to be the best marker for tracking transgenic L. hesperus. Abstract Cuticle coloration in insects is a consequence of the accumulation of pigments in a species-specific pattern. Numerous genes are involved in regulating the underlying processes of melanization and sclerotization, and their manipulation can be used to create externally visible markers of successful gene editing. To clarify the roles for many of these genes and examine their suitability as phenotypic markers in Lygus hesperus Knight (western tarnished plant bug), transcriptomic data were screened for sequences exhibiting homology with the Drosophila melanogaster proteins. Complete open reading frames encoding putative homologs for six genes (aaNAT, black, ebony, pale, tan, and yellow) were identified, with two variants for black. Sequence and phylogenetic analyses supported preliminary annotations as cuticle pigmentation genes. In accord with observable difference in color patterning, expression varied for each gene by developmental stage, adult age, body part, and sex. Knockdown by injection of dsRNA for each gene produced varied effects in adults, ranging from the non-detectable (black 1, yellow), to moderate decreases (pale, tan) and increases (black 2, ebony) in darkness, to extreme melanization (aaNAT). Based solely on its expression profile and highly visible phenotype, aaNAT appears to be the best marker for tracking transgenic L. hesperus.",
@@ -1981,6 +2271,16 @@
         "publicationDate": "2022-10-27",
         "author": "C. Brent, Chan C Heu, Roni J. Gross, Baochan Fan, D. Langhorst, J. Hull",
         "venue": "Insects"
+      },
+      {
+        "id": "0097802ffca89f9d9c88b62f7602d47cb2e24a47",
+        "title": "Reduction of Rare-Earth Metal Complexes Induced by γ Irradiation.",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/0097802ffca89f9d9c88b62f7602d47cb2e24a47",
+        "pub_year": 2022,
+        "publicationDate": "2022-10-25",
+        "author": "William N. G. Moore, Jessica K. White, Justin C. Wedal, F. Furche, W. Evans",
+        "venue": "Inorganic Chemistry"
       },
       {
         "id": "1f720eac860d74c42770a395a775c79e4643f498",
@@ -2173,6 +2473,16 @@
         "venue": "American Studies"
       },
       {
+        "id": "f3be009f3f29bb56cf44ef40319db1c42daf1e6c",
+        "title": "Scoring Aave Accounts for Creditworthiness",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/f3be009f3f29bb56cf44ef40319db1c42daf1e6c",
+        "pub_year": 2022,
+        "publicationDate": "2022-07-14",
+        "author": "W. Wolf, A. Henry, H. Fadel, Xavier Quintuna, Julian Gay",
+        "venue": ""
+      },
+      {
         "id": "750f43029c2e52a0b5497e678460e89ae1705705",
         "title": "Effect of Number of Impregnations of Microberlinla sp with Microcapsule Emulsion on the Performance of Self-Repairing Coatings on Wood Surfaces",
         "abstract": "Embedding melamine-formaldehyde (MF) resin-coated shellac microcapsules in waterborne coatings can extend the service longevity of waterborne coatings on a wood surface to a certain extent. Due to the content limitation of self-repairing microcapsules in waterborne coatings, the effective self-healing performance time is short. With the aim of improving the self-repairing properties of self-repairing coatings on the surface of a Microberlinla sp substrate, a more effective self-healing mechanism was achieved by impregnating the ebony wood substrate several times with an MF resin-coated transparent shellac-rosin microcapsule emulsion. After the impregnation of the ebony boards with microcapsules, a waterborne acrylic resin coating containing 3.0 wt.% transparent shellac microcapsules was applied to the surface of the wood boards. The influence of the number impregnations on the surface coating’s physical properties, chemical properties, and self-repairing properties was explored. The results showed that the hardness of the surface coating on the ebony boards changed little under different numbers of impregnations. With the increasing number of impregnations, the surface coatings’ adhesion and impact strength slowly increased, the chromatic difference value was increased, and the roughness first increased and then decreased. Impregnating ebony boards with the microcapsule emulsion contributes to enhancing the aging resistance and repair performance of surface coatings on the ebony boards. When the number of impregnations was eight, the width change rate of cracks on surface self-healing coatings was 28.4%, which suggested the best repair performance among all samples. By impregnating the wood substrate with the self-healing microcapsule emulsion, the effect of the interaction between microcapsules and wood on the self-repairing properties of the surface coating was studied, contributing to the theory for further improving the self-repairing properties of waterborne coatings on wood surfaces and promoting the application and development of self-healing microcapsules.",
@@ -2181,6 +2491,16 @@
         "publicationDate": "2022-07-14",
         "author": "Yan Han, Xiaoxing Yan, Yu Tao",
         "venue": "Coatings"
+      },
+      {
+        "id": "2809a34584a1b763501dab2edb641857b9f7d4aa",
+        "title": "Blockchain Stretching & Squeezing: Manipulating Time for Your Best Interest",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/2809a34584a1b763501dab2edb641857b9f7d4aa",
+        "pub_year": 2022,
+        "publicationDate": "2022-07-12",
+        "author": "Aviv Yaish, Saar Tochner, Aviv Zohar",
+        "venue": "ACM Conference on Economics and Computation"
       },
       {
         "id": "e38c223c48b0b7e08b5d3383970007348acc82ce",
@@ -2213,6 +2533,16 @@
         "venue": "Hungarian Journal of English and American Studies"
       },
       {
+        "id": "889008d98c9f3eccdecddb2280fb92e557287467",
+        "title": "Liquidity Risks in Lending Protocols: Evidence from Aave Protocol",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/889008d98c9f3eccdecddb2280fb92e557287467",
+        "pub_year": 2022,
+        "publicationDate": "2022-06-23",
+        "author": "Xiaotong Sun, C. Stasinakis, G. Sermpinis",
+        "venue": ""
+      },
+      {
         "id": "dd70b5393ce21ae9a88886d5b7cf624650c78af1",
         "title": "“The Whole Ensemble”: Gwendolyn Bennett, Josephine Baker, and Interartistic Exchange in Black American Modernism",
         "abstract": "Since her debut in Paris in 1925 and meteoric rise to stardom, views of Josephine Baker have been dominated by the white artists and audiences who constructed her as an exotic “Other”. This article revisits the phenomenon of “La Bakaire” from the perspective of a Black female artist who witnessed her performance first-hand and participated in the same Jazz Age projects of fashioning New Negro womanhood and formulating Black Deco aesthetics. When Gwendolyn Bennett saw Baker perform, she recognized her as a familiar model of selfhood, fellow artist, and member of a diasporic Black cultural community. In her article “Let’s Go: In Gay Paree”, July 1926 Opportunity cover, and “Ebony Flute” column, she utilizes call and response patterns to transform racialized sexual objectification into collective affirmation of Black female beauty and artistry. The picture that emerges from Bennett’s art and writing is one of communal practices and interartistic expression, in which Baker joins a host of now-forgotten chorus girls, vaudeville actors, jazz singers, musicians, visual artists, and writers participating in a modern renaissance of Black expressive culture.",
@@ -2221,6 +2551,16 @@
         "publicationDate": "2022-06-21",
         "author": "Suzanne W. Churchill",
         "venue": "Humanities"
+      },
+      {
+        "id": "b4b6a6f0cf6b813a1b63f623e2f7c4c0aa5c3747",
+        "title": "Is decentralized finance actually decentralized? A social network analysis of the Aave protocol on the Ethereum blockchain",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/b4b6a6f0cf6b813a1b63f623e2f7c4c0aa5c3747",
+        "pub_year": 2022,
+        "publicationDate": "2022-06-16",
+        "author": "Ziqiao Ao, Gergely Horváth, Luyao Zhang",
+        "venue": ""
       },
       {
         "id": "3cd46b9ee2e3d22e99260f88f4cbb4724d8fadf2",
@@ -2383,6 +2723,16 @@
         "venue": "Jurnal Agrohut"
       },
       {
+        "id": "e0d45135c6a8f0cbbf61599b4ecfad3b150613f8",
+        "title": "Decentralized finance to hybrid finance through blockchain: a case-study of acala and current",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/e0d45135c6a8f0cbbf61599b4ecfad3b150613f8",
+        "pub_year": 2022,
+        "publicationDate": "2022-04-28",
+        "author": "V. Anoop, Justin Goldston",
+        "venue": "Journal of Banking and Financial Technology"
+      },
+      {
         "id": "f408560fc4907895dad083d4c94d41b611aa8df2",
         "title": "Passant Connection Screw of Dental Implants: An In Vitro SEM Preliminary Study",
         "abstract": "The use of dental implants in oral rehabilitations has become increasingly common, thanks to the safety and predictability of these rehabilitations. Unfortunately, dental implants, being alloplastic devices, are not free from biomechanical complications, especially in the case in which the connections are complex and involve several components. The aim of the study is to highlight what could be surface alterations using different screwing torques, or by repeating the screwing process several times. In this study, 40 passant screws (Osstem®, South Korea Dental Implant Ebony Gold®) were examined under a Zeiss EVO LS 10 scanning electron microscope (SEM), operating with an accelerating voltage of 20 kV. Passant screws were subdivided into 4 groups: 30 Nmm tightening torque; maximum tightening torque; 2 times 30 Nmm tightening torque; no screwing, new ones (control group). There are no significant differences in the surfaces of the passant screws in SEM images, and the 100% of the passant screws is free of defects or fractures. Surely, further studies and investigations will certainly be needed to allow improvement of these devices.",
@@ -2401,6 +2751,16 @@
         "publicationDate": "2022-04-21",
         "author": "Marcus Berni, Leonardo Lima, D. Bressan, A. Julio, L. Bonfim, Y. Simão, A. Pane, I. Ramos, P. Oliveira, H. Araujo",
         "venue": "Genetics"
+      },
+      {
+        "id": "515de7b8d2793b1aad8464dc4218b55dc3ce74a1",
+        "title": "Derivation Method of Architectural Asset Value Enhancement Zones in South Korea",
+        "abstract": "In June 2014, South Korea enacted a law to systematically preserve and utilize architectural assets to strengthen national competitiveness through the enhancement of architectural culture. An architectural asset value enhancement zone (AAVE) can be designated for an area in which a unique spatial environment has been created, centered on excellent architectural assets or in which architectural assets are densely concentrated. However, five years after the law was promulgated, while 14 local governments had completed basic investigations of architectural assets, only three had been designated as AAVE zones (as of March 2020). This is because the criteria for non-Hanok architectural assets are unclear, making it difficult to specify the scope of designation. This study aims to present and verify a methodology for deriving more effective AAVE zones. After establishing the criteria for architectural asset candidates, densely populated areas across the country were identified using GIS. Subsequently, a methodology was derived to classify candidate areas for the enhancement zone, based on the locations of these densely populated areas and designated/registered cultural heritage sites. The effectiveness of the methodology was reviewed through an actual area analysis, which indicated that the methodology is highly applicable to AAVE zones.",
+        "url": "https://www.semanticscholar.org/paper/515de7b8d2793b1aad8464dc4218b55dc3ce74a1",
+        "pub_year": 2022,
+        "publicationDate": "2022-04-16",
+        "author": "D. Shon, S. Kim, Nahyang Byun",
+        "venue": "Land"
       },
       {
         "id": "d92007c239f55577aa095fbdf2e5bd6f29e137db",
@@ -3203,6 +3563,16 @@
         "venue": "Habitus Aquatica"
       },
       {
+        "id": "b8610ac0d0d538b4aa6ebb509def9054ed34381f",
+        "title": "If You're Woke You Dig It",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/b8610ac0d0d538b4aa6ebb509def9054ed34381f",
+        "pub_year": 2021,
+        "publicationDate": "2021-08-05",
+        "author": "Brian C. Perry",
+        "venue": "Root Work Journal"
+      },
+      {
         "id": "8978a8ee2dd7566f1b26f648117abaab62633884",
         "title": "Winning Spelling Bee Competition: The Representation of Black Girl in Akeelah and The Bee (2006) Movie",
         "abstract": "This research examines the representations of African-American stereotype and the struggle of Black American girl in National Spelling Bee contest in Hollywood movie entitled Akeelah and the Bee (2006). The use of African-American English (AAVE) is one of the stereotype often depicted in Hollywood movie. Race theories are used to examine the relationship between race, racism and power. Meanwhile, Roland Barthes’s theory and semiotic film theory are used to examine the meaning portrayed in the movie. Findings show that the representation of Akeelah as a successful participant in the spelling bee competition challenges the stereotype of African American as academic underclass, and as associated with crime, failure and frustration. Akeelah is represented as a successful African American girl as she assimilates (adopts) American values of change/mobility, time and its importance, action and work orientation. The assimilation is achieved through a mentoring process and support from African American community. Keywords: African-American, African American Vernacular English (AAVE), Stereotype, Spelling Bee",
@@ -3221,6 +3591,16 @@
         "publicationDate": "2021-07-30",
         "author": "Alison Wilcox",
         "venue": "Descriptosaurus Punctuation in Action Years 4–6"
+      },
+      {
+        "id": "0ba218d133e4d0cc665854c9abb453560e493103",
+        "title": "Financial intermediation and risk in decentralized lending protocols",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/0ba218d133e4d0cc665854c9abb453560e493103",
+        "pub_year": 2021,
+        "publicationDate": "2021-07-26",
+        "author": "Carlos Castro-Iragorri, J. Ramírez, S. Vélez",
+        "venue": ""
       },
       {
         "id": "0ea3493cd5e78ad271a01352542cbb36c07ab556",
@@ -3343,6 +3723,16 @@
         "venue": ""
       },
       {
+        "id": "292d7774712cea3aca01b4420d8051b495a8546f",
+        "title": "An empirical study of DeFi liquidations: incentives, risks, and instabilities",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/292d7774712cea3aca01b4420d8051b495a8546f",
+        "pub_year": 2021,
+        "publicationDate": "2021-06-11",
+        "author": "Kaihua Qin, Liyi Zhou, Pablo Gamito, Philipp Jovanovic, Arthur Gervais",
+        "venue": "ACM/SIGCOMM Internet Measurement Conference"
+      },
+      {
         "id": "5bfb505a8139f43cfb64ac3f10adc7413ceb3244",
         "title": "Bauhinia variegate (Kanchnara), An ornamental Plant with significant value in Ayurvedic and Folk Medicinal system",
         "abstract": "Medicinal plants are important part of traditional medication system. These plants are also the primary source of modern drugs. One such important medicinal plant is Bauhinia variegate (orchid tree) commonly called as Kanchanara in Hindi and Mountain Ebony in English. It belongs to Caesalpiniaceae family. It is one of the most common tree species found throughout the India. This tree is known for its beautiful scented and aesthetic white pinkish flowers. It is traditionally used in many folk cultures around the country for various kind of disorders. It is commonly used plant species in Indian cuisine. Its flower buds are commonly used as vegetables in many regions of India. It holds a significant place in Ayurveda for its curative and healing properties in many diseases especially cervical lymphadenitis, hemorrhage, rectal prolapse, menorrhagia, leukoderma etc. It is used in many Ayurvedic polyherbal formulations as a main ingredient like Kanchanara Guggulu, Ushirasava, Vidangarishta etc. It has diverse nature of phytochemical constituents present in it which are responsible for extraordinary therapeutic properties like anti-microbial, anti-tumor, anti-diabetic, hepatoprotective, immunomodulatory, haemagglutination, anti-oxidant, antigoitrogenic, nephroprotective. The aim of present review is to provide information related to phytochemistry, traditional uses in Ayurveda and folk medicinal system and therapeutic properties of Bauhinia variegate.",
@@ -3443,6 +3833,16 @@
         "venue": "International Research in Children's Literature (IRCL)"
       },
       {
+        "id": "6289c0f41e72c5ed1a417cb7dec13d56999cbf9f",
+        "title": "An Advanced Angular Velocity Error Prediction Horizon Self-Tuning Nonlinear Model Predictive Speed Control Strategy for PMSM System",
+        "abstract": "In nonlinear model predictive control (NMPC), higher accuracy can be obtained with a shorter prediction horizon in steady-state, better dynamics can be obtained with a longer prediction horizon in a transient state, and calculation burden is proportional to the prediction horizon which is usually pre-selected as a constant according to dynamics of the system with NMPC. The minimum calculation and prediction accuracy are hard to ensure for all operating states. This can be improved by an online changing prediction horizon. A nonlinear model predictive speed control (NMPSC) with advanced angular velocity error (AAVE) prediction horizon self-tuning method has been proposed in which the prediction horizon is improved as a discrete-time integer variable and can be adjusted during each sampling period. A permanent magnet synchronous motor (PMSM) rotor position control system with the proposed strategy is accomplished. Tracking performances including rotor position Integral of Time-weighted Absolute value of the Error (ITAE), the maximal delay time, and static error are improved about 15.033%, 23.077%, and 10.294% respectively comparing with the conventional NMPSC strategy with a certain prediction horizon. Better disturbance resisting performance, lower weighting factor sensitivities, and higher servo stiffness are achieved. Simulation and experimental results are given to demonstrate the effectiveness and correctness.",
+        "url": "https://www.semanticscholar.org/paper/6289c0f41e72c5ed1a417cb7dec13d56999cbf9f",
+        "pub_year": 2021,
+        "publicationDate": "2021-05-10",
+        "author": "Yao Wei, Yanjun Wei, Yening Sun, H. Qi, Mengyuan Li",
+        "venue": "Electronics"
+      },
+      {
         "id": "df50deed188c89e359aee201b3c8011e469b02ff",
         "title": "Automated Skin Lesion Preprocessing Model of Dermoscopic Images Towards Melanoma Detection",
         "abstract": "",
@@ -3471,6 +3871,16 @@
         "publicationDate": "2021-04-28",
         "author": "E. West",
         "venue": "Advertising & Society Quarterly"
+      },
+      {
+        "id": "cb11c67a6c1d95360b7da54f9f7c49acacf15233",
+        "title": "Digging in Crypto-Communities’ Future-Making",
+        "abstract": "Introduction\nThis article situates the dark as a liminal and creative space of experimentation where tensions are generative and people tinker with emerging technologies to create alternative futures. Darkness need not mean chaos and fear of violence – it can mean privacy and protection. We define dark as an experimental space based upon uncertainties rather than computational knowns (Bridle) and then demonstrate via a case study of cryptocurrencies the contribution of dark and liminal social spaces to future(s)-making. Cryptocurrencies are digital cash systems that use decentralised (peer-to-peer) networking to enable irreversible payments (Maurer, Nelms, and Swartz). Cryptocurrencies are often clones or variations on the ‘original’ Bitcoin payment systems protocol (Trump et al.) that was shared with the cryptographic community through a pseudonymous and still unknown author(s) (Nakamoto), creating a founder mystery. Due to the open creation process, a new cryptocurrency is relatively easy to make. However, many of them are based on speculative bubbles that mirror Bitcoin, Ethereum, and ICOs’ wealth creation. Examples of cryptocurrencies now largely used for speculation due to their volatility in holding value are rampant, with online clearing houses competing to trade hundreds of different assets from AAVE to ZIL. Many of these altcoins have little to no following or trading volume, leading to their obsolescence. Others enjoy immense popularity among dedicated communities of backers and investors. Consequently, while many cryptocurrency experiments fail or lack adoption and drop from the purview of history, their constant variation also contributes to the undertow of the future that pulls against more visible surface waves of computational progress.\nThe article is structured to first define how we understand and leverage ‘dark’ against computational cultures. We then apply thematic and analytical tactics to articulate future-making socio-technical experiments in the dark. Based on past empirical work of the authors (Maddox \"Netnography\") we focus on crypto-cultures’ complex emancipatory and normative tensions via themes of construction, disruption, contention, redirection, obsolescence, and iteration. Through these themes we illustrate the mutation and absorption of dark experimental spaces into larger social structures. The themes we identify are not meant as a complete or necessarily serial set of occurrences, but nonetheless contribute a new vocabulary for students of technology and media to see into and grapple with the dark.\nEmbracing the Dark: Prework & Analytical Tactics for Outside the Known\nTo frame discussion of the dark here as creative space for alternative futures, we focus on scholars who have deeply engaged with notions of socio-technical darkness. This allows us to explore outside the blinders of computational light and, with a nod to Sassen, dig in the shadows of known categories to evolve the analytical tactics required for the study of emerging socio-technical conditions.\nWe understand the Dark Web to usher shifting and multiple definitions of darkness, from a moral darkness to a technical one (Gehl). From this work, we draw the observation of how technologies that obfuscate digital tracking create novel capacities for digital cultures in spaces defined by anonymity for both publisher and user. Darknets accomplish this by overlaying open internet protocols (e.g. TCP/IP) with non-standard protocols that encrypt and anonymise information (Pace). Pace traces concepts of darknets to networks in the 1970s that were 'insulated’ from the internet’s predecessor ARPANET by air gap, and then reemerged as software protocols similarly insulated from cultural norms around intellectual property. ‘Darknets’ can also be considered in ternary as opposed to binary terms (Gehl and McKelvey) that push to make private that which is supposed to be public infrastructure, and push private platforms (e.g. a Personal Computer) to make public networks via common bandwidth. In this way, darknets feed new possibilities of communication from both common infrastructures and individual’s platforms.\nEnabling new potentials of community online and out of sight serves to signal what the dark accomplishes for the social when measured against an otherwise unending light of computational society. To this point, a new dark age can be welcomed insofar it allows an undecided future outside of computational logics that continually define and refine the possible and probable (Bridle). This argument takes von Neumann’s 1945 declaration that “all stable processes we shall predict. All unstable processes we shall control” (in Bridle 21) as a founding statement for computational thought and indicative of current society. The hope expressed by Bridle is not an absence of knowledge, but an absence of knowing the future. Past the computational prison of total information awareness within an accelerating information age (Castells) is the promise of new formations of as yet unknowable life. Thus, from Bridle’s perspective, and ours, darkness can be a place of freedom and possibility, where the equality of being in the dark, together, is not as threatening as current privileged ways of thinking would suggest (Bridle 15). The consequences of living in a constant glaring light lead to data hierarchies “leaching” (Bridle) into everything, including social relationships, where our data are relationalised while our relations are datafied (Maddox and Heemsbergen) by enforcing computational thinking upon them. Darkness becomes a refuge that acknowledges the power of unknowing, and a return to potential for social, equitable, and reciprocal relations.\nThis is not to say that we envision a utopian life without the shadow of hierarchy, but rather an encouragement to dig into those shadows made visible only by the brightest of lights. The idea of digging in the shadows is borrowed from Saskia Sassen, who asks us to consider the ‘master categories’ that blind us to alternatives. According to Sassen (402), while master categories have the power to illuminate, their blinding power keeps us from seeing other presences in the landscape: “they produce, then, a vast penumbra around that center of light. It is in that penumbra that we need to go digging”. We see darkness in the age of digital ubiquity as rejecting the blinding ‘master category’ of computational thought. Computational thought defines social/economic/political life via what is static enough to predict or unstable enough to render a need to control. Otherwise, the observable, computable, knowable, and possible all follow in line.\nOur dig in the shadows posits a penumbra of protocols – both of computational code and human practice – that circle the blinding light of known digital communications. We use the remainder of this short article to describe these themes found in the dark that offer new ways to understand the movements and moments of potential futures that remain largely unseen.\nThematic Resonances in the Dark\nThis section considers cryptocultures of the dark. We build from a thematic vocabulary that has been previously introduced from empirical examples of the crypto-market communities which tinker with and through the darkness provided by encryption and privacy technologies (Maddox \"Netnography\"). Here we refine these future-making themes through their application to events surrounding community-generated technology aimed at disrupting centralised banking systems: cryptocurrencies (Maddox, Singh, et al.). Given the overlaps in collective values and technologies between crypto-communities, we find it useful to test the relevance of these themes to the experimental dynamics surrounding cryptocurrencies. We unpack these dynamics as construction, rupture and disruption, redirection, and the flip-sided relationship between obsolescence and iteration leading to mutation and absorption. This section provides a working example for how these themes adapt in application to a community dwelling at the edge of experimental technological possibilities.\nThe theme of construction is both a beginning and a materialisation of a value field. It originates within the cyberlibertarians’ ideological stance towards using technological innovations to ‘create a new world in the shell of the old’ (van de Sande) which has been previously expressed through the concept of constructive activism (Maddox, Barratt, et al.). This libertarian ideology is also to be found in the early cultures that gave rise to cryptocurrencies. Through their interest in the potential of cryptography technologies related to social and political change, the Cypherpunks mailing list formed in 1992 (Swartz). The socio-cultural field surrounding cryptocurrencies, however, has always consisted of a diverse ecosystem of vested interests building collaborations from “goldbugs, hippies, anarchists, cyberpunks, cryptographers, payment systems experts, currency activists, commodity traders, and the curious” (Maurer, Nelms, and Swartz 262). Through the theme of construction we can consider architectures of collaboration, cooperation, and coordination developed by technically savvy populations. Cryptocurrencies are often developed as code by teams who build in mechanisms for issuance (e.g. ‘mining’) and other controls (Conway). Thus, construction and making of cryptocurrencies tend to be collective yet decentralised.\nCryptocurrencies arose during a time of increasing levels of distrust in governments and global financial instability from the Global Financial Crisis (2008-2013), whilst gaining traction through their usefulness in engaging in illicit trade (Saiedi, Broström, and Ruiz). It was through this rupture in the certainties of ‘the old system’ that this technology, and the community developing it, sought to disrupt the financial system (Maddox, Singh, et al.; Nelms et al.). Here we see the utility of the second theme of rupture and disruption ",
+        "url": "https://www.semanticscholar.org/paper/cb11c67a6c1d95360b7da54f9f7c49acacf15233",
+        "pub_year": 2021,
+        "publicationDate": "2021-04-27",
+        "author": "Alexia Maddox, Luke Heemsbergen",
+        "venue": ""
       },
       {
         "id": "24f7b0ecfaf9a8e51ee75e5e3621310e6cb357bc",
@@ -3521,6 +3931,16 @@
         "publicationDate": "2021-04-06",
         "author": "A. Turpin",
         "venue": ""
+      },
+      {
+        "id": "6416e31926871745770f597f3628b7365857750d",
+        "title": "From banks to DeFi: the evolution of the lending market",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/6416e31926871745770f597f3628b7365857750d",
+        "pub_year": 2021,
+        "publicationDate": "2021-04-02",
+        "author": "Jiahua Xu, Nikhil Vadgama",
+        "venue": "Future of Business and Finance"
       },
       {
         "id": "c72494d6e541eadc261d358474d5efcd49fdc5a4",
@@ -3711,6 +4131,16 @@
         "publicationDate": "2021-01-02",
         "author": "Alex Burchmore",
         "venue": "Australian and New Zealand Journal of Art"
+      },
+      {
+        "id": "83b94e76b82c0955a875d0814dc1ff3877f84dbe",
+        "title": "Acoustic Emission Characteristics and Joint Nonlinear Mechanical Response of Rock Masses under Uniaxial Compression",
+        "abstract": "The joint arrangement in rock masses is the critical factor controlling the stability of rock structures in underground geotechnical engineering. In this study, the influence of the joint inclination angle on the mechanical behavior of jointed rock masses under uniaxial compression was investigated. Physical model laboratory experiments were conducted on jointed specimens with a single pre-existing flaw inclined at 0°, 30°, 45°, 60°, and 90° and on intact specimens. The acoustic emission (AE) signals were monitored during the loading process, which revealed that there is a correlation between the AE characteristics and the failure modes of the jointed specimens with different inclination angles. In addition, particle flow code (PFC) modeling was carried out to reproduce the phenomena observed in the physical experiments. According to the numerical results, the AE phenomenon was basically the same as that observed in the physical experiments. The response of the pre-existing joint mainly involved three stages: (I) the closing of the joint; (II) the strength mobilization of the joint; and (III) the reopening of the joint. Moreover, the response of the pre-existing joint was closely related to the joint’s inclination. As the joint inclination angle increased, the strength mobilization stage of the joint gradually shifted from the pre-peak stage of the stress–strain curve to the post-peak stage. In addition, the instantaneous drop in the average joint system aperture (aave) in the specimens with medium and high inclination angles corresponded to a rapid increase in the form of the pulse of the AE activity during the strength mobilization stage.",
+        "url": "https://www.semanticscholar.org/paper/83b94e76b82c0955a875d0814dc1ff3877f84dbe",
+        "pub_year": 2021,
+        "publicationDate": "2021-01-02",
+        "author": "Zhongliang Feng, Xin Chen, Yu Fu, Shaoshuai Qing, Tong Xie",
+        "venue": ""
       },
       {
         "id": "9e1228bc52ed1b64e991a5eeccdd935318e221ab",
@@ -4043,6 +4473,16 @@
         "venue": "American Journalism"
       },
       {
+        "id": "93333cb51be8e523f79c48a564caddadcc00686c",
+        "title": "E-bonics: An Analysis of AAVE's Context on an Electronic Social Media Platform",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/93333cb51be8e523f79c48a564caddadcc00686c",
+        "pub_year": 2020,
+        "publicationDate": "2020-10-01",
+        "author": "Jessica Edouard",
+        "venue": ""
+      },
+      {
         "id": "ee1f421cb31a2328580fd6e48a02b2c73e80a545",
         "title": "Ebony Jr! Race, Meritocracy, and Sports in African American Children's Media",
         "abstract": "",
@@ -4313,6 +4753,16 @@
         "venue": "Barnboken"
       },
       {
+        "id": "3a51172573fc748163087271ebe0b81a12667e9d",
+        "title": "DeFi Protocols for Loanable Funds: Interest Rates, Liquidity and Market Efficiency",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/3a51172573fc748163087271ebe0b81a12667e9d",
+        "pub_year": 2020,
+        "publicationDate": "2020-06-11",
+        "author": "L. Gudgeon, Sam M. Werner, Daniel Perez, W. Knottenbelt",
+        "venue": "Conference on Advances in Financial Technologies"
+      },
+      {
         "id": "a61181c3cff3368f8588c010b05ccddfda18afce",
         "title": "Abstract C024: Lifestyle-associated advanced glycation end products are elevated in ER+ positive breast cancer patients, alter response to therapy, and can be targeted by lifestyle intervention",
         "abstract": "",
@@ -4483,6 +4933,16 @@
         "venue": ""
       },
       {
+        "id": "55cd73df0120d383bb50ffeec99f6c2c2efea496",
+        "title": "CultureBot: A Culturally Relevant Humanoid Robotic Dialogue Agent",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/55cd73df0120d383bb50ffeec99f6c2c2efea496",
+        "pub_year": 2020,
+        "publicationDate": "2020-04-02",
+        "author": "Jaye Nias, M. Ruffin",
+        "venue": "ACM Southeast Regional Conference"
+      },
+      {
         "id": "5ea2c2dc82bef5caac5bb4620279126ed5524944",
         "title": "Can You Hear Me Now? An Autoethnographic Analysis of Code-Switching",
         "abstract": "",
@@ -4491,6 +4951,16 @@
         "publicationDate": "2020-04-01",
         "author": "Taryn K. Myers",
         "venue": "Cultural Studies ↔ Critical Methodologies"
+      },
+      {
+        "id": "54c2dc0325ee914bf1790c00a952722db715de49",
+        "title": "“Sassy Queens”: Stylistic orthographic variation in Twitter and the enregisterment of\n AAVE",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/54c2dc0325ee914bf1790c00a952722db715de49",
+        "pub_year": 2020,
+        "publicationDate": "2020-04-01",
+        "author": "Christian Ilbury",
+        "venue": ""
       },
       {
         "id": "3dbc85c3af12736a4c7f89a2204370b061e1d192",
@@ -4933,6 +5403,16 @@
         "venue": ""
       },
       {
+        "id": "71563566e5a6d84b31d0263707d85cfe60c62d79",
+        "title": "The Aspects of “Be” in selected rap and Hip Hop lyrics: A marker of cultural identity?",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/71563566e5a6d84b31d0263707d85cfe60c62d79",
+        "pub_year": 2019,
+        "publicationDate": "2019-12-16",
+        "author": "Beatriz Helgotsson",
+        "venue": ""
+      },
+      {
         "id": "c5a60d3eba53407df52dbad354833c30a8b6204d",
         "title": "Author index",
         "abstract": "",
@@ -5121,6 +5601,16 @@
         "publicationDate": "2019-09-17",
         "author": "L. Reinprecht, Zuzana Vidholdová",
         "venue": "BioResources"
+      },
+      {
+        "id": "2c375e511b7714dad4dbcd01f345be8f1c081b34",
+        "title": "Another Look at the Creolist Hypothesis of Aave Origins",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/2c375e511b7714dad4dbcd01f345be8f1c081b34",
+        "pub_year": 2019,
+        "publicationDate": "2019-09-17",
+        "author": "D. Winford",
+        "venue": "The Routledge Companion to the Work of John R. Rickford"
       },
       {
         "id": "d8ad1b19f43c3ee426a00048322566f7a38e3a2d",
@@ -5331,6 +5821,16 @@
         "publicationDate": "2019-07-12",
         "author": "Sharon Stein",
         "venue": "Review of higher education (Print)"
+      },
+      {
+        "id": "4b606e73440986091ef594bc0d86b63f77125400",
+        "title": "“I believe in home language, but the tests don't”: Addressing Linguistic Diversity within Assessment Practices across Literacy Teacher Preparation and Classroom Practice",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/4b606e73440986091ef594bc0d86b63f77125400",
+        "pub_year": 2019,
+        "publicationDate": "2019-07-01",
+        "author": "K. Jacobs",
+        "venue": "Teachers College Record"
       },
       {
         "id": "40a271d22aae58bf8fbef661c3c69dd82d87a804",
@@ -5593,6 +6093,16 @@
         "venue": "Antiquity and Its Reception - Modern Expressions of the Past"
       },
       {
+        "id": "da0f746b0f5b0328c31eb97cb59d12ef577bd583",
+        "title": "Joensuun yliopisto – liian punainen oppilaitos?",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/da0f746b0f5b0328c31eb97cb59d12ef577bd583",
+        "pub_year": 2019,
+        "publicationDate": "2019-04-01",
+        "author": "Laura Kolbe",
+        "venue": "Historiallinen Aikakauskirja"
+      },
+      {
         "id": "91ebb42085be085f5fb269d8165b13c7239344c8",
         "title": "The Half Lives of African Fictive States",
         "abstract": "",
@@ -5663,6 +6173,26 @@
         "venue": "Transformative Works and Cultures"
       },
       {
+        "id": "7e31ebf928ee531de3bb43bd77606b41e3c10313",
+        "title": "Attitude change is not enough: Disrupting deficit grading practices to disrupt dialect prejudice",
+        "abstract": "If we wish to truly dismantle the linguistic hegemony in our schools, we must not only improve negative attitudes toward vernacular dialects, but we must also unseat discriminatory grading practices. Teachers may understand that vernacular dialects are differently patterned, not deficient, but if they do not learn grading practices embodying the difference approach, then dialect discrimination remains. In sum, this paper a) demonstrates the need for change in grading practices in dialectally diverse classrooms, b) illustrates teacher resistance to learning salient grammar (SAE and AAVE) underlying change of practice and c) suggests that addressing discriminatory grading practices is the next frontier of in the work of linguistic social justice.",
+        "url": "https://www.semanticscholar.org/paper/7e31ebf928ee531de3bb43bd77606b41e3c10313",
+        "pub_year": 2019,
+        "publicationDate": "2019-03-15",
+        "author": "R. Wheeler",
+        "venue": "Proceedings of the Linguistic Society of America"
+      },
+      {
+        "id": "7096fe64bd0bb1df4fb6c185df792b3a3bee45c9",
+        "title": "2D and 3D bladder segmentation using U-Net-based deep-learning",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/7096fe64bd0bb1df4fb6c185df792b3a3bee45c9",
+        "pub_year": 2019,
+        "publicationDate": "2019-03-13",
+        "author": "Xiangyuan Ma, Lubomir M. Hadjiiski, Jun Wei, H. Chan, Kenny H. Cha, R. Cohan, E. Caoili, Ravi K. Samala, Chuan Zhou, Yao Lu",
+        "venue": "Medical Imaging"
+      },
+      {
         "id": "c3df024080f531dd1ae13f8e17423a804f969d7a",
         "title": "Modular cis‐regulatory logic of yellow gene expression in silkmoth larvae",
         "abstract": "Colour patterns in butterflies and moths are crucial traits for adaptation. Previous investigations have highlighted genes responsible for pigmentation (ie yellow and ebony). However, the mechanisms by which these genes are regulated in lepidopteran insects remain poorly understood. To elucidate this, molecular studies involving dipterans have largely analysed the cis‐regulatory regions of pigmentation genes and have revealed cis‐regulatory modularity. Here, we used well‐developed transgenic techniques in Bombyx mori and demonstrated that cis‐regulatory modularity controls tissue‐specific expression of the yellow gene. We first identified which body parts are regulated by the yellow gene via black pigmentation. We then isolated three discrete regulatory elements driving tissue‐specific gene expression in three regions of B. mori larvae. Finally, we found that there is no apparent sequence conservation of cis‐regulatory regions between B. mori and Drosophila melanogaster, and no expression driven by the regulatory regions of one species when introduced into the other species. Therefore, the trans‐regulatory landscapes of the yellow gene differ significantly between the two taxa. The results of this study confirm that lepidopteran species use cis‐regulatory modules to control gene expression related to pigmentation, and represent a powerful cadre of transgenic tools for studying evolutionary developmental mechanisms.",
@@ -5691,6 +6221,16 @@
         "publicationDate": "2019-03-01",
         "author": "Walt Wolfram, Kellynoel Waldorf",
         "venue": "English Today"
+      },
+      {
+        "id": "8b84582c690c04ba4838ce995b8e816ad3fa45f5",
+        "title": "U‐Net based deep learning bladder segmentation in CT urography",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/8b84582c690c04ba4838ce995b8e816ad3fa45f5",
+        "pub_year": 2019,
+        "publicationDate": "2019-02-28",
+        "author": "Xiangyuan Ma, Lubomir M. Hadjiiski, Jun Wei, H. Chan, Kenny H. Cha, R. Cohan, E. Caoili, Ravi K. Samala, Chuan Zhou, Yao Lu",
+        "venue": "Medical Physics (Lancaster)"
       },
       {
         "id": "3ff208509a8d9eaa124ba7eeacec00f0ed27a427",
@@ -5883,6 +6423,16 @@
         "venue": "Comparative Studies in Society and History"
       },
       {
+        "id": "1a3c4b79f4f611ccad8b411746297b4f844f0cdd",
+        "title": "Propiedades ópticas no lineales del difosfaferroceno. Un estudio teórico",
+        "abstract": "  \nLa óptica no lineal (NLO, por sus siglas en inglés de: No Linear Optics) se ha desarrollado en los últimos años como un importante campo de investigación debido a su aplicabilidad en la fotoelectrónica y tecnología fotónica. En las últimas décadas los complejos organometálicos se han convertido en una clase de moléculas de gran interés en NLO. Estos complejos combinan las ventajas de las moléculas orgánicas con las ofrecidas por las sales inorgánicas. En este trabajo se realizó un estudio mecano-cuántico computacional de la contribución electrónica en fase gas de las propiedades ópticas del difosfaferroceno a nivel estático, empleando el método DFT CAM-B3LYP y el conjunto base 6-31+G(d,p), en conjunto con la metodología de campo finito basadas en la ecuaciones de Kurtz. Adicionalmente se realizaron cálculos para el ferroceno a modo comparativo. La comparación teoría-experimentales, muestra que la metodología empleada proporciona valores comparables, mostrando una correspondencia de 93 % para aave, y un 87 % para gave. Con respecto a las propiedades ópticas, se observa que el complejo de difosfaferroceno es mayormente polarizable que el ferroceno. Sin embargo, las mayores contribuciones se observan en las propiedades NLO, donde para b la respuesta calculada para el complejo difosfaferroceno es 72 ua, a diferencia de ferroceno el cual no presenta respuesta por ser una molécula centro simétrica. En gave, la respuesta es casi dos veces superior. Estos resultados permiten inferir que la interacción de anillos fosfolil con el átomo de Fe origina una mayor perturbación o deslocalización de la densidad electrónica de la molécula, promoviendo así elevadas respuestas ópticas cuando se aplican campos eléctricos, catalogándolo como un candidato potencial para el diseño de nuevos materiales NLO. \n  \nPalabras clave: NLO, difosfaferroceno, óptica, DFT, (hiper)polarizabilidades. \n  \nAbstract \nNon linear optics (NLO) has been developed in recent years as an important field of research due to its applicability in photoelectronics and photonic technology. In recent decades organometallic complexes have become a class of molecules of great interest in NLO. These complexes combine the advantages of organic molecules with the ones offered by inorganic salts. In this work, a computational quantum mechanics study of the electronic contribution in gas phase of the optical properties of diphosphaferrocene at a static level was carried out, using the CAM-B3LYP DFT Method and the 6-31+G(d,p) basic set, together with the finite field methodology based on Kurtz equations. Additionally, the ferrocene molecule was studied for comparison purposes. The theory-experimental comparison shows that the methodology used provides comparable values, showing a 93% correspondence for aave, and 87% for gave. With respect to the optical properties, it is observed that the diphosphaferrocene complex is mostly more polarizable than ferrocene. However, the greatest contributions are observed in the NLO properties, where for b, the calculated response for the diphosphaferrocene complex is 72 ua, different from, which does not respond because it is a symmetric center molecule. In gave, the answer is almost double. These results allow us to infer that the interaction of phospholyl rings with the Fe atom causes a greater perturbation or delocalization of the electronic density of the molecule, promoting high optical responses when an electric field is applied, cataloging it as a potential candidate for the design of new NLO materials. \n  \nKey words: NLO, diphosphaferrocene, optics, DFT, (hyper) polarizabilities.",
+        "url": "https://www.semanticscholar.org/paper/1a3c4b79f4f611ccad8b411746297b4f844f0cdd",
+        "pub_year": 2018,
+        "publicationDate": "2018-12-26",
+        "author": "J. Urdaneta, Humberto Soscún, Ana Ocando, A. Campos",
+        "venue": "Revista Bases de la Ciencia. e-ISSN 2588-0764"
+      },
+      {
         "id": "c99fbb28ca1c16a9f6b589505eee5c8b829ef958",
         "title": "The Policing of Black Women's Hair in the Military",
         "abstract": "",
@@ -5941,6 +6491,16 @@
         "publicationDate": "2018-12-01",
         "author": "Sara B. Kajder, Shelbie Witte",
         "venue": "Voices from the Middle"
+      },
+      {
+        "id": "e49439bc1def28f3f3788888b1a83762e8eb513f",
+        "title": "Rare-Earth Metal(II) Aryloxides: Structure, Synthesis, and EPR Spectroscopy of [K(2.2.2-cryptand)][Sc(OC6 H2 tBu2 -2,6-Me-4)3 ].",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/e49439bc1def28f3f3788888b1a83762e8eb513f",
+        "pub_year": 2018,
+        "publicationDate": "2018-11-08",
+        "author": "S. Moehring, María J Beltrán-Leiva, D. Páez‐Hernández, R. Arratia‐Pérez, J. Ziller, W. Evans",
+        "venue": "Chemistry"
       },
       {
         "id": "22b546713db1c4b2c18873b18ece505ca46d48c1",
@@ -6100,6 +6660,16 @@
         "pub_year": 2018,
         "publicationDate": "2018-09-01",
         "author": "백혜진",
+        "venue": ""
+      },
+      {
+        "id": "916f627f5ed128af3bcbdc22ef3281c0bf8d24dd",
+        "title": "AAVE as a class-marker in American film.",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/916f627f5ed128af3bcbdc22ef3281c0bf8d24dd",
+        "pub_year": 2018,
+        "publicationDate": "2018-08-31",
+        "author": "M. Janssen",
         "venue": ""
       },
       {
@@ -6750,6 +7320,16 @@
         "pub_year": 2017,
         "publicationDate": "2017-07-12",
         "author": "C. Lincoln",
+        "venue": ""
+      },
+      {
+        "id": "2da8295f428f470467ef85222d8accfc6fe1fd50",
+        "title": "Some observations on the sources of AAVE structure: Re-examining the creole connection",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/2da8295f428f470467ef85222d8accfc6fe1fd50",
+        "pub_year": 2017,
+        "publicationDate": "2017-07-12",
+        "author": "D. Winford",
         "venue": ""
       },
       {
@@ -8283,6 +8863,26 @@
         "venue": ""
       },
       {
+        "id": "022b6431afbee1c4604e9668172e33d68eaae464",
+        "title": "AN EXPLORATORY STUDY ON E-PURCHASING BEHAVIOUR OF CONSUMERS TOWARDS FOOD, GROCERIES, FRUITS AND VEGETABLES IN BENGALURU CITY",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/022b6431afbee1c4604e9668172e33d68eaae464",
+        "pub_year": 2015,
+        "publicationDate": "2015-11-26",
+        "author": "B. Shruthi",
+        "venue": ""
+      },
+      {
+        "id": "35becb0ff8c5e3fdadf83b4fa8fb8c917f1bde58",
+        "title": "Identification of Pathogenicity-Related Genes in Biofilm-Defective Acidovorax citrulli by Transposon Tn5 Mutagenesis",
+        "abstract": "Biofilm formation is important for virulence of a large number of plant pathogenic bacteria. Indeed, some virulence genes have been found to be involved in the formation of biofilm in bacterial fruit blotch pathogen Acidovorax citrulli. However, some virulent strains of A. citrulli were unable to format biofilm, indicating the complexity between biofilm formation and virulence. In this study, virulence-related genes were identified in the biofilm-defective strain A1 of A. citrulli by using Tn5 insertion, pathogenicity test, and high-efficiency thermal asymmetric interlaced PCR (hiTAIL-PCR). Results from this study indicated that 22 out of the obtained 301 mutants significantly decreased the virulence of strain A1 compared to the wild-type. Furthermore, sequence analysis indicated that the obtained 22 mutants were due to the insertion of Tn5 into eight genes, including Aave 4244 (cation diffusion facilitator family transporter), Aave 4286 (hypothetical protein), Aave 4189 (alpha/beta hydrolase fold), Aave 1911 (IMP dehydrogenase/GMP reductase domain), Aave 4383 (bacterial export proteins, family 1), Aave 4256 (Hsp70 protein), Aave 0003 (histidine kinase, DNA gyrase B, and HSP90-like ATPase), and Aave 2428 (pyridoxal-phosphate dependent enzyme). Furthermore, the growth of mutant Aave 2428 was unaffected and even increased by the change in incubation temperature, NaCl concentration and the pH of the LB broth, indicating that this gene may be directly involved in the bacterial virulence. Overall, the determination of the eight pathogenicity-related genes in strain A1 will be helpful to elucidate the pathogenesis of biofilm-defective A. citrulli.",
+        "url": "https://www.semanticscholar.org/paper/35becb0ff8c5e3fdadf83b4fa8fb8c917f1bde58",
+        "pub_year": 2015,
+        "publicationDate": "2015-11-25",
+        "author": "Jinyan Luo, W. Qiu, Lei Chen, Syed Ishtiaq Anjum, Menghao Yu, Changlin Shan, M. Ilyas, Bin Li, Yanli Wang, Guo-chang Sun",
+        "venue": "International Journal of Molecular Sciences"
+      },
+      {
         "id": "699badf516a9350612f0b2a99f558a12c4ac266b",
         "title": "ATT ÅTERGE AFRICAN AMERICAN VERNACULAR ENGLISH PÅ SVENSKA. En analys av hur dialekt översätts i tre av Toni Morrisons romaner",
         "abstract": "",
@@ -8523,6 +9123,16 @@
         "venue": "Social Science Research"
       },
       {
+        "id": "087227cb4fd478827d304959677cddc334a37f9d",
+        "title": "[Effect of AAVC-I on the migration of human umbilical vein endothelial cells].",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/087227cb4fd478827d304959677cddc334a37f9d",
+        "pub_year": 2015,
+        "publicationDate": "2015-09-01",
+        "author": "Shu Li, Xin Jin, X. Long, Jingyun Jia, Gen-bao Zhang, Yun Hong",
+        "venue": "Zhongguo ying yong sheng li xue za zhi = Zhongguo yingyong shenglixue zazhi = Chinese journal of applied physiology"
+      },
+      {
         "id": "b428d467d31124202709cbdfe753a1c7cbf04eab",
         "title": "Referentes culturales afroamericanos en la adaptación fílmica de The Help (Criadas y señoras): dificultades y estrategias de traducción al español",
         "abstract": "",
@@ -8591,6 +9201,16 @@
         "publicationDate": "2015-07-29",
         "author": "Obassi Ettu, D. Gundu, Ashwe Abugh, M. Akindele",
         "venue": ""
+      },
+      {
+        "id": "55d278c5f6a0f152e6d76e09e3bf9dad4cea6a3c",
+        "title": "An Enhanced Channel Estimation Method for Millimeter Wave Systems With Massive Antenna Arrays",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/55d278c5f6a0f152e6d76e09e3bf9dad4cea6a3c",
+        "pub_year": 2015,
+        "publicationDate": "2015-07-16",
+        "author": "Yuexing Peng, Yonghui Li, Peng Wang",
+        "venue": "IEEE Communications Letters"
       },
       {
         "id": "6fbbd3756c889c342d76021d3cf6108c25e7d938",
@@ -8773,6 +9393,16 @@
         "venue": "PLoS Genetics"
       },
       {
+        "id": "8ef726542a7bcf038dad5adcc501fa0546a5a7d7",
+        "title": "AB0248 Clinical Significance of Soluble Vascular Endothelial-Cadherin and Anti-Vascular Endothelial-Cadherin Antibody in Rheumatoid Arthritis Treated with Etanercept or Adalimumab",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/8ef726542a7bcf038dad5adcc501fa0546a5a7d7",
+        "pub_year": 2015,
+        "publicationDate": "2015-06-01",
+        "author": "C. Banse, H. Polena, B. Stidder, A. Khallil-Mgharbel, E. Houivet, T. Lequerré, P. Fardellone, X. Le Loet, P. Philippe, C. Marcelli, I. Vilgrain, O. Vittecoq",
+        "venue": ""
+      },
+      {
         "id": "15a9e56f0d812f6744dcc7a1bca98b948afba398",
         "title": "N‐β‐alanyldopamine metabolism, locomotor activity and sleep in Drosophila melanogaster ebony and tan mutants",
         "abstract": "",
@@ -8920,6 +9550,16 @@
         "pub_year": 2015,
         "publicationDate": "2015-04-30",
         "author": "T. Morrison",
+        "venue": ""
+      },
+      {
+        "id": "d08784e5176401a463bf782ac03a5a7f5adff17b",
+        "title": "Semantic Bleaching and the Emergence of New Pronouns in AAVE",
+        "abstract": "AAVE is developing new pronouns, facilitated by the semantic bleaching of the word ‘nigga.’ We show ‘nigga’ is not specified for race, gender, or humanness (although default is [+human] and [+male]). Using 20,000 tweets and field notes from NYC and Philadelphia, we demonstrate that there are new first person pronouns in AAVE based on ‘nigga’ (e.g. 1sg “a nigga”) – moreover, we demonstrate they pattern with true pronouns and not imposters (Collins & Postal, 2010) with respect to binding and verbal agreement. We discuss the origin of these new pronouns, related grammatical forms (including vocatives and honorifics), and rate of adoption and current rates of use.",
+        "url": "https://www.semanticscholar.org/paper/d08784e5176401a463bf782ac03a5a7f5adff17b",
+        "pub_year": 2015,
+        "publicationDate": "2015-04-13",
+        "author": "Taylor Jones, C. Hall",
         "venue": ""
       },
       {
@@ -9303,16 +9943,6 @@
         "venue": ""
       },
       {
-        "id": "e520a93fb9a26039fc94bc75bc61d07d49be17a1",
-        "title": "Digital_Humanities, by Anne Burdick, Johanna Drucker, Peter Lunenfeld, Todd Presner, and Jeffrey Schnapp",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/e520a93fb9a26039fc94bc75bc61d07d49be17a1",
-        "pub_year": 2014,
-        "publicationDate": "2014-11-01",
-        "author": "Jeffrey L. Meikle",
-        "venue": ""
-      },
-      {
         "id": "d1eb7f534d155d35c4020a72598aa67fbb46e458",
         "title": "Drosophila Ebony: a novel type of nonribosomal peptide synthetase related enzyme with unusually fast peptide bond formation kinetics",
         "abstract": "",
@@ -9321,6 +9951,36 @@
         "publicationDate": "2014-11-01",
         "author": "S. Hartwig, Christine Dovengerds, C. Herrmann, B. Hovemann",
         "venue": "The FEBS Journal"
+      },
+      {
+        "id": "e75c5f9ba60d5875f2e02efd82e262ec68c66fe7",
+        "title": "Linguistic Variation: Confronting Fact and Theory",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/e75c5f9ba60d5875f2e02efd82e262ec68c66fe7",
+        "pub_year": 2014,
+        "publicationDate": "2014-10-24",
+        "author": "Rena Cacoullos, Nathalie Dion, André Lapierre",
+        "venue": ""
+      },
+      {
+        "id": "cc92d4fc8df332bf86c373ca4d1a96ed893c4941",
+        "title": "Linguistic Variation: Confronting Fact and Theory",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/cc92d4fc8df332bf86c373ca4d1a96ed893c4941",
+        "pub_year": 2014,
+        "publicationDate": "2014-10-24",
+        "author": "",
+        "venue": ""
+      },
+      {
+        "id": "9f81ff14e67c5727e99442d50371e64d834a8b66",
+        "title": "Évaluation de l’intérêt clinique de la VE cadhérine soluble et des autoanticorps anti-VE cadhérine dans la polyarthrite rhumatoïde traitée par adalimumab et etanercep",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/9f81ff14e67c5727e99442d50371e64d834a8b66",
+        "pub_year": 2014,
+        "publicationDate": "2014-10-23",
+        "author": "Christopher Banse",
+        "venue": ""
       },
       {
         "id": "5c193ed302c6e19274b93284fb3bb309f57da035",
@@ -9340,666 +10000,6 @@
         "pub_year": 2014,
         "publicationDate": "2014-10-13",
         "author": "L. Jenny, N. Cochoy",
-        "venue": ""
-      },
-      {
-        "id": "33cd809dd83d8ca32e6d4d45e6303e691bad9e41",
-        "title": "Teaching Outside One’s Race: The Story of an Oakland Teacher",
-        "abstract": "“Oh, the District placed you at Prescott Elementary?  You better watch out ‒ they hate white people.  Especially that Carrie Secret ‒ she’s one of those black radicals, you know, the Ebonics people.”  This was the warning I was given multiple times in multiple ways when people found out that I had been assigned to Prescott Elementary School for my first teaching position, in Oakland, California in 1999.  The “warners” were other white folks who were trying to protect what they saw as a young, new teacher from what they perceived to be a hostile place. However, I really didn’t fit the stereotype.  I had been involved with several organizations that explicitly addressed issues of race and education for several years, often as the only white person there.  I was thrilled to be placed at a school such as Prescott, whose reputation for high achievement for African American children and adoption of the “Ebonics” program had placed it at the forefront of national debate.",
-        "url": "https://www.semanticscholar.org/paper/33cd809dd83d8ca32e6d4d45e6303e691bad9e41",
-        "pub_year": 2014,
-        "publicationDate": "2014-10-09",
-        "author": "Bree Picower",
-        "venue": ""
-      },
-      {
-        "id": "6daffa6f591df0861afa55477fb2630be635bfe1",
-        "title": "Reviewers for Volume 45",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/6daffa6f591df0861afa55477fb2630be635bfe1",
-        "pub_year": 2014,
-        "publicationDate": "2014-10-02",
-        "author": "Thea Renda Abu El-Haj, John Bruer, James S. Mcdonnell, Colleen A. Capper, Jeffrey Choppin, eDUcATIONAL reSeArcHer, Bryan J. Cook",
-        "venue": "International Security"
-      },
-      {
-        "id": "b62fa960d0f36fc87cdc8c5bf3a594232f0616ec",
-        "title": "'Ebony Fire', 'Ebony Flame', 'Ebony embers', 'Ebony & Ivory', and 'Ebony Glow': five new dark-leaved crape myrtles",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b62fa960d0f36fc87cdc8c5bf3a594232f0616ec",
-        "pub_year": 2014,
-        "publicationDate": "2014-10-01",
-        "author": "C. Pounders",
-        "venue": ""
-      },
-      {
-        "id": "49d40010d244d3abf64327ca48d07eaef4934f0a",
-        "title": "Daudi Azibo: Defining and Developing Africana Psychological Theory, Research and Practice",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/49d40010d244d3abf64327ca48d07eaef4934f0a",
-        "pub_year": 2014,
-        "publicationDate": "2014-10-01",
-        "author": "DeReef F. Jamison",
-        "venue": ""
-      },
-      {
-        "id": "def93fd80d9fc7cd3e77de7ca847d0e9835bbb22",
-        "title": "“Then, all was spoken!” What “The Custom-House” and The Scarlet Letter Disclose",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/def93fd80d9fc7cd3e77de7ca847d0e9835bbb22",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-22",
-        "author": "Patricia Dunlavy Valenti",
-        "venue": "Nathaniel Hawthorne Review"
-      },
-      {
-        "id": "cd83aa86c81b6614008cdf4a22c34fe3ab05360e",
-        "title": "Fender コントラバス ベースセンター Jim Root プレミアム Jazzmaster, Ebony Fingerboard, Flat Black 《エレキギター》：クロサワ楽器 日本総本店 WEBSHOP【エレキギター/ジャズマスター】《フェンダー》",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/cd83aa86c81b6614008cdf4a22c34fe3ab05360e",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-22",
-        "author": "Training",
-        "venue": ""
-      },
-      {
-        "id": "8a695a774b9ffa73508137a2eec6409ef8df86f2",
-        "title": "バスク オンライン メンズ ハイキング·登山 シューズ·靴【Breeze III Boot】Ebony/Gargoyle：フェルマート バスク メンズ ハイキング·登山 シューズ·靴 Ebony/Gargoyle【サイズ交換無料】",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/8a695a774b9ffa73508137a2eec6409ef8df86f2",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-22",
-        "author": "Training",
-        "venue": ""
-      },
-      {
-        "id": "245006b1ad38a19e341a142b6927dee0c188d992",
-        "title": "Earth Wood アースウッド ユニセックス サングラス Aroa オンライン Sunglasses Ebony/Purple-Green：サンガ【送料無料】 Earth Wood アースウッド ユニセックス",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/245006b1ad38a19e341a142b6927dee0c188d992",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-22",
-        "author": "Training",
-        "venue": ""
-      },
-      {
-        "id": "d22a3d00eb48ab3cbb7230396dfbeddf6e3daef9",
-        "title": "Excessive behaviour and extraordinary collections: William Beckford and Alfred Morrison, two nineteenth-century millionaire collectors",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/d22a3d00eb48ab3cbb7230396dfbeddf6e3daef9",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-18",
-        "author": "C. Dakers",
-        "venue": ""
-      },
-      {
-        "id": "35d3a2da53aba255e43abfcb1f13d6fd742fb486",
-        "title": "“Arang” Wood (Diospyros maritime (?) sp) as Subsitution of Eboni Wood (Diospyros celebica)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/35d3a2da53aba255e43abfcb1f13d6fd742fb486",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-18",
-        "author": "A. Yunianti",
-        "venue": ""
-      },
-      {
-        "id": "f397cc1bbb8e0c7d2b669c785365898437c679a5",
-        "title": "Make it plain, preacha': African American rhetorical license, African American Vernacular English (AAVE), and a modern rendering of epideictic rhetoric",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/f397cc1bbb8e0c7d2b669c785365898437c679a5",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-17",
-        "author": "Leslie E. Similly",
-        "venue": ""
-      },
-      {
-        "id": "e23ff7c87ebffd8f86c8679e781ab8567aa5616a",
-        "title": "Innovation in pre-World War II AAVE?",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/e23ff7c87ebffd8f86c8679e781ab8567aa5616a",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-15",
-        "author": "Ulrich Miethaner",
-        "venue": ""
-      },
-      {
-        "id": "497b598bc6c818024e6ff68b1454dcc0300ed517",
-        "title": "The English origins of African American Vernacular English",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/497b598bc6c818024e6ff68b1454dcc0300ed517",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-15",
-        "author": "S. Mufwene",
-        "venue": ""
-      },
-      {
-        "id": "d6705b24e9e8714b26b9df7b5cef956ba07df996",
-        "title": "Gibson 1960s J-45 ギター Ebony Normal 楽器、器材 Ebony Saddle W/L.R.Baggs Element VTC【名古屋店在庫品】 :25-3584950:クロサワ楽器60周年記念SHOP",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/d6705b24e9e8714b26b9df7b5cef956ba07df996",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-04",
-        "author": "參觀行程規劃入口網",
-        "venue": ""
-      },
-      {
-        "id": "b284bc032d2a93c3a742e70e66336a4f5410f253",
-        "title": "Fender 渋谷 《フェンダー》 ギター American Elite Stratocaster アンプ HSS Shawbucker (Champagne/Ebony)【g_p5】：渋谷IKEBE楽器村 Fender American Elite Stratocaster",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b284bc032d2a93c3a742e70e66336a4f5410f253",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-04",
-        "author": "參觀行程規劃入口網",
-        "venue": ""
-      },
-      {
-        "id": "c9812256654c8b5fc7f8049bdd6a1bb02f53c99f",
-        "title": "Copula Contraction and Deletion among African American Vernacular English* (AAVE) Speakers",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/c9812256654c8b5fc7f8049bdd6a1bb02f53c99f",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-01",
-        "author": "W. Willie",
-        "venue": ""
-      },
-      {
-        "id": "643d4e8744a115b699de65c67e40623341391072",
-        "title": "The eburnated bone–cement interface",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/643d4e8744a115b699de65c67e40623341391072",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-01",
-        "author": "Y. Kamat, A. Crocombe, William Neil Bradley",
-        "venue": ""
-      },
-      {
-        "id": "370d53eca8802988b7a752263673425d2ee40966",
-        "title": "Identity and women poets of the Black Atlantic : musicality, history, and home",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/370d53eca8802988b7a752263673425d2ee40966",
-        "pub_year": 2014,
-        "publicationDate": "2014-09-01",
-        "author": "K. Concannon",
-        "venue": ""
-      },
-      {
-        "id": "eda7e834071b541562e97722e5aa15ae7e2756cd",
-        "title": "The Ebony Column: Classics, Civilization, and the African American Reclamation of the West by Eric Ashley Hairston (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/eda7e834071b541562e97722e5aa15ae7e2756cd",
-        "pub_year": 2014,
-        "publicationDate": "2014-08-12",
-        "author": "E. Shalev",
-        "venue": ""
-      },
-      {
-        "id": "6b59f7a4ecf7d77c3dbe18f55607b762cb343002",
-        "title": "Ebony and Ivy: Race, Slavery, and the Troubled History of America’s Universities by Craig Steven Wilder, and: The People’s Martyr: Thomas Wilson Dorr and His 1842 Rhode Island Rebellion by Eric J. Chaput (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/6b59f7a4ecf7d77c3dbe18f55607b762cb343002",
-        "pub_year": 2014,
-        "publicationDate": "2014-08-12",
-        "author": "Chris Malone",
-        "venue": ""
-      },
-      {
-        "id": "ae9f50d6d4731986ab910c82dc78dbda60d6e1d8",
-        "title": "A View of Dialect and Folklore in Hurston’s Their Eyes Were Watching God",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/ae9f50d6d4731986ab910c82dc78dbda60d6e1d8",
-        "pub_year": 2014,
-        "publicationDate": "2014-08-11",
-        "author": "Pr Mortad-Serir Ilhem",
-        "venue": ""
-      },
-      {
-        "id": "73bc8f194e291eeb161036ed8c9b020b6ddc7e10",
-        "title": "The Chief Sam Movement, A Century Later: public histories, private stories, and the African diaspora",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/73bc8f194e291eeb161036ed8c9b020b6ddc7e10",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-30",
-        "author": "Kendra Field, Ebony E. A. Coletu",
-        "venue": ""
-      },
-      {
-        "id": "59b4981e5d990ccd71d19d2c5d8effbabc2fc819",
-        "title": "Do Candidate Genes Mediating Conspecific Sperm Precedence Affect Sperm Competitive Ability Within Species? A Test Case in Drosophila",
-        "abstract": "When females mate to multiple males, the last male to mate fathers the majority of progeny. When males of different species inseminate a female, the sperm of the male conspecific to the female is favored in fertilization in a process known as conspecific sperm precedence (CSP). A large number of studies in Drosophila have assayed the genetic basis of sperm competition, with a main focus on D. melanogaster and accessory gland protein genes. Only a few studies have attempted to disentangle the genetic basis of CSP between related species of Drosophila. Although there is no a priori reason to believe that genes influencing intraspecific sperm competitive ability might also mediate conspecific sperm precedence, no study has addressed the question. Here, we test a group of candidate CSP genes between D. simulans and D. mauritiana for their effect on sperm competition in D. melanogaster. The use of P-element insertion lines identified CG14891 gene disruption as the only one causing a significant decrease in second male paternity success relative to wild-type and ebony tester males. The gene disruption affected both sperm displacement and the sperm fertilizing ability. Out of five genes tested using RNA interference, only gene knockdown of CG6864 (Mst89B) significantly reduced the male’s ability to father progeny when second to mate. Our results suggest that CG14891 and CG6864 might have been co-opted from an intraspecies gene function (i.e., sperm competition) into an interspecies avoidance phenotype (i.e., CSP). Alternatively, the dual role of these genes could be a consequence of their pleiotropic roles.",
-        "url": "https://www.semanticscholar.org/paper/59b4981e5d990ccd71d19d2c5d8effbabc2fc819",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-16",
-        "author": "A. Civetta, S. Finn",
-        "venue": "G3: Genes, Genomes, Genetics"
-      },
-      {
-        "id": "6e070957881b6a798253c4ed85a01b8594898e56",
-        "title": "Ragtime, jazz e tango em processos composicionais de Igor Stravinsky",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/6e070957881b6a798253c4ed85a01b8594898e56",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-13",
-        "author": "Alexy Gaione Viegas de Araújo",
-        "venue": ""
-      },
-      {
-        "id": "f0074bd1c07cdfab1d85c8dc1329054aeb479ebf",
-        "title": "Establishing an In Vivo Assay System to Identify Components Involved in Environmental RNA Interference in the Western Corn Rootworm",
-        "abstract": "The discovery of environmental RNA interference (RNAi), in which gene expression is suppressed via feeding with double-stranded RNA (dsRNA) molecules, opened the door to the practical application of RNAi-based techniques in crop pest management. The western corn rootworm (WCR, Diabrotica virgifera virgifera) is one of the most devastating corn pests in North America. Interestingly, WCR displays a robust environmental RNAi response, raising the possibility of applying an RNAi-based pest management strategy to this pest. Understanding the molecular mechanisms involved in the WCR environmental RNAi process will allow for determining the rate limiting steps involved with dsRNA toxicity and potential dsRNA resistance mechanisms in WCR. In this study, we have established a two-step in vivo assay system, which allows us to evaluate the involvement of genes in environmental RNAi in WCR. We show that laccase 2 and ebony, critical cuticle pigmentation/tanning genes, can be used as marker genes in our assay system, with ebony being a more stable marker to monitor RNAi activity. In addition, we optimized the dsRNA dose and length for the assay, and confirmed that this assay system is sensitive to detect well-known RNAi components such as Dicer-2 and Argonaute-2. We also evaluated two WCR sid1- like (sil) genes with this assay system. This system will be useful to quickly survey candidate systemic RNAi genes in WCR, and also will be adaptable for a genome-wide RNAi screening to give us an unbiased view of the environmental/systemic RNAi pathway in WCR.",
-        "url": "https://www.semanticscholar.org/paper/f0074bd1c07cdfab1d85c8dc1329054aeb479ebf",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-08",
-        "author": "Keita Miyata, Parthasarathy Ramaseshadri, Yuanji Zhang, G. Segers, R. Bolognesi, Yoshinori Tomoyasu",
-        "venue": "PLoS ONE"
-      },
-      {
-        "id": "57d1a6e75b544e5b45370ba1502426602ab9768e",
-        "title": "V.S. Naipaul's Fiction In Quest of the Enemy by Anthony Boxhill (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/57d1a6e75b544e5b45370ba1502426602ab9768e",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-02",
-        "author": "W. Howard",
-        "venue": ""
-      },
-      {
-        "id": "f7eb4f020d8ad5740e9165285b79231039155c7e",
-        "title": "Correction: Genome-Wide Meta-Analysis of Homocysteine and Methionine Metabolism Identifies Five One Carbon Metabolism Loci and a Novel Association of ALDH1L1 with Ischemic Stroke",
-        "abstract": "Two authors are not included in the author byline. Jessica J. Connelly should be listed as the eighth author and affiliated with Robert M. Berne Cardiovascular Research Center, University of Virginia, Charlottesville, Virginia, United States of America, and Department of Medicine, Division of Cardiovascular Medicine, University of Virginia, Charlottesville, Virginia, United States of America. The contributions of this author are as follows: Conceived and designed the experiments and Edited the Manuscript. Travis S. Lillard should be listed as the ninth author and affiliated with Department of Medicine, Division of Cardiovascular Medicine, University of Virginia, Charlottesville, Virginia, United States of America. The contributions of this author are as follows: Conceived and designed the experiments and Edited the Manuscript. Affiliation 2 and 9 also have information missing and are listed correctly below. The fully corrected author and affiliation list and author contribution list is provided below. Stephen R. Williams, Qiong Yang, Fang Chen, Xuan Liu, Keith L. Keene, Paul Jacques, Wei-Min Chen, Jessica J. Connelly, Travis S. Lillard, Galit Weinstein, Fang-Chi Hsu, Alexa Beiser, Liewei Wang, Ebony Bookman, Kimberly F. Doheny, Philip A. Wolf, Michelle Zilka, Jacob Selhub, Sarah Nelson, Stephanie M. Gogarten, Bradford B. Worrall, Sudha Seshadri, Michèle M. Sale, the Genomics and Randomized Trials Network, and the Framingham Heart Study Center for Public Health Genomics, University of Virginia, Charlottesville, Virginia, United States of America Robert M. Berne Cardiovascular Research Center, University of Virginia, Charlottesville, Virginia, United States of America Department of Biostatistics, Boston University School of Public Health, Boston, Massachusetts, United States of America The Framingham Heart Study, Framingham, Massachusetts, United States of America Department of Public Health Sciences, University of Virginia, Charlottesville, Virginia, United States of America Department of Biology, East Carolina University, Greenville, North Carolina, United States of America Center for Health Disparities Research, East Carolina University, Greenville, North Carolina, United States of America Jean Mayer USDA Human Nutrition Research Center on Aging and Friedman School of Nutrition Science and Policy, Tufts University, Boston, Massachusetts, United States of America Department of Medicine, Division of Cardiovascular Medicine, University of Virginia, Charlottesville, Virginia, United States of America Department of Neurology, Boston University School of Medicine, Boston, Massachusetts, United States of America Department of Biostatistical Sciences, Wake Forest School of Medicine, Winston-Salem, North Carolina, United States of America Department of Molecular Pharmacology and Experimental Therapeutics, Mayo Clinic College of Medicine, Rochester, Minnesota, United States of America National Human Genome Research Institute, Bethesda, Maryland, United States of America Center for Inherited Disease Research, Johns Hopkins University, Baltimore, Maryland, United States of America Department of Biostatistics, University of Washington, Seattle, Washington, United States of America Department of Neurology University of Virginia, Charlottesville, Virginia, United States of America Department of Biochemistry and Molecular Genetics, University of Virginia, Charlottesville, Virginia, United States of America Contributed equally. \" BBW, SS, and MMS are joint senior authors on this work. { Membership of the Genomics and Randomized Trials Network and the Framingham Heart Study is provided in the Acknowledgments. * E-mail: ms5fe@eservices.virginia.edu The authors have declared that no competing interests exist. Conceived and designed the experiments: SRW QY FC XL KLK PJ WMC JJC TSL GW FCH AB LW EB KFD PAW MZ JS SN SMG SS MMS BBW. Performed the experiments: SRW FC QY XL KFD SN WMC. Analyzed the data: SRW FC QY XL FCH WMC KLK SS BBW MMS. Wrote the paper: SRW QY SS MMS BBW. Edited the manuscript: SRW QY FC XL KLK PJ WMC JJC TSL GW FCH AB LW EB KFD PAW MZ JS SN SMG SS MMS BBW.",
-        "url": "https://www.semanticscholar.org/paper/f7eb4f020d8ad5740e9165285b79231039155c7e",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-01",
-        "author": "Stephen R. Williams, Qiong Yang, Fang Chen, Xuan Liu, Keith L. Keene, P. Jacques, Wei-Min Chen, J. Connelly, Travis S. Lillard, Galit Weinstein, F. Hsu, A. Beiser, Liewei Wang, E. Bookman, K. Doheny, P. Wolf, Michelle Zilka, J. Selhub, Sarah C. Nelson, S. Gogarten, B. Worrall, S. Seshadri, M. Sale",
-        "venue": "PLoS Genetics"
-      },
-      {
-        "id": "6e41928d733505dbd7f141a1eea578a8febc7542",
-        "title": "The Elements of Bile",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/6e41928d733505dbd7f141a1eea578a8febc7542",
-        "pub_year": 2014,
-        "publicationDate": "2014-07-01",
-        "author": "D. Comfort",
-        "venue": ""
-      },
-      {
-        "id": "d695738cf67de0322d8d0a4c11ac9e72338fca3d",
-        "title": "SASMA: happy to be ‘hip’, wary of being too ‘hip happy’",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/d695738cf67de0322d8d0a4c11ac9e72338fca3d",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-26",
-        "author": "J. Patricios, P. Zondi",
-        "venue": "British Journal of Sports Medicine"
-      },
-      {
-        "id": "e6906cd770466126fc5ec8c6491891d85d059b5b",
-        "title": "AN EARLY STUDY OF THE SPEECH OF YOUNG BLACK CHILDREN IN CALIFORNIA: WHY IT MATTERS",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/e6906cd770466126fc5ec8c6491891d85d059b5b",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-20",
-        "author": "J. Rickford",
-        "venue": ""
-      },
-      {
-        "id": "d53d9bcb9922144e60c60b4a21fcbffd97a0eb17",
-        "title": "Rap and Religion: Understanding the Gangsta’s God by Ebony Utley (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/d53d9bcb9922144e60c60b4a21fcbffd97a0eb17",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-09",
-        "author": "J. Winters",
-        "venue": ""
-      },
-      {
-        "id": "0e3b1222cb77d99cf12ddf4ee8afad44b3f5cb0a",
-        "title": "Ebony & Ivy: Race, Slavery, and the Troubled History of America’s Universities by Craig Steven Wilder (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/0e3b1222cb77d99cf12ddf4ee8afad44b3f5cb0a",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-06",
-        "author": "W. Byrd",
-        "venue": ""
-      },
-      {
-        "id": "e1050c384ab12a58bbcd22ec1e428702b91e15e1",
-        "title": "Representing the language of the ‘other’: African American Vernacular English in ethnography",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/e1050c384ab12a58bbcd22ec1e428702b91e15e1",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-01",
-        "author": "T. Brown, E. Casanova",
-        "venue": ""
-      },
-      {
-        "id": "7da50b95baaeaef75cb9a6ec7ab8c6fa80ac728e",
-        "title": "Inheritance of a darkened caudal peduncle and yellow body coloration in the gilthead sea bream (Sparus aurata L.)",
-        "abstract": "Summary \n \nThis study presents data on inheritance of a darkened caudal peduncle (ebony) and yellow body coloration (yellow) in the gilthead sea bream (Sparus aurata). Fifteen progeny groups, obtained by crossing fish with three color phenotypes and of known origin, were analyzed. Analyzes of segregation in F1 progeny involving groups from parental crosses of wild-type colored × wild-type colored; ebony × ebony; yellow × yellow, showed that the parents produced the offspring only with the same phenotypes (true breeding). Crosses involving F1 wild-type colored parents (that resulted from crosses of wild-type parents with either ebony or yellow fish) showed in their F2 progeny groups of which their phenotypic segregations did not differ significantly from a 3 : 1 Mendelian ratio. The progeny of back-cross of ebony × (F1 wild-type colored × ebony) showed phenotypic segregations that did not differ significantly from the 1 : 1 Mendelian ratio. Overall, the results of the crossing experiments demonstrated that, similar to albinism described in a number of aquacultured species, ebony and yellow body coloration in S. aurata are both due to a single recessive allele. However, the yellow mutation of a gene controlling yellow pigment synthesis affects the yellow color of the whole fish body, whereas the ebony mutation causes production of melanin only in a specific area of the fish body, resulting in the development of a black coloration of the caudal peduncle. Experiments to assess culture performance showed that the color genes controlling ebony and yellow coloration had significant detrimental pleiotropic effects on growth, survival and body shape. Color mutations in the gilthead sea bream may be used as models for the study of: (i) genetic and physiological mechanisms of sterility, (ii) stress and disease resistance, (iii) effects of heterosis, (iv) genetic polymorphism in populations, and (v) methods of genetic protection in selected sea bream strains as well as in experiments on chromosome set manipulation.",
-        "url": "https://www.semanticscholar.org/paper/7da50b95baaeaef75cb9a6ec7ab8c6fa80ac728e",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-01",
-        "author": "S. Gorshkov",
-        "venue": ""
-      },
-      {
-        "id": "4b89c732a09c0df825f775ae2d9ebf61234d2766",
-        "title": "Sociolinguistics African American Vernacular English (AAVE)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/4b89c732a09c0df825f775ae2d9ebf61234d2766",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-01",
-        "author": "Maan Mohammed",
-        "venue": ""
-      },
-      {
-        "id": "3c14369e6f8227a34aee2ae27fbfb025d5905954",
-        "title": "Poplar Wood Stain Research",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/3c14369e6f8227a34aee2ae27fbfb025d5905954",
-        "pub_year": 2014,
-        "publicationDate": "2014-06-01",
-        "author": "D. Shen, Wei Jiang",
-        "venue": ""
-      },
-      {
-        "id": "bce484725f87881d86b32a689b8a092709ba2dc1",
-        "title": "Sex, butterflies and molecular biology: when pigmentation met mimicry",
-        "abstract": "Pigmentation, specifically melanism, is often the driving force behind classic examples of natural selection such as camouflage and mimicry. However, whilst pigmentation in insects has long been considered the exclusive preserve of the genetic model Drosophila, stunning new papers on the molecular basis of melanism and mimicry in butterflies are beginning to show how evolution can act directly on what has previously been viewed as strictly a developmental problem. For example, pigmentation and mimicry in the striking yellow, black and red ‘Postman’ butterflies of the genus Heliconius is controlled by transcription factors, such as optix, apparently redeployed from their roles in early development. Melanism is also important in sexual dimorphism and within butterflies is often used to generate mimicry-related sex-limited polymorphisms. Whilst a number of different butterfly families show such sex-limited mimicry, the swallowtail butterflies of the genus Papilio form an excellent model in which to study the genetics of pigmentation under strong natural selection. Clarke and Sheppard used swallowtails to study the genetics of mimicry and were the first to come up with the concept of a ‘supergene’, inferred to be a block of tightly linked genes somehow acting together to account for the seemingly complex array of different pigmentation phenotypes they observed in their genetic crosses. \n \nKunte et al. have now used a blistering series of genetic crosses, association mapping, transcriptome and genome sequencing to look at sex-limited melanism and mimicry in the Asian swallowtail Papilio polytes, which appears to be controlled by onesuch ‘supergene’. Here, males are black and yellow and are monomorphic and non-mimetic, whereas the females are either male like or belong to one of several different melanic morphs mimicking distasteful species from a different swallowtail genus, Pachliopta. Clarke and Sheppard had already shown that this female polymorphism, including the presence or absence of the swallow ‘tails’ themselves, was under the control of a single Mendelian locus or ‘supergene’. They envisaged that a tightly linked cluster of genes, each controlling different aspects of wing pattern, must be behaving as one single locus and that recombination within this supergene cluster would be unexpected or rare. Some 40 years later, Kunte and co-workers have confirmed that polymorphism is controlled by one single gene, doublesex, rather than a cluster of tightly linked loci. This helps explain why autosomal loci, such as the H locus that controls female-limited mimicry in P. dardanus, can be expressed in a sex-‘limited’ fashion rather than specifically being sex-linked as in the W (female specific chromosome)-linked, female-limited melanism in P. glaucus. This is of course because doublesex is responsible for somatic sex determination rather than the germline determined sex of the butterfly itself. Unfortunately, like any good piece of research, however, it also raises perhaps more questions than it answers. For example, Drosophila doublesex uses alternative splicing to control somatic sex differentiation, one splice form leading to male sexual differentiation and the other to female. But surprisingly, cloning of doublesex isoforms from mimetic and non-mimetic P. polytes males and females suggests no specific presence–absence correlation of isoforms with mimicry, rather gene expression levels themselves seem to be more important. \n \nThese findings highlight the huge gap now exposed between these regulatory ‘switch’ genes (doublesex, optix and WntA) and the genes controlling pigmentation itself. In swallowtails, yellow colour is formed by a pigment called papiliochrome and black is formed by melanin. In a strange twist, the precursor dopamine is required both to form the yellow papiliochrome (after its transformation to N-β-alanyl dopamine by N-β-alanyl dopamine synthase, the product of the ebony locus) and melanin itself (via dopamine quinone). To provide dopamine to the correct set of scales (yellow or black) at the correct stage in development, transcription of the dopa decarboxylase (DDC) encoding gene (which converts dihydroxy-phenylananine to dopamine) is therefore switched from the yellow pattern early in wing pigmentation to the black pattern just prior to butterfly eclosion (Koch et al., 1998). Such an exquisite spatial and temporal regulation of the enzymes involved in pigmentation is also mimicked by a similar regulation in which the scale cells themselves develop. In essence, therefore, pigmentation of the butterfly wing involves differential rates of development of differently coloured scales, in a process similar to developmental ‘heterochrony’. To become coloured (yellow or white), the scales must develop ‘early’, to be pigmented in the ‘papiliochrome window’, and in order to be black, they must delay their development to be exposed to the correct availability of melanin precursors (ffrench-Constant and Koch, 2003). So what has this all to do with doublesex and the control of somatic sex differentiation? Further what are the missing players in between the switch gene doublesex and the pigmentation gene ddc? \n \nThe final pigmentation of butterfly wings in the pupa, just before hatching, is set against a falling titre of the hatching hormone 20-hydroxyecdysone, and specific ecdysone receptor isoforms show colour pattern-specific expression during wing pattern development (Koch et al., 2003). The development of scale cells that are destined to be different colours must therefore be differentially triggered across the maturing butterfly wing, but again what is the critical trigger for the initiation of scale cell development itself? In this context, it is hard to understand how doublesex, a gene previously thought to be important in somatic sex determination, can also be deployed as a patterning gene. Thus, the doublesex switch not only appears to be involved in the genetic control of female morphs, but expression of the doublesex protein in developing scale cells also correlates with the yellowish white rays found on the forewing of mimetic females. Loehlin and Carroll, in their accompanying commentary in the same issue of Nature on pages 172–173 note that rather than simply indicating whether a specific tissue is male or female, doublesex expression is also elaborately regulated itself and shows tissue-specific expression in its own right. This means that doublesex is not only the female-limited switch gene but also a wing patterning gene. \n \n \nFinally, if a tightly linked cluster of genes (a supergene) is indeed only one albeit rather complicated gene, what exactly is recombination within a supergene? Loehlin and Carroll already noted that complex genes like doublesex probably carry a significant number of regulatory elements themselves and that any ‘recombinants’ within this supergene (although none have been noted for P. polytes by either Clarke and Sheppard or indeed Kunte et al.), or others, may be recombination events between different doublesex enhancers, that is, specifically correspond to recombinants within one gene rather than a set of clustered genes. Further, Kunte et al. also found an inversion polymorphism with breakpoints flanking the doublesex gene; however, it is not clear how different inversions might lock together different doublesex regulatory elements to drive different patterns of scale cell development. These results are similar to inversions around the P locus of Heliconius numata, which control the wide range of mimetic morphs associated with Mullerian mimicry (Joron et al., 2011). \n \n‘a tightly linked cluster of genes (a supergene) is indeed only one, albeit rather complicated, gene’ \n \nSignificantly, many of these melanic mimicry examples, including P. polytes and H. numata, show dominance series amongst the different mimetic alleles with more melanic morphs being dominant over paler ones. If we now understand these to be alleles of a single gene (doublesex or P), then it may be easier to understand how such dominance series have evolved. Different inversions may therefore simply ‘lock together’ different enhancer elements and thus drive morph specific patterns of expression from different alleles of a single switch gene. This may also help to explain the famous ‘industrial’ melanism of the peppered moth, Biston betularia, where again darker forms are dominant over lighter ones and again melanism looks to be under control of a single locus at the equivalent chromosomal location to H. numata P (Van't Hof et al., 2011). This very brief review of pigmentation and melanism in butterflies and moths therefore gives us two important ‘take-home messages’. First, pigmentation is about more than just ‘development’ and can in fact act as a major driver of natural selection. Second, and as a direct correlate to this, understanding the developmental heterochrony that underlies insect pigmentation is critical to our understanding of the molecular basis of natural selection itself.",
-        "url": "https://www.semanticscholar.org/paper/bce484725f87881d86b32a689b8a092709ba2dc1",
-        "pub_year": 2014,
-        "publicationDate": "2014-05-22",
-        "author": "R. ffrench-Constant",
-        "venue": "Pigment Cell & Melanoma Research"
-      },
-      {
-        "id": "f4abe9fb4e21ad43a0060f7d25355d6ad804d0a4",
-        "title": "Boosting your higher education prospects",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/f4abe9fb4e21ad43a0060f7d25355d6ad804d0a4",
-        "pub_year": 2014,
-        "publicationDate": "2014-05-09",
-        "author": "John D. Baines",
-        "venue": "BDJ"
-      },
-      {
-        "id": "e293d040b5ccdb1a1d1f279eff8646021a9bed27",
-        "title": "Watch your patients' jaws drop",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/e293d040b5ccdb1a1d1f279eff8646021a9bed27",
-        "pub_year": 2014,
-        "publicationDate": "2014-05-09",
-        "author": "John D. Baines",
-        "venue": "BDJ"
-      },
-      {
-        "id": "cf465b98bf71501f252b6c3e7f8f7668dace23fa",
-        "title": "Attend professional lectures while cruising the med",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/cf465b98bf71501f252b6c3e7f8f7668dace23fa",
-        "pub_year": 2014,
-        "publicationDate": "2014-05-09",
-        "author": "Cruising The Med, John D. Baines",
-        "venue": "BDJ"
-      },
-      {
-        "id": "bec8c46c44902297b056cf3a7ed540a67b6487b1",
-        "title": "Cowboy Stuntman: From Olympic Gold to the Silver Screen by Dean Smith, Mike Cox (review)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/bec8c46c44902297b056cf3a7ed540a67b6487b1",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-28",
-        "author": "Dolph Briscoe",
-        "venue": ""
-      },
-      {
-        "id": "a0c16cca5ad1cb1692221b021e605fe773599f6a",
-        "title": "What Can a Painting Do?: Absorption and Aesthetic Form in Fernando Botero’s Abu Ghraib as a Response to Affect Theory and the Moral Utopia of Human Rights",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/a0c16cca5ad1cb1692221b021e605fe773599f6a",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-25",
-        "author": "Eugenio Di Stefano",
-        "venue": ""
-      },
-      {
-        "id": "da4595bd5895ed3bc33784774f887037d5cd020b",
-        "title": "One kind of black tea and wine barley blueberry health and processing method",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/da4595bd5895ed3bc33784774f887037d5cd020b",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-24",
-        "author": "田益坤",
-        "venue": ""
-      },
-      {
-        "id": "2600a07b54101f2e64bc5ad23a123d0d3cf61a0b",
-        "title": "Grape seed effervescent tablet and preparation method odoratum",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/2600a07b54101f2e64bc5ad23a123d0d3cf61a0b",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-22",
-        "author": "魏国平, 张杨, 相朝清, 谷长海, 崇吉祥, 周维华, 朱文鑫",
-        "venue": ""
-      },
-      {
-        "id": "a00d30b94a4317fbdd575d67889781969eb36da8",
-        "title": "One kind yangxinanshen turtle soup and preparation method",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/a00d30b94a4317fbdd575d67889781969eb36da8",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-21",
-        "author": "金玉刚",
-        "venue": ""
-      },
-      {
-        "id": "2bd1f258be7e7bdf2519844406517367cdf01563",
-        "title": "Sorption and Drying Characteristics of Xylite",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/2bd1f258be7e7bdf2519844406517367cdf01563",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-15",
-        "author": "Ž. Gorišek, A. Straže",
-        "venue": ""
-      },
-      {
-        "id": "eb394e8cbcb6c2b9d4b9a66c0cc35815771977ee",
-        "title": "One kind of lotus leaf plum peanut butter",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/eb394e8cbcb6c2b9d4b9a66c0cc35815771977ee",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-14",
-        "author": "吴和建",
-        "venue": ""
-      },
-      {
-        "id": "ddaa0deb50384866b10ae04904c39a118ed39e37",
-        "title": "Traditional Chinese medicine preparation for treating rectal cancer and preparation method thereof",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/ddaa0deb50384866b10ae04904c39a118ed39e37",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-05",
-        "author": "柳桂玉, 吕荣华",
-        "venue": ""
-      },
-      {
-        "id": "9c192745eecdabe6c63596f190d2c06163a0730b",
-        "title": "Interests and Opportunities: Race, Racism, and University Writing Instruction in the Post-Civil Rights Era",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/9c192745eecdabe6c63596f190d2c06163a0730b",
-        "pub_year": 2014,
-        "publicationDate": "2014-04-01",
-        "author": "L. Faulk",
-        "venue": ""
-      },
-      {
-        "id": "8f657dbe8c8cce7c2d9b688fe6ffbe7d3aeb23db",
-        "title": "The β-alanyl-monoamine synthase ebony is regulated by schizophrenia susceptibility gene dysbindin in Drosophila",
-        "abstract": "The Drosophila homolog of schizophrenia susceptibility gene dysbindin (Ddysb) affects a range of behaviors through regulation of multiple neurotransmitter signals, including dopamine activity. To gain insights into mechanisms underlying Ddysb-dependent regulation of dopamine signal, we investigated interaction between Ddysb and Ebony, the Drosophila β-alanyl-monoamine synthase involved in dopamine recycling. We found that Ddysb was capable of regulating expression of Ebony in a bi-directional manner and its subcellular distribution. Such regulation is confined to glial cells. The expression level of ebony and its accumulation in glial soma depend positively on Ddysb activity, whereas its distribution in glial processes is bound to be reduced in response to any alterations of Ddysb from the normal control level, either an increase or decrease. An optimal binding ratio between Dysb and Ebony might contribute to such non-linear effects. Thus, Ddysb-dependent regulation of Ebony could be one of the mechanisms that mediate dopamine signal.",
-        "url": "https://www.semanticscholar.org/paper/8f657dbe8c8cce7c2d9b688fe6ffbe7d3aeb23db",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-25",
-        "author": "Binyan Lu, Lisha Shao, Shanxi Feng, Tian Wang, Yi Zhong",
-        "venue": "Science China Life Sciences"
-      },
-      {
-        "id": "32e90c117bf8f685d9f926e4cd24587831501038",
-        "title": "Sexually Dimorphic Body Color Is Regulated by Sex-Specific Expression of Yellow Gene in Ponerine Ant, Diacamma Sp",
-        "abstract": "Most hymenopteran species exhibit conspicuous sexual dimorphism due to ecological differences between the sexes. As hymenopteran genomes, under the haplodiploid genetic system, exhibit quantitative differences between sexes while remaining qualitatively identical, sexual phenotypes are assumed to be expressed through sex-specific gene usage. In the present study, the molecular basis for expression of sexual dimorphism in a queenless ant, Diacamma sp., which exhibits a distinct color dimorphism, was examined. Worker females of the species appear bluish-black, while winged males exhibit a yellowish-brown body color. Initially, observations of the pigmentation processes during pupal development revealed that black pigmentation was present in female pupae but not in males, suggesting that sex-specific melanin synthesis was responsible for the observed color dimorphism. Therefore, five orthologs of the genes involved in the insect melanin synthesis (yellow, ebony, tan, pale and dopa decarboxylase) were subcloned and their spatiotemporal expression patterns were examined using real-time quantitative RT-PCR. Of the genes examined, yellow, which plays a role in black melanin synthesis in insects, was expressed at higher levels in females than in males throughout the entire body during the pupal stage. RNA interference of yellow was then carried out in order to determine the gene function, and produced females with a more yellowish, brighter body color similar to that of males. It was concluded that transcriptional regulation of yellow was responsible for the sexual color dimorphism observed in this species.",
-        "url": "https://www.semanticscholar.org/paper/32e90c117bf8f685d9f926e4cd24587831501038",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-25",
-        "author": "S. Miyazaki, Y. Okada, H. Miyakawa, G. Tokuda, R. Cornette, Shigeyuki Koshikawa, K. Maekawa, T. Miura",
-        "venue": "PLoS ONE"
-      },
-      {
-        "id": "73ef8e58b0b60d6715df69dd4529f1d4583903ac",
-        "title": "One kind of hawthorn beef jerky",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/73ef8e58b0b60d6715df69dd4529f1d4583903ac",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-21",
-        "author": "杨茹芹",
-        "venue": ""
-      },
-      {
-        "id": "b5c580ec2f6c88de026bfbcb506613f0b8f5051c",
-        "title": "Resources by Subject: English 3349: The Vernacular Tradition in African American Literature and Culture: Home",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b5c580ec2f6c88de026bfbcb506613f0b8f5051c",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-19",
-        "author": "Breanne Crumpton",
-        "venue": ""
-      },
-      {
-        "id": "33f99c8a0bdd0e057ce0eefce748fe8ff2eb22a2",
-        "title": "A new species of Epania Pascoe (Coleoptera: Cerambycidae: Cerambycinae: Molorchini) from Papua New Guinea.",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/33f99c8a0bdd0e057ce0eefce748fe8ff2eb22a2",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-10",
-        "author": "Gui-Qiang Huang, B. Cai, Wei Xu, Li Chen",
-        "venue": "Zootaxa"
-      },
-      {
-        "id": "ef7d88b3f102b67cc1341929776349c92af7d29d",
-        "title": "Laboratory test of the Galilean universality of the free fall experiment",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/ef7d88b3f102b67cc1341929776349c92af7d29d",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "Rasmus S. Christensen, R. Teiwes, S. Petersen, U. Uggerhøj, B. Jacoby",
-        "venue": ""
-      },
-      {
-        "id": "c4502b617f3d524cfedcdf6a5f151f0280c40e68",
-        "title": "Witnessing Brother Malcolm X: The Master Teacher, a Memoir",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/c4502b617f3d524cfedcdf6a5f151f0280c40e68",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "Todd Steven Burroughs",
-        "venue": ""
-      },
-      {
-        "id": "c1ac91e10a8639ae20236b1aafee3eb499c432cd",
-        "title": "Contractional Deformation for the Formation of Dorsa on the Trailing Hemisphere of Enceladus",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/c1ac91e10a8639ae20236b1aafee3eb499c432cd",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "R. Pappalardo, D. A. Patthoff, H. Chilton, M. Golombek, P. Thomas",
-        "venue": ""
-      },
-      {
-        "id": "b677465350bafa812a84c1764818c20473733091",
-        "title": "Archaeodendrometrical study of the Bureau 372-1901 from the Victoria and Albert Museum (London - UK)",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b677465350bafa812a84c1764818c20473733091",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "C. Locatelli, Didier Pousset",
-        "venue": ""
-      },
-      {
-        "id": "956e57caff4b1aa3a1f42de17e0262d86f0481af",
-        "title": "Findings of the rare fungus Ebony Cup (Pseudoplectania nigrella) in Silesia and the northern Moravia",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/956e57caff4b1aa3a1f42de17e0262d86f0481af",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "Helena Deckerová, Jiří Šuhaj",
-        "venue": "Acta Musei Beskidensis"
-      },
-      {
-        "id": "8b25ef9386cbd92976e6d14e8888dc6a729208e7",
-        "title": "Vertebrate Acyl CoA synthetase family member 4 (ACSF4‐U26) is a β‐alanine‐activating enzyme homologous to bacterial non‐ribosomal peptide synthetase",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/8b25ef9386cbd92976e6d14e8888dc6a729208e7",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "J. Drożak, M. Veiga-da-Cunha, B. Kądziołka, E. Van Schaftingen",
-        "venue": "The FEBS Journal"
-      },
-      {
-        "id": "51b70506228ecf2a18559c41d55f2ee90f9c6a53",
-        "title": "Study of graphical features on gravestones of an ancient iranian cemetery",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/51b70506228ecf2a18559c41d55f2ee90f9c6a53",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "Mehdi Parsayi, F. Rad, Seyed Maziar Mazloomi",
-        "venue": ""
-      },
-      {
-        "id": "0f6a470b8b56c1c9dcf046c6629774425a661470",
-        "title": "Faces of Perfect Ebony: Encountering Atlantic Slavery in Imperial Britain. By Catherine Molineux. Harvard Historical Studies, volume 175.Cambridge, MA: Harvard University Press, 2012. Pp. xvi+341. $49.95.",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/0f6a470b8b56c1c9dcf046c6629774425a661470",
-        "pub_year": 2014,
-        "publicationDate": "2014-03-01",
-        "author": "G. Boulukos",
-        "venue": ""
-      },
-      {
-        "id": "136e2797d8072738213b88ef9cbc708640bd2443",
-        "title": "Faces of Perfect Ebony: Encountering Atlantic Slavery in Imperial Britain Catherine Molineux. Cambridge, MA: Harvard University Press, 2011. xvi+341 pp. US$49.95 (hardback).",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/136e2797d8072738213b88ef9cbc708640bd2443",
-        "pub_year": 2014,
-        "publicationDate": "2014-02-26",
-        "author": "S. Amussen",
-        "venue": ""
-      },
-      {
-        "id": "1fcc9c35c8ebf7bba3f567e77684feeca8eb13e8",
-        "title": "Construction of a Dicotomous Key for Common Local and Imported Timber Species in Sri Lanka",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/1fcc9c35c8ebf7bba3f567e77684feeca8eb13e8",
-        "pub_year": 2014,
-        "publicationDate": "2014-02-18",
-        "author": "C. Muthumala, H. Amarasekara",
-        "venue": ""
-      },
-      {
-        "id": "506659d3a2c1aaa78a5fbc2b3b9da1c822441965",
-        "title": "Fatigue kidney health liquor and preparation method",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/506659d3a2c1aaa78a5fbc2b3b9da1c822441965",
-        "pub_year": 2014,
-        "publicationDate": "2014-02-17",
-        "author": "刘铭成, 户金玲, 刘圆正",
-        "venue": ""
-      },
-      {
-        "id": "b333ad57e3d780f18fd05e49c878e6dcf7653e25",
-        "title": "Nutritional corn flour and preparation method thereof",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/b333ad57e3d780f18fd05e49c878e6dcf7653e25",
-        "pub_year": 2014,
-        "publicationDate": "2014-02-14",
-        "author": "陈杏爱",
         "venue": ""
       }
     ]
@@ -20165,7 +20165,7 @@
     ]
   },
   "aave-african american english-african american vernacular english-african-american english-black english": {
-    "timestamp": 1747159464501,
+    "timestamp": 1747160651405,
     "data": [
       {
         "id": "8b0aeda226009072d8cc7ba8da18915d55d8033c",
@@ -21778,16 +21778,6 @@
         "venue": "Frontiers in Public Health"
       },
       {
-        "id": "3b0829a7ea363fbe2d4b985c117535546b5e308c",
-        "title": "Interactive Theatre, Advocacy, and the Pursuit of Freedom",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/3b0829a7ea363fbe2d4b985c117535546b5e308c",
-        "pub_year": 2025,
-        "publicationDate": "2025-02-19",
-        "author": "Lebogang Disele-Pitso, Abigail Ameley Quaye, Jan Selman, Funke Olokude, Elsa Robinson, Noreta Lewis-Prince, Yasmine Lewis-Clarke, Jazlynn Steinbach",
-        "venue": ""
-      },
-      {
         "id": "21f9eb7784b05fb549fa3f96b7016d2d94f3004c",
         "title": "The (Re)construction of the Memory of Slavery and the Slave Trade: Bimbia in Cameroon Between Silence, Rehabilitation, and Cultural Dialogue",
         "abstract": "",
@@ -23316,6 +23306,16 @@
         "publicationDate": "2024-12-02",
         "author": "Shaolin Wang, Yiu-Shing Lau, Matt Sutton, Michael Anderson, Chris Kypridemos, A. Head, Ben Barr, R. Cookson, Chris Bentley, L. Anselmi",
         "venue": "BMC Medicine"
+      },
+      {
+        "id": "f34c5e76990dd316a889753f0fde4495c5ca0067",
+        "title": "Staging Haiti in Nineteenth-Century America: Revolution, Race, and Popular Performance by Peter P. Reed (review)",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/f34c5e76990dd316a889753f0fde4495c5ca0067",
+        "pub_year": 2024,
+        "publicationDate": "2024-12-01",
+        "author": "John Saillant",
+        "venue": "Comparative drama"
       },
       {
         "id": "f010ba68ea8ac9a9ca2bb020df08e949f32f8402",
@@ -25136,6 +25136,16 @@
         "publicationDate": "2024-10-01",
         "author": "Shaniza Haniff, Yu-Che Lee, Ko-Yun Chang, Santosh Kagathur, Ashwin Shive Gowda, Daniel Isaac",
         "venue": "JCO Oncology Practice"
+      },
+      {
+        "id": "3b0829a7ea363fbe2d4b985c117535546b5e308c",
+        "title": "Interactive Theatre, Advocacy, and the Pursuit of Freedom",
+        "abstract": "",
+        "url": "https://www.semanticscholar.org/paper/3b0829a7ea363fbe2d4b985c117535546b5e308c",
+        "pub_year": 2024,
+        "publicationDate": "2024-10-01",
+        "author": "Lebogang Disele-Pitso, Abigail Ameley Quaye, Jan Selman, Funke Olokude, Elsa Robinson, Noreta Lewis-Prince, Yasmine Lewis-Clarke, Jazlynn Steinbach",
+        "venue": "Canadian Theatre Review"
       },
       {
         "id": "34f0ff764428637ee89560347367c489052a2186",
@@ -30156,16 +30166,6 @@
         "publicationDate": "2024-02-07",
         "author": "Nikkola Carmichael, Kimberly Zayhowski, Joselyn Saenz Diaz",
         "venue": "Journal of Genetic Counseling"
-      },
-      {
-        "id": "3e6abdcc7cb9a011abebf61d9f3c3d18b7090704",
-        "title": "Arabic Synonym BERT-based Adversarial Examples for Text Classification",
-        "abstract": "",
-        "url": "https://www.semanticscholar.org/paper/3e6abdcc7cb9a011abebf61d9f3c3d18b7090704",
-        "pub_year": 2024,
-        "publicationDate": "2024-02-05",
-        "author": "Norah M. Alshahrani, Saied Alshahrani, Esma Wali, J. Matthews",
-        "venue": "Conference of the European Chapter of the Association for Computational Linguistics"
       }
     ]
   }

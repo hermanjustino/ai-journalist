@@ -60,7 +60,7 @@ class ContentFetcher {
       const API_BASE_URL = getApiBaseUrl();
       
       const response = await axios.post(`${API_BASE_URL}/api/scholar/search`, {
-        keywords: ['african american vernacular english', 'aave', 'african american english', 'black english', 'african-american english'],
+        keywords: ['african american vernacular english', 'aave', 'ebonics'],
         limit: 15,
         ...options
       });
