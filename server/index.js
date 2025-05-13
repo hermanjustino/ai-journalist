@@ -18,6 +18,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001', 
   'https://ai-journalist-1.onrender.com',
+  'https://ai-journalist-3kvy.onrender.com',
 ];
 
 // CORS configuration that properly handles different environments
@@ -41,6 +42,10 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({ status: 'AI Journalist API is running', timestamp: new Date() });
+});
 
 // Mount trends API router
 app.use('/api/trends', trendsApi);
