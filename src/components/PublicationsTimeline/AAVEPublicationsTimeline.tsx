@@ -34,6 +34,7 @@ const AAVEPublicationsTimeline: React.FC = () => {
   const [rawPapers, setRawPapers] = useState<Paper[]>([]);
   const [showRawData, setShowRawData] = useState<boolean>(false);
   const [dataSource, setDataSource] = useState<'cache' | 'api' | 'sample'>('cache');
+  const [selectedYear, setSelectedYear] = useState<number | null>(null);
 
   useEffect(() => {
     fetchAAVEPublications();
@@ -323,6 +324,14 @@ const AAVEPublicationsTimeline: React.FC = () => {
             x: {
               title: { display: true, text: 'Year' }
             }
+          },
+          onClick: (event, elements) => {
+            if (elements && elements.length > 0) {
+              const index = elements[0].index;
+              const year = parseInt(yearCounts[index].year.toString());
+              setSelectedYear(year);
+              setShowRawData(true); // Show the papers list when a bar is clicked
+            }
           }
         }
       });
@@ -331,28 +340,15 @@ const AAVEPublicationsTimeline: React.FC = () => {
     }
   };
 
-  // Add this function to the component
-  const debugApiConnection = async () => {
-    try {
-      // Determine the base URL the same way as the fetch function
-      let baseUrl;
-      if (process.env.REACT_APP_API_BASE_URL) {
-        baseUrl = process.env.REACT_APP_API_BASE_URL;
-      } else if (window.location.hostname === 'localhost') {
-        baseUrl = 'http://localhost:3001';
-      } else {
-        baseUrl = window.location.origin;
-      }
-      
-      console.log('Testing API connection to:', baseUrl);
-      const response = await fetch(`${baseUrl}/api/health`);
-      const data = await response.json();
-      console.log('API health check result:', data);
-      return data;
-    } catch (err) {
-      console.error('API connection test failed:', err);
-      return null;
-    }
+  // Filter papers for selected year
+  const getYearFilteredPapers = () => {
+    if (!selectedYear) return rawPapers;
+    
+    return rawPapers.filter(paper => {
+      const paperYear = paper.year || 
+                       (paper.publicationDate ? new Date(paper.publicationDate).getFullYear() : null);
+      return paperYear === selectedYear;
+    });
   };
 
   // Format author information
@@ -364,12 +360,20 @@ const AAVEPublicationsTimeline: React.FC = () => {
 
   // Format paper display
   const renderPapersList = () => {
-    if (rawPapers.length === 0) {
-      return <div className="no-papers">No papers to display</div>;
+    const papersToDisplay = selectedYear ? getYearFilteredPapers() : rawPapers;
+    
+    if (papersToDisplay.length === 0) {
+      return (
+        <div className="no-papers">
+          {selectedYear ? 
+            `No papers found for year ${selectedYear}` : 
+            'No papers to display'}
+        </div>
+      );
     }
 
     // Sort papers by year (most recent first)
-    const sortedPapers = [...rawPapers]
+    const sortedPapers = [...papersToDisplay]
       .filter(paper => paper.title) // Filter out papers without titles
       .sort((a, b) => {
         const yearA = a.year || 0;
@@ -379,7 +383,19 @@ const AAVEPublicationsTimeline: React.FC = () => {
 
     return (
       <div className="papers-list">
-        <p className="papers-count">Showing {sortedPapers.length} papers from {dataSource} data</p>
+        <p className="papers-count">
+          {selectedYear ? 
+            `Showing ${sortedPapers.length} papers from ${selectedYear}` : 
+            `Showing ${sortedPapers.length} papers from ${dataSource} data`}
+          {selectedYear && (
+            <button 
+              className="clear-year-filter" 
+              onClick={() => setSelectedYear(null)}
+            >
+              Clear year filter
+            </button>
+          )}
+        </p>
         {sortedPapers.map((paper, index) => (
           <div key={paper.paperId || `paper-${index}`} className="paper-item">
             <h4 className="paper-title">{paper.title}</h4>
@@ -407,6 +423,17 @@ const AAVEPublicationsTimeline: React.FC = () => {
       <div className="timeline-header">
         <h2>AAVE in Academic Publications</h2>
         <p>Timeline of academic publications mentioning African American Vernacular English over the years</p>
+        {selectedYear && (
+          <div className="selected-year-banner">
+            <h3>Publications from {selectedYear}</h3>
+            <button 
+              className="back-button"
+              onClick={() => setSelectedYear(null)}
+            >
+              ← Back to all years
+            </button>
+          </div>
+        )}
         <div className="timeline-actions">
           <button 
             onClick={() => fetchAAVEPublications(true)}
@@ -426,24 +453,6 @@ const AAVEPublicationsTimeline: React.FC = () => {
             Data source: <strong>{dataSource}</strong>
           </span>
         </div>
-        {error && (
-          <div className="error-message">
-            {error}
-            {window.location.hostname === 'localhost' && (
-              <div>
-                <button 
-                  onClick={async () => {
-                    const result = await debugApiConnection();
-                    alert(result ? `API connection successful: ${JSON.stringify(result)}` : 'API connection failed');
-                  }}
-                  style={{ marginTop: '10px', padding: '5px 10px' }}
-                >
-                  Test API Connection
-                </button>
-              </div>
-            )}
-          </div>
-        )}
       </div>
       
       {loading ? (
@@ -478,12 +487,15 @@ const AAVEPublicationsTimeline: React.FC = () => {
             </div>
           </div>
           
-          {!showRawData && (
+          {/* Always show chart unless a specific year is selected */}
+          {!selectedYear && (
             <div className="chart-container">
               <canvas ref={chartRef}></canvas>
+              <p className="chart-instruction">Click on any bar to see papers for that year</p>
             </div>
           )}
           
+          {/* Conditionally show papers list below the chart */}
           {showRawData && renderPapersList()}
           
           <div className="timeline-explanation">

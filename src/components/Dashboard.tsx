@@ -53,6 +53,8 @@ interface DashboardProps {
 
 const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) => {
   const [timeRange, setTimeRange] = useState<'day' | 'week' | 'month'>('week');
+  // Add state for search query
+  const [searchQuery, setSearchQuery] = useState<string>('');
   
   // Filter content by domain if a domain is selected
   const filteredContent = selectedDomain 
@@ -63,47 +65,57 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
     })
   : contentItems;
 
-  // Group content by source
-  const sourceGroups = filteredContent.reduce((acc, item) => {
+  // Add search filtering
+  const searchFilteredContent = searchQuery.trim() 
+    ? filteredContent.filter(item => 
+        (item.title && item.title.toLowerCase().includes(searchQuery.toLowerCase())) || 
+        item.content.toLowerCase().includes(searchQuery.toLowerCase()))
+    : filteredContent;
+
+  // Group content by source - now use searchFilteredContent
+  const sourceGroups = searchFilteredContent.reduce((acc, item) => {
     const sourceKey = item.source.toLowerCase();
     acc[sourceKey] = (acc[sourceKey] || 0) + 1;
     return acc;
   }, {} as Record<string, number>);
 
-  // Get all items sorted by timestamp (most recent first)
-  const sortedItems = [...filteredContent]
+  // Get all items sorted by timestamp (most recent first) - use searchFilteredContent
+  const sortedItems = [...searchFilteredContent]
     .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
 
   return (
     <div className="dashboard">
       <div className="dashboard-header">
         <h2>{selectedDomain ? `${selectedDomain} Dashboard` : 'Cultural Insights Dashboard'}</h2>
-        <div className="time-filters">
-          <button 
-            className={timeRange === 'day' ? 'active' : ''} 
-            onClick={() => setTimeRange('day')}
-          >
-            Today
-          </button>
-          <button 
-            className={timeRange === 'week' ? 'active' : ''} 
-            onClick={() => setTimeRange('week')}
-          >
-            This Week
-          </button>
-          <button 
-            className={timeRange === 'month' ? 'active' : ''} 
-            onClick={() => setTimeRange('month')}
-          >
-            This Month
-          </button>
+        <div className="search-container">
+          <input
+            type='text'
+            placeholder='Search articles...'
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="search-input"
+          />
+          {searchQuery && (
+            <button 
+              className="clear-search" 
+              onClick={() => setSearchQuery('')}
+              aria-label="Clear search"
+            >
+              ×
+            </button>
+          )}
         </div>
       </div>
 
       <div className="dashboard-metrics">
         <div className="metric-card">
           <h3>Total Content</h3>
-          <div className="metric-value">{filteredContent.length}</div>
+          <div className="metric-value">{searchFilteredContent.length}</div>
+          {searchQuery && filteredContent.length !== searchFilteredContent.length && (
+            <div className="search-info">
+              Showing {searchFilteredContent.length} of {filteredContent.length} items
+            </div>
+          )}
         </div>
         <div className="metric-card">
           <h3>Source Categories</h3>
@@ -121,7 +133,7 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
                 <div 
                   className="source-bar" 
                   style={{ 
-                    width: `${Math.max((count / filteredContent.length) * 100, 5)}%`,
+                    width: `${Math.max((count / searchFilteredContent.length) * 100, 5)}%`,
                     backgroundColor: getSourceColor(source)
                   }}
                 />
@@ -133,6 +145,9 @@ const Dashboard: React.FC<DashboardProps> = ({ contentItems, selectedDomain }) =
         
         <div className="section recent-content">
           <h3>All Content ({sortedItems.length} items)</h3>
+          {searchQuery && sortedItems.length === 0 && (
+            <div className="no-results">No content found matching "{searchQuery}"</div>
+          )}
           <div className="content-scrollable-container">
             <ul className="content-list">
               {sortedItems.map(item => (

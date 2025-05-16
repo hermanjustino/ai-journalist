@@ -228,6 +228,86 @@
   font-style: italic;
 }
 
+/* New styles for year selection and filtering */
+.selected-year-banner {
+  background-color: #f3f3f3;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-year-banner h3 {
+  margin: 0;
+  color: #8d2327;
+}
+
+.back-button {
+  background-color: #8d2327;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #6d1a1d;
+}
+
+.clear-year-filter {
+  margin-left: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  padding: 3px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.clear-year-filter:hover {
+  background-color: #e0e0e0;
+}
+
+.chart-instruction {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Make papers for selected year stand out */
+.selected-year {
+  background-color: #fff8e1;
+}
+
+/* Adjust papers list when displayed with chart */
+.chart-container + .papers-list {
+  margin-top: 30px;
+  border-top: 2px solid #e0e0e0;
+  padding-top: 20px;
+}
+
+/* Add a subtle visual separator */
+.papers-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.papers-list-title {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .timeline-stats {
     flex-direction: column;
