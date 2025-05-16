@@ -8,6 +8,7 @@ import contentFetcher from './services/contentFetcher';
 import './App.css';
 import AAVEPublicationsTimeline from './components/PublicationsTimeline/AAVEPublicationsTimeline';
 import ScholarApiTester from './components/ScholarApiTester';
+import LandingPage from './components/LandingPage/LandingPage';
 
 
 function App() {
@@ -107,6 +108,8 @@ function App() {
     }
 
     switch (currentView) {
+      case 'landing':
+        return <LandingPage onNavigate={setCurrentView} />;
       case 'dashboard':
         return <Dashboard contentItems={contentItems} />;
       case 'about':

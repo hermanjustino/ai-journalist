@@ -33,6 +33,12 @@ const Navigation: React.FC<Props> = ({ currentView, onViewChange }) => {
         
         <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
 
+          <li className={currentView === 'landing' ? 'active' : ''}>
+            <button onClick={() => handleViewChange('landing')}>
+              Home
+            </button>
+          </li>
+
           <li className={currentView === 'publications-timeline' ? 'active' : ''}>
             <button onClick={() => handleViewChange('publications-timeline')}>
               Publications Timeline
